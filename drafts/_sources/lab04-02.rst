@@ -1,0 +1,26 @@
+.. qnum::
+   :start: 1
+   :prefix: lab04-02-
+
+
+Lab 4-2: Caesar Cipher - Encrypting and Decrypting
+==================================================
+
+Lab Requirements and Specifications
+-----------------------------------
+
+
+You should name your file ``FILN-caesar.py``, where FILN is your first initial and last name, no space.
+
+Testing Your Program
+--------------------
+
+The following space is provided in case you want to test code out or write it in the browser:
+
+.. activecode:: labspace-04-02
+
+    #Write and run code here!
+
+Taking it Further
+-----------------
+

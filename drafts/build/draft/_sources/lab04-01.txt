@@ -1,0 +1,116 @@
+.. qnum::
+   :start: 1
+   :prefix: lab04-01-
+
+
+Lab 4-1: Rock Paper Scissors
+============================
+
+Lab Requirements and Specifications
+-----------------------------------
+
+Rock Paper Scissors - the ultimate, time-tested witness to the greatest and most difficult question in the world - *"Who should go first?"*.
+
+In this lab, you'll be creating a program to play **rock paper scissors**.
+
+At the beginning of the game, the program should ask for the number of rounds to be played.  Each round will consist of each player (or computer) selecting their choice between rock, paper, and scissors.  A round is a round, even if the players tie.  The manner in which players choose their moves is completely up to you.  You may have them enter a string or pick from a menu.
+
+As a reminder, these are the interactions between rock, paper, and scissors:
+    - Rock beats Scissors
+    - Paper beats Rock (don't ask me how)
+    - Scissors beats Paper
+
+The game will keep track of the number of rounds each player (or computer) has won.  If all the rounds are played or if a player wins the majority (more than half) of the rounds, the game should end.
+
+When the game ends, the program should report how many rounds each player/computer has won, as well as the number of ties.
+
+*"Weeks of programming can save you hours of planning." -- unknown*
+
+As our labs get more and more complex, you'll find that planning and writing pseudocode gets more and more beneficial.  Once again, you should consider the following tips to help guide your planning:
+    - Now that we can create and call functions, the majority of your program should be functions.  Break the game down into simple steps or instructions - each of those will have its own function.
+    - Take advantage of ``return`` statements.  Your code should not have any global variables.  Data should be passed to functions through arguments, and from functions using the ``return`` statement.
+    - Each function should have a single purpose.  If you find that you have written a function that is doing multiple things, it means you should break it down into more functions.
+    - Which variables will you have to keep track of during all the rounds, and after all the rounds are completed? Make a note of which ones should be *initialized* outside of your loop.
+    - Be sure to provide the player with the appropriate prompts, letting them know their options, and appropriate round information.  See below as an example.
+    - Don't forget to ``import random`` to use ``random.randint()``!
+
+You should name your file ``FILN-rps.py``, where FILN is your first initial and last name, no space.
+
+Testing Your Program
+--------------------
+
+Below is a sample runthrough:
+
+::
+    
+    Welcome to Rock Paper Scissors!
+    Enter the number of rounds to play, from 1 to 9: 5
+    -----------------
+    Round 1!
+    Enter your move from [r|p|s]: r
+    You picked: Rock
+    Computer picked: Paper
+    Computer won!
+    Player Wins: 0
+    Computer Wins: 1
+    Ties: 0
+    -----------------
+    Round 2!
+    Enter your move from [r|p|s]: p
+    You picked: Paper
+    Computer picked: Rock
+    Player won!
+    Player Wins: 1
+    Computer Wins: 1
+    Ties: 0
+    -----------------
+    Round 3!
+    Enter your move from [r|p|s]: s
+    You picked: Scissors
+    Computer picked: Paper
+    Player won!
+    Player Wins: 2
+    Computer Wins: 1
+    Ties: 0
+    -----------------
+    Round 4!
+    Enter your move from [r|p|s]: r
+    You picked: Rock
+    Computer picked: Scissors
+    Player won!
+    Player Wins: 3
+    Computer Wins: 1
+    Ties: 0
+    
+    The player is victorious! P:3 to C:1!
+
+The following space is provided in case you want to test code out or write it in the browser:
+
+.. activecode:: labspace-04-01
+
+    #Write and run code here!
+
+Taking it Further
+-----------------
+
+**1:** Right now the game is only PvC, or Player vs Computer.  You can easily adjust your code to make it PvP, or Player vs Player.  The biggest problem with PvP games like this is that the other player can see what you type in, and will know how to counter you.  However, there is a solution around this.  Python's ``input()`` function "echoes" what we type in - meaning we see it on the screen too.  This is a good thing, because it allows us to make sure what we typed in is what we want.  However, if we don't want our input to be visible, then we will need to need to use the ``getpass`` library.
+
+We can do this by using ``import getpass``, similar to how we would get the ``random`` library.  We can then use the function ``getpass.getpass()``, which works almost identically to the ``input()`` function, except nothing is echoed - you cannot see what you are typing in - which is perfect for our purposes!  Copy and paste the code below and run it to test it out:
+
+::
+    
+    import getpass
+    inp = getpass.getpass("Enter your name: ")
+    print("Your name is {}".format(inp))
+    print("Note how you can't see it next to the prompt!")
+
+Note that the ``getpass`` library is not included in the packages on this site.  This will not work on any site that implement Skulpt, such as this one, or Trinket.  It's best done on your desktop, or in a virtualmachine IDE such as Koding or C9.io
+
+**2:** The next thing you can do is create RPSLS - Rock Paper Scissors Lizard Spock.  It's similar to RPS, except with more elements.
+
+Here are the relationships between moves in RPSLS:
+    - Rock crushes Scissors and crushes Lizard
+    - Paper covers Rock and disproves Spock
+    - Scissors cuts Paper and decapitates Lizard
+    - Lizard eats Paper and poisons Spock
+    - Spock vaporizes Rock and crushes Scissors

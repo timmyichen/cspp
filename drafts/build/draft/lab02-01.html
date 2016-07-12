@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lab 1-2: Single Digit Calculator &mdash; Runestone Interactive Overview</title>
+    <title>Lab 2-1: Single Digit Calculator &mdash; Runestone Interactive Overview</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -257,7 +257,12 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lab 1-2: Single Digit Calculator</a></li>
+<li><a class="reference internal" href="#">Lab 2-1: Single Digit Calculator</a><ul>
+<li><a class="reference internal" href="#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
+<li><a class="reference internal" href="#testing-your-program">Testing Your Program</a></li>
+<li><a class="reference internal" href="#taking-it-further">Taking it Further</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -290,8 +295,10 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="lab-1-2-single-digit-calculator">
-<h1>Lab 1-2: Single Digit Calculator<a class="headerlink" href="#lab-1-2-single-digit-calculator" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="lab-2-1-single-digit-calculator">
+<h1>Lab 2-1: Single Digit Calculator<a class="headerlink" href="#lab-2-1-single-digit-calculator" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="lab-requirements-and-specifications">
+<h2>Lab Requirements and Specifications<a class="headerlink" href="#lab-requirements-and-specifications" title="Permalink to this headline">¶</a></h2>
 <p>In this lab, you are going to be creating a simple calculator that will only operate on single-digit numbers.  Your program should use the <code class="docutils literal"><span class="pre">input()</span></code> function to allow the user to enter the input.  The output should be something like <code class="docutils literal"><span class="pre">&quot;The</span> <span class="pre">result</span> <span class="pre">is</span> <span class="pre">____&quot;</span></code></p>
 <p>The input will always be three characters long.  The first character will always be the first (single-digit) number, the third character will always be the second (single-digit) number, and the second character will always be the operator.</p>
 <dl class="docutils">
@@ -306,7 +313,12 @@
 </dd>
 </dl>
 <p>As an example, if given an input of <code class="docutils literal"><span class="pre">&quot;3*5&quot;</span></code>, your program should perform the calculation and print out <code class="docutils literal"><span class="pre">&quot;The</span> <span class="pre">result</span> <span class="pre">is</span> <span class="pre">15&quot;</span></code>.  The result may have more than one digit.  The result may also be negative.</p>
+<p>Again, please remember that <code class="docutils literal"><span class="pre">input()</span></code> will always give you a string.  You will have to use conversion functions such as <code class="docutils literal"><span class="pre">int()</span></code> or <code class="docutils literal"><span class="pre">float()</span></code> in order to use a string (or its parts) as a number.</p>
+<p>Your program will break the input into three parts - the first term, the operator, and the second term.  Since your input is a string, you can use string indexing to grab specific parts.  For example, <code class="docutils literal"><span class="pre">&quot;Howdy!&quot;[3]</span></code> will give you <code class="docutils literal"><span class="pre">&quot;d&quot;</span></code> since the index starts at zero.  Feel free to look back on previous pages for assistance.  Once you have your parts broken up (and preferably saved as variables), how do you know what your program will do?  Which part of the input expression determines what the program does?  You will want to use <em>conditionals</em> to control what the program will do and when it will do it.</p>
 <p>You should name your file <code class="docutils literal"><span class="pre">FILN-simplecalc.py</span></code>, where FILN is first initial and last name, no space.</p>
+</div>
+<div class="section" id="testing-your-program">
+<h2>Testing Your Program<a class="headerlink" href="#testing-your-program" title="Permalink to this headline">¶</a></h2>
 <p>You can test your program by feeding it the following inputs and comparing your output to the result.</p>
 <blockquote>
 <div><table border="1" class="docutils">
@@ -340,9 +352,24 @@
 </div></blockquote>
 <p>The following space is provided in case you want to test code out or write it in the browser:</p>
 
-<textarea data-component="activecode" id=labspace-01-01 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+<textarea data-component="activecode" id=labspace-02-01 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
 #Write and run code here!
 </textarea>
+</div>
+<div class="section" id="taking-it-further">
+<h2>Taking it Further<a class="headerlink" href="#taking-it-further" title="Permalink to this headline">¶</a></h2>
+<p>We can expand the capabilities of our calculator by allowing it to handle lengths of multiple digits!</p>
+<dl class="docutils">
+<dt>We will do this by asking the user for three things:</dt>
+<dd><ul class="first last simple">
+<li>The expression in the format term1 operator term2, no spaces, and the terms can be any length.  Example: <code class="docutils literal"><span class="pre">492-51</span></code></li>
+<li>The length of the first term in terms of digits.  From the example above, that would be <code class="docutils literal"><span class="pre">3</span></code></li>
+<li>The length of the second term in terms of digits.  From the example above, that would be <code class="docutils literal"><span class="pre">2</span></code>.</li>
+</ul>
+</dd>
+</dl>
+<p>Using that information, you will do something similar to your original program, but this time, you will have to use string slicing.  As a reminder, string slicing is similar to string indexing, but you provide a range of indexes instead of a single index.  Example: <code class="docutils literal"><span class="pre">&quot;howdy&quot;[1:4]</span></code> will be <code class="docutils literal"><span class="pre">&quot;owd&quot;</span></code> because it starts at the first index <code class="docutils literal"><span class="pre">&quot;howdy&quot;[1]</span></code>, or <code class="docutils literal"><span class="pre">&quot;o&quot;</span></code> and end at one less than the last index <code class="docutils literal"><span class="pre">&quot;howdy&quot;[4-1]</span></code>, or <code class="docutils literal"><span class="pre">&quot;howdy&quot;[3]</span></code>, or <code class="docutils literal"><span class="pre">&quot;d&quot;</span></code>.  Everything from <code class="docutils literal"><span class="pre">&quot;o&quot;</span></code> to <code class="docutils literal"><span class="pre">&quot;d&quot;</span></code> is <code class="docutils literal"><span class="pre">&quot;owd&quot;</span></code>.  You will use this to determine the two terms in the expression.</p>
+</div>
 </div>
 
 

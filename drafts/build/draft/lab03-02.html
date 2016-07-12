@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lab 1-1: Temperature Converter &mdash; Runestone Interactive Overview</title>
+    <title>Lab 3-2: Number Guessing Game &mdash; Runestone Interactive Overview</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -257,9 +257,10 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lab 1-1: Temperature Converter</a><ul>
+<li><a class="reference internal" href="#">Lab 3-2: Number Guessing Game</a><ul>
 <li><a class="reference internal" href="#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
 <li><a class="reference internal" href="#testing-your-program">Testing Your Program</a></li>
+<li><a class="reference internal" href="#taking-it-further">Taking it Further</a></li>
 </ul>
 </li>
 </ul>
@@ -294,94 +295,87 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="lab-1-1-temperature-converter">
-<h1>Lab 1-1: Temperature Converter<a class="headerlink" href="#lab-1-1-temperature-converter" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="lab-3-2-number-guessing-game">
+<h1>Lab 3-2: Number Guessing Game<a class="headerlink" href="#lab-3-2-number-guessing-game" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="lab-requirements-and-specifications">
 <h2>Lab Requirements and Specifications<a class="headerlink" href="#lab-requirements-and-specifications" title="Permalink to this headline">¶</a></h2>
-<p>In this lab, you will be creating two different programs to convert temperature values between Fahrenheit and Celcius.  One program will convert Fahrenheit to Celcius, and the other program will convert Celcius to Fahrenheit.</p>
-<p>Each program should use <code class="docutils literal"><span class="pre">input()</span></code> to allow the user to type in a number to convert.  The program will perform some math, then display an output formatted like:</p>
-<p><code class="docutils literal"><span class="pre">&quot;15</span> <span class="pre">C</span> <span class="pre">is</span> <span class="pre">equal</span> <span class="pre">to</span> <span class="pre">32</span> <span class="pre">F&quot;</span></code></p>
-<p>To convert from Celcius to Fahrenheit, you would use the following equation:</p>
-<div class="math">
-\[T_f = T_c \times 1.8 + 32\]</div>
-<p>To convert from Fahrenheit to Celcius, you would use the following equation:</p>
-<div class="math">
-\[T_c = \frac{(T_f - 32)}{1.8}\]</div>
-<p>Where <span class="math">\(T_c\)</span> is the temperature in Celcius and <span class="math">\(T_f\)</span> is the temperature in Fahrenheit.</p>
+<p>In this lab, you&#8217;ll be recreating the classic number guessing game.  The computer will host the game, randomly picking a number between 1 and 100, and the user will be the making the guesses.  The computer should provide hints - telling the user whether their guess was too low or too high.  The computer should be repeatedly asking the user to enter numbers until the user correctly guesses the number.  There is no maximum to the number of tries.  At the end, (if and) when the player finally guesses the correct number, the computer should tell the user how many guesses it took.</p>
+<p>This is the first lab which requires you to break down a multi-part, complex problem.  Don&#8217;t be discouraged if you get stuck.  Power through it!</p>
 <dl class="docutils">
-<dt>You should create two files in your workspace:</dt>
+<dt>From the description above, the program will clearly need to:</dt>
 <dd><ul class="first last simple">
-<li><code class="docutils literal"><span class="pre">FILN-calcFtoC.py</span></code></li>
-<li><code class="docutils literal"><span class="pre">FILN-calcCtoF.py</span></code></li>
+<li>Keep track of the number of guesses</li>
+<li>Use some kind of loop (<code class="docutils literal"><span class="pre">while</span></code> or <code class="docutils literal"><span class="pre">for</span></code>?  When should you use each one?)</li>
+<li>Have some kind of conditional to determine the computer&#8217;s response before it asks for another guess</li>
 </ul>
 </dd>
 </dl>
-<p>Where &#8220;FILN&#8221; is your first initial and last name, no space.</p>
-<p>As a reminder, you should be running this program using python3.  Running this program using python2 may give you unexpected results!  If you are getting errors, make sure you look over your code and double-check for typos.  If you are getting numbers that seem way off, make sure that the equations are entered in correctly!  Don&#8217;t forget your PEMDAS!</p>
+<p><em>&#8220;The sooner you start to code, the longer the program will take.&#8221;   &#8211; Roy Carlson</em></p>
+<p>It would be a wise idea to plan out your strategy for writing this program before you actually start writing it.  I would recommend writing down some very rough pseudocode to help organize the algorithm.</p>
+<dl class="docutils">
+<dt>Here are some guided questions that you should think about when you are writing out your pseudocode:</dt>
+<dd><ul class="first last simple">
+<li>What should happen at the beginning of the program?</li>
+<li>What part of the program should be looped?</li>
+<li>When a user makes a guess, how many different outcomes are there?  What are the outcomes?</li>
+<li>For each outcome, what should the program be doing?</li>
+<li>How do we exit the loop?  Or, what should be the condition for the loop - what should keep us looping?</li>
+</ul>
+</dd>
+</dl>
+<p>There are multiple solutions to this program.  For now, don&#8217;t worry about the &#8220;best&#8221; solution - see if you can get a working version first, then improve on the code afterwards!</p>
+<p>Also, once again, don&#8217;t forget that <code class="docutils literal"><span class="pre">input()</span></code> gives you a string!  <code class="docutils literal"><span class="pre">&quot;50&quot;</span></code> is not the same as <code class="docutils literal"><span class="pre">50</span></code>..</p>
+<p>You should name your file <code class="docutils literal"><span class="pre">FILN-numguess.py</span></code>, where FILN is your first initial and last name, no space.</p>
 </div>
 <div class="section" id="testing-your-program">
 <h2>Testing Your Program<a class="headerlink" href="#testing-your-program" title="Permalink to this headline">¶</a></h2>
-<p>You can test your program <code class="docutils literal"><span class="pre">calcFtoC.py</span></code> by feeding it the following (input) numbers and comparing your output to the result:</p>
-<blockquote>
-<div><table border="1" class="docutils">
-<colgroup>
-<col width="48%" />
-<col width="52%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Input (F)</th>
-<th class="head">Result (C)</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>32</td>
-<td>0</td>
-</tr>
-<tr class="row-odd"><td>-13</td>
-<td>-25</td>
-</tr>
-<tr class="row-even"><td>100</td>
-<td>37.777</td>
-</tr>
-<tr class="row-odd"><td>63.8</td>
-<td>17.666</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<p>You can test your program <code class="docutils literal"><span class="pre">calcCtoF.py</span></code> by feeding it the following (input) numbers and comparing your output to the result:</p>
-<blockquote>
-<div><table border="1" class="docutils">
-<colgroup>
-<col width="48%" />
-<col width="52%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Input (C)</th>
-<th class="head">Result (F)</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>0</td>
-<td>32</td>
-</tr>
-<tr class="row-odd"><td>25</td>
-<td>77</td>
-</tr>
-<tr class="row-even"><td>100</td>
-<td>212</td>
-</tr>
-<tr class="row-odd"><td>-33</td>
-<td>-27.4</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
+<p>I cannot give you any tests for this program - you will have to simply play it to see if it works as expected.  Be sure to manually count your own guesses so you can compare it to what the computer reports, for accuracy.  It might be wise to have the computer print out the answer at the beginning of the program while you test it, so you know what the actual solution is (rather than having to guess for it every time).   Make sure it&#8217;s not printing the answer on your final, ready-to-submit version though!  That would be unfortunate.</p>
+<p>The following is a sample output of what a runthrough might look like:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>Enter your guess (1-100): 50
+Too high! Try again.
+Enter your guess (1-100): 30
+Too high! Try again.
+Enter your guess (1-100): 20
+Too high! Try again.
+Enter your guess (1-100): 10
+Too high! Try again.
+Enter your guess (1-100): 5
+Too low! Try again.
+Enter your guess (1-100): 7
+Too low! Try again.
+Enter your guess (1-100): 8
+
+You got it! It was indeed 8.
+It took you 7 tries.
+You&#39;re like the best person ever.
+</pre></div>
+</div>
+<p>Your output may not look exactly the same, but it should follow the same general format.</p>
 <p>The following space is provided in case you want to test code out or write it in the browser:</p>
 
-<textarea data-component="activecode" id=labspace-01-01 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+<textarea data-component="activecode" id=labspace-03-02 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
 #Write and run code here!
 </textarea>
+</div>
+<div class="section" id="taking-it-further">
+<h2>Taking it Further<a class="headerlink" href="#taking-it-further" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>There are quite a few things we can do to extend our program.  Here are a few gameplay-focused ideas:</dt>
+<dd><ul class="first last simple">
+<li>Before generating the answer, allow the user to choose the ending range for the numbers. The number could be chosen from 1 to 1,000,000, if the user wanted.</li>
+<li>Limit the number of guesses the player has based on the range of numbers.  The equation for coming up with the number of guesses is entirely up to you.</li>
+<li>Incorporate a point system where the user gets points based on how far away their guess is from the answer.  You&#8217;ll need to use <code class="docutils literal"><span class="pre">abs()</span></code> for absolute value to do this.  Instead of reporting the number of guesses, report the number of points at the end.  The lower the points, the better.</li>
+</ul>
+</dd>
+<dt>Then there&#8217;s some other, non-gameplay related things you can add to make it more fun.</dt>
+<dd><ul class="first last simple">
+<li>If they guess a number that&#8217;s too high, then they guess a number that&#8217;s too high again, point it out.  Maybe something like &#8220;Hey dude, I said it was too high and you still guessed a higher number, step up your game!&#8221;.  Same with a number that&#8217;s too low.</li>
+<li>If they guess the same number as they did before, ask the user if they&#8217;re feeling alright, and if they need a break from the computer.</li>
+<li>If they take more guesses than there are possibilities for numbers, tell them to see a doctor.</li>
+</ul>
+</dd>
+</dl>
+<p>Feel free to add your own creative touch into the program!  After all, programming is a creative activity!</p>
 </div>
 </div>
 

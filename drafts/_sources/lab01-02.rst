@@ -6,6 +6,9 @@
 Lab 1-2: Making Sense of Seconds
 ================================
 
+Lab Requirements and Specifications
+-----------------------------------
+
 In this lab, you will be creating a program that can convert a number of seconds into hours, minutes, and seconds.
 
 The program should use the ``input()`` function to allow the user to type in a number of seconds.  You can assume that the user will type in a non-negative integer.  The program will perform some math, then display an output formatted like:
@@ -16,7 +19,22 @@ As a reminder:
    - :math:`60 sec = 1 min`
    - :math:`60 min = 1 hr`
 
-You should name your file ``FILN-seconds.py``, where FILN is your first initial and last name, no space.
+When thinking about how to calculate the number of hours, minutes, and seconds, try to think of these terms as **cups** - let's start by talking about the "minute" cup.
+
+In this example, we want to find how many full cups we can make (each full cup represents one minute).  Each of these cups can only hold 60 of something, so any more and we'll have to start filling a new cup and add one to the number of full cups we have.  If this concept sounds familiar, it's probably because it sounds like division - and that's because it is!  If we have 128 seconds, how many minutes is that?  Two plus change, you probably figured, by dividing 128 by 60.
+
+That means that 128 seconds is equivalent to 2 whole minutes, plus some seconds left over.  How many seconds?  What's the remainder of 128/60?  While you might be able to do it in your head, you'll generally want to find some kind of general rule or formula that you can apply.  And we learned one!  Recall the modulo operator, that calculates the remainder of a quotient.
+
+Reminder: :math:`a \% b` is the remainder of :math:`a \div b`.
+
+Once you're able to convert seconds to minutes + seconds, you'll want to repeat this thought process in order to get hours + minutes!
+
+Please keep in mind that when ``input()`` will always give you the user's input as a *string*, even if the user typed in a number!  We know that ``5`` is not the same thing as ``"5"``.
+
+You should name your file ``FILN_seconds.py``, where FILN is your first initial and last name, all lowercase, no space.
+
+Testing Your Program
+--------------------
 
 You can test your program ``seconds.py`` by feeding it the following inputs and comparing your output to the result:
 
@@ -36,16 +54,13 @@ You can test your program ``seconds.py`` by feeding it the following inputs and 
 
 The following space is provided in case you want to test code out or write it in the browser:
 
-.. activecode:: labspace-01-01
+.. activecode:: labspace-01-02
 
     #Write and run code here!
 
-Need help?
-----------
-**This one is tough!  Don't give up!  It requires some tricky math thinking... think of it as a puzzle!**
+Taking it Further
+-----------------
 
-**Not sure how to get the number of hours?**
-Let me propose a similar example.  I have 128 seconds and I want to calculate the number of minutes.  I know that there are only 60 seconds in a minute, and by doing some math, I know that 128 / 60 is 2.something.  I don't really need to know what the something is, because that's just leftovers, which are just seconds.  We just consider our answer as an integer - and boom!  We know that we have 2 minutes!  It's the same idea with hours, except how many seconds are in an hour?
+Incorporate days, weeks, and years, into your calculations.
 
-**Not sure how to get the number of minutes?**
-todo
+You will have to create your own tests for this.  If you want to explore an interesting topic, visit the `Unix Timestamp <http://www.unixtimestamp.com/>`_.  Grab the long number on the left side of the page, which represents the number of seconds that have passed since January 1st, 1970.  Can your program calculate how many seconds, minutes, hours, days, weeks, and years have passed since then?  For the sake of simplicity you can ignore leap years.

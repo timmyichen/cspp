@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lab 1-1: Temperature Converter &mdash; Runestone Interactive Overview</title>
+    <title>Lab 2-2: Pluralizer &mdash; Runestone Interactive Overview</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -257,9 +257,10 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lab 1-1: Temperature Converter</a><ul>
+<li><a class="reference internal" href="#">Lab 2-2: Pluralizer</a><ul>
 <li><a class="reference internal" href="#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
 <li><a class="reference internal" href="#testing-your-program">Testing Your Program</a></li>
+<li><a class="reference internal" href="#taking-it-further">Taking it Further</a></li>
 </ul>
 </li>
 </ul>
@@ -294,94 +295,117 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="lab-1-1-temperature-converter">
-<h1>Lab 1-1: Temperature Converter<a class="headerlink" href="#lab-1-1-temperature-converter" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="lab-2-2-pluralizer">
+<h1>Lab 2-2: Pluralizer<a class="headerlink" href="#lab-2-2-pluralizer" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="lab-requirements-and-specifications">
 <h2>Lab Requirements and Specifications<a class="headerlink" href="#lab-requirements-and-specifications" title="Permalink to this headline">¶</a></h2>
-<p>In this lab, you will be creating two different programs to convert temperature values between Fahrenheit and Celcius.  One program will convert Fahrenheit to Celcius, and the other program will convert Celcius to Fahrenheit.</p>
-<p>Each program should use <code class="docutils literal"><span class="pre">input()</span></code> to allow the user to type in a number to convert.  The program will perform some math, then display an output formatted like:</p>
-<p><code class="docutils literal"><span class="pre">&quot;15</span> <span class="pre">C</span> <span class="pre">is</span> <span class="pre">equal</span> <span class="pre">to</span> <span class="pre">32</span> <span class="pre">F&quot;</span></code></p>
-<p>To convert from Celcius to Fahrenheit, you would use the following equation:</p>
-<div class="math">
-\[T_f = T_c \times 1.8 + 32\]</div>
-<p>To convert from Fahrenheit to Celcius, you would use the following equation:</p>
-<div class="math">
-\[T_c = \frac{(T_f - 32)}{1.8}\]</div>
-<p>Where <span class="math">\(T_c\)</span> is the temperature in Celcius and <span class="math">\(T_f\)</span> is the temperature in Fahrenheit.</p>
-<dl class="docutils">
-<dt>You should create two files in your workspace:</dt>
-<dd><ul class="first last simple">
-<li><code class="docutils literal"><span class="pre">FILN-calcFtoC.py</span></code></li>
-<li><code class="docutils literal"><span class="pre">FILN-calcCtoF.py</span></code></li>
-</ul>
-</dd>
-</dl>
-<p>Where &#8220;FILN&#8221; is your first initial and last name, no space.</p>
-<p>As a reminder, you should be running this program using python3.  Running this program using python2 may give you unexpected results!  If you are getting errors, make sure you look over your code and double-check for typos.  If you are getting numbers that seem way off, make sure that the equations are entered in correctly!  Don&#8217;t forget your PEMDAS!</p>
+<p>Two horses.  Five monkeys.  Twenty flies.  One cat.  Nine lives.  Despite the English language being one of the most commonly used languages around the world, it is also quite complicated to learn if you are not a native speaker.  Taking a noun and converting it to its plural form has a dozen rules and even more special cases.</p>
+<p>In this lab, you will be creating a program that will take in two inputs: a non-negative number, and a singular-form noun.  If the number entered is 1, then you would just print out &#8220;1 noun&#8221;.  However, if the number is 0 or greater than 1, you would print out the number and the pluralized version of the word - like &#8220;0 nouns&#8221; or &#8220;4 nouns&#8221;.</p>
+<p>Your program will be handling the following rules to pluralize nouns:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="45%" />
+<col width="27%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">If it ends in...</th>
+<th class="head">Rule</th>
+<th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>-fe</td>
+<td>Replace &#8220;fe&#8221; with &#8220;ves&#8221;</td>
+<td>knife, knives</td>
+</tr>
+<tr class="row-odd"><td>-y</td>
+<td>Replace &#8220;y&#8221; with &#8220;ies&#8221;</td>
+<td>family, families</td>
+</tr>
+<tr class="row-even"><td>-sh, -ch</td>
+<td>Add &#8220;es&#8221; to the end</td>
+<td>bush, bushes</td>
+</tr>
+<tr class="row-odd"><td>-us</td>
+<td>Replace &#8220;us&#8221; with &#8220;i&#8221;</td>
+<td>cactus, cacti</td>
+</tr>
+<tr class="row-even"><td>-ay, -oy, -ey, -uy</td>
+<td>Add &#8220;s&#8221; to the end</td>
+<td rowspan="2"><div class="first last line-block">
+<div class="line">guy, guys</div>
+<div class="line">boy, boys</div>
+<div class="line">key, keys</div>
+<div class="line">day, days</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td colspan="2">(The above rule is included because it is a special
+case that conflicts with the first &#8220;y&#8221; rule.)</td>
+</tr>
+<tr class="row-even"><td>All other cases</td>
+<td>Add &#8220;s&#8221; to the end</td>
+<td>cat, cats</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>You should name your file <code class="docutils literal"><span class="pre">FILN-pluralizer.py</span></code>, where FILN is your first initial and last name, no space.</p>
 </div>
 <div class="section" id="testing-your-program">
 <h2>Testing Your Program<a class="headerlink" href="#testing-your-program" title="Permalink to this headline">¶</a></h2>
-<p>You can test your program <code class="docutils literal"><span class="pre">calcFtoC.py</span></code> by feeding it the following (input) numbers and comparing your output to the result:</p>
+<p>Although it is a good idea to come up with some of your own test cases to realize the limitations our own programs the following are some inputs that can also be used to verify that your program works as intended.  I would also recommend using the examples in the table above.</p>
 <blockquote>
 <div><table border="1" class="docutils">
 <colgroup>
-<col width="48%" />
-<col width="52%" />
+<col width="24%" />
+<col width="35%" />
+<col width="41%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Input (F)</th>
-<th class="head">Result (C)</th>
-</tr>
-</thead>
 <tbody valign="top">
-<tr class="row-even"><td>32</td>
-<td>0</td>
+<tr class="row-odd"><td>Input (#)</td>
+<td>Input (word)</td>
+<td>Result</td>
 </tr>
-<tr class="row-odd"><td>-13</td>
-<td>-25</td>
-</tr>
-<tr class="row-even"><td>100</td>
-<td>37.777</td>
-</tr>
-<tr class="row-odd"><td>63.8</td>
-<td>17.666</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<p>You can test your program <code class="docutils literal"><span class="pre">calcCtoF.py</span></code> by feeding it the following (input) numbers and comparing your output to the result:</p>
-<blockquote>
-<div><table border="1" class="docutils">
-<colgroup>
-<col width="48%" />
-<col width="52%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Input (C)</th>
-<th class="head">Result (F)</th>
-</tr>
-</thead>
-<tbody valign="top">
 <tr class="row-even"><td>0</td>
-<td>32</td>
+<td>word</td>
+<td>0 words</td>
 </tr>
-<tr class="row-odd"><td>25</td>
-<td>77</td>
+<tr class="row-odd"><td>1</td>
+<td>city</td>
+<td>1 city</td>
 </tr>
-<tr class="row-even"><td>100</td>
-<td>212</td>
+<tr class="row-even"><td>5</td>
+<td>fish</td>
+<td>5 fishes</td>
 </tr>
-<tr class="row-odd"><td>-33</td>
-<td>-27.4</td>
+<tr class="row-odd"><td>33</td>
+<td>fly</td>
+<td>33 flies</td>
+</tr>
+<tr class="row-even"><td>8</td>
+<td>wife</td>
+<td>8 wives</td>
+</tr>
+<tr class="row-odd"><td>20</td>
+<td>hippopotamus</td>
+<td>20 hippopotami</td>
 </tr>
 </tbody>
 </table>
 </div></blockquote>
+<p>Note that some words covered by special cases will look incorrect if used in this program.  Examples: bus - buses, foot, feets, etc.  It&#8217;s important to realize that for now, you want to make sure that the words follow your rules, regardless of whether it is actually an English word or not.</p>
 <p>The following space is provided in case you want to test code out or write it in the browser:</p>
 
-<textarea data-component="activecode" id=labspace-01-01 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+<textarea data-component="activecode" id=labspace-02-02 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
 #Write and run code here!
 </textarea>
+</div>
+<div class="section" id="taking-it-further">
+<h2>Taking it Further<a class="headerlink" href="#taking-it-further" title="Permalink to this headline">¶</a></h2>
+<p>You can extend the functionality of your program by including all possible rules and special cases.  Performing a google search on &#8220;plural nouns rules&#8221; will provide numerous resources on the various rules and exceptions in making a noun plural.  See how many you can incorporate, then challenge your peers or teachers to stump your program!</p>
 </div>
 </div>
 

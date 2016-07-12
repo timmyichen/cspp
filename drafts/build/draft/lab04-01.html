@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lab 1-1: Temperature Converter &mdash; Runestone Interactive Overview</title>
+    <title>Lab 4-1: Rock Paper Scissors &mdash; Runestone Interactive Overview</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -257,9 +257,10 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lab 1-1: Temperature Converter</a><ul>
+<li><a class="reference internal" href="#">Lab 4-1: Rock Paper Scissors</a><ul>
 <li><a class="reference internal" href="#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
 <li><a class="reference internal" href="#testing-your-program">Testing Your Program</a></li>
+<li><a class="reference internal" href="#taking-it-further">Taking it Further</a></li>
 </ul>
 </li>
 </ul>
@@ -294,94 +295,113 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="lab-1-1-temperature-converter">
-<h1>Lab 1-1: Temperature Converter<a class="headerlink" href="#lab-1-1-temperature-converter" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="lab-4-1-rock-paper-scissors">
+<h1>Lab 4-1: Rock Paper Scissors<a class="headerlink" href="#lab-4-1-rock-paper-scissors" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="lab-requirements-and-specifications">
 <h2>Lab Requirements and Specifications<a class="headerlink" href="#lab-requirements-and-specifications" title="Permalink to this headline">¶</a></h2>
-<p>In this lab, you will be creating two different programs to convert temperature values between Fahrenheit and Celcius.  One program will convert Fahrenheit to Celcius, and the other program will convert Celcius to Fahrenheit.</p>
-<p>Each program should use <code class="docutils literal"><span class="pre">input()</span></code> to allow the user to type in a number to convert.  The program will perform some math, then display an output formatted like:</p>
-<p><code class="docutils literal"><span class="pre">&quot;15</span> <span class="pre">C</span> <span class="pre">is</span> <span class="pre">equal</span> <span class="pre">to</span> <span class="pre">32</span> <span class="pre">F&quot;</span></code></p>
-<p>To convert from Celcius to Fahrenheit, you would use the following equation:</p>
-<div class="math">
-\[T_f = T_c \times 1.8 + 32\]</div>
-<p>To convert from Fahrenheit to Celcius, you would use the following equation:</p>
-<div class="math">
-\[T_c = \frac{(T_f - 32)}{1.8}\]</div>
-<p>Where <span class="math">\(T_c\)</span> is the temperature in Celcius and <span class="math">\(T_f\)</span> is the temperature in Fahrenheit.</p>
+<p>Rock Paper Scissors - the ultimate, time-tested witness to the greatest and most difficult question in the world - <em>&#8220;Who should go first?&#8221;</em>.</p>
+<p>In this lab, you&#8217;ll be creating a program to play <strong>rock paper scissors</strong>.</p>
+<p>At the beginning of the game, the program should ask for the number of rounds to be played.  Each round will consist of each player (or computer) selecting their choice between rock, paper, and scissors.  A round is a round, even if the players tie.  The manner in which players choose their moves is completely up to you.  You may have them enter a string or pick from a menu.</p>
 <dl class="docutils">
-<dt>You should create two files in your workspace:</dt>
+<dt>As a reminder, these are the interactions between rock, paper, and scissors:</dt>
 <dd><ul class="first last simple">
-<li><code class="docutils literal"><span class="pre">FILN-calcFtoC.py</span></code></li>
-<li><code class="docutils literal"><span class="pre">FILN-calcCtoF.py</span></code></li>
+<li>Rock beats Scissors</li>
+<li>Paper beats Rock (don&#8217;t ask me how)</li>
+<li>Scissors beats Paper</li>
 </ul>
 </dd>
 </dl>
-<p>Where &#8220;FILN&#8221; is your first initial and last name, no space.</p>
-<p>As a reminder, you should be running this program using python3.  Running this program using python2 may give you unexpected results!  If you are getting errors, make sure you look over your code and double-check for typos.  If you are getting numbers that seem way off, make sure that the equations are entered in correctly!  Don&#8217;t forget your PEMDAS!</p>
+<p>The game will keep track of the number of rounds each player (or computer) has won.  If all the rounds are played or if a player wins the majority (more than half) of the rounds, the game should end.</p>
+<p>When the game ends, the program should report how many rounds each player/computer has won, as well as the number of ties.</p>
+<p><em>&#8220;Weeks of programming can save you hours of planning.&#8221; &#8211; unknown</em></p>
+<dl class="docutils">
+<dt>As our labs get more and more complex, you&#8217;ll find that planning and writing pseudocode gets more and more beneficial.  Once again, you should consider the following tips to help guide your planning:</dt>
+<dd><ul class="first last simple">
+<li>Now that we can create and call functions, the majority of your program should be functions.  Break the game down into simple steps or instructions - each of those will have its own function.</li>
+<li>Take advantage of <code class="docutils literal"><span class="pre">return</span></code> statements.  Your code should not have any global variables.  Data should be passed to functions through arguments, and from functions using the <code class="docutils literal"><span class="pre">return</span></code> statement.</li>
+<li>Each function should have a single purpose.  If you find that you have written a function that is doing multiple things, it means you should break it down into more functions.</li>
+<li>Which variables will you have to keep track of during all the rounds, and after all the rounds are completed? Make a note of which ones should be <em>initialized</em> outside of your loop.</li>
+<li>Be sure to provide the player with the appropriate prompts, letting them know their options, and appropriate round information.  See below as an example.</li>
+<li>Don&#8217;t forget to <code class="docutils literal"><span class="pre">import</span> <span class="pre">random</span></code> to use <code class="docutils literal"><span class="pre">random.randint()</span></code>!</li>
+</ul>
+</dd>
+</dl>
+<p>You should name your file <code class="docutils literal"><span class="pre">FILN-rps.py</span></code>, where FILN is your first initial and last name, no space.</p>
 </div>
 <div class="section" id="testing-your-program">
 <h2>Testing Your Program<a class="headerlink" href="#testing-your-program" title="Permalink to this headline">¶</a></h2>
-<p>You can test your program <code class="docutils literal"><span class="pre">calcFtoC.py</span></code> by feeding it the following (input) numbers and comparing your output to the result:</p>
-<blockquote>
-<div><table border="1" class="docutils">
-<colgroup>
-<col width="48%" />
-<col width="52%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Input (F)</th>
-<th class="head">Result (C)</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>32</td>
-<td>0</td>
-</tr>
-<tr class="row-odd"><td>-13</td>
-<td>-25</td>
-</tr>
-<tr class="row-even"><td>100</td>
-<td>37.777</td>
-</tr>
-<tr class="row-odd"><td>63.8</td>
-<td>17.666</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<p>You can test your program <code class="docutils literal"><span class="pre">calcCtoF.py</span></code> by feeding it the following (input) numbers and comparing your output to the result:</p>
-<blockquote>
-<div><table border="1" class="docutils">
-<colgroup>
-<col width="48%" />
-<col width="52%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Input (C)</th>
-<th class="head">Result (F)</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>0</td>
-<td>32</td>
-</tr>
-<tr class="row-odd"><td>25</td>
-<td>77</td>
-</tr>
-<tr class="row-even"><td>100</td>
-<td>212</td>
-</tr>
-<tr class="row-odd"><td>-33</td>
-<td>-27.4</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
+<p>Below is a sample runthrough:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>Welcome to Rock Paper Scissors!
+Enter the number of rounds to play, from 1 to 9: 5
+-----------------
+Round 1!
+Enter your move from [r|p|s]: r
+You picked: Rock
+Computer picked: Paper
+Computer won!
+Player Wins: 0
+Computer Wins: 1
+Ties: 0
+-----------------
+Round 2!
+Enter your move from [r|p|s]: p
+You picked: Paper
+Computer picked: Rock
+Player won!
+Player Wins: 1
+Computer Wins: 1
+Ties: 0
+-----------------
+Round 3!
+Enter your move from [r|p|s]: s
+You picked: Scissors
+Computer picked: Paper
+Player won!
+Player Wins: 2
+Computer Wins: 1
+Ties: 0
+-----------------
+Round 4!
+Enter your move from [r|p|s]: r
+You picked: Rock
+Computer picked: Scissors
+Player won!
+Player Wins: 3
+Computer Wins: 1
+Ties: 0
+
+The player is victorious! P:3 to C:1!
+</pre></div>
+</div>
 <p>The following space is provided in case you want to test code out or write it in the browser:</p>
 
-<textarea data-component="activecode" id=labspace-01-01 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+<textarea data-component="activecode" id=labspace-04-01 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
 #Write and run code here!
 </textarea>
+</div>
+<div class="section" id="taking-it-further">
+<h2>Taking it Further<a class="headerlink" href="#taking-it-further" title="Permalink to this headline">¶</a></h2>
+<p><strong>1:</strong> Right now the game is only PvC, or Player vs Computer.  You can easily adjust your code to make it PvP, or Player vs Player.  The biggest problem with PvP games like this is that the other player can see what you type in, and will know how to counter you.  However, there is a solution around this.  Python&#8217;s <code class="docutils literal"><span class="pre">input()</span></code> function &#8220;echoes&#8221; what we type in - meaning we see it on the screen too.  This is a good thing, because it allows us to make sure what we typed in is what we want.  However, if we don&#8217;t want our input to be visible, then we will need to need to use the <code class="docutils literal"><span class="pre">getpass</span></code> library.</p>
+<p>We can do this by using <code class="docutils literal"><span class="pre">import</span> <span class="pre">getpass</span></code>, similar to how we would get the <code class="docutils literal"><span class="pre">random</span></code> library.  We can then use the function <code class="docutils literal"><span class="pre">getpass.getpass()</span></code>, which works almost identically to the <code class="docutils literal"><span class="pre">input()</span></code> function, except nothing is echoed - you cannot see what you are typing in - which is perfect for our purposes!  Copy and paste the code below and run it to test it out:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">getpass</span>
+<span class="n">inp</span> <span class="o">=</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getpass</span><span class="p">(</span><span class="s2">&quot;Enter your name: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your name is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">inp</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Note how you can&#39;t see it next to the prompt!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that the <code class="docutils literal"><span class="pre">getpass</span></code> library is not included in the packages on this site.  This will not work on any site that implement Skulpt, such as this one, or Trinket.  It&#8217;s best done on your desktop, or in a virtualmachine IDE such as Koding or C9.io</p>
+<p><strong>2:</strong> The next thing you can do is create RPSLS - Rock Paper Scissors Lizard Spock.  It&#8217;s similar to RPS, except with more elements.</p>
+<dl class="docutils">
+<dt>Here are the relationships between moves in RPSLS:</dt>
+<dd><ul class="first last simple">
+<li>Rock crushes Scissors and crushes Lizard</li>
+<li>Paper covers Rock and disproves Spock</li>
+<li>Scissors cuts Paper and decapitates Lizard</li>
+<li>Lizard eats Paper and poisons Spock</li>
+<li>Spock vaporizes Rock and crushes Scissors</li>
+</ul>
+</dd>
+</dl>
 </div>
 </div>
 

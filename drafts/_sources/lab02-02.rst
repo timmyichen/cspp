@@ -1,0 +1,71 @@
+.. qnum::
+   :start: 1
+   :prefix: lab02-02-
+
+
+Lab 2-2: Pluralizer
+===================
+
+Lab Requirements and Specifications
+-----------------------------------
+
+Two horses.  Five monkeys.  Twenty flies.  One cat.  Nine lives.  Despite the English language being one of the most commonly used languages around the world, it is also quite complicated to learn if you are not a native speaker.  Taking a noun and converting it to its plural form has a dozen rules and even more special cases.
+
+In this lab, you will be creating a program that will take in two inputs: a non-negative number, and a singular-form noun.  If the number entered is 1, then you would just print out "1 noun".  However, if the number is 0 or greater than 1, you would print out the number and the pluralized version of the word - like "0 nouns" or "4 nouns".
+
+Your program will be handling the following rules to pluralize nouns:
+
+    +--------------------+--------------------------------+-------------------+
+    | If it ends in...   | Rule                           | Example           |
+    +====================+================================+===================+
+    | -fe                | Replace "fe" with "ves"        | knife, knives     |
+    +--------------------+--------------------------------+-------------------+
+    | -y                 | Replace "y" with "ies"         | family, families  |
+    +--------------------+--------------------------------+-------------------+
+    | -sh, -ch           | Add "es" to the end            | bush, bushes      |
+    +--------------------+--------------------------------+-------------------+
+    | -us                | Replace "us" with "i"          | cactus, cacti     |
+    +--------------------+--------------------------------+-------------------+
+    | -ay, -oy, -ey, -uy | Add "s" to the end             | | guy, guys       |
+    +--------------------+--------------------------------+ | boy, boys       |
+    | (The above rule is included because it is a special | | key, keys       |
+    | case that conflicts with the first "y" rule.)       | | day, days       |
+    +--------------------+--------------------------------+-------------------+
+    | All other cases    | Add "s" to the end             | cat, cats         |
+    +--------------------+--------------------------------+-------------------+
+
+You should name your file ``FILN_pluralizer.py``, where FILN is your first initial and last name, all lowercase, no space.
+
+Testing Your Program
+--------------------
+
+Although it is a good idea to come up with some of your own test cases to realize the limitations our own programs the following are some inputs that can also be used to verify that your program works as intended.  I would also recommend using the examples in the table above.
+
+    +-----------+----------------+-------------------+
+    | Input (#) | Input (word)   | Result            |
+    +-----------+----------------+-------------------+
+    | 0         | word           | 0 words           |
+    +-----------+----------------+-------------------+
+    | 1         | city           | 1 city            |
+    +-----------+----------------+-------------------+
+    | 5         | fish           | 5 fishes          |
+    +-----------+----------------+-------------------+
+    | 33        | fly            | 33 flies          |
+    +-----------+----------------+-------------------+
+    | 8         | wife           | 8 wives           |
+    +-----------+----------------+-------------------+
+    | 20        | hippopotamus   | 20 hippopotami    |
+    +-----------+----------------+-------------------+
+
+Note that some words covered by special cases will look incorrect if used in this program.  Examples: bus - buses, foot, feets, etc.  It's important to realize that for now, you want to make sure that the words follow your rules, regardless of whether it is actually an English word or not.
+
+The following space is provided in case you want to test code out or write it in the browser:
+
+.. activecode:: labspace-02-02
+
+    #Write and run code here!
+
+Taking it Further
+-----------------
+
+You can extend the functionality of your program by including all possible rules and special cases.  Performing a google search on "plural nouns rules" will provide numerous resources on the various rules and exceptions in making a noun plural.  See how many you can incorporate, then challenge your peers or teachers to stump your program!

@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lab 1-1: Temperature Converter &mdash; Runestone Interactive Overview</title>
+    <title>Lab 3-1: FizzBuzz Generator &mdash; Runestone Interactive Overview</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -257,9 +257,10 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lab 1-1: Temperature Converter</a><ul>
+<li><a class="reference internal" href="#">Lab 3-1: FizzBuzz Generator</a><ul>
 <li><a class="reference internal" href="#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
 <li><a class="reference internal" href="#testing-your-program">Testing Your Program</a></li>
+<li><a class="reference internal" href="#taking-it-further">Taking it Further</a></li>
 </ul>
 </li>
 </ul>
@@ -294,94 +295,48 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="lab-1-1-temperature-converter">
-<h1>Lab 1-1: Temperature Converter<a class="headerlink" href="#lab-1-1-temperature-converter" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="lab-3-1-fizzbuzz-generator">
+<h1>Lab 3-1: FizzBuzz Generator<a class="headerlink" href="#lab-3-1-fizzbuzz-generator" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="lab-requirements-and-specifications">
 <h2>Lab Requirements and Specifications<a class="headerlink" href="#lab-requirements-and-specifications" title="Permalink to this headline">¶</a></h2>
-<p>In this lab, you will be creating two different programs to convert temperature values between Fahrenheit and Celcius.  One program will convert Fahrenheit to Celcius, and the other program will convert Celcius to Fahrenheit.</p>
-<p>Each program should use <code class="docutils literal"><span class="pre">input()</span></code> to allow the user to type in a number to convert.  The program will perform some math, then display an output formatted like:</p>
-<p><code class="docutils literal"><span class="pre">&quot;15</span> <span class="pre">C</span> <span class="pre">is</span> <span class="pre">equal</span> <span class="pre">to</span> <span class="pre">32</span> <span class="pre">F&quot;</span></code></p>
-<p>To convert from Celcius to Fahrenheit, you would use the following equation:</p>
-<div class="math">
-\[T_f = T_c \times 1.8 + 32\]</div>
-<p>To convert from Fahrenheit to Celcius, you would use the following equation:</p>
-<div class="math">
-\[T_c = \frac{(T_f - 32)}{1.8}\]</div>
-<p>Where <span class="math">\(T_c\)</span> is the temperature in Celcius and <span class="math">\(T_f\)</span> is the temperature in Fahrenheit.</p>
+<p>FizzBuzz is a game where a group of people has to say, in order, a sequence of numbers starting at 1, as fast as they can.  Here&#8217;s the catch: if the number is a multiple of 3, you say &#8220;Fizz&#8221; instead of the number.  If the number is a multiple of 5, you say &#8220;Buzz&#8221; instead of the number.  If the number is a multiple of both 3 and 5, you say &#8220;FizzBuzz&#8221; instead of the number.  Finally, if it doesn&#8217;t fit any of those criteria, you would just say the number.</p>
 <dl class="docutils">
-<dt>You should create two files in your workspace:</dt>
+<dt>Someone playing might start with:</dt>
 <dd><ul class="first last simple">
-<li><code class="docutils literal"><span class="pre">FILN-calcFtoC.py</span></code></li>
-<li><code class="docutils literal"><span class="pre">FILN-calcCtoF.py</span></code></li>
+<li>1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz, 16, etc.</li>
 </ul>
 </dd>
 </dl>
-<p>Where &#8220;FILN&#8221; is your first initial and last name, no space.</p>
-<p>As a reminder, you should be running this program using python3.  Running this program using python2 may give you unexpected results!  If you are getting errors, make sure you look over your code and double-check for typos.  If you are getting numbers that seem way off, make sure that the equations are entered in correctly!  Don&#8217;t forget your PEMDAS!</p>
+<p>In this lab, you will be writing a program that takes in a user-entered number as input, and then generate the FizzBuzz sequence up to that number, inclusive.</p>
+<p>Your program should use <code class="docutils literal"><span class="pre">input()</span></code> to take in user input, and then a <code class="docutils literal"><span class="pre">for</span></code> loop to iterate up to that number.  You may assume that the user will enter a non-negative integer.  Your output should print out one number/Fizz/Buzz/FizzBuzz per line.</p>
+<p>You should name your file <code class="docutils literal"><span class="pre">FILN-fizzbuzz.py</span></code>, where FILN is your first initial and last name, no space.</p>
 </div>
 <div class="section" id="testing-your-program">
 <h2>Testing Your Program<a class="headerlink" href="#testing-your-program" title="Permalink to this headline">¶</a></h2>
-<p>You can test your program <code class="docutils literal"><span class="pre">calcFtoC.py</span></code> by feeding it the following (input) numbers and comparing your output to the result:</p>
-<blockquote>
-<div><table border="1" class="docutils">
-<colgroup>
-<col width="48%" />
-<col width="52%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Input (F)</th>
-<th class="head">Result (C)</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>32</td>
-<td>0</td>
-</tr>
-<tr class="row-odd"><td>-13</td>
-<td>-25</td>
-</tr>
-<tr class="row-even"><td>100</td>
-<td>37.777</td>
-</tr>
-<tr class="row-odd"><td>63.8</td>
-<td>17.666</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<p>You can test your program <code class="docutils literal"><span class="pre">calcCtoF.py</span></code> by feeding it the following (input) numbers and comparing your output to the result:</p>
-<blockquote>
-<div><table border="1" class="docutils">
-<colgroup>
-<col width="48%" />
-<col width="52%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Input (C)</th>
-<th class="head">Result (F)</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>0</td>
-<td>32</td>
-</tr>
-<tr class="row-odd"><td>25</td>
-<td>77</td>
-</tr>
-<tr class="row-even"><td>100</td>
-<td>212</td>
-</tr>
-<tr class="row-odd"><td>-33</td>
-<td>-27.4</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
+<p>The example above is the fizzbuzz output up to 16 inclusive.  Theoretically, if your fizzbuzz works up to 15 inclusive, it will work for any number, since the sequence above will just repeat.</p>
 <p>The following space is provided in case you want to test code out or write it in the browser:</p>
 
-<textarea data-component="activecode" id=labspace-01-01 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+<textarea data-component="activecode" id=labspace-03-01 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
 #Write and run code here!
 </textarea>
+</div>
+<div class="section" id="taking-it-further">
+<h2>Taking it Further<a class="headerlink" href="#taking-it-further" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>The original FizzBuzz game is pretty easy.  After all, the sequence is predictable and repeating.  HardMode FizzBuzz incorporates a whole new level of unpredictability:</dt>
+<dd><ul class="first last simple">
+<li>If a number is a multiple of 3, or contains a 3: Fizz</li>
+<li>If a number is a multiple of 5, or contains a 5: Buzz</li>
+<li>If a number satisfies both of the above: FizzBuzz</li>
+</ul>
+</dd>
+<dt>This means that the sequence from 25-40 will look something like:</dt>
+<dd><ul class="first last simple">
+<li>Buzz, 26, Fizz, 28, 29, FizzBuzz, Fizz, Fizz, Fizz, Fizz, FizzBuzz, Fizz, Fizz, Fizz, Fizz, Buzz.</li>
+</ul>
+</dd>
+</dl>
+<p>God forbid you enter a number that reaches the 300s.  Good luck!</p>
 </div>
 </div>
 

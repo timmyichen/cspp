@@ -1,0 +1,45 @@
+.. qnum::
+   :start: 1
+   :prefix: lab03-01-
+
+
+Lab 3-1: FizzBuzz Generator
+===========================
+
+Lab Requirements and Specifications
+-----------------------------------
+
+FizzBuzz is a game where a group of people has to say, in order, a sequence of numbers starting at 1, as fast as they can.  Here's the catch: if the number is a multiple of 3, you say "Fizz" instead of the number.  If the number is a multiple of 5, you say "Buzz" instead of the number.  If the number is a multiple of both 3 and 5, you say "FizzBuzz" instead of the number.  Finally, if it doesn't fit any of those criteria, you would just say the number.
+
+Someone playing might start with:
+   - 1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz, 16, etc.
+
+In this lab, you will be writing a program that takes in a user-entered number as input, and then generate the FizzBuzz sequence up to that number, inclusive.
+
+Your program should use ``input()`` to take in user input, and then a ``for`` loop to iterate up to that number.  You may assume that the user will enter a non-negative integer.  Your output should print out one number/Fizz/Buzz/FizzBuzz per line.
+
+You should name your file ``FILN-fizzbuzz.py``, where FILN is your first initial and last name, no space.
+
+Testing Your Program
+--------------------
+
+The example above is the fizzbuzz output up to 16 inclusive.  Theoretically, if your fizzbuzz works up to 15 inclusive, it will work for any number, since the sequence above will just repeat.
+
+The following space is provided in case you want to test code out or write it in the browser:
+
+.. activecode:: labspace-03-01
+
+    #Write and run code here!
+
+Taking it Further
+-----------------
+
+The original FizzBuzz game is pretty easy.  After all, the sequence is predictable and repeating.  HardMode FizzBuzz incorporates a whole new level of unpredictability:
+   - If a number is a multiple of 3, or contains a 3: Fizz
+   - If a number is a multiple of 5, or contains a 5: Buzz
+   - If a number satisfies both of the above: FizzBuzz
+
+This means that the sequence from 25-40 will look something like:
+   - Buzz, 26, Fizz, 28, 29, FizzBuzz, Fizz, Fizz, Fizz, Fizz, FizzBuzz, Fizz, Fizz, Fizz, Fizz, Buzz.
+   
+God forbid you enter a number that reaches the 300s.  Good luck!

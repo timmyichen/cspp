@@ -258,7 +258,9 @@
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">Lab 1-2: Making Sense of Seconds</a><ul>
-<li><a class="reference internal" href="#need-help">Need help?</a></li>
+<li><a class="reference internal" href="#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
+<li><a class="reference internal" href="#testing-your-program">Testing Your Program</a></li>
+<li><a class="reference internal" href="#taking-it-further">Taking it Further</a></li>
 </ul>
 </li>
 </ul>
@@ -295,6 +297,8 @@
   
   <div class="section" id="lab-1-2-making-sense-of-seconds">
 <h1>Lab 1-2: Making Sense of Seconds<a class="headerlink" href="#lab-1-2-making-sense-of-seconds" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="lab-requirements-and-specifications">
+<h2>Lab Requirements and Specifications<a class="headerlink" href="#lab-requirements-and-specifications" title="Permalink to this headline">¶</a></h2>
 <p>In this lab, you will be creating a program that can convert a number of seconds into hours, minutes, and seconds.</p>
 <p>The program should use the <code class="docutils literal"><span class="pre">input()</span></code> function to allow the user to type in a number of seconds.  You can assume that the user will type in a non-negative integer.  The program will perform some math, then display an output formatted like:</p>
 <p><code class="docutils literal"><span class="pre">&quot;100</span> <span class="pre">seconds</span> <span class="pre">is</span> <span class="pre">0</span> <span class="pre">hours,</span> <span class="pre">1</span> <span class="pre">minute,</span> <span class="pre">and</span> <span class="pre">40</span> <span class="pre">seconds.&quot;</span></code></p>
@@ -306,7 +310,16 @@
 </ul>
 </dd>
 </dl>
+<p>When thinking about how to calculate the number of hours, minutes, and seconds, try to think of these terms as <strong>cups</strong> - let&#8217;s start by talking about the &#8220;minute&#8221; cup.</p>
+<p>In this example, we want to find how many full cups we can make (each full cup represents one minute).  Each of these cups can only hold 60 of something, so any more and we&#8217;ll have to start filling a new cup and add one to the number of full cups we have.  If this concept sounds familiar, it&#8217;s probably because it sounds like division - and that&#8217;s because it is!  If we have 128 seconds, how many minutes is that?  Two plus change, you probably figured, by dividing 128 by 60.</p>
+<p>That means that 128 seconds is equivalent to 2 whole minutes, plus some seconds left over.  How many seconds?  What&#8217;s the remainder of 128/60?  While you might be able to do it in your head, you&#8217;ll generally want to find some kind of general rule or formula that you can apply.  And we learned one!  Recall the modulo operator, that calculates the remainder of a quotient.</p>
+<p>Reminder: <span class="math">\(a \% b\)</span> is the remainder of <span class="math">\(a \div b\)</span>.</p>
+<p>Once you&#8217;re able to convert seconds to minutes + seconds, you&#8217;ll want to repeat this thought process in order to get hours + minutes!</p>
+<p>Please keep in mind that when <code class="docutils literal"><span class="pre">input()</span></code> will always give you the user&#8217;s input as a <em>string</em>, even if the user typed in a number!  We know that <code class="docutils literal"><span class="pre">5</span></code> is not the same thing as <code class="docutils literal"><span class="pre">&quot;5&quot;</span></code>.</p>
 <p>You should name your file <code class="docutils literal"><span class="pre">FILN-seconds.py</span></code>, where FILN is your first initial and last name, no space.</p>
+</div>
+<div class="section" id="testing-your-program">
+<h2>Testing Your Program<a class="headerlink" href="#testing-your-program" title="Permalink to this headline">¶</a></h2>
 <p>You can test your program <code class="docutils literal"><span class="pre">seconds.py</span></code> by feeding it the following inputs and comparing your output to the result:</p>
 <blockquote>
 <div><table border="1" class="docutils">
@@ -340,16 +353,14 @@
 </div></blockquote>
 <p>The following space is provided in case you want to test code out or write it in the browser:</p>
 
-<textarea data-component="activecode" id=labspace-01-01 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+<textarea data-component="activecode" id=labspace-01-02 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
 #Write and run code here!
 </textarea>
-<div class="section" id="need-help">
-<h2>Need help?<a class="headerlink" href="#need-help" title="Permalink to this headline">¶</a></h2>
-<p><strong>This one is tough!  Don&#8217;t give up!  It requires some tricky math thinking... think of it as a puzzle!</strong></p>
-<p><strong>Not sure how to get the number of hours?</strong>
-Let me propose a similar example.  I have 128 seconds and I want to calculate the number of minutes.  I know that there are only 60 seconds in a minute, and by doing some math, I know that 128 / 60 is 2.something.  I don&#8217;t really need to know what the something is, because that&#8217;s just leftovers, which are just seconds.  We just consider our answer as an integer - and boom!  We know that we have 2 minutes!  It&#8217;s the same idea with hours, except how many seconds are in an hour?</p>
-<p><strong>Not sure how to get the number of minutes?</strong>
-todo</p>
+</div>
+<div class="section" id="taking-it-further">
+<h2>Taking it Further<a class="headerlink" href="#taking-it-further" title="Permalink to this headline">¶</a></h2>
+<p>Incorporate days, weeks, and years, into your calculations.</p>
+<p>You will have to create your own tests for this.  If you want to explore an interesting topic, visit the <a class="reference external" href="http://www.unixtimestamp.com/">Unix Timestamp</a>.  Grab the long number on the left side of the page, which represents the number of seconds that have passed since January 1st, 1970.  Can your program calculate how many seconds, minutes, hours, days, weeks, and years have passed since then?  For the sake of simplicity you can ignore leap years.</p>
 </div>
 </div>
 

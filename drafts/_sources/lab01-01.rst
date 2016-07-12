@@ -6,6 +6,9 @@
 Lab 1-1: Temperature Converter
 ==============================
 
+Lab Requirements and Specifications
+-----------------------------------
+
 In this lab, you will be creating two different programs to convert temperature values between Fahrenheit and Celcius.  One program will convert Fahrenheit to Celcius, and the other program will convert Celcius to Fahrenheit.
 
 Each program should use ``input()`` to allow the user to type in a number to convert.  The program will perform some math, then display an output formatted like:
@@ -25,9 +28,14 @@ To convert from Fahrenheit to Celcius, you would use the following equation:
 Where :math:`T_c` is the temperature in Celcius and :math:`T_f` is the temperature in Fahrenheit.
 
 You should create two files in your workspace:
-	-  ``FILN-calcFtoC.py``
-	-  ``FILN-calcCtoF.py``
-Where "FILN" is your first initial and last name, no space.
+	- ``FILN_calcFtoC.py``
+	- ``FILN_calcCtoF.py``
+Where "FILN" is your first initial and last name, all lowercase, no space.
+
+As a reminder, you should be running this program using python3.  Running this program using python2 may give you unexpected results!  If you are getting errors, make sure you look over your code and double-check for typos.  If you are getting numbers that seem way off, make sure that the equations are entered in correctly!  Don't forget your PEMDAS!
+
+Testing Your Program
+--------------------
 
 You can test your program ``calcFtoC.py`` by feeding it the following (input) numbers and comparing your output to the result:
 
@@ -62,17 +70,3 @@ The following space is provided in case you want to test code out or write it in
 .. activecode:: labspace-01-01
 
     #Write and run code here!
-
-
-Need Help?
-----------
-**Are you encountering something that says "SyntaxError"?**
-    It means you made a typo of some sort in your code.  Look over your code carefully!
-    
-**Are you getting a number that is way off?**
-	Your equation may be missing something, or may have something extra!  Recheck your equation!
-	
-**When doing the F to C conversion, are you getting a number that is close, but not quite there?**
-	Are you sure you are running the program with python3, and not python2?
-
-

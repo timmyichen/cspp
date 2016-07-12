@@ -1,0 +1,55 @@
+.. qnum::
+   :start: 1
+   :prefix: lab01-03-
+
+
+Lab 1-3: Single Digit Calculator
+================================
+
+In this lab, you are going to be creating a simple calculator that will only operate on single-digit numbers.  Your program should use the ``input()`` function to allow the user to enter the input.  The output should be something like ``"The result is ____"``
+
+The input will always be three characters long.  The first character will always be the first (single-digit) number, the third character will always be the second (single-digit) number, and the second character will always be the operator.
+
+Your program should be set up to handle the following operations:
+    - Addition +
+    - Subtraction -
+    - Multiplication *
+    - Division /
+    - Modulo %
+
+As an example, if given an input of ``"3*5"``, your program should perform the calculation and print out ``"The result is 15"``.  The result may have more than one digit.  The result may also be negative.
+
+You should name your file ``FILN-simplecalc.py``, where FILN is first initial and last name, no space.
+
+You can test your program by feeding it the following inputs and comparing your output to the result.
+
+    +------------+-------------------------+
+    | Input      | Output                  |
+    +============+=========================+
+    | ``4+9``    | ``The result is 13``    |
+    +------------+-------------------------+
+    | ``4-6``    | ``The result is -2``    |
+    +------------+-------------------------+
+    | ``8*5``    | ``The result is 40``    |
+    +------------+-------------------------+
+    | ``9/6``    | ``The result is 1.5``   |
+    +------------+-------------------------+
+    | ``8%3``    | ``The result is 2``     |
+    +------------+-------------------------+
+    
+
+The following space is provided in case you want to test code out or write it in the browser:
+
+.. activecode:: labspace-01-01
+
+    #Write and run code here!
+
+Additional Help
+---------------
+
+Some tips to keep in mind:
+    - Remember that the input is a string!  How do you reference the first character of a string?  How do you reference the second character?  Feel free to look back on previous pages for help.
+    - Your code will do different things depending on what you type in.  Which part of that string will determine what the program does?
+
+Taking it Further
+-----------------

@@ -1,0 +1,86 @@
+.. qnum::
+   :start: 1
+   :prefix: lab03-02-
+
+
+Lab 3-2: Number Guessing Game
+===========================
+
+Lab Requirements and Specifications
+-----------------------------------
+
+In this lab, you'll be recreating the classic number guessing game.  The computer will host the game, randomly picking a number between 1 and 100, and the user will be the making the guesses.  The computer should provide hints - telling the user whether their guess was too low or too high.  The computer should be repeatedly asking the user to enter numbers until the user correctly guesses the number.  There is no maximum to the number of tries.  At the end, (if and) when the player finally guesses the correct number, the computer should tell the user how many guesses it took.
+
+This is the first lab which requires you to break down a multi-part, complex problem.  Don't be discouraged if you get stuck.  Power through it!
+
+From the description above, the program will clearly need to:
+     - Keep track of the number of guesses
+     - Use some kind of loop (``while`` or ``for``?  When should you use each one?)
+     - Have some kind of conditional to determine the computer's response before it asks for another guess
+
+*"The sooner you start to code, the longer the program will take."   -- Roy Carlson*
+
+It would be a wise idea to plan out your strategy for writing this program before you actually start writing it.  I would recommend writing down some very rough pseudocode to help organize the algorithm.
+
+Here are some guided questions that you should think about when you are writing out your pseudocode:
+    - What should happen at the beginning of the program?
+    - What part of the program should be looped?
+    - When a user makes a guess, how many different outcomes are there?  What are the outcomes?
+    - For each outcome, what should the program be doing?
+    - How do we exit the loop?  Or, what should be the condition for the loop - what should keep us looping?
+
+There are multiple solutions to this program.  For now, don't worry about the "best" solution - see if you can get a working version first, then improve on the code afterwards!
+
+Also, once again, don't forget that ``input()`` gives you a string!  ``"50"`` is not the same as ``50``..
+
+You should name your file ``FILN-numguess.py``, where FILN is your first initial and last name, no space.
+
+Testing Your Program
+--------------------
+
+I cannot give you any tests for this program - you will have to simply play it to see if it works as expected.  Be sure to manually count your own guesses so you can compare it to what the computer reports, for accuracy.  It might be wise to have the computer print out the answer at the beginning of the program while you test it, so you know what the actual solution is (rather than having to guess for it every time).   Make sure it's not printing the answer on your final, ready-to-submit version though!  That would be unfortunate.
+
+The following is a sample output of what a runthrough might look like:
+
+::
+    
+    Enter your guess (1-100): 50
+    Too high! Try again.
+    Enter your guess (1-100): 30
+    Too high! Try again.
+    Enter your guess (1-100): 20
+    Too high! Try again.
+    Enter your guess (1-100): 10
+    Too high! Try again.
+    Enter your guess (1-100): 5
+    Too low! Try again.
+    Enter your guess (1-100): 7
+    Too low! Try again.
+    Enter your guess (1-100): 8
+    
+    You got it! It was indeed 8.
+    It took you 7 tries.
+    You're like the best person ever.
+
+Your output may not look exactly the same, but it should follow the same general format.
+
+The following space is provided in case you want to test code out or write it in the browser:
+
+.. activecode:: labspace-03-02
+
+    #Write and run code here!
+
+Taking it Further
+-----------------
+
+There are quite a few things we can do to extend our program.  Here are a few gameplay-focused ideas:
+    - Before generating the answer, allow the user to choose the ending range for the numbers. The number could be chosen from 1 to 1,000,000, if the user wanted.
+    - Limit the number of guesses the player has based on the range of numbers.  The equation for coming up with the number of guesses is entirely up to you.
+    - Incorporate a point system where the user gets points based on how far away their guess is from the answer.  You'll need to use ``abs()`` for absolute value to do this.  Instead of reporting the number of guesses, report the number of points at the end.  The lower the points, the better.
+
+Then there's some other, non-gameplay related things you can add to make it more fun.
+    - If they guess a number that's too high, then they guess a number that's too high again, point it out.  Maybe something like "Hey dude, I said it was too high and you still guessed a higher number, step up your game!".  Same with a number that's too low.
+    - If they guess the same number as they did before, ask the user if they're feeling alright, and if they need a break from the computer.
+    - If they take more guesses than there are possibilities for numbers, tell them to see a doctor.
+
+Feel free to add your own creative touch into the program!  After all, programming is a creative activity!
