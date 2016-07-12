@@ -1,0 +1,51 @@
+.. qnum::
+   :start: 1
+   :prefix: lab01-02-
+
+
+Lab 1-2: Making Sense of Seconds
+================================
+
+In this lab, you will be creating a program that can convert a number of seconds into hours, minutes, and seconds.
+
+The program should use the ``input()`` function to allow the user to type in a number of seconds.  You can assume that the user will type in a non-negative integer.  The program will perform some math, then display an output formatted like:
+
+``"100 seconds is 0 hours, 1 minute, and 40 seconds."``
+
+As a reminder:
+   - :math:`60 sec = 1 min`
+   - :math:`60 min = 1 hr`
+
+You should name your file ``FILN-seconds.py``, where FILN is your first initial and last name, no space.
+
+You can test your program ``seconds.py`` by feeding it the following inputs and comparing your output to the result:
+
+   +-----------------+---------------+
+   | Seconds (input) | Output        |
+   +=================+===============+
+   | 100             | 0hr 1m 40s    |
+   +-----------------+---------------+
+   | 0               | 0hr 0m 0s     |
+   +-----------------+---------------+
+   | 1234            | 0hr 20m 34s   |
+   +-----------------+---------------+
+   | 11683           | 3hr 14m 43s   |
+   +-----------------+---------------+
+   | 99999           | 27hr 46m 39s  |
+   +-----------------+---------------+
+
+The following space is provided in case you want to test code out or write it in the browser:
+
+.. activecode:: labspace-01-01
+
+    #Write and run code here!
+
+Need help?
+----------
+**This one is tough!  Don't give up!  It requires some tricky math thinking... think of it as a puzzle!**
+
+**Not sure how to get the number of hours?**
+Let me propose a similar example.  I have 128 seconds and I want to calculate the number of minutes.  I know that there are only 60 seconds in a minute, and by doing some math, I know that 128 / 60 is 2.something.  I don't really need to know what the something is, because that's just leftovers, which are just seconds.  We just consider our answer as an integer - and boom!  We know that we have 2 minutes!  It's the same idea with hours, except how many seconds are in an hour?
+
+**Not sure how to get the number of minutes?**
+todo
