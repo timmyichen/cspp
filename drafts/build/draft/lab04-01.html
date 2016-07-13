@@ -300,8 +300,8 @@
 <div class="section" id="lab-requirements-and-specifications">
 <h2>Lab Requirements and Specifications<a class="headerlink" href="#lab-requirements-and-specifications" title="Permalink to this headline">¶</a></h2>
 <p>Rock Paper Scissors - the ultimate, time-tested witness to the greatest and most difficult question in the world - <em>&#8220;Who should go first?&#8221;</em>.</p>
-<p>In this lab, you&#8217;ll be creating a program to play <strong>rock paper scissors</strong>.</p>
-<p>At the beginning of the game, the program should ask for the number of rounds to be played.  Each round will consist of each player (or computer) selecting their choice between rock, paper, and scissors.  A round is a round, even if the players tie.  The manner in which players choose their moves is completely up to you.  You may have them enter a string or pick from a menu.</p>
+<p>In this lab, you&#8217;ll be creating a program to play <strong>rock paper scissors</strong> with the user.</p>
+<p>At the beginning of the game, the program should ask for the number of rounds to be played.  Each round will consist of the player and computer selecting their choice between rock, paper, and scissors.  A round is a round, even if the players tie.  The manner in which players choose their moves is completely up to you.  You may have them enter a string or pick from a menu.</p>
 <dl class="docutils">
 <dt>As a reminder, these are the interactions between rock, paper, and scissors:</dt>
 <dd><ul class="first last simple">
@@ -315,22 +315,70 @@
 <p>When the game ends, the program should report how many rounds each player/computer has won, as well as the number of ties.</p>
 <p><em>&#8220;Weeks of programming can save you hours of planning.&#8221; &#8211; unknown</em></p>
 <dl class="docutils">
-<dt>As our labs get more and more complex, you&#8217;ll find that planning and writing pseudocode gets more and more beneficial.  Once again, you should consider the following tips to help guide your planning:</dt>
+<dt>As our labs get more and more complex, you&#8217;ll find that planning and writing pseudocode gets more and more beneficial.  You should consider the following tips to help guide your planning:</dt>
 <dd><ul class="first last simple">
 <li>Now that we can create and call functions, the majority of your program should be functions.  Break the game down into simple steps or instructions - each of those will have its own function.</li>
-<li>Take advantage of <code class="docutils literal"><span class="pre">return</span></code> statements.  Your code should not have any global variables.  Data should be passed to functions through arguments, and from functions using the <code class="docutils literal"><span class="pre">return</span></code> statement.</li>
-<li>Each function should have a single purpose.  If you find that you have written a function that is doing multiple things, it means you should break it down into more functions.</li>
+<li>Take advantage of <code class="docutils literal"><span class="pre">return</span></code> statements.  Your code should not have any global variables.  Data should be passed to functions through arguments, and from functions through the <code class="docutils literal"><span class="pre">return</span></code> statement.</li>
+<li>Each function should have a single purpose.  If you find that you have written a function that is doing multiple things, it means you should break it down further into more functions.</li>
+<li>The one exception to the above should be your main game function, which will contain the game loop, as well as any persistent variables.</li>
 <li>Which variables will you have to keep track of during all the rounds, and after all the rounds are completed? Make a note of which ones should be <em>initialized</em> outside of your loop.</li>
 <li>Be sure to provide the player with the appropriate prompts, letting them know their options, and appropriate round information.  See below as an example.</li>
 <li>Don&#8217;t forget to <code class="docutils literal"><span class="pre">import</span> <span class="pre">random</span></code> to use <code class="docutils literal"><span class="pre">random.randint()</span></code>!</li>
 </ul>
 </dd>
+<dt>One of the first steps you should do in your planning is to determine which functions can be written for the program.  Each function should be written with its name, its arguments, what it will do, and what it returns (if anything).  The following are a few ideas:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>function: get_round_result</dt>
+<dd><ul class="first last simple">
+<li>arguments: player&#8217;s move, computer&#8217;s move</li>
+<li>purpose: determines who won based on each person&#8217;s move</li>
+<li>returns: the winner, or if it was a tie</li>
+</ul>
+</dd>
 </dl>
-<p>You should name your file <code class="docutils literal"><span class="pre">FILN-rps.py</span></code>, where FILN is your first initial and last name, no space.</p>
+</li>
+<li><dl class="first docutils">
+<dt>function: get_computer_move</dt>
+<dd><ul class="first last simple">
+<li>arguments: none</li>
+<li>purpose: generates the computer&#8217;s move</li>
+<li>returns: the randomly generated computer&#8217;s move</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>function: display_scoreboard</dt>
+<dd><ul class="first last simple">
+<li>arguments: player&#8217;s score, computer&#8217;s score, number of ties</li>
+<li>purpose: prints out the scoreboard in an organized fashion</li>
+<li>returns: none</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<p>Try to follow the above format for all functions you can think of.  It will greatly simplify the code-writing process.  Notice how all the function names are verbs (get, display).  Remember that functions should <em>do</em> things, and therefore have names that reflect what they <em>do</em>.</p>
+<p>You should name your file <code class="docutils literal"><span class="pre">FILN_rps.py</span></code>, where FILN is your first initial and last name, all lowercase, no space.</p>
 </div>
 <div class="section" id="testing-your-program">
 <h2>Testing Your Program<a class="headerlink" href="#testing-your-program" title="Permalink to this headline">¶</a></h2>
-<p>Below is a sample runthrough:</p>
+<p>Since we have learned functions, testing our functions has become much easier.  We can now write tests for individual functions.</p>
+<p>For example, for the get_round_result function shown above, we can write the following tests for the function to make sure everything works as expected:</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#reminder: player move is first arg, computer move is second arg</span>
+<span class="k">print</span><span class="p">(</span><span class="n">get_round_result</span><span class="p">(</span><span class="s2">&quot;rock&quot;</span><span class="p">,</span><span class="s2">&quot;rock&quot;</span><span class="p">))</span> <span class="c1">#should print &quot;tie&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">get_round_result</span><span class="p">(</span><span class="s2">&quot;rock&quot;</span><span class="p">,</span><span class="s2">&quot;scissors&quot;</span><span class="p">))</span> <span class="c1">#should print &quot;player&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">get_round_result</span><span class="p">(</span><span class="s2">&quot;paper&quot;</span><span class="p">,</span><span class="s2">&quot;scissors&quot;</span><span class="p">))</span> <span class="c1">#should print &quot;computer&quot;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Except you would probably want to write more test cases to make sure that every case works.  These tests can (and in most cases, should be) written before the function itself is written.  This is called <strong>Test Driven Development</strong> - where the tests are written first.  You can then gradually pass each test to make sure you&#8217;ve handle every case that you need to.</p>
+<p>Below is a sample runthrough of the entire program:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>Welcome to Rock Paper Scissors!
 Enter the number of rounds to play, from 1 to 9: 5
 -----------------
@@ -373,6 +421,7 @@ Ties: 0
 The player is victorious! P:3 to C:1!
 </pre></div>
 </div>
+<p>Note that the game ended after the 4th round because the player won 3 out of 5 total rounds, ensuring his victory.</p>
 <p>The following space is provided in case you want to test code out or write it in the browser:</p>
 
 <textarea data-component="activecode" id=labspace-04-01 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >

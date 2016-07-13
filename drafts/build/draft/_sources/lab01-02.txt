@@ -31,7 +31,7 @@ Once you're able to convert seconds to minutes + seconds, you'll want to repeat 
 
 Please keep in mind that when ``input()`` will always give you the user's input as a *string*, even if the user typed in a number!  We know that ``5`` is not the same thing as ``"5"``.
 
-You should name your file ``FILN-seconds.py``, where FILN is your first initial and last name, no space.
+You should name your file ``FILN_seconds.py``, where FILN is your first initial and last name, all lowercase, no space.
 
 Testing Your Program
 --------------------

@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Table of Contents &mdash; Runestone Interactive Overview</title>
+    <title>Pre-Lab 3-2: Mock ATM &mdash; Runestone Interactive Overview</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -257,8 +257,13 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Table of Contents</a><ul>
-<li><a class="reference internal" href="#labs">Labs</a></li>
+<li><a class="reference internal" href="#">Pre-Lab 3-2: Mock ATM</a><ul>
+<li><a class="reference internal" href="#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
+<li><a class="reference internal" href="#partial-solution">Partial Solution</a><ul>
+<li><a class="reference internal" href="#planning">Planning</a></li>
+<li><a class="reference internal" href="#code">Code</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -293,71 +298,182 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="table-of-contents">
-<span id="t-o-c"></span><h1>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="labs">
-<h2>Labs<a class="headerlink" href="#labs" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="lab01-01.html">Lab 1-1: Temperature Converter</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lab01-01.html#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab01-01.html#testing-your-program">Testing Your Program</a></li>
+  <div class="section" id="pre-lab-3-2-mock-atm">
+<h1>Pre-Lab 3-2: Mock ATM<a class="headerlink" href="#pre-lab-3-2-mock-atm" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="lab-requirements-and-specifications">
+<h2>Lab Requirements and Specifications<a class="headerlink" href="#lab-requirements-and-specifications" title="Permalink to this headline">¶</a></h2>
+<p>The &#8220;Mock&#8221; ATM program is supposed to simulate a simple ATM interface.  You have $10,000 in your bank account.  The ATM should present the user with three options:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Withdraw (take out money) from account</li>
+<li>Deposit (put money) into account</li>
+<li>Exit (ends program)</li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="lab01-02.html">Lab 1-2: Making Sense of Seconds</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lab01-02.html#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab01-02.html#testing-your-program">Testing Your Program</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab01-02.html#taking-it-further">Taking it Further</a></li>
+</div></blockquote>
+<p>The program should repeatedly ask the user for a choice until a valid choice is made.  If the user selects either Withdraw or Deposit, the program should ask them how much they want to deposit.  Your account is not allowed to fall into a negative balance, so the user can&#8217;t withdraw more money than they have in their bank account.  There is no limit to how much the user can deposit into the account.</p>
+<p>A heavily documented, partial solution to this lab will be given to you below, as well as the rationale behind the planning.  You are to complete the gaps in the planning, then implement those ideas in code.</p>
+<p>Your final, completed solution should be saved in a file called <code class="docutils literal"><span class="pre">FILN-mockatm.py</span></code>, where FILN is your first initial and last name, all lowercase, no space.</p>
+</div>
+<div class="section" id="partial-solution">
+<h2>Partial Solution<a class="headerlink" href="#partial-solution" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="planning">
+<h3>Planning<a class="headerlink" href="#planning" title="Permalink to this headline">¶</a></h3>
+<p>The first thing I ask myself is - what control structures will I need to use?  From the description above, I know that I will need a loop <em>(key word: repeatedly)</em> and at least one conditional <em>(user is making a choice, program will do different things for each choice)</em>.  Since I don&#8217;t know how many times I will be looping since it depends on the user choosing &#8220;exit&#8221;, I know that I will need a <code class="docutils literal"><span class="pre">while</span></code> loop.</p>
+<p>Next, I need to figure out what my program is doing first.  Since the user is doing is making choices at a menu, the first thing that needs to be done is to present the user with their choices.  Then I&#8217;ll probably want to ask the user to make their choice.</p>
+<p>Then, since I know that I&#8217;ll be using a <code class="docutils literal"><span class="pre">while</span></code> loop, I will need some kind of condition to keep it looping as long as the user doesn&#8217;t choose to exit.  We can leave it blank for now, but we should definitely revisit it later down the line.</p>
+<p>Here&#8217;s how my pseudocode would start:</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="hll"><span class="c1">#present the user with their choices</span>
+</span><span class="hll"><span class="c1">#ask user to choose from options and save in variable</span>
+</span><span class="hll"><span class="c1">#while ______________</span>
+</span><span class="hll">    <span class="c1">#do something based on their choice</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>Pretty simple, right?  My next step would be to figure out what &#8220;do something based on their choice&#8221; means.  We know we&#8217;ll be using a conditional, so let&#8217;s list out all the possibilities:</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#present the user with their choices</span>
+<span class="c1">#ask user to choose from options and save in variable</span>
+<span class="c1">#while _____</span>
+<span class="hll">    <span class="c1">#if the user chooses withdraw</span>
+</span><span class="hll">        <span class="c1">#do something to take money out</span>
+</span><span class="hll">    <span class="c1">#if the user chooses deposit</span>
+</span><span class="hll">        <span class="c1">#do something else to put money in</span>
+</span><span class="hll">    <span class="c1">#if the user chooses exit</span>
+</span><span class="hll">        <span class="c1">#_____</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>Now we have to decide what will happen when each of the options are chosen:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Withdraw</strong>: We will need to know how much the user wants to withdraw, make sure the user CAN withdraw it, then subtract that amount from the bank account.</li>
+<li><strong>Deposit</strong>: We will need to know how much the user wants to deposit, then add the amount to the bank account.</li>
+<li><strong>Exit</strong>: To decide later.</li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="lab02-01.html">Lab 2-1: Single Digit Calculator</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lab02-01.html#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab02-01.html#testing-your-program">Testing Your Program</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab02-01.html#taking-it-further">Taking it Further</a></li>
+</div></blockquote>
+<p>Speaking of the bank account, it has a starting value of 10000.  We need to include that into our plan.  Note that I am also including which values should be saved in a variable for later use.</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="hll"><span class="c1">#set account to 10000</span>
+</span><span class="c1">#present the user with their choices</span>
+<span class="c1">#ask user to choose from options and save in variable</span>
+<span class="c1">#while _____</span>
+    <span class="c1">#if the user chooses withdraw</span>
+<span class="hll">        <span class="c1">#ask the user how much they want to withdraw and save it in variable</span>
+</span><span class="hll">        <span class="c1">#if the amount is too much</span>
+</span><span class="hll">            <span class="c1">#tell the user its too much</span>
+</span><span class="hll">        <span class="c1">#otherwise</span>
+</span><span class="hll">            <span class="c1">#subtract that amount from account</span>
+</span>    <span class="c1">#if the user chooses deposit</span>
+<span class="hll">        <span class="c1">#ask the user how much they want to deposit and save it in variable</span>
+</span><span class="hll">        <span class="c1">#add that amount to account</span>
+</span>    <span class="c1">#if the user chooses exit</span>
+        <span class="c1">#_____</span>
+</pre></div>
+</td></tr></table></div>
+<p>Finally, part of the loop should allow the user to choose another action.</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#set account to 10000</span>
+<span class="c1">#present the user with their choices</span>
+<span class="c1">#ask user to choose from options and save in variable</span>
+<span class="c1">#while _____</span>
+    <span class="c1">#if the user chooses withdraw</span>
+        <span class="c1">#ask the user how much they want to withdraw and save it in variable</span>
+        <span class="c1">#if the amount is too much</span>
+            <span class="c1">#tell the user its too much</span>
+        <span class="c1">#otherwise</span>
+            <span class="c1">#subtract that amount from account</span>
+    <span class="c1">#if the user chooses deposit</span>
+        <span class="c1">#ask the user how much they want to deposit and save it in variable</span>
+        <span class="c1">#add that amount to account</span>
+    <span class="c1">#if the user chooses exit</span>
+        <span class="c1">#_____</span>
+
+<span class="hll">    <span class="c1">#present user with their choices again</span>
+</span><span class="hll">    <span class="c1">#ask user to choose from options and save in same variable as first time</span>
+</span></pre></div>
+</td></tr></table></div>
+<dl class="docutils">
+<dt>To figure out what condition to use in the while loop, we need to ask ourselves a few essential questions:</dt>
+<dd><ul class="first last simple">
+<li>When do I want my loop to run?</li>
+<li>When do I want my loop to <strong>not</strong> run?</li>
+<li>Based on your answers above, which seems easier to write a condition for?  Which condition would fit best in our while loop?</li>
+<li>What, then, should be done when the user chooses exit?  Does anything have to be done at all?</li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="lab02-02.html">Lab 2-2: Pluralizer</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lab02-02.html#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab02-02.html#testing-your-program">Testing Your Program</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab02-02.html#taking-it-further">Taking it Further</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="lab03-01.html">Lab 3-1: FizzBuzz Generator</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lab03-01.html#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab03-01.html#testing-your-program">Testing Your Program</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab03-01.html#taking-it-further">Taking it Further</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="lab03-02-1.html">Pre-Lab 3-2: Mock ATM</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lab03-02-1.html#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab03-02-1.html#partial-solution">Partial Solution</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="lab03-02.html">Lab 3-2: Number Guessing Game</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lab03-02.html#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab03-02.html#testing-your-program">Testing Your Program</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab03-02.html#taking-it-further">Taking it Further</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="lab04-01.html">Lab 4-1: Rock Paper Scissors</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lab04-01.html#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab04-01.html#testing-your-program">Testing Your Program</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab04-01.html#taking-it-further">Taking it Further</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="lab04-02.html">Lab 4-2: Caesar Cipher - Encrypting and Decrypting</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lab04-02.html#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab04-02.html#testing-your-program">Testing Your Program</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab04-02.html#taking-it-further">Taking it Further</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="lab04-04.html">Lab 4-4: Craps</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lab04-04.html#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab04-04.html#testing-your-program">Testing Your Program</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab04-04.html#taking-it-further">Taking it Further</a></li>
-</ul>
-</li>
-</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="code">
+<h3>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have our pseudocode, it becomes very easy to write the code.  Much of it is literally translating line-by-line.</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">bank_account</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;1. Withdraw </span><span class="se">\n</span><span class="s2">2. Deposit </span><span class="se">\n</span><span class="s2">3. Exit&quot;</span><span class="p">)</span>
+<span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Welcome to ATM! Pick from above [1|2|3]:&quot;</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">_____</span><span class="p">:</span> <span class="c1">#student completes while loop</span>
+    <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span> <span class="c1">#user chooses &#39;withdraw&#39;</span>
+        <span class="c1">#student does this part</span>
+    <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+        <span class="n">amount</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How much to deposit: &quot;</span><span class="p">)</span>
+        <span class="n">bank_account</span> <span class="o">=</span> <span class="n">bank_account</span> <span class="o">+</span> <span class="n">amount</span>
+    <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span> <span class="c1">#user chooses &#39;exit&#39;</span>
+        <span class="c1">#student does this part too</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;1. Withdraw </span><span class="se">\n</span><span class="s2">2. Deposit </span><span class="se">\n</span><span class="s2">3. Exit&quot;</span><span class="p">)</span>
+    <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Pick from above [1|2|3]:&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>And that&#8217;s it!  You may copy and paste this code into your file and work from there.  Complete the prompted areas, and run it to make sure it works.  Of course, you are allowed to add extra lines of code if necessary.</p>
+<p><a href="#id1"><span class="problematic" id="id2">*</span></a>Please note that this is NOT the only way, nor is it the best way that this program can be written.  The purpose of this exercise is to get us used to breaking down problems in a systematic and logical manner.</p>
 </div>
 </div>
 </div>

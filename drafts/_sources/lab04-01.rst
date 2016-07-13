@@ -11,9 +11,9 @@ Lab Requirements and Specifications
 
 Rock Paper Scissors - the ultimate, time-tested witness to the greatest and most difficult question in the world - *"Who should go first?"*.
 
-In this lab, you'll be creating a program to play **rock paper scissors**.
+In this lab, you'll be creating a program to play **rock paper scissors** with the user.
 
-At the beginning of the game, the program should ask for the number of rounds to be played.  Each round will consist of each player (or computer) selecting their choice between rock, paper, and scissors.  A round is a round, even if the players tie.  The manner in which players choose their moves is completely up to you.  You may have them enter a string or pick from a menu.
+At the beginning of the game, the program should ask for the number of rounds to be played.  Each round will consist of the player and computer selecting their choice between rock, paper, and scissors.  A round is a round, even if the players tie.  The manner in which players choose their moves is completely up to you.  You may have them enter a string or pick from a menu.
 
 As a reminder, these are the interactions between rock, paper, and scissors:
     - Rock beats Scissors
@@ -26,20 +26,50 @@ When the game ends, the program should report how many rounds each player/comput
 
 *"Weeks of programming can save you hours of planning." -- unknown*
 
-As our labs get more and more complex, you'll find that planning and writing pseudocode gets more and more beneficial.  Once again, you should consider the following tips to help guide your planning:
+As our labs get more and more complex, you'll find that planning and writing pseudocode gets more and more beneficial.  You should consider the following tips to help guide your planning:
     - Now that we can create and call functions, the majority of your program should be functions.  Break the game down into simple steps or instructions - each of those will have its own function.
-    - Take advantage of ``return`` statements.  Your code should not have any global variables.  Data should be passed to functions through arguments, and from functions using the ``return`` statement.
-    - Each function should have a single purpose.  If you find that you have written a function that is doing multiple things, it means you should break it down into more functions.
+    - Take advantage of ``return`` statements.  Your code should not have any global variables.  Data should be passed to functions through arguments, and from functions through the ``return`` statement.
+    - Each function should have a single purpose.  If you find that you have written a function that is doing multiple things, it means you should break it down further into more functions.
+    - The one exception to the above should be your main game function, which will contain the game loop, as well as any persistent variables.
     - Which variables will you have to keep track of during all the rounds, and after all the rounds are completed? Make a note of which ones should be *initialized* outside of your loop.
     - Be sure to provide the player with the appropriate prompts, letting them know their options, and appropriate round information.  See below as an example.
     - Don't forget to ``import random`` to use ``random.randint()``!
+
+One of the first steps you should do in your planning is to determine which functions can be written for the program.  Each function should be written with its name, its arguments, what it will do, and what it returns (if anything).  The following are a few ideas:
+    - function: get_round_result
+        - arguments: player's move, computer's move
+        - purpose: determines who won based on each person's move
+        - returns: the winner, or if it was a tie
+    - function: get_computer_move
+        - arguments: none
+        - purpose: generates the computer's move
+        - returns: the randomly generated computer's move
+    - function: display_scoreboard
+        - arguments: player's score, computer's score, number of ties
+        - purpose: prints out the scoreboard in an organized fashion
+        - returns: none
+Try to follow the above format for all functions you can think of.  It will greatly simplify the code-writing process.  Notice how all the function names are verbs (get, display).  Remember that functions should *do* things, and therefore have names that reflect what they *do*.
 
 You should name your file ``FILN_rps.py``, where FILN is your first initial and last name, all lowercase, no space.
 
 Testing Your Program
 --------------------
 
-Below is a sample runthrough:
+Since we have learned functions, testing our functions has become much easier.  We can now write tests for individual functions.
+
+For example, for the get_round_result function shown above, we can write the following tests for the function to make sure everything works as expected:
+
+.. code-block:: python
+    :linenos:
+    
+    #reminder: player move is first arg, computer move is second arg
+    print(get_round_result("rock","rock")) #should print "tie"
+    print(get_round_result("rock","scissors")) #should print "player"
+    print(get_round_result("paper","scissors")) #should print "computer"
+    
+Except you would probably want to write more test cases to make sure that every case works.  These tests can (and in most cases, should be) written before the function itself is written.  This is called **Test Driven Development** - where the tests are written first.  You can then gradually pass each test to make sure you've handle every case that you need to.
+
+Below is a sample runthrough of the entire program:
 
 ::
     
@@ -83,6 +113,8 @@ Below is a sample runthrough:
     Ties: 0
     
     The player is victorious! P:3 to C:1!
+
+Note that the game ended after the 4th round because the player won 3 out of 5 total rounds, ensuring his victory.
 
 The following space is provided in case you want to test code out or write it in the browser:
 

@@ -34,7 +34,7 @@ Your program will be handling the following rules to pluralize nouns:
     | All other cases    | Add "s" to the end             | cat, cats         |
     +--------------------+--------------------------------+-------------------+
 
-You should name your file ``FILN-pluralizer.py``, where FILN is your first initial and last name, no space.
+You should name your file ``FILN_pluralizer.py``, where FILN is your first initial and last name, all lowercase, no space.
 
 Testing Your Program
 --------------------

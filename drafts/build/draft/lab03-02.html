@@ -300,7 +300,6 @@
 <div class="section" id="lab-requirements-and-specifications">
 <h2>Lab Requirements and Specifications<a class="headerlink" href="#lab-requirements-and-specifications" title="Permalink to this headline">¶</a></h2>
 <p>In this lab, you&#8217;ll be recreating the classic number guessing game.  The computer will host the game, randomly picking a number between 1 and 100, and the user will be the making the guesses.  The computer should provide hints - telling the user whether their guess was too low or too high.  The computer should be repeatedly asking the user to enter numbers until the user correctly guesses the number.  There is no maximum to the number of tries.  At the end, (if and) when the player finally guesses the correct number, the computer should tell the user how many guesses it took.</p>
-<p>This is the first lab which requires you to break down a multi-part, complex problem.  Don&#8217;t be discouraged if you get stuck.  Power through it!</p>
 <dl class="docutils">
 <dt>From the description above, the program will clearly need to:</dt>
 <dd><ul class="first last simple">
@@ -315,17 +314,18 @@
 <dl class="docutils">
 <dt>Here are some guided questions that you should think about when you are writing out your pseudocode:</dt>
 <dd><ul class="first last simple">
-<li>What should happen at the beginning of the program?</li>
-<li>What part of the program should be looped?</li>
+<li>What is the very first thing the program should do?</li>
+<li>For a moment, forget about the fact that the program allows multiple guesses.  What needs to happen in order for the user to make one guess, and to check that guess against the correct answer?</li>
+<li>Using your answer above, how would write a loop to enable multiple guesses, breaking out of the loop only when the user gets the correct answer?</li>
+<li>How do we exit the loop?  Or, what should be the condition for the loop - what should keep us looping?</li>
 <li>When a user makes a guess, how many different outcomes are there?  What are the outcomes?</li>
 <li>For each outcome, what should the program be doing?</li>
-<li>How do we exit the loop?  Or, what should be the condition for the loop - what should keep us looping?</li>
 </ul>
 </dd>
 </dl>
 <p>There are multiple solutions to this program.  For now, don&#8217;t worry about the &#8220;best&#8221; solution - see if you can get a working version first, then improve on the code afterwards!</p>
-<p>Also, once again, don&#8217;t forget that <code class="docutils literal"><span class="pre">input()</span></code> gives you a string!  <code class="docutils literal"><span class="pre">&quot;50&quot;</span></code> is not the same as <code class="docutils literal"><span class="pre">50</span></code>..</p>
-<p>You should name your file <code class="docutils literal"><span class="pre">FILN-numguess.py</span></code>, where FILN is your first initial and last name, no space.</p>
+<p>Also, once again, don&#8217;t forget that <code class="docutils literal"><span class="pre">input()</span></code> gives you a string!  <code class="docutils literal"><span class="pre">&quot;50&quot;</span></code> is not the same as <code class="docutils literal"><span class="pre">50</span></code>.</p>
+<p>You should name your file <code class="docutils literal"><span class="pre">FILN_numguess.py</span></code>, where FILN is your first initial and last name, all lowercase, no space.</p>
 </div>
 <div class="section" id="testing-your-program">
 <h2>Testing Your Program<a class="headerlink" href="#testing-your-program" title="Permalink to this headline">¶</a></h2>

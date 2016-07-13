@@ -18,7 +18,7 @@ In this lab, you will be writing a program that takes in a user-entered number a
 
 Your program should use ``input()`` to take in user input, and then a ``for`` loop to iterate up to that number.  You may assume that the user will enter a non-negative integer.  Your output should print out one number/Fizz/Buzz/FizzBuzz per line.
 
-You should name your file ``FILN-fizzbuzz.py``, where FILN is your first initial and last name, no space.
+You should name your file ``FILN_fizzbuzz.py``, where FILN is your first initial and last name, all lowercase, no space.
 
 Testing Your Program
 --------------------

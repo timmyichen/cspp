@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Table of Contents &mdash; Runestone Interactive Overview</title>
+    <title>Lab 4-4: Craps &mdash; Runestone Interactive Overview</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -257,8 +257,10 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Table of Contents</a><ul>
-<li><a class="reference internal" href="#labs">Labs</a></li>
+<li><a class="reference internal" href="#">Lab 4-4: Craps</a><ul>
+<li><a class="reference internal" href="#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
+<li><a class="reference internal" href="#testing-your-program">Testing Your Program</a></li>
+<li><a class="reference internal" href="#taking-it-further">Taking it Further</a></li>
 </ul>
 </li>
 </ul>
@@ -293,72 +295,44 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="table-of-contents">
-<span id="t-o-c"></span><h1>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="labs">
-<h2>Labs<a class="headerlink" href="#labs" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="lab01-01.html">Lab 1-1: Temperature Converter</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lab01-01.html#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab01-01.html#testing-your-program">Testing Your Program</a></li>
-</ul>
+  <div class="section" id="lab-4-4-craps">
+<h1>Lab 4-4: Craps<a class="headerlink" href="#lab-4-4-craps" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="lab-requirements-and-specifications">
+<h2>Lab Requirements and Specifications<a class="headerlink" href="#lab-requirements-and-specifications" title="Permalink to this headline">¶</a></h2>
+<p>Hopefully many of the high school students reading this have not spent extended time in a casino and do not know the rules of the dice game, Craps.  We will be programming a simple version of the game with the following rules:</p>
+<dl class="docutils">
+<dt>The player starts with a balance of $100.  The player places a bet, then rolls two dice, and the results are summed (giving a number between 2 and 12).  Depending on what they roll, a few things can happen:</dt>
+<dd><ul class="first last">
+<li><p class="first">If the player rolls a 7 or 11 on the first roll of the round, the player wins the bet.</p>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="lab01-02.html">Lab 1-2: Making Sense of Seconds</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lab01-02.html#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab01-02.html#testing-your-program">Testing Your Program</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab01-02.html#taking-it-further">Taking it Further</a></li>
-</ul>
+<li><p class="first">If the player rolls a 2, 3, or 12 on the first roll of the round, the player loses.</p>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="lab02-01.html">Lab 2-1: Single Digit Calculator</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lab02-01.html#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab02-01.html#testing-your-program">Testing Your Program</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab02-01.html#taking-it-further">Taking it Further</a></li>
+<li><p class="first">If the player rolls any other number (not 2,3,7,11,12), that number becomes the &#8220;point number&#8221;</p>
+<blockquote>
+<div><ul class="simple">
+<li>During this round, from this point on, if the player rolls the point number again before rolling a 7, the player wins.</li>
+<li>However, if the player rolls a 7 before rolling the point number, the player loses.</li>
+<li>The player rolls again if any other number (other than 7 or the point number) is rolled</li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="lab02-02.html">Lab 2-2: Pluralizer</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lab02-02.html#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab02-02.html#testing-your-program">Testing Your Program</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab02-02.html#taking-it-further">Taking it Further</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="lab03-01.html">Lab 3-1: FizzBuzz Generator</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lab03-01.html#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab03-01.html#testing-your-program">Testing Your Program</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab03-01.html#taking-it-further">Taking it Further</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="lab03-02-1.html">Pre-Lab 3-2: Mock ATM</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lab03-02-1.html#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab03-02-1.html#partial-solution">Partial Solution</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="lab03-02.html">Lab 3-2: Number Guessing Game</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lab03-02.html#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab03-02.html#testing-your-program">Testing Your Program</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab03-02.html#taking-it-further">Taking it Further</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="lab04-01.html">Lab 4-1: Rock Paper Scissors</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lab04-01.html#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab04-01.html#testing-your-program">Testing Your Program</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab04-01.html#taking-it-further">Taking it Further</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="lab04-02.html">Lab 4-2: Caesar Cipher - Encrypting and Decrypting</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lab04-02.html#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab04-02.html#testing-your-program">Testing Your Program</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab04-02.html#taking-it-further">Taking it Further</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="lab04-04.html">Lab 4-4: Craps</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lab04-04.html#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab04-04.html#testing-your-program">Testing Your Program</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab04-04.html#taking-it-further">Taking it Further</a></li>
-</ul>
+</div></blockquote>
 </li>
 </ul>
+</dd>
+</dl>
+<p>After each round, the program should ask the user if he/she wants to continue playing.  The game continues until the player runs out of money, or the player chooses to exit.</p>
+<p>Similar to Rock Paper Scissors (as well as any multi-step, complex program),</p>
+<p>You should name your file <code class="docutils literal"><span class="pre">FILN-craps.py</span></code>, where FILN is your first initial and last name, no space.</p>
 </div>
+<div class="section" id="testing-your-program">
+<h2>Testing Your Program<a class="headerlink" href="#testing-your-program" title="Permalink to this headline">¶</a></h2>
+<p>The following space is provided in case you want to test code out or write it in the browser:</p>
+
+<textarea data-component="activecode" id=labspace-04-04 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+#Write and run code here!
+</textarea>
+</div>
+<div class="section" id="taking-it-further">
+<h2>Taking it Further<a class="headerlink" href="#taking-it-further" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 

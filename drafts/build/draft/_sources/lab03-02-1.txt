@@ -1,0 +1,152 @@
+.. qnum::
+   :start: 1
+   :prefix: lab03-02-
+
+
+Pre-Lab 3-2: Mock ATM
+=====================
+
+Lab Requirements and Specifications
+-----------------------------------
+
+The "Mock" ATM program is supposed to simulate a simple ATM interface.  You have $10,000 in your bank account.  The ATM should present the user with three options:
+
+    - Withdraw (take out money) from account
+    - Deposit (put money) into account
+    - Exit (ends program)
+
+The program should repeatedly ask the user for a choice until a valid choice is made.  If the user selects either Withdraw or Deposit, the program should ask them how much they want to deposit.  Your account is not allowed to fall into a negative balance, so the user can't withdraw more money than they have in their bank account.  There is no limit to how much the user can deposit into the account.
+
+A heavily documented, partial solution to this lab will be given to you below, as well as the rationale behind the planning.  You are to complete the gaps in the planning, then implement those ideas in code.
+
+Your final, completed solution should be saved in a file called ``FILN-mockatm.py``, where FILN is your first initial and last name, all lowercase, no space.
+
+Partial Solution
+----------------
+
+Planning
+~~~~~~~~
+
+The first thing I ask myself is - what control structures will I need to use?  From the description above, I know that I will need a loop *(key word: repeatedly)* and at least one conditional *(user is making a choice, program will do different things for each choice)*.  Since I don't know how many times I will be looping since it depends on the user choosing "exit", I know that I will need a ``while`` loop.
+
+Next, I need to figure out what my program is doing first.  Since the user is doing is making choices at a menu, the first thing that needs to be done is to present the user with their choices.  Then I'll probably want to ask the user to make their choice.
+
+Then, since I know that I'll be using a ``while`` loop, I will need some kind of condition to keep it looping as long as the user doesn't choose to exit.  We can leave it blank for now, but we should definitely revisit it later down the line.
+
+Here's how my pseudocode would start:
+
+.. code-block:: python
+    :linenos:
+    :emphasize-lines: 1,2,3,4
+
+    #present the user with their choices
+    #ask user to choose from options and save in variable
+    #while ______________
+        #do something based on their choice
+    
+Pretty simple, right?  My next step would be to figure out what "do something based on their choice" means.  We know we'll be using a conditional, so let's list out all the possibilities:
+
+.. code-block:: python
+    :linenos:
+    :emphasize-lines: 4,5,6,7,8,9
+
+    #present the user with their choices
+    #ask user to choose from options and save in variable
+    #while _____
+        #if the user chooses withdraw
+            #do something to take money out
+        #if the user chooses deposit
+            #do something else to put money in
+        #if the user chooses exit
+            #_____
+
+Now we have to decide what will happen when each of the options are chosen:
+
+    - **Withdraw**: We will need to know how much the user wants to withdraw, make sure the user CAN withdraw it, then subtract that amount from the bank account.
+    - **Deposit**: We will need to know how much the user wants to deposit, then add the amount to the bank account.
+    - **Exit**: To decide later.
+
+Speaking of the bank account, it has a starting value of 10000.  We need to include that into our plan.  Note that I am also including which values should be saved in a variable for later use.
+
+.. code-block:: python
+    :linenos:
+    :emphasize-lines: 1,6,7,8,9,10,12,13
+    
+    #set account to 10000
+    #present the user with their choices
+    #ask user to choose from options and save in variable
+    #while _____
+        #if the user chooses withdraw
+            #ask the user how much they want to withdraw and save it in variable
+            #if the amount is too much
+                #tell the user its too much
+            #otherwise
+                #subtract that amount from account
+        #if the user chooses deposit
+            #ask the user how much they want to deposit and save it in variable
+            #add that amount to account
+        #if the user chooses exit
+            #_____
+        
+
+Finally, part of the loop should allow the user to choose another action.
+
+.. code-block:: python
+    :linenos:
+    :emphasize-lines: 17,18
+    
+    #set account to 10000
+    #present the user with their choices
+    #ask user to choose from options and save in variable
+    #while _____
+        #if the user chooses withdraw
+            #ask the user how much they want to withdraw and save it in variable
+            #if the amount is too much
+                #tell the user its too much
+            #otherwise
+                #subtract that amount from account
+        #if the user chooses deposit
+            #ask the user how much they want to deposit and save it in variable
+            #add that amount to account
+        #if the user chooses exit
+            #_____
+        
+        #present user with their choices again
+        #ask user to choose from options and save in same variable as first time
+
+To figure out what condition to use in the while loop, we need to ask ourselves a few essential questions:
+    - When do I want my loop to run?
+    - When do I want my loop to **not** run?
+    - Based on your answers above, which seems easier to write a condition for?  Which condition would fit best in our while loop?
+    - What, then, should be done when the user chooses exit?  Does anything have to be done at all?
+
+
+Code
+~~~~
+
+Now that we have our pseudocode, it becomes very easy to write the code.  Much of it is literally translating line-by-line.
+
+.. code-block:: python
+    :linenos:
+    
+    bank_account = 10000
+    print("1. Withdraw \n2. Deposit \n3. Exit")
+    choice = input("Welcome to ATM! Pick from above [1|2|3]:")
+    while _____: #student completes while loop
+        if choice == "1": #user chooses 'withdraw'
+            #student does this part
+        elif choice == "2":
+            amount = input("How much to deposit: ")
+            bank_account = bank_account + amount
+        elif choice == "3": #user chooses 'exit'
+            #student does this part too
+        
+        print("1. Withdraw \n2. Deposit \n3. Exit")
+        choice = input("Pick from above [1|2|3]:")
+    
+And that's it!  You may copy and paste this code into your file and work from there.  Complete the prompted areas, and run it to make sure it works.  Of course, you are allowed to add extra lines of code if necessary.
+
+*Please note that this is NOT the only way, nor is it the best way that this program can be written.  The purpose of this exercise is to get us used to breaking down problems in a systematic and logical manner.
+
+
+            

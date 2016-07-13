@@ -26,7 +26,7 @@ Again, please remember that ``input()`` will always give you a string.  You will
 
 Your program will break the input into three parts - the first term, the operator, and the second term.  Since your input is a string, you can use string indexing to grab specific parts.  For example, ``"Howdy!"[3]`` will give you ``"d"`` since the index starts at zero.  Feel free to look back on previous pages for assistance.  Once you have your parts broken up (and preferably saved as variables), how do you know what your program will do?  Which part of the input expression determines what the program does?  You will want to use *conditionals* to control what the program will do and when it will do it.
 
-You should name your file ``FILN-simplecalc.py``, where FILN is first initial and last name, no space.
+You should name your file ``FILN_simplecalc.py``, where FILN is first initial and last name, all lowercase, no space.
 
 Testing Your Program
 --------------------

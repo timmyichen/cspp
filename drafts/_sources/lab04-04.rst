@@ -1,0 +1,48 @@
+.. qnum::
+   :start: 1
+   :prefix: lab04-04-
+
+
+Lab 4-4: Craps
+==============
+
+Lab Requirements and Specifications
+-----------------------------------
+
+Hopefully many of the high school students reading this have not spent extended time in a casino and do not know the rules of the dice game, Craps.  We will be programming a simple version of the game with the following rules:
+
+The player starts with a balance of $100.  The player places a bet, then rolls two dice, and the results are summed (giving a number between 2 and 12).  Depending on what they roll, a few things can happen:
+    - If the player rolls a 7 or 11 on the first roll of the round, the player wins the bet.
+    - If the player rolls a 2, 3, or 12 on the first roll of the round, the player loses.
+    - If the player rolls any other number (not 2,3,7,11,12), that number becomes the "point number"
+    
+        - During this round, from this point on, if the player rolls the point number again before rolling a 7, the player wins.
+        - However, if the player rolls a 7 before rolling the point number, the player loses.
+        - The player rolls again if any other number (other than 7 or the point number) is rolled
+
+After each round, the program should ask the user if he/she wants to continue playing.  The game continues until the player runs out of money, or the player chooses to exit.
+
+Similar to Rock Paper Scissors (as well as any multi-step, complex program), planning out your code will be highly beneficial in writing cleaner and more organized solutions.  As a reminder, here are some general guidelines:
+
+    - Consider what control structures are necessary for the program.
+    - Break your problem down into smaller, testable functions.  Each function should have a single purpose.
+    - Consider the order of occurrences - what should the program do first?
+    - You'll probably have one main game loop, which will contain all the persistent variables.  This is probably where most of the function calls will happen.  Try to keep this section as small as possible, using functions.
+    
+
+You should name your file ``FILN-craps.py``, where FILN is your first initial and last name, no space.
+
+Testing Your Program
+--------------------
+
+
+
+The following space is provided in case you want to test code out or write it in the browser:
+
+.. activecode:: labspace-04-04
+
+    #Write and run code here!
+
+Taking it Further
+-----------------
+

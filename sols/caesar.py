@@ -1,8 +1,4 @@
-"""
-set 3 main variables - key, message, action
 
-
-"""
 def encrypt(key, message):
     # key = 1
     # message = "IFMMP UIFSF"

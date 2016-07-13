@@ -4,14 +4,12 @@
 
 
 Lab 3-2: Number Guessing Game
-===========================
+=============================
 
 Lab Requirements and Specifications
 -----------------------------------
 
 In this lab, you'll be recreating the classic number guessing game.  The computer will host the game, randomly picking a number between 1 and 100, and the user will be the making the guesses.  The computer should provide hints - telling the user whether their guess was too low or too high.  The computer should be repeatedly asking the user to enter numbers until the user correctly guesses the number.  There is no maximum to the number of tries.  At the end, (if and) when the player finally guesses the correct number, the computer should tell the user how many guesses it took.
-
-This is the first lab which requires you to break down a multi-part, complex problem.  Don't be discouraged if you get stuck.  Power through it!
 
 From the description above, the program will clearly need to:
      - Keep track of the number of guesses
@@ -23,15 +21,16 @@ From the description above, the program will clearly need to:
 It would be a wise idea to plan out your strategy for writing this program before you actually start writing it.  I would recommend writing down some very rough pseudocode to help organize the algorithm.
 
 Here are some guided questions that you should think about when you are writing out your pseudocode:
-    - What should happen at the beginning of the program?
-    - What part of the program should be looped?
+    - What is the very first thing the program should do?
+    - For a moment, forget about the fact that the program allows multiple guesses.  What needs to happen in order for the user to make one guess, and to check that guess against the correct answer?
+    - Using your answer above, how would write a loop to enable multiple guesses, breaking out of the loop only when the user gets the correct answer?
+    - How do we exit the loop?  Or, what should be the condition for the loop - what should keep us looping?
     - When a user makes a guess, how many different outcomes are there?  What are the outcomes?
     - For each outcome, what should the program be doing?
-    - How do we exit the loop?  Or, what should be the condition for the loop - what should keep us looping?
 
 There are multiple solutions to this program.  For now, don't worry about the "best" solution - see if you can get a working version first, then improve on the code afterwards!
 
-Also, once again, don't forget that ``input()`` gives you a string!  ``"50"`` is not the same as ``50``..
+Also, once again, don't forget that ``input()`` gives you a string!  ``"50"`` is not the same as ``50``.
 
 You should name your file ``FILN_numguess.py``, where FILN is your first initial and last name, all lowercase, no space.
 
