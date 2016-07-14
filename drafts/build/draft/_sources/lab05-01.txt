@@ -1,0 +1,38 @@
+.. qnum::
+   :start: 1
+   :prefix: lab05-01-
+
+
+Lab 5-1: Hangman
+================
+
+Lab Requirements and Specifications
+-----------------------------------
+
+Here you will be testing your game.
+
+You should name your file ``FILN_rps.py``, where FILN is your first initial and last name, no space.
+
+Testing Your Program
+--------------------
+
+Like any game, you should play it extensively, testing every outcome that can happen.  In the context of this game, for example, you'll want to play where:
+    - You guess the same letter multiple times in a row (you should not lose guesses)
+    - You guess the word correctly
+    - You guess the word incorrectly
+
+You'll also want to pay special attention to:
+    - The game accurately displays the number of guesses remaining
+    - The game accurately displays the letters that have been guessed
+
+Here is a sample output:
+
+The following space is provided in case you want to test code out or write it in the browser:
+
+.. activecode:: labspace-05-01
+
+    #Write and run code here!
+
+Taking it Further
+-----------------
+

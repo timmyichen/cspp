@@ -258,7 +258,16 @@
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">Lab 4-4: Craps</a><ul>
-<li><a class="reference internal" href="#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
+<li><a class="reference internal" href="#lab-requirements-and-specifications">Lab Requirements and Specifications</a><ul>
+<li><a class="reference internal" href="#game-rules">Game Rules</a><ul>
+<li><a class="reference internal" href="#phase-1-before-the-roll">Phase 1: Before The Roll</a></li>
+<li><a class="reference internal" href="#phase-2-the-first-roll">Phase 2: The First Roll</a></li>
+<li><a class="reference internal" href="#phase-3-the-point-number">Phase 3: The Point Number</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#planning-strategies">Planning Strategies</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#testing-your-program">Testing Your Program</a></li>
 <li><a class="reference internal" href="#taking-it-further">Taking it Further</a></li>
 </ul>
@@ -299,6 +308,8 @@
 <h1>Lab 4-4: Craps<a class="headerlink" href="#lab-4-4-craps" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="lab-requirements-and-specifications">
 <h2>Lab Requirements and Specifications<a class="headerlink" href="#lab-requirements-and-specifications" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="game-rules">
+<h3>Game Rules<a class="headerlink" href="#game-rules" title="Permalink to this headline">¶</a></h3>
 <p>Hopefully many of the high school students reading this have not spent extended time in a casino and do not know the rules of the dice game, Craps.  We will be programming a simple version of the game with the following rules:</p>
 <dl class="docutils">
 <dt>The player starts with a balance of $100.  The player places a bet, then rolls two dice, and the results are summed (giving a number between 2 and 12).  Depending on what they roll, a few things can happen:</dt>
@@ -319,6 +330,36 @@
 </ul>
 </dd>
 </dl>
+<p>At the beginning of the game, the user needs to have their bank account set to $100.  The player then continues to play rounds of craps until he/she decides to quit, or runs out of money.  Each round can be broken up into three phases:</p>
+<div class="section" id="phase-1-before-the-roll">
+<h4>Phase 1: Before The Roll<a class="headerlink" href="#phase-1-before-the-roll" title="Permalink to this headline">¶</a></h4>
+<p>Before any dice are rolled, the player should place their bet.</p>
+</div>
+<div class="section" id="phase-2-the-first-roll">
+<h4>Phase 2: The First Roll<a class="headerlink" href="#phase-2-the-first-roll" title="Permalink to this headline">¶</a></h4>
+<p>When the first pair of dice are rolled, a few outcomes can happen based on the sum:</p>
+<blockquote>
+<div><ul class="simple">
+<li>If the player rolls a 2, 3, or 12 in this phase, they lose their bet, and the round ends.</li>
+<li>If the player rolls a 7 or 11 in this phase, they win their bet, and the round ends.</li>
+<li>If the player rolls any other number (a 4,5,6,8,9,10), then they continue to Phase 3, with their roll becoming their &#8220;<strong>point number</strong>&#8220;</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="phase-3-the-point-number">
+<h4>Phase 3: The Point Number<a class="headerlink" href="#phase-3-the-point-number" title="Permalink to this headline">¶</a></h4>
+<p>If the player reaches Phase 3, which most rounds they do, then they keep rolling die until they roll a 7 or they roll their point number.</p>
+<blockquote>
+<div><ul class="simple">
+<li>If the player rolls their point number first, they win their bet, and the round ends.</li>
+<li>If the player rolls a 7 first, they lose their bet, and the round ends.</li>
+<li>If the player rolls any other number, they keep rolling in Phase 3.</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="planning-strategies">
+<h3>Planning Strategies<a class="headerlink" href="#planning-strategies" title="Permalink to this headline">¶</a></h3>
 <p>After each round, the program should ask the user if he/she wants to continue playing.  The game continues until the player runs out of money, or the player chooses to exit.</p>
 <dl class="docutils">
 <dt>Similar to Rock Paper Scissors (as well as any multi-step, complex program), planning out your code will be highly beneficial in writing cleaner and more organized solutions.  However, this time, you will be coming up with your own functions.  Please remember to heed the following guidelines:</dt>
@@ -372,6 +413,7 @@
 </dl>
 <p>And so on. The above are examples, and do not have to be followed.  There are many ways these games can be organized.  However, notice that the names of my functions are verbs - just remember that functions should <em>do</em> things, and therefore have names that reflect what they <em>do</em>.</p>
 <p>You should name your file <code class="docutils literal"><span class="pre">FILN_craps.py</span></code>, where FILN is your first initial and last name, no space.</p>
+</div>
 </div>
 <div class="section" id="testing-your-program">
 <h2>Testing Your Program<a class="headerlink" href="#testing-your-program" title="Permalink to this headline">¶</a></h2>

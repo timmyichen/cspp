@@ -110,7 +110,7 @@ Previously, you learned how to import functions you've created in other ``.py`` 
 
 Your first step should be to import the ``decrypt`` function from your ``caesar.py`` module.  Feel free to give it an alias if desired.
 
-Your main goal is to, given an encrypted string, use the imported ``decrypt`` function to print out every possible decryption of that string.  This can be done without defining any new functions in ``brute_caesar.py``.  
+Your main goal is to, given an encrypted string, use the imported ``decrypt`` function to print out every possible decryption of that string.  This can be done without defining any new functions in ``brute_caesar.py``.  In fact, then entire program to brute force a message using an imported function can be as small as 5 lines!
 
 Testing Your Program
 --------------------

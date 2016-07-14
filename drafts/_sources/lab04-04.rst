@@ -9,6 +9,9 @@ Lab 4-4: Craps
 Lab Requirements and Specifications
 -----------------------------------
 
+Game Rules
+~~~~~~~~~~
+
 Hopefully many of the high school students reading this have not spent extended time in a casino and do not know the rules of the dice game, Craps.  We will be programming a simple version of the game with the following rules:
 
 The player starts with a balance of $100.  The player places a bet, then rolls two dice, and the results are summed (giving a number between 2 and 12).  Depending on what they roll, a few things can happen:
@@ -19,6 +22,34 @@ The player starts with a balance of $100.  The player places a bet, then rolls t
         - During this round, from this point on, if the player rolls the point number again before rolling a 7, the player wins.
         - However, if the player rolls a 7 before rolling the point number, the player loses.
         - The player rolls again if any other number (other than 7 or the point number) is rolled
+
+At the beginning of the game, the user needs to have their bank account set to $100.  The player then continues to play rounds of craps until he/she decides to quit, or runs out of money.  Each round can be broken up into three phases:
+
+Phase 1: Before The Roll
+````````````````````````
+
+Before any dice are rolled, the player should place their bet.
+
+Phase 2: The First Roll
+```````````````````````
+
+When the first pair of dice are rolled, a few outcomes can happen based on the sum:
+
+    - If the player rolls a 2, 3, or 12 in this phase, they lose their bet, and the round ends.
+    - If the player rolls a 7 or 11 in this phase, they win their bet, and the round ends. 
+    - If the player rolls any other number (a 4,5,6,8,9,10), then they continue to Phase 3, with their roll becoming their "**point number**"
+
+Phase 3: The Point Number
+`````````````````````````
+
+If the player reaches Phase 3, which most rounds they do, then they keep rolling die until they roll a 7 or they roll their point number.
+
+    - If the player rolls their point number first, they win their bet, and the round ends.
+    - If the player rolls a 7 first, they lose their bet, and the round ends.
+    - If the player rolls any other number, they keep rolling in Phase 3.
+
+Planning Strategies
+~~~~~~~~~~~~~~~~~~~
 
 After each round, the program should ask the user if he/she wants to continue playing.  The game continues until the player runs out of money, or the player chooses to exit.
 

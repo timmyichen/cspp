@@ -9,14 +9,365 @@ Lab 4-2: Caesar Cipher - Encrypting and Decrypting
 The Caesar Cipher
 -----------------
 
-The Caesar Cipher, named after Julius Caesar of Ancient Rome, is a type of substitution cipher where each letter of the original (plaintext) message is substituted with another letter.  All ``A``s become 
+The Caesar Cipher, named after Julius Caesar of Ancient Rome, is a type of substitution cipher where each letter of the original (plaintext) message is substituted with another letter.  
 
-Pre-Lab Walkthrough
--------------------
+Encrypting with the Caesar Cipher
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+But how do we decide what letter is replaced by what?  That's where the **key** comes into play.  Found in almost every encryption algorithm, the key determines **how the data is encrypted**.
+
+In the Caesar cipher, the key is a number from 0 to 25, because there are 26 letters in the alphabet.  This means that for any given message, there are 26 different ways we can encrpyt the message.
+
+For each letter, the key determines **which letter is replacing the current letter, by counting down the alphabet**.  In the following example, let's say we wanted to encrypt the letter ``B`` with a key of ``3``, we would find the 3rd letter that appears after ``B`` - which is C, D, then finally ``E``.
+
+.. image:: img/caesar1.png
+    :scale: 20%
+    :alt: B becomes E in the Caesar cipher using a key of 3.
+    :align: center
+
+*In the Caesar cipher, A becomes D, B becomes E, C becomes F, and so on...*
+
+This can easily be shown by lining up two alphabets, one on top of each other, with the second alphabet starting at the letter shifted 3 letters down.  This means that the bottom row should be shifted to the *left*.
+
+::
+
+    ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    DEFGHIJKLMNOPQRSTUVWXYZABC
+
+This makes it much more clear what letter should become what.  If we wanted to encrypt the word ``BILLY``, we would simply take each plaintext letter (top row) and find its matching encrypted letter (bottom row), or:
+
+::
+
+    A [B] CDEFGH [I] JK [L] MNOPQRSTUVWX [Y] Z
+    D [E] FGHIJK [L] MN [O] PQRSTUVWXYZA [B] C
+
+So we clearly see that:
+
+    - ``B`` becomes ``E``
+    - ``I`` becomes ``L``
+    - ``L`` becomes ``O``
+    - ``Y`` becomes ``B``
+
+So the final encrypted word is ``ELOOB``.  Note that when we reach the end of the alphabet, we keep counting starting with A, B, etc...
+
+Decrypting with the Caesar Cipher
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Decrypting works in a very similar way - except this time, instead of counting "down" the alphabet, you count "up"!  As an example, let's try to decrypt ``ELOOB`` using a key of ``3`` - because we know the result should be our original plaintext, ``BILLY``.  Let's start by aligning our alphabets:
+
+::
+
+    ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    XYZABCDEFGHIJKLMNOPQRSTUVW
+
+Notice how this time, instead of shifting the bottom row to the left, now we are shifting it to the *right*.  We can then find our encrypted letters (top row) ``E,L,O,B`` and find their corresponding plaintext letters (bottom row).
+
+::
+
+    A [B] CD [E] FGHIJK [L] MN [O] PQRSTUVWXYZ
+    X [Y] ZA [B] CDEFGH [I] JK [L] MNOPQRSTUVW
+
+We can now see that:
+
+    - ``E`` becomes ``B``
+    - ``L`` becomes ``I``
+    - ``O`` becomes ``L``
+    - ``B`` becomes ``Y``
+
+Which gives us our original plaintext, ``BILLY``.
+
+Next, we're going to learn about a python implementation of the Caesar cipher.
+
+Encryption Walkthrough
+----------------------
 
 To begin, create a file called ``FILN_caesar.py``, where FILN is your first initial and last name, no space.
 
-This lab will work a little differently than previous ones.  The purpose of this lab is to explain an algorithm, walking you through the algorithm.  In this lab, you should be following along in your preferred python IDE.
+This lab will work a little differently than previous ones.  The purpose of this lab is to explain an algorithm, walking you through the algorithm.  In this lab, you should be following along and building this step-by-step in your preferred python IDE.  Changed lines in code will be highlighted.
 
+Let's start with our encryption function.  In this function, we'll be taking in ``key`` and ``message`` as arguments.  The first thing I'm going to do is to convert the entire message to uppercase, which we can do using the ``.upper()`` string method.  Then I'm going to create a variable called ``alpha`` that will hold the alphabet as a long string
 
+.. code-block:: python
+    :linenos:
+    :emphasize-lines: 1,2,3
+    
+    def encrypt(key, message):
+        message = mesage.upper()
+        alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        
+Next, I know that I will have to operate on every letter in the message.  I can write a ``for`` loop that will loop through every letter in a string by using ``for var in str``, where ``var`` will cycle through being every character in ``str``.  I also know that since I am going through letter by letter, I will need to initialize an empty string as the result so I can build upon it.
 
+.. code-block:: python
+    :linenos:
+    :emphasize-lines: 4,6
+    
+    def encrypt(key, message):
+        message = mesage.upper()
+        alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        result = ""
+        
+        for letter in message:
+            
+One thing to note about the Caesar cipher is that it doesn't really handle characters that aren't letters, such as punctuation, or spaces.  So we want to make sure that if we're going to encrypt something, we're only going to encrypt letters.
+
+Let's add in a conditional to handle that.  The logic here is, "if it's a letter, encrypt it.  otherwise, just add it to the result (i.e. don't change it)".  We can check whether a letter ``var`` is in a string ``str`` by using ``var in str``, which returns ``True`` if ``var`` is found in ``str``.
+
+.. code-block:: python
+    :linenos:
+    :emphasize-lines: 7,8,9,10
+    
+    def encrypt(key, message):
+        message = mesage.upper()
+        alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        result = ""
+        
+        for letter in message:
+            if letter in alpha: #if the letter is actually a letter
+                #encrypt it
+            else:
+                result = result + letter
+
+Now we're going to get into the actual encryption.  This happens letter-by-letter since we are using the for loop to iterate through the message, which makes it simpler for us.  The first thing we want to do is find out **where is the letter in the alphabet?  What index is the letter in?**  To do this, we can use the ``.find()`` string method, which will give us the first occurrence of the letter.
+
+.. code-block:: python
+    :linenos:
+    :emphasize-lines: 9
+    
+    def encrypt(key, message):
+        message = mesage.upper()
+        alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        result = ""
+        
+        for letter in message:
+            if letter in alpha: #if the letter is actually a letter
+                #find the letter in the alphabet
+                letter_index = alpha.find(letter)
+            else:
+                result = result + letter
+
+Now that we know the plaintext letter index... we have to find the corresponding encrypted letter!  While we could technically create a new alphabet string that has been shifted, it would be much easier to compute the new letter index using the **key**.  We can "shift" the alphabet to the left by adding the value of the key to the index.  In our old example where we turned ``B`` into ``E`` with a key of ``3``, you can see here that the index of ``B`` is ``1``, and the index of ``E`` is ``4``, so indeed, ``+3`` is the operation here.  More generally, it's just ``+key``.
+
+.. code-block:: python
+    :linenos:
+    :emphasize-lines: 9
+    
+    def encrypt(key, message):
+        message = mesage.upper()
+        alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        result = ""
+        
+        for letter in message:
+            if letter in alpha: #if the letter is actually a letter
+                #find the corresponding encrypted letter in the alphabet
+                letter_index = alpha.find(letter) + key 
+            else:
+                result = result + letter
+
+Now that we have the index of the encrypted letter, we now just need to add that letter to the result.  Right now, ``letter_index`` represents the position of the letter in the alphabet.  We want to get the letter itself.  We do this just by using ``letter_index`` as an index to the string, ``alpha[letter_index]``.  Then we add this to the result.
+
+.. code-block:: python
+    :linenos:
+    :emphasize-lines: 11
+    
+    def encrypt(key, message):
+        message = mesage.upper()
+        alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        result = ""
+        
+        for letter in message:
+            if letter in alpha: #if the letter is actually a letter
+                #find the corresponding encrypted letter in the alphabet
+                letter_index = alpha.find(letter) + key 
+                
+                result = result + alpha[letter_index]
+            else:
+                result = result + letter
+
+We did forget one thing, however.  We forgot to handle loop-arounds!  How do we handle what happens when we reach the end of the alphabet?  Well, whenever we hit a index of 26, we want that index to becomes zero (especially since ``alpha`` doesn't have a 26th index!).  If our index goes to 28, we want our index to actually be 2.  The consistent thing here is that **if our index is 26 or over, we want to subtract 26.**
+
+A good practice in programming, however, is to avoid card-coding numbers if possible.  We are working with the number 26 because there are 26 letters in the alphabet, but also because ``alpha`` has a length of 26 (``len(alpha) == 26``).  Instead of using 26 in our algorithm, we should use ``len(alpha)``.
+
+.. code-block:: python
+    :linenos:
+    :emphasize-lines: 11,12
+    
+    def encrypt(key, message):
+        message = mesage.upper()
+        alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        result = ""
+        
+        for letter in message:
+            if letter in alpha: #if the letter is actually a letter
+                #find the corresponding encrypted letter in the alphabet
+                letter_index = alpha.find(letter) + key 
+                
+                if letter_index >= len(alpha):
+                    letter_index = letter_index - len(alpha)
+                result = result + alpha[letter_index]
+            else:
+                result = result + letter
+
+Alternatively, you can replace lines 11 and 12 and change line 9 to the following, using modulo.
+
+.. code-block:: python
+    
+    letter_index = (alpha.find(letter) + key) % len(alpha)
+
+But either will work for our purposes.  Finally, what we've written will repeat for every character in the message.  Let's return our final string.
+
+.. code-block:: python
+    :linenos:
+    :emphasize-lines: 17
+    
+    def encrypt(key, message):
+        message = mesage.upper()
+        alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        result = ""
+        
+        for letter in message:
+            if letter in alpha: #if the letter is actually a letter
+                #find the corresponding encrypted letter in the alphabet
+                letter_index = alpha.find(letter) + key 
+                
+                if letter_index >= len(alpha):
+                    letter_index = letter_index - len(alpha)
+                result = result + alpha[letter_index]
+            else:
+                result = result + letter
+        
+        return result
+
+Decryption Walkthrough
+----------------------
+
+Again, this is very similar to our encryption function, so let's go ahead and copy/paste our encryption function and call it "decrypt".
+
+.. code-block:: python
+    :linenos:
+    :emphasize-lines: 19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35
+    
+    def encrypt(key, message):
+        message = mesage.upper()
+        alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        result = ""
+        
+        for letter in message:
+            if letter in alpha: #if the letter is actually a letter
+                #find the corresponding encrypted letter in the alphabet
+                letter_index = alpha.find(letter) + key 
+                
+                if letter_index >= len(alpha):
+                    letter_index = letter_index - len(alpha)
+                result = result + alpha[letter_index]
+            else:
+                result = result + letter
+        
+        return result
+        
+    def decrypt(key, message):
+        message = mesage.upper()
+        alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        result = ""
+        
+        for letter in message:
+            if letter in alpha: #if the letter is actually a letter
+                #find the corresponding encrypted letter in the alphabet
+                letter_index = alpha.find(letter) + key 
+                
+                if letter_index >= len(alpha):
+                    letter_index = letter_index - len(alpha)
+                result = result + alpha[letter_index]
+            else:
+                result = result + letter
+        
+        return result
+        
+The only things we need to change are:
+    - Instead of ``+ key`` to shift the letters left on line 27, we would ``- key`` to shift the letters right.
+    - Instead of checking to see ``if letter_index >= len(alpha)`` on line 29, we would check to see ``if letter_index < 0`` (because now we are subtracting numbers)
+    - Instead of ``- len(alpha)`` on line 30, we would ``+ len(alpha)`` to loop it back around.
+
+Our final program is then:
+
+.. code-block:: python
+    :linenos:
+    :emphasize-lines: 27,29,30
+    
+    def encrypt(key, message):
+        message = mesage.upper()
+        alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        result = ""
+        
+        for letter in message:
+            if letter in alpha: #if the letter is actually a letter
+                #find the corresponding encrypted letter in the alphabet
+                letter_index = alpha.find(letter) + key 
+                
+                if letter_index >= len(alpha):
+                    letter_index = letter_index - len(alpha)
+                result = result + alpha[letter_index]
+            else:
+                result = result + letter
+        
+        return result
+        
+    def decrypt(key, message):
+        message = mesage.upper()
+        alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        result = ""
+        
+        for letter in message:
+            if letter in alpha: #if the letter is actually a letter
+                #find the corresponding encrypted letter in the alphabet
+                letter_index = alpha.find(letter) - key 
+                
+                if letter_index < 0:
+                    letter_index = letter_index + len(alpha)
+                result = result + alpha[letter_index]
+            else:
+                result = result + letter
+        
+        return result
+
+Testing our Program
+-------------------
+
+Finally, we get to test our program.  Let's write a script to test our code.  The following code should be added to the **end** of your program above.
+
+.. code-block:: python
+    :emphasize-lines: 1,2,4,5,6,8,9,10,12,13
+
+    def main():
+        word = "BILLY"
+        
+        #encrypt "BILLY" with a key of 3
+        encrypted = encrypt(3,word)
+        print encrypted #should print "ELOOB"
+        
+        #decrypt "ELOOB" with a key of 3
+        decrypted = decrypt(3,encrypted)
+        print decrypted #should print "BILLY"
+    
+    if __name__ == "__main__":
+        main()
+        
+Run the program and compare its output to what it should be (it should print ``ELOOB`` then ``BILLY`` again).  If it works, then great!  We should test it one more time, but this time with a phrase/word with non-letter characters mixed in:
+
+.. code-block:: python
+    :emphasize-lines: 2,4,5,6,8,9,10
+
+    def main():
+        word = "HELLO WORLD?!"
+        
+        #encrypt "HELLO WORLD?!" with a key of 20
+        encrypted = encrypt(20,word)
+        print encrypted #should print "BYFFI QILFX?!"
+        
+        #decrypt "BYFFI QILFX?!" with a key of 20
+        decrypted = decrypt(20,encrypted)
+        print decrypted #should print "HELLO WORLD?!"
+    
+    if __name__ == "__main__":
+        main
+
+When we run this program, we should notice that when it prints its encrypted form, the space, question mark, and exclamation point all stay in the same place.  A good sign!  We are ready to move forward and learn how to programmatically crack the Caesar cipher in the next lab.
