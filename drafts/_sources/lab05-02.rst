@@ -1,0 +1,58 @@
+.. qnum::
+   :start: 1
+   :prefix: lab05-02-
+
+
+Lab 5-2: Word Scrambler
+============================
+::
+
+    Aanlrtppey eevn wehn wodrs are all smraelcbd , as lnog as the frsit and lsat ltteer saty the smae , yuor biarn can slitl raed it ! 
+
+At least, that's what some clickbait article says.
+
+::
+
+    "Apparently, even when words are all scrambled , as long as the first and last letter stay the same , your brain can still read it !"
+
+Regardless of whether you believe it or not, this kind of exercise is perfect for lists.  We're going to be creating a program that takes in a phrase or sentence and scrambles every word, keeping only the first letter and the last letter the same.  Since it's random, the same phrase should come out different every time you run it.  Here's the phrase "I love learning computer science" scrambled five different times by the same program:
+
+::
+
+    I lvoe lrnanieg cpueomtr sncceie 
+    I lvoe liarnneg cpeoutmr scniece 
+    I lvoe lnanrieg coptmuer sneicce 
+    I lvoe lnanireg ceptmour senicce 
+    I lvoe lannreig ctomeupr seincce 
+    
+As you can see, each one is slightly different from the last.
+
+This is not a large multi-step problem, like Hangman or Rock Paper Scissors or Craps.  This is an exercise in algorithmic thinking - coming up with a strategy to a single problem - how do you scramble a word keeping the first and last letters the same?
+
+In this program, I would only write two real functions:
+    - A function ``scramble_word()`` that scrambles a single word
+    - A function ``scramble_phrase()`` that uses ``scramble_word()`` to scramble a series of words
+
+As a reminder, you might find the following methods useful:
+    - ``list.shuffle()`` - rearranges items in list
+    - ``list(string)`` - converts a string into a list of characters
+    - ``string.split()`` - splits a string into a list, separating by the given delimiter
+
+Lab Requirements and Specifications
+-----------------------------------
+
+
+You should name your file ``FILN_rps.py``, where FILN is your first initial and last name, no space.
+
+Testing Your Program
+--------------------
+
+The following space is provided in case you want to test code out or write it in the browser:
+
+.. activecode:: labspace-04-01
+
+    #Write and run code here!
+
+Taking it Further
+-----------------
+

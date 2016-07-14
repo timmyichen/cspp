@@ -9,14 +9,36 @@ Lab 5-1: Hangman
 Lab Requirements and Specifications
 -----------------------------------
 
-Here you will be testing your game.
+While Hangman is typically a very visual game, our python implementation will not incorporate any graphics.  If you are interested in making some ASCII graphics, be sure to see the extensions after you have finished the core program!
 
-You should name your file ``FILN_rps.py``, where FILN is your first initial and last name, no space.
+At the beginning of the program, hidden to the user, you should have a list of single words or phrases, without spaces.  This will serve as your "word bank", from which you will randomly select a word for the user's play.  Once a word is selected, you should show the blank spaces "_" (one for each letter) and repeatedly ask the user for a letter until either they guess the word, or they run out of incorrect guesses.  The user should have a set number of incorrect guesses (I suggest six - one head, one body, one for each limb), but correctly guessing a letter should not count as an incorrect guess.
+
+After every guess, the user should be able to see:
+
+    - The blank letters in the word, with correctly-guessed letters filled in
+    - Their correctly guessed letters
+    - Their incorrectly guessed letters
+    - How many incorrect guesses they have left
+    
+To see an example, please scroll down to *Testing Your Program* and see the sample output.  It does not have to match exactly, but it should serve as a general basis of what information the user should have access to as they make their guesses.
+
+A few tips to keep in mind:
+    - Remember that functions are the name of the game - use functions to break your problem down into smaller, more manageable pieces.  If you have a function that is doing multiple things, then break it down into multiple functions.
+    - Remember that lists are passed by *reference* and not by value.  This means that if you pass a list to a function and you edit the list in the function, those edits will persist after the function is done.  You can and should use this to your advantage in this program.
+    - Keep track of which variables are essential to the game and must be initialized with the main game loop.
+
+A good first step as always is to break the problem down into functions.  Define what functions you are going to write, and list its name, its purpose, its arguments, and its return values.  **This was completely done for you for Rock Paper Scissors, partially done for you in Craps, and here, it is entirely on you to come up with your functions.**  Remember to first break the problem down into functions.  Once you do, you can then tackle each problem independent of one another.  Divide and conquer worked for the Mongolians, and it can work for you!
+
+Note that there are multiple ways to create this game.  Don't worry about best practices yet - just focus on decomposing the problem.
+
+You should name your file ``FILN_hangman.py``, where FILN is your first initial and last name, no space.
 
 Testing Your Program
 --------------------
 
-Like any game, you should play it extensively, testing every outcome that can happen.  In the context of this game, for example, you'll want to play where:
+When you are
+
+Once you think you have finished your program, you should play it extensively, testing every outcome that can happen.  In the context of this game, for example, you'll want to play where:
     - You guess the same letter multiple times in a row (you should not lose guesses)
     - You guess the word correctly
     - You guess the word incorrectly
@@ -27,6 +49,103 @@ You'll also want to pay special attention to:
 
 Here is a sample output:
 
+::
+
+    _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+    Guess a letter: a
+    
+    Nope!
+    _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+    Correct letters: []
+    Incorrect letters: ['a']
+    Chances: 1/6
+    Guess a letter: e
+    
+    Good!
+    _ _ _ _ _ _ e _ _ _ _ e _ _ e 
+    Correct letters: ['e']
+    Incorrect letters: ['a']
+    Chances: 1/6
+    Guess a letter: i
+    
+    Good!
+    _ _ _ _ _ _ e _ _ _ i e _ _ e 
+    Correct letters: ['e', 'i']
+    Incorrect letters: ['a']
+    Chances: 1/6
+    Guess a letter: o
+    
+    Good!
+    _ o _ _ _ _ e _ _ _ i e _ _ e 
+    Correct letters: ['e', 'i', 'o']
+    Incorrect letters: ['a']
+    Chances: 1/6
+    Guess a letter: u
+    
+    Good!
+    _ o _ _ u _ e _ _ _ i e _ _ e 
+    Correct letters: ['e', 'i', 'o', 'u']
+    Incorrect letters: ['a']
+    Chances: 1/6
+    Guess a letter: t
+    
+    Good!
+    _ o _ _ u t e _ _ _ i e _ _ e 
+    Correct letters: ['e', 'i', 'o', 'u', 't']
+    Incorrect letters: ['a']
+    Chances: 1/6
+    Guess a letter: m
+    
+    Good!
+    _ o m _ u t e _ _ _ i e _ _ e 
+    Correct letters: ['e', 'i', 'o', 'u', 't', 'm']
+    Incorrect letters: ['a']
+    Chances: 1/6
+    Guess a letter: h
+    
+    Nope!
+    _ o m _ u t e _ _ _ i e _ _ e 
+    Correct letters: ['e', 'i', 'o', 'u', 't', 'm']
+    Incorrect letters: ['a', 'h']
+    Chances: 2/6
+    Guess a letter: s
+    
+    Good!
+    _ o m _ u t e _ s _ i e _ _ e 
+    Correct letters: ['e', 'i', 'o', 'u', 't', 'm', 's']
+    Incorrect letters: ['a', 'h']
+    Chances: 2/6
+    Guess a letter: c
+    
+    Good!
+    c o m _ u t e _ s c i e _ c e 
+    Correct letters: ['e', 'i', 'o', 'u', 't', 'm', 's', 'c']
+    Incorrect letters: ['a', 'h']
+    Chances: 2/6
+    Guess a letter: p
+    
+    Good!
+    c o m p u t e _ s c i e _ c e 
+    Correct letters: ['e', 'i', 'o', 'u', 't', 'm', 's', 'c', 'p']
+    Incorrect letters: ['a', 'h']
+    Chances: 2/6
+    Guess a letter: r
+    
+    Good!
+    c o m p u t e r s c i e _ c e 
+    Correct letters: ['e', 'i', 'o', 'u', 't', 'm', 's', 'c', 'p', 'r']
+    Incorrect letters: ['a', 'h']
+    Chances: 2/6
+    Guess a letter: n
+    
+    Good!
+    c o m p u t e r s c i e n c e 
+    Correct letters: ['e', 'i', 'o', 'u', 't', 'm', 's', 'c', 'p', 'r', 'n']
+    Incorrect letters: ['a', 'h']
+    Chances: 2/6
+    
+    You got it!  Great job!
+
 The following space is provided in case you want to test code out or write it in the browser:
 
 .. activecode:: labspace-05-01
@@ -36,3 +155,99 @@ The following space is provided in case you want to test code out or write it in
 Taking it Further
 -----------------
 
+Adding "Space" Functionality
+````````````````````````````
+
+Another extension for this project would be to add functionality to allow spaces in words.  Spaces are different in the sense that they aren't letters that have to be guessed, and they should not be printed as an "unguessed" character.
+
+Adding space functionality to this project will change *at least* the following areas:
+    - How your game prints the word
+    - How your game knows if the word has been guessed or not
+    - How your guesses are handled (what if someone guesses a space?)
+
+Adding this functionality would open your game words up to new possibilities, from short phrases to entire sentences!
+
+Simple ASCII Graphics
+`````````````````````
+
+ASCII art can be fun sometimes, and in games like this, we can implement some very simple graphics to complement our game.  For example, the hangman stand can look something like this:
+
+::
+
+    _____
+    |/  |
+    |
+    |
+    |
+    |
+    +-----+
+
+This would get printed with every guess. But when the user starts to guess the wrong letters...
+
+::
+
+    _____
+    |/  |
+    |   O
+    |   
+    |
+    |
+    +-----+
+
+Until eventually we get to this point:
+
+::
+
+    _____
+    |/  |
+    |   O
+    |  /|\
+    |  / \
+    |
+    +-----+
+
+*(morbid? maybe a little bit)*
+
+In any case, there are six characters to draw, hence six chances for the player.  How would we implement this though?
+
+We can have a two lists that represents each body part:
+    - One list can be the list of characters that actually gets printed out
+    - The other list will be the list of actual characters
+
+.. code-block:: python
+    
+    incorrect_guesses = 0
+    print_person = [" "," "," "," "," "," "]
+    
+    # head, body, leftarm, rightarm, leftleg, rightleg
+    print_actual = ["O","|","/","\\","/","\\"]
+
+The values from ``print_person`` are what would get printed with the graphic above.  So when the user has no incorrect guesses, only blanks are drawn.  However, as the user starts to guess incorrectly, things start to change:
+
+.. code-block:: python
+    
+    incorrect_guesses = 2
+    print_person = ["O","|"," "," "," "," "]
+    
+    # head, body, leftarm, rightarm, leftleg, rightleg
+    print_actual = ["O","|","/","\\","/","\\"]
+
+And so on...
+
+This kind of strategy is good because the print statements for the hangman stand don't need to change.  They can just reference positions in the list, like so:
+
+(for the sake of character limits, ``print_person`` is shortened to just ``person`` in this example)
+
+.. code-block:: python
+
+    print("_____")
+    print("|/  |")
+    print("|   {}".format(person[0]))
+    print("|  {}{}{}".format(person[2],person[1],person[3]))
+    print("|  {} {}".person[4],person[5])
+    print("|")
+    print("+-----+")
+
+Even though the ``{}`` characters take up two spots in our print statement, in reality they will only ever be one character long - the single character that is stored in ``print_person`` or just ``person``.
+
+Therefore, to change our output, we only need to change our list, and the rest will happen automatically.
