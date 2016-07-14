@@ -12,8 +12,8 @@ Lab Requirements and Specifications
 Hopefully many of the high school students reading this have not spent extended time in a casino and do not know the rules of the dice game, Craps.  We will be programming a simple version of the game with the following rules:
 
 The player starts with a balance of $100.  The player places a bet, then rolls two dice, and the results are summed (giving a number between 2 and 12).  Depending on what they roll, a few things can happen:
-    - If the player rolls a 7 or 11 on the first roll of the round, the player wins the bet.
-    - If the player rolls a 2, 3, or 12 on the first roll of the round, the player loses.
+    - If the player rolls a 7 or 11 on the **first** roll of the round, the player wins the bet.
+    - If the player rolls a 2, 3, or 12 on the **first** roll of the round, the player loses.
     - If the player rolls any other number (not 2,3,7,11,12), that number becomes the "point number"
     
         - During this round, from this point on, if the player rolls the point number again before rolling a 7, the player wins.
@@ -22,20 +22,100 @@ The player starts with a balance of $100.  The player places a bet, then rolls t
 
 After each round, the program should ask the user if he/she wants to continue playing.  The game continues until the player runs out of money, or the player chooses to exit.
 
-Similar to Rock Paper Scissors (as well as any multi-step, complex program), planning out your code will be highly beneficial in writing cleaner and more organized solutions.  As a reminder, here are some general guidelines:
-
+Similar to Rock Paper Scissors (as well as any multi-step, complex program), planning out your code will be highly beneficial in writing cleaner and more organized solutions.  However, this time, you will be coming up with your own functions.  Please remember to heed the following guidelines:
+    - The majority of your program should be functions.  Break the game down into simple steps or instructions - each of those will have its own function.
+    - Each function should have a single purpose.  If you find that you have written a function that is doing multiple things, it means you should break it down further into more functions.  It's okay to refactor code mid-development!
+    - The one exception to the above should be your main game function, which will contain the game loop, as well as any persistent variables.  Try to keep this one as small as possible, utilizing functions as much as you can.
+    - Take advantage of ``return`` statements.  Your code should not have any global variables.  Data should be passed to functions through arguments, and from functions through the ``return`` statement.
+    - Which variables will you have to keep track of during all the rounds, and after all the rounds are completed? Make a note of which ones should be *initialized* outside of your loop.
+    - Be sure to provide the player with the appropriate prompts, letting them know their options and limitations for input.
     - Consider what control structures are necessary for the program.
-    - Break your problem down into smaller, testable functions.  Each function should have a single purpose.
     - Consider the order of occurrences - what should the program do first?
-    - You'll probably have one main game loop, which will contain all the persistent variables.  This is probably where most of the function calls will happen.  Try to keep this section as small as possible, using functions.
-    
 
-You should name your file ``FILN-craps.py``, where FILN is your first initial and last name, no space.
+However, unlike Rock Paper Scissors, in this lab you will be required to validate user's inputs.  This means that:
+
+    - Players should not be able to enter a negative number as a bet
+    - Players should not be able to bet more money than they have in their bank
+    - Players should not be able to bet decimal amounts of money - only whole numbers. (recall: A boolean to check if ``x`` is an integer or not would be: ``x == int(x)``.  This will return ``True`` is ``x`` is an integer and ``False`` otherwise. It works because of math.)
+    - When prompted with the choice of ending the game or continuing, the question should repeat until the user has entered one choice or the other.
+
+This also means that your labs will have quite a few ``while`` loops. Keep that in mind!
+
+A good place to start would be to write the functions that you plan on writing.  You do not need to write the code itself, only the purpose of each function.  Here are a few examples:
+    - function name: roll2dice
+        - arguments: none
+        - purpose: generates a random dice roll for two dice and prints out that the two rolls are
+        - returns: the sum of the dice roll
+    - function name: get_bet
+        - arguments: bank amount
+        - purpose: to get the amount to be bet from the user.  Bet must be a positive integer and no more than they have in their bank.  Should repeatedly ask the user to make a bet until they enter a valid one
+        - returns: the chosen valid bet amount
+
+And so on. The above are examples, and do not have to be followed.  There are many ways these games can be organized.  However, notice that the names of my functions are verbs - just remember that functions should *do* things, and therefore have names that reflect what they *do*.
+
+You should name your file ``FILN_craps.py``, where FILN is your first initial and last name, no space.
 
 Testing Your Program
 --------------------
 
+Like Rock Paper Scissors, having functions makes it easier to test the program.  It would be a good idea to write tests for functions to ensure it is working as intended, for all cases that need to be considered.
 
+Here is a sample run through.  It demonstrates gameplay, some of the input validation, and the consequence of not quitting while ahead:
+
+::
+
+    You have $100 in your bank
+    Enter a whole number for your bet: -10
+    You can't bet negative money!
+    Enter a whole number for your bet: 1000
+    You don't have that much money!
+    Enter a whole number for your bet: 50.99999
+    You need to bet an integer amount!
+    Enter a whole number for your bet: 50
+    
+    The dice is thrown: 3 and 1, 4 total
+    Your point number is 4
+    Press enter to continue.
+    
+    The dice is thrown: 2 and 3, 5 total
+    No 7 or 4.  Reroll!
+    Press enter to continue.
+    
+    The dice is thrown: 1 and 3, 4 total
+    You rolled your point number!  You win the round!
+    Do you want to keep playing? [y|n]: y
+    You have $150.0 in your bank
+    Enter a whole number for your bet: 150
+    
+    The dice is thrown: 6 and 2, 8 total
+    Your point number is 8
+    Press enter to continue.
+    
+    The dice is thrown: 4 and 2, 6 total
+    No 7 or 8.  Reroll!
+    Press enter to continue.
+    
+    The dice is thrown: 5 and 3, 8 total
+    You rolled your point number!  You win the round!
+    Do you want to keep playing? [y|n]: y
+    You have $300.0 in your bank
+    Enter a whole number for your bet: 300
+    
+    The dice is thrown: 4 and 6, 10 total
+    Your point number is 10
+    Press enter to continue.
+    
+    The dice is thrown: 6 and 6, 12 total
+    No 7 or 10.  Reroll!
+    Press enter to continue.
+    
+    The dice is thrown: 1 and 3, 4 total
+    No 7 or 10.  Reroll!
+    Press enter to continue.
+    
+    The dice is thrown: 4 and 3, 7 total
+    You rolled a 7! You lose the round!
+    You lost everything!  Sorry, better luck next time!
 
 The following space is provided in case you want to test code out or write it in the browser:
 
@@ -46,3 +126,13 @@ The following space is provided in case you want to test code out or write it in
 Taking it Further
 -----------------
 
+What good is fake internet money when you can't compare yourself with other people?  Add functionality to this game to make it a two-player game.  Key changes would be:
+
+    - 2 players
+    - Each player has a separate bank and makes separate bets.
+    - Each player takes turn being the person who rolls the dice, or the "shooter"
+    - The shooter should be allowed to type in a word before rolling (this word shouldn't do anything, but it's kinda like how people blow on dice before rolling them)
+    - The game ends when one person runs out of money.  Neither player can choose to leave before then.  You don't need to ask the user if he/she wants to continue at the end of each round.
+    - The shooter (either player1 or player2) should be made clear at the beginning of each round.
+
+It's all about making your game fun!

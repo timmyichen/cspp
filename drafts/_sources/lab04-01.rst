@@ -13,20 +13,28 @@ Rock Paper Scissors - the ultimate, time-tested witness to the greatest and most
 
 In this lab, you'll be creating a program to play **rock paper scissors** with the user.
 
-At the beginning of the game, the program should ask for the number of rounds to be played.  Each round will consist of the player and computer selecting their choice between rock, paper, and scissors.  A round is a round, even if the players tie.  The manner in which players choose their moves is completely up to you.  You may have them enter a string or pick from a menu.
+At the beginning of the game, the program should ask for the number of rounds to be played.  Each round will consist of the player and computer selecting their choice between rock, paper, and scissors.  A round is a round, even if the players tie.  The player should be able to choose their move by picking from a menu.  The menu should have some shorthand way of picking an item, either by choosing 1/2/3 or a/b/c, instead of typing in the entire word "rock" or "paper" or "scissors".  Alternatively, you can use the method shown in the sample output (using ``[r|p|s]`` to show options).
 
 As a reminder, these are the interactions between rock, paper, and scissors:
     - Rock beats Scissors
     - Paper beats Rock (don't ask me how)
     - Scissors beats Paper
 
-The game will keep track of the number of rounds each player (or computer) has won.  If all the rounds are played or if a player wins the majority (more than half) of the rounds, the game should end.
+The game will keep track of the number of rounds each player (or computer) has won, as well as the number of ties.  A sample scoreboard display might look like:
 
-When the game ends, the program should report how many rounds each player/computer has won, as well as the number of ties.
+::
+
+    Player Wins: 1
+    Computer Wins: 2
+    Ties: 3
+
+It does not have to match the above example to the letter - you may present it in whichever way you wish.  Just make sure it's easy to read and interpret.
+
+If all the rounds are played or if a player wins the majority (more than half) of the rounds, the game should end.  When the game ends, the program should report how many rounds each player/computer has won, the number of ties, as well as who the overall winner is.
 
 *"Weeks of programming can save you hours of planning." -- unknown*
 
-As our labs get more and more complex, you'll find that planning and writing pseudocode gets more and more beneficial.  You should consider the following tips to help guide your planning:
+As our labs get more and more complex, you'll find that planning and writing pseudocode gets more and more beneficial.  In this lab, much of the planning is done for you - we have given you incomplete functions (clues) to write, and you will use these functions to build the game.
     - Now that we can create and call functions, the majority of your program should be functions.  Break the game down into simple steps or instructions - each of those will have its own function.
     - Take advantage of ``return`` statements.  Your code should not have any global variables.  Data should be passed to functions through arguments, and from functions through the ``return`` statement.
     - Each function should have a single purpose.  If you find that you have written a function that is doing multiple things, it means you should break it down further into more functions.
@@ -35,22 +43,87 @@ As our labs get more and more complex, you'll find that planning and writing pse
     - Be sure to provide the player with the appropriate prompts, letting them know their options, and appropriate round information.  See below as an example.
     - Don't forget to ``import random`` to use ``random.randint()``!
 
-One of the first steps you should do in your planning is to determine which functions can be written for the program.  Each function should be written with its name, its arguments, what it will do, and what it returns (if anything).  The following are a few ideas:
-    - function: get_round_result
-        - arguments: player's move, computer's move
-        - purpose: determines who won based on each person's move
-        - returns: the winner, or if it was a tie
-    - function: get_computer_move
-        - arguments: none
-        - purpose: generates the computer's move
-        - returns: the randomly generated computer's move
-    - function: display_scoreboard
-        - arguments: player's score, computer's score, number of ties
-        - purpose: prints out the scoreboard in an organized fashion
-        - returns: none
-Try to follow the above format for all functions you can think of.  It will greatly simplify the code-writing process.  Notice how all the function names are verbs (get, display).  Remember that functions should *do* things, and therefore have names that reflect what they *do*.
 
 You should name your file ``FILN_rps.py``, where FILN is your first initial and last name, all lowercase, no space.
+
+A code template is provided, which outlines the functions you should be writing as well as what those functions should be doing.  It is your job to write the main game loop to piece together the game using these functions.  Copy and paste the following into your file, and start from there.
+
+.. code-block:: python
+    :linenos:
+    
+    import random
+    
+    #function name: get_p1_move
+    #   arguments: none
+    #   purpose: present player with options, use input() to get player move
+    #   returns: the player's move as either 'r', 'p', or 's'
+    def get_p1_move():
+        #code here
+    
+    #function name: get_comp_move():
+    #   arguments: none
+    #   purpose: randomly generates the computer's move, 
+    #            either 'r' 'p' or 's'
+    #   returns: the computer's randomly generated move
+    def get_comp_move():
+        #code here
+    
+    #function name: get_rounds
+    #   arguments: none
+    #   purpose: allows the user to choose a number of rounds from 1 to 9.
+    #   returns: the user-chosen number of rounds
+    def get_rounds():
+        #code here
+    
+    #function name: get_round_winner
+    #   arguments: player move, computer move
+    #   purpose: based on the player and computer's move, determine 
+    #            the winner or if it's a tie
+    #   returns: returns a string based on the following:
+    #               "player" if player won
+    #               "comp" if computer won
+    #               "tie" if it's a tie
+    def get_round_winner(p1move, cmove):
+        #code here
+    
+    #function name: get_full_move
+    #   arguments: a single letter move 'r','p', or 's'
+    #   purpose: returns the "full" word of a given move
+    #   returns: returns a string based on the following:
+    #               "Rock" if given "r"
+    #               "Paper" if given "p"
+    #               "Scissors" if given "s"
+    def get_full_move(shortmove):
+        #code here
+    
+    #function name: print_score
+    #   arguments: player score, computer score, number of ties
+    #   purpose: prints the scoreboard
+    #   returns: none
+    def print_score(pscore, cscore, ties):
+        #code here
+    
+    #function name: rps
+    #   arguments: none
+    #   purpose: the main game loop.  This should be the longest, using
+    #               all the other functions to create RPS
+    #   returns: none
+    def rps():
+        #code here
+    
+    #function name: tests
+    #   arguments: none
+    #   purpose: a place for you to write your tests.  replace 'rps' below
+    #               with 'tests' to run this function instead of the game loop
+    #   returns: none
+    def test():
+        #code here
+    
+    rps()
+    
+Notice how all the function names are verbs (get, display).  Remember that functions should *do* things, and therefore have names that reflect what they *do*.
+
+When getting user input, you may assume that the user will type in something valid.  In other words, you don't have to make sure that the user was following directions.  However, your directions, especially for input, should be very clear to the user.
 
 Testing Your Program
 --------------------
@@ -67,7 +140,7 @@ For example, for the get_round_result function shown above, we can write the fol
     print(get_round_result("rock","scissors")) #should print "player"
     print(get_round_result("paper","scissors")) #should print "computer"
     
-Except you would probably want to write more test cases to make sure that every case works.  These tests can (and in most cases, should be) written before the function itself is written.  This is called **Test Driven Development** - where the tests are written first.  You can then gradually pass each test to make sure you've handle every case that you need to.
+Except you would probably want to write more test cases to make sure that every case works.
 
 Below is a sample runthrough of the entire program:
 
@@ -112,7 +185,7 @@ Below is a sample runthrough of the entire program:
     Computer Wins: 1
     Ties: 0
     
-    The player is victorious! P:3 to C:1!
+    The player is victorious! Player:3 to Comp:1!
 
 Note that the game ended after the 4th round because the player won 3 out of 5 total rounds, ensuring his victory.
 

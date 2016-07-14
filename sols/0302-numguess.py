@@ -29,4 +29,5 @@ def main():
     
     print("You got it! It was indeed {}. It took you {} tries. You're like the best person ever.".format(answer, guess_count))
     
-main()
+if __name__ == "__main__":
+    main()

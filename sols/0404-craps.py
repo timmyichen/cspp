@@ -60,11 +60,13 @@ def get_bank_value(bet,bank,result):
         return bank - bet
 
 def keep_playing(bank):
-    choice = input("Do you want to keep playing? [y|n]: ").lower()
-    if choice == "y":
-        return True
-    else:
-        return False
+    choice = None
+    while choice != "y" and choice != "n":
+        choice = input("Do you want to keep playing? [y|n]: ").lower()
+        if choice == "y":
+            return True
+        else:
+            return False
 
 def print_end_message(bank):
     if bank == 0:
@@ -91,4 +93,5 @@ def craps():
 
     print_end_message(bank)
     
-craps()
+if __name__ == "__main__":
+    craps()

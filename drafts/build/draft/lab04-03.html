@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lab 4-4: Craps &mdash; Runestone Interactive Overview</title>
+    <title>Lab 4-3: Cracking the Caesar Cipher &mdash; Runestone Interactive Overview</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -257,7 +257,14 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lab 4-4: Craps</a><ul>
+<li><a class="reference internal" href="#">Lab 4-3: Cracking the Caesar Cipher</a><ul>
+<li><a class="reference internal" href="#tutorial-importing-custom-modules">Tutorial - Importing Custom Modules</a><ul>
+<li><a class="reference internal" href="#importing-entire-modules">Importing Entire Modules</a></li>
+<li><a class="reference internal" href="#importing-modules-with-an-alias">Importing Modules with an Alias</a></li>
+<li><a class="reference internal" href="#importing-specific-functions-from-a-module">Importing Specific Functions from a Module</a></li>
+<li><a class="reference internal" href="#importing-specific-functions-with-an-alias">Importing Specific Functions with an Alias</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
 <li><a class="reference internal" href="#testing-your-program">Testing Your Program</a></li>
 <li><a class="reference internal" href="#taking-it-further">Taking it Further</a></li>
@@ -295,162 +302,116 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="lab-4-4-craps">
-<h1>Lab 4-4: Craps<a class="headerlink" href="#lab-4-4-craps" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="lab-4-3-cracking-the-caesar-cipher">
+<h1>Lab 4-3: Cracking the Caesar Cipher<a class="headerlink" href="#lab-4-3-cracking-the-caesar-cipher" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="tutorial-importing-custom-modules">
+<h2>Tutorial - Importing Custom Modules<a class="headerlink" href="#tutorial-importing-custom-modules" title="Permalink to this headline">¶</a></h2>
+<p><strong>Note to readers: This Tutorial section will be placed in its own page later in the curriculum building process, before this lab.  Students will already know all this by the time they reach this lab.</strong></p>
+<p>Let&#8217;s start with a simple example.  Create a file called <code class="docutils literal"><span class="pre">sample_module.py</span></code> and another called <code class="docutils literal"><span class="pre">import_functions.py</span></code>.  <strong>It is super important that these two files be in the same directory.</strong></p>
+<p>Copy and paste the following code into <code class="docutils literal"><span class="pre">sample_module.py</span></code>, then save the file.</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="k">def</span> <span class="nf">print_mult</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Then start editing <code class="docutils literal"><span class="pre">import_functions.py</span></code>.  The goal here is to be able to access the python functions found in <code class="docutils literal"><span class="pre">sample_module.py</span></code>.</p>
+<div class="section" id="importing-entire-modules">
+<h3>Importing Entire Modules<a class="headerlink" href="#importing-entire-modules" title="Permalink to this headline">¶</a></h3>
+<p>Normally, if we wanted to access the <code class="docutils literal"><span class="pre">random</span></code> or <code class="docutils literal"><span class="pre">getpass</span></code> module, we would use <code class="docutils literal"><span class="pre">import</span> <span class="pre">random</span></code> or <code class="docutils literal"><span class="pre">import</span> <span class="pre">getpass</span></code>.</p>
+<p>We can do the same with our own python file, <code class="docutils literal"><span class="pre">sample_module.py</span></code> by using the code <code class="docutils literal"><span class="pre">import</span> <span class="pre">sample_module</span></code>.  This gives us access to the <code class="docutils literal"><span class="pre">say_hello</span></code>, <code class="docutils literal"><span class="pre">add</span></code>, and <code class="docutils literal"><span class="pre">print_mult</span></code> functions from <code class="docutils literal"><span class="pre">sample_module.py</span></code>.</p>
+<p>Try running the following code in your python IDE:</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sample_module</span>
+
+<span class="n">sample_module</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">sample_module</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">sample_module</span><span class="o">.</span><span class="n">print_mult</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>It should work as if those functions were defined in this file!  Right now you are <strong>importing functions</strong> from a <strong>module</strong> that you created!</p>
+</div>
+<div class="section" id="importing-modules-with-an-alias">
+<h3>Importing Modules with an Alias<a class="headerlink" href="#importing-modules-with-an-alias" title="Permalink to this headline">¶</a></h3>
+<p>Then try running the following code in your python IDE:</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sample_module</span> <span class="kn">as</span> <span class="nn">sm</span>
+
+<span class="n">sm</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">sm</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">sm</span><span class="o">.</span><span class="n">print_mult</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Using <code class="docutils literal"><span class="pre">as</span> <span class="pre">sm</span></code> after the <code class="docutils literal"><span class="pre">import</span></code> statement means that we are giving the module another custom name from which we can access its functions - in this case, that custom name is <code class="docutils literal"><span class="pre">sm</span></code>.  You can see in the code function calls, we now call upon <code class="docutils literal"><span class="pre">sm</span></code> instead of <code class="docutils literal"><span class="pre">sample_module</span></code>.  Note that the naming rules are the same as variables in python.</p>
+</div>
+<div class="section" id="importing-specific-functions-from-a-module">
+<h3>Importing Specific Functions from a Module<a class="headerlink" href="#importing-specific-functions-from-a-module" title="Permalink to this headline">¶</a></h3>
+<p>Then try running the following code in your python IDE:</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sample_module</span> <span class="kn">import</span> <span class="n">say_hello</span>
+
+<span class="n">say_hello</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>You&#8217;ll notice that this time, we used a new keyword, <code class="docutils literal"><span class="pre">from</span></code>.  We import the <code class="docutils literal"><span class="pre">say_hello</span></code> function from <code class="docutils literal"><span class="pre">sample_module.py</span></code>.  Unlike the previous examples, we are no longer importing ALL functions from the module - only the <code class="docutils literal"><span class="pre">say_hello</span></code> function.  If we wanted to import multiple functions from a module, we would just use a comma to separate them.  For example: <code class="docutils literal"><span class="pre">from</span> <span class="pre">sample_module</span> <span class="pre">import</span> <span class="pre">say_hello,</span> <span class="pre">add</span></code>.</p>
+<p>Also note that when we call the function, we don&#8217;t need to reference its module.</p>
+</div>
+<div class="section" id="importing-specific-functions-with-an-alias">
+<h3>Importing Specific Functions with an Alias<a class="headerlink" href="#importing-specific-functions-with-an-alias" title="Permalink to this headline">¶</a></h3>
+<p>Lastly, we can combine everything we&#8217;ve learned to import a specific function from a module <em>AND</em> give it an alias!  See the following short example:</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sample_module</span> <span class="kn">import</span> <span class="n">say_hello</span> <span class="k">as</span> <span class="n">sh</span>
+
+<span class="n">sh</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>In this case, we are importing the <code class="docutils literal"><span class="pre">say_hello</span></code> function from the <code class="docutils literal"><span class="pre">sample_module.py</span></code> module, and giving it an alias of <code class="docutils literal"><span class="pre">sh</span></code>, allowing us to perform the function call <code class="docutils literal"><span class="pre">sh()</span></code> instead of <code class="docutils literal"><span class="pre">say_hello()</span></code>.  No other functions from <code class="docutils literal"><span class="pre">sample_module.py</span></code> are imported with this statement.  Note that using a single <code class="docutils literal"><span class="pre">from</span></code>/<code class="docutils literal"><span class="pre">import</span></code>/<code class="docutils literal"><span class="pre">as</span></code> is limited to only importing a single function at a time.</p>
+</div>
+</div>
 <div class="section" id="lab-requirements-and-specifications">
 <h2>Lab Requirements and Specifications<a class="headerlink" href="#lab-requirements-and-specifications" title="Permalink to this headline">¶</a></h2>
-<p>Hopefully many of the high school students reading this have not spent extended time in a casino and do not know the rules of the dice game, Craps.  We will be programming a simple version of the game with the following rules:</p>
-<dl class="docutils">
-<dt>The player starts with a balance of $100.  The player places a bet, then rolls two dice, and the results are summed (giving a number between 2 and 12).  Depending on what they roll, a few things can happen:</dt>
-<dd><ul class="first last">
-<li><p class="first">If the player rolls a 7 or 11 on the <strong>first</strong> roll of the round, the player wins the bet.</p>
-</li>
-<li><p class="first">If the player rolls a 2, 3, or 12 on the <strong>first</strong> roll of the round, the player loses.</p>
-</li>
-<li><p class="first">If the player rolls any other number (not 2,3,7,11,12), that number becomes the &#8220;point number&#8221;</p>
-<blockquote>
-<div><ul class="simple">
-<li>During this round, from this point on, if the player rolls the point number again before rolling a 7, the player wins.</li>
-<li>However, if the player rolls a 7 before rolling the point number, the player loses.</li>
-<li>The player rolls again if any other number (other than 7 or the point number) is rolled</li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
-</dd>
-</dl>
-<p>After each round, the program should ask the user if he/she wants to continue playing.  The game continues until the player runs out of money, or the player chooses to exit.</p>
-<dl class="docutils">
-<dt>Similar to Rock Paper Scissors (as well as any multi-step, complex program), planning out your code will be highly beneficial in writing cleaner and more organized solutions.  However, this time, you will be coming up with your own functions.  Please remember to heed the following guidelines:</dt>
-<dd><ul class="first last simple">
-<li>The majority of your program should be functions.  Break the game down into simple steps or instructions - each of those will have its own function.</li>
-<li>Each function should have a single purpose.  If you find that you have written a function that is doing multiple things, it means you should break it down further into more functions.  It&#8217;s okay to refactor code mid-development!</li>
-<li>The one exception to the above should be your main game function, which will contain the game loop, as well as any persistent variables.  Try to keep this one as small as possible, utilizing functions as much as you can.</li>
-<li>Take advantage of <code class="docutils literal"><span class="pre">return</span></code> statements.  Your code should not have any global variables.  Data should be passed to functions through arguments, and from functions through the <code class="docutils literal"><span class="pre">return</span></code> statement.</li>
-<li>Which variables will you have to keep track of during all the rounds, and after all the rounds are completed? Make a note of which ones should be <em>initialized</em> outside of your loop.</li>
-<li>Be sure to provide the player with the appropriate prompts, letting them know their options and limitations for input.</li>
-<li>Consider what control structures are necessary for the program.</li>
-<li>Consider the order of occurrences - what should the program do first?</li>
-</ul>
-</dd>
-</dl>
-<p>However, unlike Rock Paper Scissors, in this lab you will be required to validate user&#8217;s inputs.  This means that:</p>
-<blockquote>
-<div><ul class="simple">
-<li>Players should not be able to enter a negative number as a bet</li>
-<li>Players should not be able to bet more money than they have in their bank</li>
-<li>Players should not be able to bet decimal amounts of money - only whole numbers. (recall: A boolean to check if <code class="docutils literal"><span class="pre">x</span></code> is an integer or not would be: <code class="docutils literal"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">int(x)</span></code>.  This will return <code class="docutils literal"><span class="pre">True</span></code> is <code class="docutils literal"><span class="pre">x</span></code> is an integer and <code class="docutils literal"><span class="pre">False</span></code> otherwise. It works because of math.)</li>
-<li>When prompted with the choice of ending the game or continuing, the question should repeat until the user has entered one choice or the other.</li>
-</ul>
-</div></blockquote>
-<p>This also means that your labs will have quite a few <code class="docutils literal"><span class="pre">while</span></code> loops. Keep that in mind!</p>
-<dl class="docutils">
-<dt>A good place to start would be to write the functions that you plan on writing.  You do not need to write the code itself, only the purpose of each function.  Here are a few examples:</dt>
-<dd><ul class="first last">
-<li><dl class="first docutils">
-<dt>function name: roll2dice</dt>
-<dd><ul class="first last simple">
-<li>arguments: none</li>
-<li>purpose: generates a random dice roll for two dice and prints out that the two rolls are</li>
-<li>returns: the sum of the dice roll</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>function name: get_bet</dt>
-<dd><ul class="first last simple">
-<li>arguments: bank amount</li>
-<li>purpose: to get the amount to be bet from the user.  Bet must be a positive integer and no more than they have in their bank.  Should repeatedly ask the user to make a bet until they enter a valid one</li>
-<li>returns: the chosen valid bet amount</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
-<p>And so on. The above are examples, and do not have to be followed.  There are many ways these games can be organized.  However, notice that the names of my functions are verbs - just remember that functions should <em>do</em> things, and therefore have names that reflect what they <em>do</em>.</p>
-<p>You should name your file <code class="docutils literal"><span class="pre">FILN_craps.py</span></code>, where FILN is your first initial and last name, no space.</p>
+<p>The Caesar cipher can be cracked by hand with only a little bit of time and perhaps some luck.  However, the Caesar cipher can be cracked even faster by the computer, and that is what you are going to create in this lab.</p>
+<p>You will be cracking the Caesar cipher using a method called &#8220;brute forcing&#8221; - trying every possible key/combination until you get the right one.  Since the Caesar cipher only has 26 keys, this is a very trivial problem for a computer.</p>
+<p><strong>In order to do this lab, you need to have completed Lab 4-2 - Encrypting and Decrypting the Caesar Cipher</strong>.</p>
+<p>You should name your file <code class="docutils literal"><span class="pre">FILN_brute_caesar.py</span></code>, where FILN is your first initial and last name, no space.  In addition, your file should be saved in the same directory as your Caesar Cipher python program.  For the purposes of this lab, if I reference a file or module named <code class="docutils literal"><span class="pre">caesar.py</span></code> or <code class="docutils literal"><span class="pre">caesar</span></code>, it should be the same as your personal caesar file.</p>
+<p>Previously, you learned how to import functions you&#8217;ve created in other <code class="docutils literal"><span class="pre">.py</span></code> files.  In your <code class="docutils literal"><span class="pre">caesar.py</span></code> file, you should have created three functions - <code class="docutils literal"><span class="pre">encrypt()</span></code>, <code class="docutils literal"><span class="pre">decrypt()</span></code>, and <code class="docutils literal"><span class="pre">main()</span></code>.  In this lab, we will only be using the <code class="docutils literal"><span class="pre">decrypt()</span></code> function.</p>
+<p>Your first step should be to import the <code class="docutils literal"><span class="pre">decrypt</span></code> function from your <code class="docutils literal"><span class="pre">caesar.py</span></code> module.  Feel free to give it an alias if desired.</p>
+<p>Your main goal is to, given an encrypted string, use the imported <code class="docutils literal"><span class="pre">decrypt</span></code> function to print out every possible decryption of that string.  This can be done without defining any new functions in <code class="docutils literal"><span class="pre">brute_caesar.py</span></code>.</p>
 </div>
 <div class="section" id="testing-your-program">
 <h2>Testing Your Program<a class="headerlink" href="#testing-your-program" title="Permalink to this headline">¶</a></h2>
-<p>Like Rock Paper Scissors, having functions makes it easier to test the program.  It would be a good idea to write tests for functions to ensure it is working as intended, for all cases that need to be considered.</p>
-<p>Here is a sample run through.  It demonstrates gameplay, some of the input validation, and the consequence of not quitting while ahead:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>You have $100 in your bank
-Enter a whole number for your bet: -10
-You can&#39;t bet negative money!
-Enter a whole number for your bet: 1000
-You don&#39;t have that much money!
-Enter a whole number for your bet: 50.99999
-You need to bet an integer amount!
-Enter a whole number for your bet: 50
-
-The dice is thrown: 3 and 1, 4 total
-Your point number is 4
-Press enter to continue.
-
-The dice is thrown: 2 and 3, 5 total
-No 7 or 4.  Reroll!
-Press enter to continue.
-
-The dice is thrown: 1 and 3, 4 total
-You rolled your point number!  You win the round!
-Do you want to keep playing? [y|n]: y
-You have $150.0 in your bank
-Enter a whole number for your bet: 150
-
-The dice is thrown: 6 and 2, 8 total
-Your point number is 8
-Press enter to continue.
-
-The dice is thrown: 4 and 2, 6 total
-No 7 or 8.  Reroll!
-Press enter to continue.
-
-The dice is thrown: 5 and 3, 8 total
-You rolled your point number!  You win the round!
-Do you want to keep playing? [y|n]: y
-You have $300.0 in your bank
-Enter a whole number for your bet: 300
-
-The dice is thrown: 4 and 6, 10 total
-Your point number is 10
-Press enter to continue.
-
-The dice is thrown: 6 and 6, 12 total
-No 7 or 10.  Reroll!
-Press enter to continue.
-
-The dice is thrown: 1 and 3, 4 total
-No 7 or 10.  Reroll!
-Press enter to continue.
-
-The dice is thrown: 4 and 3, 7 total
-You rolled a 7! You lose the round!
-You lost everything!  Sorry, better luck next time!
-</pre></div>
-</div>
+<p>You can attempt to bruteforce any encrypted message - and you can encrypt any message using your <code class="docutils literal"><span class="pre">caesar.py</span></code> file!</p>
+<p>For fun, you can also try decrypting this message through bruteforcing:
+<code class="docutils literal"><span class="pre">PMTTW</span> <span class="pre">NZWU</span> <span class="pre">BPM</span> <span class="pre">XIAB!</span> <span class="pre">BPMZM</span> <span class="pre">QA</span> <span class="pre">VWBPQVO</span> <span class="pre">BW</span> <span class="pre">AMM</span> <span class="pre">PMZM.</span> <span class="pre">EMTKWUM</span> <span class="pre">BW</span> <span class="pre">BPM</span> <span class="pre">EWZTL</span> <span class="pre">WN</span> <span class="pre">KZGXBWOZIXPG.</span> <span class="pre">BWBITTG</span> <span class="pre">NCV</span> <span class="pre">ABCNN!</span></code></p>
 <p>The following space is provided in case you want to test code out or write it in the browser:</p>
 
-<textarea data-component="activecode" id=labspace-04-04 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+<textarea data-component="activecode" id=labspace-04-03 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
 #Write and run code here!
 </textarea>
 </div>
 <div class="section" id="taking-it-further">
 <h2>Taking it Further<a class="headerlink" href="#taking-it-further" title="Permalink to this headline">¶</a></h2>
-<p>What good is fake internet money when you can&#8217;t compare yourself with other people?  Add functionality to this game to make it a two-player game.  Key changes would be:</p>
-<blockquote>
-<div><ul class="simple">
-<li>2 players</li>
-<li>Each player has a separate bank and makes separate bets.</li>
-<li>Each player takes turn being the person who rolls the dice, or the &#8220;shooter&#8221;</li>
-<li>The shooter should be allowed to type in a word before rolling (this word shouldn&#8217;t do anything, but it&#8217;s kinda like how people blow on dice before rolling them)</li>
-<li>The game ends when one person runs out of money.  Neither player can choose to leave before then.  You don&#8217;t need to ask the user if he/she wants to continue at the end of each round.</li>
-<li>The shooter (either player1 or player2) should be made clear at the beginning of each round.</li>
-</ul>
-</div></blockquote>
-<p>It&#8217;s all about making your game fun!</p>
+<p>We wrote a program to brute force the Caesar Cipher, but it still involves a human to read its results and select the actual solution from a list of mostly gibberish.  It saves us time, but can still be improved.  As an extension to this project, I want you to <em>consider</em> possible ways we can have the computer detect whether a given decryption is actually English or not.  If we can effectively build an English detector, we can remove the human element from our program.  We&#8217;ll be able to run the program for an encrypted message and one correct decryption will be shown on the screen.</p>
+<p>To reiterate, do <em>not</em> try to code it yourself (unless you&#8217;re sure of your idea) - I just want you to brainstorm.</p>
 </div>
 </div>
 

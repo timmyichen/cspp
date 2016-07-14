@@ -20,4 +20,5 @@ def main():
     sec = input("Enter seconds: ")
     solution3(sec)
     
-main()
+if __name__ == "__main__":
+    main

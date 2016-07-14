@@ -10,7 +10,7 @@ Lab Requirements and Specifications
 -----------------------------------
 
 
-You should name your file ``FILN-rps.py``, where FILN is your first initial and last name, no space.
+You should name your file ``FILN_rps.py``, where FILN is your first initial and last name, no space.
 
 Testing Your Program
 --------------------

@@ -6,24 +6,21 @@
 Lab 4-2: Caesar Cipher - Encrypting and Decrypting
 ==================================================
 
-Lab Requirements and Specifications
------------------------------------
-
-This lab will work a little differently than previous ones.  The purpose of this lab is to explain an algorithm, walking you, the reader, through the algorithm.  In this lab, you should be following along in your preferred python IDE.
-
-
-
-You should name your file ``FILN_caesar.py``, where FILN is your first initial and last name, no space.
-
-Testing Your Program
---------------------
-
-The following space is provided in case you want to test code out or write it in the browser:
-
-.. activecode:: labspace-04-02
-
-    #Write and run code here!
-
-Taking it Further
+The Caesar Cipher
 -----------------
+
+The Caesar Cipher, named after Julius Caesar of Ancient Rome, is a type of substitution cipher where each letter of the original (plaintext) message is substituted with another letter.  
+
+But how do we decide what letter is replaced by what?  
+
+
+
+Pre-Lab Walkthrough
+-------------------
+
+To begin, create a file called ``FILN_caesar.py``, where FILN is your first initial and last name, no space.
+
+This lab will work a little differently than previous ones.  The purpose of this lab is to explain an algorithm, walking you through the algorithm.  In this lab, you should be following along in your preferred python IDE.
+
+
 

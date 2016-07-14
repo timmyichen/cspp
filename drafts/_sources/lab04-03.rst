@@ -1,0 +1,134 @@
+.. qnum::
+   :start: 1
+   :prefix: lab04-03-
+
+
+Lab 4-3: Cracking the Caesar Cipher
+===================================
+
+Tutorial - Importing Custom Modules
+-----------------------------------
+
+**Note to readers: This Tutorial section will be placed in its own page later in the curriculum building process, before this lab.  Students will already know all this by the time they reach this lab.**
+
+Let's start with a simple example.  Create a file called ``sample_module.py`` and another called ``import_functions.py``.  **It is super important that these two files be in the same directory.**
+
+Copy and paste the following code into ``sample_module.py``, then save the file.
+
+.. code-block:: python
+    :linenos:
+    
+    def say_hello():
+        print("Hello World!")
+    
+    def add(a,b):
+        return a + b
+    
+    def print_mult(a,b,c):
+        print(a * b * c)
+
+Then start editing ``import_functions.py``.  The goal here is to be able to access the python functions found in ``sample_module.py``.
+
+Importing Entire Modules
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Normally, if we wanted to access the ``random`` or ``getpass`` module, we would use ``import random`` or ``import getpass``.
+
+We can do the same with our own python file, ``sample_module.py`` by using the code ``import sample_module``.  This gives us access to the ``say_hello``, ``add``, and ``print_mult`` functions from ``sample_module.py``.
+
+Try running the following code in your python IDE:
+
+.. code-block:: python
+    :linenos:
+    
+    import sample_module
+
+    sample_module.say_hello()
+    print(sample_module.add(1,2))
+    sample_module.print_mult(2,3,2)
+
+It should work as if those functions were defined in this file!  Right now you are **importing functions** from a **module** that you created!
+
+Importing Modules with an Alias
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Then try running the following code in your python IDE:
+
+.. code-block:: python
+    :linenos:
+    
+    import sample_module as sm
+
+    sm.say_hello()
+    print(sm.add(1,2))
+    sm.print_mult(2,3,2)
+    
+Using ``as sm`` after the ``import`` statement means that we are giving the module another custom name from which we can access its functions - in this case, that custom name is ``sm``.  You can see in the code function calls, we now call upon ``sm`` instead of ``sample_module``.  Note that the naming rules are the same as variables in python.
+
+Importing Specific Functions from a Module
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Then try running the following code in your python IDE:
+
+.. code-block:: python
+    :linenos:
+    
+    from sample_module import say_hello
+
+    say_hello()
+    
+You'll notice that this time, we used a new keyword, ``from``.  We import the ``say_hello`` function from ``sample_module.py``.  Unlike the previous examples, we are no longer importing ALL functions from the module - only the ``say_hello`` function.  If we wanted to import multiple functions from a module, we would just use a comma to separate them.  For example: ``from sample_module import say_hello, add``.
+
+Also note that when we call the function, we don't need to reference its module.
+
+Importing Specific Functions with an Alias
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Lastly, we can combine everything we've learned to import a specific function from a module *AND* give it an alias!  See the following short example:
+
+.. code-block:: python
+    :linenos:
+    
+    from sample_module import say_hello as sh
+
+    sh()
+
+In this case, we are importing the ``say_hello`` function from the ``sample_module.py`` module, and giving it an alias of ``sh``, allowing us to perform the function call ``sh()`` instead of ``say_hello()``.  No other functions from ``sample_module.py`` are imported with this statement.  Note that using a single ``from``/``import``/``as`` is limited to only importing a single function at a time.
+
+Lab Requirements and Specifications
+-----------------------------------
+
+The Caesar cipher can be cracked by hand with only a little bit of time and perhaps some luck.  However, the Caesar cipher can be cracked even faster by the computer, and that is what you are going to create in this lab.
+
+You will be cracking the Caesar cipher using a method called "brute forcing" - trying every possible key/combination until you get the right one.  Since the Caesar cipher only has 26 keys, this is a very trivial problem for a computer.
+
+**In order to do this lab, you need to have completed Lab 4-2 - Encrypting and Decrypting the Caesar Cipher**.
+
+You should name your file ``FILN_brute_caesar.py``, where FILN is your first initial and last name, no space.  In addition, your file should be saved in the same directory as your Caesar Cipher python program.  For the purposes of this lab, if I reference a file or module named ``caesar.py`` or ``caesar``, it should be the same as your personal caesar file.
+
+Previously, you learned how to import functions you've created in other ``.py`` files.  In your ``caesar.py`` file, you should have created three functions - ``encrypt()``, ``decrypt()``, and ``main()``.  In this lab, we will only be using the ``decrypt()`` function.
+
+Your first step should be to import the ``decrypt`` function from your ``caesar.py`` module.  Feel free to give it an alias if desired.
+
+Your main goal is to, given an encrypted string, use the imported ``decrypt`` function to print out every possible decryption of that string.  This can be done without defining any new functions in ``brute_caesar.py``.  
+
+Testing Your Program
+--------------------
+
+You can attempt to bruteforce any encrypted message - and you can encrypt any message using your ``caesar.py`` file!  
+
+For fun, you can also try decrypting this message through bruteforcing:
+``PMTTW NZWU BPM XIAB! BPMZM QA VWBPQVO BW AMM PMZM. EMTKWUM BW BPM EWZTL WN KZGXBWOZIXPG. BWBITTG NCV ABCNN!``
+
+The following space is provided in case you want to test code out or write it in the browser:
+
+.. activecode:: labspace-04-03
+
+    #Write and run code here!
+
+Taking it Further
+-----------------
+
+We wrote a program to brute force the Caesar Cipher, but it still involves a human to read its results and select the actual solution from a list of mostly gibberish.  It saves us time, but can still be improved.  As an extension to this project, I want you to *consider* possible ways we can have the computer detect whether a given decryption is actually English or not.  If we can effectively build an English detector, we can remove the human element from our program.  We'll be able to run the program for an encrypted message and one correct decryption will be shown on the screen.
+
+To reiterate, do *not* try to code it yourself (unless you're sure of your idea) - I just want you to brainstorm.

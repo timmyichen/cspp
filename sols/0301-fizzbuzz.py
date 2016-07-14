@@ -13,4 +13,5 @@ def main():
     end = int(input("Enter ending point (#): "))
     fizzbuzz(end)
     
-main()
+if __name__ == "__main__":
+    main()

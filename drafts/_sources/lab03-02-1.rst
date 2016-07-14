@@ -19,7 +19,7 @@ The program should repeatedly ask the user for a choice until a valid choice is 
 
 A heavily documented, partial solution to this lab will be given to you below, as well as the rationale behind the planning.  You are to complete the gaps in the planning, then implement those ideas in code.
 
-Your final, completed solution should be saved in a file called ``FILN-mockatm.py``, where FILN is your first initial and last name, all lowercase, no space.
+Your final, completed solution should be saved in a file called ``FILN_mockatm.py``, where FILN is your first initial and last name, all lowercase, no space.
 
 Partial Solution
 ----------------

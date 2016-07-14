@@ -22,4 +22,5 @@ def main():
     word = input("Enter a word in singular form: ")
     pluralize(num, word)
     
-main()
+if __name__ == "__main__":
+    main()

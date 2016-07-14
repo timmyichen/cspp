@@ -21,7 +21,7 @@ def get_comp_move():
     else:
         return "s"
 
-#returns p, c, or tie based on winner
+# returns p, c, or tie based on winner
 def get_round_winner(p1move, cmove):
     if p1move == cmove:
         return "tie"
@@ -83,4 +83,5 @@ def rps():
     else:
         print("The computer is victorious! P:{} to C:{}!".format(pscore,cscore) )
 
-rps()
+if __name__ == "__main__":
+    rps()

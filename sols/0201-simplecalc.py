@@ -20,4 +20,5 @@ def main():
     exp = input("Enter expression: ")
     solution1(exp)
     
-main()
+if __name__ == "__main__":
+    main()

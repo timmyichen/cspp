@@ -40,4 +40,3 @@ def decrypt(key, message):
         else:
             result = result + letter
     return result
-# do()
