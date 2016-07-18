@@ -260,7 +260,6 @@
 <li><a class="reference internal" href="#">Lab 6-3: Bruteforcing the Transposition Cipher</a><ul>
 <li><a class="reference internal" href="#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
 <li><a class="reference internal" href="#testing-your-program">Testing Your Program</a></li>
-<li><a class="reference internal" href="#taking-it-further">Taking it Further</a></li>
 </ul>
 </li>
 </ul>
@@ -299,15 +298,21 @@
 <h1>Lab 6-3: Bruteforcing the Transposition Cipher<a class="headerlink" href="#lab-6-3-bruteforcing-the-transposition-cipher" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="lab-requirements-and-specifications">
 <h2>Lab Requirements and Specifications<a class="headerlink" href="#lab-requirements-and-specifications" title="Permalink to this headline">¶</a></h2>
+<p>Similar to the Caesar cipher bruteforcing, you are to try every possible key for the transposition cipher.  Unlike the Caesar cipher where there are only 26 possible keys, the number of possible keys in the transposition cipher is not a set number.  Instead, the number of possible keys is dependent on the length of the message.  A message with 150 characters can have 150 keys.  This makes it kind of a chore to brute force it and check each decryption manually, but that&#8217;s what our program is going to do.</p>
+<p>In lab 6-5, we will be using strategies to check each encryption for us, so we don&#8217;t have to.</p>
 <p>You should name your file <code class="docutils literal"><span class="pre">FILN_brutetransposition.py</span></code>, where FILN is your first initial and last name, no space.</p>
 </div>
 <div class="section" id="testing-your-program">
 <h2>Testing Your Program<a class="headerlink" href="#testing-your-program" title="Permalink to this headline">¶</a></h2>
-<p>Using our encrypted message from before:</p>
+<p>You can test your program by encrypting text with your <code class="docutils literal"><span class="pre">transposition.py</span></code> module from before, and then bruteforcing it to make sure that the key is accurate.  As a challenge, I also offer you a bit of text to decrypt.  Try to find the key to this one!</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>HDI ee olcmrlea omym,b a enyIrob  tea1  m4ba tedch vu,air  crIwee’a,nml t rjlmuuyoss v t1iy 5nei gtny ,bet oaobxr u sAtm n eotI.la  drpT trhaioancmndaik ;s I ey h owoyuamo neuat  l oiltff o  s tyobho eeumc  uoggcmriheev  ae~at ~ emrwsenat ul aGrw fuacVslhZ.raq unbIscA eeJks Pn.aCo nxwIdG ’ Utvtzhehke eyra pelsS’rulsepf apAadou yrkm tKic RluITlt ai nLooeTnfef fdRp ,Hem aoyIEp  jlawcerig mlQoslJu, yt bI aertnczhdoYe mmrneleo w wtnj hmuseYsl Itigr drjleeHi aVkotHeneC  sGmmtVey D, wn saLbtlSuorbtmuX asTIc X help vereeBovrDme.Sir SsyIFewfg h xyeyForoiueuM   sIIhK’ aXmgvj oeud  uiaazfsnDf yQet KrrqHeaupnieutnsf.itQ nijOgoen.ne  sW
+</pre></div>
+</div>
+<p>Below is a sample output of what a program execution might look like, using our encrypted message from before:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;aeeeiywvyhhil  nnoiicoevwagdtuloh reasusarllokeay y i  epn dsi uncbnaoys fwpioettwogc h nd  hsusotomgeap   hdh a   swwlk&quot;</span>
 </pre></div>
 </div>
-<p>This is a sample output by running the encrypted message through our Transposition Cipher bruteforcer (showing only the first 55 characters):</p>
+<p>And as we run it through our Transposition Cipher bruteforcer (showing only the first 55 characters):</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>Trying key #1: aeeeiywvyhhil  nnoiicoevwagdtuloh reasusarllokeay y i  ...
 Trying key #2: aseie euinycwbvnyahohyisl  f wnpniooieitctoweovgwca ghd...
 Trying key #3: aaterweloelgiocyk wehva yynh dhy i  lih  s  unesnpoonti...
@@ -429,15 +434,12 @@ Trying key #118: aeiwyhl nicewgtlhraualoeyyi p s nbay wietochn huooga  d...
 Trying key #119: aeiwyhl nicewgtlhraualoeyyi p s nbay wietochn huooga  d...
 </pre></div>
 </div>
-<p>(In case you&#8217;re wondering why we get so many repeats, it&#8217;s because we use <code class="docutils literal"><span class="pre">math.ceil()</span></code> in our decryption algorithm, which rounds numbers up when we calculate the # of rows - meaning we will have similar)</p>
+<p>(In case you&#8217;re wondering why we get so many repeats, it&#8217;s because we use <code class="docutils literal"><span class="pre">math.ceil()</span></code> in our decryption algorithm, which rounds numbers up when we calculate the # of rows - meaning we will have similar decrypted messages for keys of higher numbers.)</p>
 <p>The following space is provided in case you want to test code out or write it in the browser:</p>
 
 <textarea data-component="activecode" id=labspace-06-03 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
 #Write and run code here!
 </textarea>
-</div>
-<div class="section" id="taking-it-further">
-<h2>Taking it Further<a class="headerlink" href="#taking-it-further" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 

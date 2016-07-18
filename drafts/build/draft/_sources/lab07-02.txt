@@ -1,0 +1,27 @@
+.. qnum::
+   :start: 1
+   :prefix: lab07-02-
+
+
+TODO 7-2: Simple Search Engine
+==============================
+
+Lab Requirements and Specifications
+-----------------------------------
+
+
+
+You should name your file ``FILN_searchEngine.py``, where FILN is your first initial and last name, no space.
+
+Testing Your Program
+--------------------
+
+The following space is provided in case you want to test code out or write it in the browser:
+
+.. activecode:: labspace-07-02
+
+    #Write and run code here!
+
+Taking it Further
+-----------------
+

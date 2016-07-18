@@ -3,8 +3,8 @@
    :prefix: lab06-02-
 
 
-Lab 6-2: Transposition Cipher Cipher - Encrypting and Decrypting
-================================================================
+TODO 6-2: Transposition Cipher Cipher - Encrypting and Decrypting
+=================================================================
 
 The Transposition Cipher
 ------------------------
@@ -127,7 +127,7 @@ Testing Your Program
 
 The following space is provided in case you want to test code out or write it in the browser:
 
-.. activecode:: labspace-04-01
+.. activecode:: labspace-06-02
 
     #Write and run code here!
 

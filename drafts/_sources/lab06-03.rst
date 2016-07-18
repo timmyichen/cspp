@@ -9,20 +9,28 @@ Lab 6-3: Bruteforcing the Transposition Cipher
 Lab Requirements and Specifications
 -----------------------------------
 
+Similar to the Caesar cipher bruteforcing, you are to try every possible key for the transposition cipher.  Unlike the Caesar cipher where there are only 26 possible keys, the number of possible keys in the transposition cipher is not a set number.  Instead, the number of possible keys is dependent on the length of the message.  A message with 150 characters can have 150 keys.  This makes it kind of a chore to brute force it and check each decryption manually, but that's what our program is going to do.
 
+In lab 6-5, we will be using strategies to check each encryption for us, so we don't have to.
 
 You should name your file ``FILN_brutetransposition.py``, where FILN is your first initial and last name, no space.
 
 Testing Your Program
 --------------------
 
-Using our encrypted message from before:
+You can test your program by encrypting text with your ``transposition.py`` module from before, and then bruteforcing it to make sure that the key is accurate.  As a challenge, I also offer you a bit of text to decrypt.  Try to find the key to this one!
+
+::
+
+    HDI ee olcmrlea omym,b a enyIrob  tea1  m4ba tedch vu,air  crIwee’a,nml t rjlmuuyoss v t1iy 5nei gtny ,bet oaobxr u sAtm n eotI.la  drpT trhaioancmndaik ;s I ey h owoyuamo neuat  l oiltff o  s tyobho eeumc  uoggcmriheev  ae~at ~ emrwsenat ul aGrw fuacVslhZ.raq unbIscA eeJks Pn.aCo nxwIdG ’ Utvtzhehke eyra pelsS’rulsepf apAadou yrkm tKic RluITlt ai nLooeTnfef fdRp ,Hem aoyIEp  jlawcerig mlQoslJu, yt bI aertnczhdoYe mmrneleo w wtnj hmuseYsl Itigr drjleeHi aVkotHeneC  sGmmtVey D, wn saLbtlSuorbtmuX asTIc X help vereeBovrDme.Sir SsyIFewfg h xyeyForoiueuM   sIIhK’ aXmgvj oeud  uiaazfsnDf yQet KrrqHeaupnieutnsf.itQ nijOgoen.ne  sW
+
+Below is a sample output of what a program execution might look like, using our encrypted message from before:
 
 ::
     
     "aeeeiywvyhhil  nnoiicoevwagdtuloh reasusarllokeay y i  epn dsi uncbnaoys fwpioettwogc h nd  hsusotomgeap   hdh a   swwlk"
     
-This is a sample output by running the encrypted message through our Transposition Cipher bruteforcer (showing only the first 55 characters):
+And as we run it through our Transposition Cipher bruteforcer (showing only the first 55 characters):
 
 .. code-block:: none
     :emphasize-lines: 10
@@ -147,14 +155,10 @@ This is a sample output by running the encrypted message through our Transpositi
     Trying key #118: aeiwyhl nicewgtlhraualoeyyi p s nbay wietochn huooga  d...
     Trying key #119: aeiwyhl nicewgtlhraualoeyyi p s nbay wietochn huooga  d...
 
-(In case you're wondering why we get so many repeats, it's because we use ``math.ceil()`` in our decryption algorithm, which rounds numbers up when we calculate the # of rows - meaning we will have similar)
+(In case you're wondering why we get so many repeats, it's because we use ``math.ceil()`` in our decryption algorithm, which rounds numbers up when we calculate the # of rows - meaning we will have similar decrypted messages for keys of higher numbers.)
 
 The following space is provided in case you want to test code out or write it in the browser:
 
 .. activecode:: labspace-06-03
 
     #Write and run code here!
-
-Taking it Further
------------------
-

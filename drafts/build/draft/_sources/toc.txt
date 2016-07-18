@@ -28,3 +28,4 @@ Labs
     lab06-04.rst
     lab06-05.rst
     lab07-01.rst
+    lab07-02.rst

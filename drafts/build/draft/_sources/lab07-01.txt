@@ -9,7 +9,7 @@ Lab 7-1: Word Frequency Counter
 Lab Requirements and Specifications
 -----------------------------------
 
-Provided for you is TODO
+Provided for you is a text file containing the lyrics to all of Taylor Swift's songs in her album *Fearless*.  The file can be downloaded by clicking here: :download:`tswiftlyrics.txt <resource/tswiftlyrics.txt>` or viewed by clicking here: `tswiftlyrics.txt <_downloads/tswiftlyrics.txt>`_.
 
 **This lab a three-step process.**
 
@@ -24,7 +24,7 @@ You should name your file ``FILN_wordcounter.py``, where FILN is your first init
 Some tips to keep in mind:
     - If you have a dictionary ``d``, the expression ``max(d, key=d.get)`` will return the key with the largest value.  Super big hint for step #3!
     - If you have a dictionary ``d`` with a key of ``key``, the you can use ``d.pop(key, None)`` which will remove that key-value pair from ``d``.  Another big hint for step #3!
-    - After using ``.split()``, you will have an array.  You can use the array method ``.remove(e)`` to remove ``e`` from the array.  Combine this with a while loop and you can easily remove ALL elements of ``e`` from the array.
+    - After using ``.split()``, you will have a list, let's say the list is called ``array``.  You can use the list method ``array.remove(e)`` to remove ``e`` from the list.  Combine this with a while loop like ``while e in array:`` and you can easily remove ALL elements of ``e`` from the list.
 
 Testing Your Program
 --------------------
