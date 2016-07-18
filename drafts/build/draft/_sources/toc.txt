@@ -22,3 +22,9 @@ Labs
     lab04-04.rst
     lab05-01.rst
     lab05-02.rst
+    lab06-01.rst
+    lab06-02.rst
+    lab06-03.rst
+    lab06-04.rst
+    lab06-05.rst
+    lab07-01.rst

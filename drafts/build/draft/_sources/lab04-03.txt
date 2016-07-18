@@ -63,7 +63,7 @@ Then try running the following code in your python IDE:
     print(sm.add(1,2))
     sm.print_mult(2,3,2)
     
-Using ``as sm`` after the ``import`` statement means that we are giving the module another custom name from which we can access its functions - in this case, that custom name is ``sm``.  You can see in the code function calls, we now call upon ``sm`` instead of ``sample_module``.  Note that the naming rules are the same as variables in python.
+Using ``as sm`` after the ``import`` statement means that we are giving the module another custom name, or an **alias**, from which we can access its functions - in this case, that custom name is ``sm``.  You can see in the code function calls, we now call upon ``sm`` instead of ``sample_module``.  Note that the naming rules for aliases are the same as variables in python.
 
 Importing Specific Functions from a Module
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -119,6 +119,40 @@ You can attempt to bruteforce any encrypted message - and you can encrypt any me
 
 For fun, you can also try decrypting this message through bruteforcing:
 ``PMTTW NZWU BPM XIAB! BPMZM QA VWBPQVO BW AMM PMZM. EMTKWUM BW BPM EWZTL WN KZGXBWOZIXPG. BWBITTG NCV ABCNN!``
+
+Here is a sample output of what a brute force attempt might look like for the message:
+``YRJ REPFEV IVRCCP SVVE WRI RJ UVTZUVU KF LJV VMVE XF NREK KF UF CFFB DFIV CZBV``:
+
+::
+    
+    Key 0: YRJ REPFEV IVRCCP SVVE WRI RJ UVTZUVU KF LJV VMVE XF NREK KF UF CFFB DFIV CZBV
+    Key 1: XQI QDOEDU HUQBBO RUUD VQH QI TUSYTUT JE KIU ULUD WE MQDJ JE TE BEEA CEHU BYAU
+    Key 2: WPH PCNDCT GTPAAN QTTC UPG PH STRXSTS ID JHT TKTC VD LPCI ID SD ADDZ BDGT AXZT
+    Key 3: VOG OBMCBS FSOZZM PSSB TOF OG RSQWRSR HC IGS SJSB UC KOBH HC RC ZCCY ACFS ZWYS
+    Key 4: UNF NALBAR ERNYYL ORRA SNE NF QRPVQRQ GB HFR RIRA TB JNAG GB QB YBBX ZBER YVXR
+    Key 5: TME MZKAZQ DQMXXK NQQZ RMD ME PQOUPQP FA GEQ QHQZ SA IMZF FA PA XAAW YADQ XUWQ
+    Key 6: SLD LYJZYP CPLWWJ MPPY QLC LD OPNTOPO EZ FDP PGPY RZ HLYE EZ OZ WZZV XZCP WTVP
+    Key 7: RKC KXIYXO BOKVVI LOOX PKB KC NOMSNON DY ECO OFOX QY GKXD DY NY VYYU WYBO VSUO
+    Key 8: QJB JWHXWN ANJUUH KNNW OJA JB MNLRMNM CX DBN NENW PX FJWC CX MX UXXT VXAN URTN
+    Key 9: PIA IVGWVM ZMITTG JMMV NIZ IA LMKQLML BW CAM MDMV OW EIVB BW LW TWWS UWZM TQSM
+    Key 10: OHZ HUFVUL YLHSSF ILLU MHY HZ KLJPKLK AV BZL LCLU NV DHUA AV KV SVVR TVYL SPRL
+    Key 11: NGY GTEUTK XKGRRE HKKT LGX GY JKIOJKJ ZU AYK KBKT MU CGTZ ZU JU RUUQ SUXK ROQK
+    Key 12: MFX FSDTSJ WJFQQD GJJS KFW FX IJHNIJI YT ZXJ JAJS LT BFSY YT IT QTTP RTWJ QNPJ
+    Key 13: LEW ERCSRI VIEPPC FIIR JEV EW HIGMHIH XS YWI IZIR KS AERX XS HS PSSO QSVI PMOI
+    Key 14: KDV DQBRQH UHDOOB EHHQ IDU DV GHFLGHG WR XVH HYHQ JR ZDQW WR GR ORRN PRUH OLNH
+    Key 15: JCU CPAQPG TGCNNA DGGP HCT CU FGEKFGF VQ WUG GXGP IQ YCPV VQ FQ NQQM OQTG NKMG
+    Key 16: IBT BOZPOF SFBMMZ CFFO GBS BT EFDJEFE UP VTF FWFO HP XBOU UP EP MPPL NPSF MJLF
+    Key 17: HAS ANYONE REALLY BEEN FAR AS DECIDED TO USE EVEN GO WANT TO DO LOOK MORE LIKE
+    Key 18: GZR ZMXNMD QDZKKX ADDM EZQ ZR CDBHCDC SN TRD DUDM FN VZMS SN CN KNNJ LNQD KHJD
+    Key 19: FYQ YLWMLC PCYJJW ZCCL DYP YQ BCAGBCB RM SQC CTCL EM UYLR RM BM JMMI KMPC JGIC
+    Key 20: EXP XKVLKB OBXIIV YBBK CXO XP ABZFABA QL RPB BSBK DL TXKQ QL AL ILLH JLOB IFHB
+    Key 21: DWO WJUKJA NAWHHU XAAJ BWN WO ZAYEZAZ PK QOA ARAJ CK SWJP PK ZK HKKG IKNA HEGA
+    Key 22: CVN VITJIZ MZVGGT WZZI AVM VN YZXDYZY OJ PNZ ZQZI BJ RVIO OJ YJ GJJF HJMZ GDFZ
+    Key 23: BUM UHSIHY LYUFFS VYYH ZUL UM XYWCXYX NI OMY YPYH AI QUHN NI XI FIIE GILY FCEY
+    Key 24: ATL TGRHGX KXTEER UXXG YTK TL WXVBWXW MH NLX XOXG ZH PTGM MH WH EHHD FHKX EBDX
+    Key 25: ZSK SFQGFW JWSDDQ TWWF XSJ SK VWUAVWV LG MKW WNWF YG OSFL LG VG DGGC EGJW DACW
+
+We can see clearly that the only one that makes sense is key ``17``.  
 
 The following space is provided in case you want to test code out or write it in the browser:
 

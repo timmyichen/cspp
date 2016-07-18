@@ -25,7 +25,7 @@ For each letter, the key determines **which letter is replacing the current lett
     :alt: B becomes E in the Caesar cipher using a key of 3.
     :align: center
 
-*In the Caesar cipher, A becomes D, B becomes E, C becomes F, and so on...*
+*In the Caesar cipher with a key of 3, A becomes D, B becomes E, C becomes F, and so on...*
 
 This can easily be shown by lining up two alphabets, one on top of each other, with the second alphabet starting at the letter shifted 3 letters down.  This means that the bottom row should be shifted to the *left*.
 

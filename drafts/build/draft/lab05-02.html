@@ -297,23 +297,25 @@
   
   <div class="section" id="lab-5-2-word-scrambler">
 <h1>Lab 5-2: Word Scrambler<a class="headerlink" href="#lab-5-2-word-scrambler" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-default"><div class="highlight"><pre><span></span>Aanlrtppey eevn wehn wodrs are all smraelcbd , as lnog as the frsit and lsat ltteer saty the smae , yuor biarn can slitl raed it !
+<div class="section" id="lab-requirements-and-specifications">
+<h2>Lab Requirements and Specifications<a class="headerlink" href="#lab-requirements-and-specifications" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none"><div class="highlight"><pre><span></span>Aanlrtppey eevn wehn wodrs are all smraelcbd , as lnog as the frsit and lsat ltteer saty the smae , yuor biarn can slitl raed it !
 </pre></div>
 </div>
-<p>At least, that&#8217;s what some clickbait article says.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;Apparently, even when words are all scrambled , as long as the first and last letter stay the same , your brain can still read it !&quot;</span>
+<p>At least, that&#8217;s what some clickbait article told me on facebook.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&quot;Apparently, even when words are all scrambled , as long as the first and last letter stay the same , your brain can still read it !&quot;
 </pre></div>
 </div>
 <p>Regardless of whether you believe it or not, this kind of exercise is perfect for lists.  We&#8217;re going to be creating a program that takes in a phrase or sentence and scrambles every word, keeping only the first letter and the last letter the same.  Since it&#8217;s random, the same phrase should come out different every time you run it.  Here&#8217;s the phrase &#8220;I love learning computer science&#8221; scrambled five different times by the same program:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">I</span> <span class="n">lvoe</span> <span class="n">lrnanieg</span> <span class="n">cpueomtr</span> <span class="n">sncceie</span>
-<span class="n">I</span> <span class="n">lvoe</span> <span class="n">liarnneg</span> <span class="n">cpeoutmr</span> <span class="n">scniece</span>
-<span class="n">I</span> <span class="n">lvoe</span> <span class="n">lnanrieg</span> <span class="n">coptmuer</span> <span class="n">sneicce</span>
-<span class="n">I</span> <span class="n">lvoe</span> <span class="n">lnanireg</span> <span class="n">ceptmour</span> <span class="n">senicce</span>
-<span class="n">I</span> <span class="n">lvoe</span> <span class="n">lannreig</span> <span class="n">ctomeupr</span> <span class="n">seincce</span>
+<div class="highlight-none"><div class="highlight"><pre><span></span>I lvoe lrnanieg cpueomtr sncceie
+I lvoe liarnneg cpeoutmr scniece
+I lvoe lnanrieg coptmuer sneicce
+I lvoe lnanireg ceptmour senicce
+I lvoe lannreig ctomeupr seincce
 </pre></div>
 </div>
 <p>As you can see, each one is slightly different from the last.</p>
-<p>This is not a large multi-step problem, like Hangman or Rock Paper Scissors or Craps.  This is an exercise in algorithmic thinking - coming up with a strategy to a single problem - how do you scramble a word keeping the first and last letters the same?</p>
+<p>This is not a large multi-step problem, like Hangman or Rock Paper Scissors or Craps.  This is an exercise in algorithmic thinking - coming up with a strategy to a single problem - how do you scramble a word keeping the first and last letters the same?  <strong>Note that only words with length 4 or greater should be scrambled, as anything with 3 or less letters cannot be scrambled</strong> as long as the first and last letter stay the same.</p>
 <dl class="docutils">
 <dt>In this program, I would only write two real functions:</dt>
 <dd><ul class="first last simple">
@@ -321,7 +323,7 @@
 <li>A function <code class="docutils literal"><span class="pre">scramble_phrase()</span></code> that uses <code class="docutils literal"><span class="pre">scramble_word()</span></code> to scramble a series of words</li>
 </ul>
 </dd>
-<dt>As a reminder, you might find the following methods useful:</dt>
+<dt>As a reminder, you might find the following functions/methods useful:</dt>
 <dd><ul class="first last simple">
 <li><code class="docutils literal"><span class="pre">list.shuffle()</span></code> - rearranges items in list</li>
 <li><code class="docutils literal"><span class="pre">list(string)</span></code> - converts a string into a list of characters</li>
@@ -329,12 +331,11 @@
 </ul>
 </dd>
 </dl>
-<div class="section" id="lab-requirements-and-specifications">
-<h2>Lab Requirements and Specifications<a class="headerlink" href="#lab-requirements-and-specifications" title="Permalink to this headline">¶</a></h2>
-<p>You should name your file <code class="docutils literal"><span class="pre">FILN_rps.py</span></code>, where FILN is your first initial and last name, no space.</p>
+<p>You should name your file <code class="docutils literal"><span class="pre">FILN_scramble.py</span></code>, where FILN is your first initial and last name, no space.</p>
 </div>
 <div class="section" id="testing-your-program">
 <h2>Testing Your Program<a class="headerlink" href="#testing-your-program" title="Permalink to this headline">¶</a></h2>
+<p>Your program should be fairly simple to test.  Simply look at the output and make sure that the letters are indeed scrambled, except for the first and last letter.  If any words have a different first or last letter, or are missing letters, then you know that something is wrong.</p>
 <p>The following space is provided in case you want to test code out or write it in the browser:</p>
 
 <textarea data-component="activecode" id=labspace-04-01 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
@@ -343,6 +344,8 @@
 </div>
 <div class="section" id="taking-it-further">
 <h2>Taking it Further<a class="headerlink" href="#taking-it-further" title="Permalink to this headline">¶</a></h2>
+<p>This program is made simple with the <code class="docutils literal"><span class="pre">shuffle()</span></code> function.  Many other languages don&#8217;t have this function built in.  Try to solve this problem without using the <code class="docutils literal"><span class="pre">shuffle()</span></code> function.  It is difficult, but the mental exercise of working through the algorithm is very rewarding once you get it.</p>
+<p>Another part to add is to make sure that the word has been scrambled.  Especially with shorter words, it&#8217;s possible that a randomly scrambled word still yields the same original word, since it is random.  Implement some check where it will re-scramble the word if the scrambled word is the same as the original.  This can be achieved with some clever loops, or, if you&#8217;re feeling adventurous, with <strong>recursion</strong>.</p>
 </div>
 </div>
 

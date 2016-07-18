@@ -4,20 +4,24 @@
 
 
 Lab 5-2: Word Scrambler
-============================
-::
+=======================
+
+Lab Requirements and Specifications
+-----------------------------------
+
+.. code-block:: none
 
     Aanlrtppey eevn wehn wodrs are all smraelcbd , as lnog as the frsit and lsat ltteer saty the smae , yuor biarn can slitl raed it ! 
 
-At least, that's what some clickbait article says.
+At least, that's what some clickbait article told me on facebook.
 
-::
+.. code-block:: none
 
     "Apparently, even when words are all scrambled , as long as the first and last letter stay the same , your brain can still read it !"
 
 Regardless of whether you believe it or not, this kind of exercise is perfect for lists.  We're going to be creating a program that takes in a phrase or sentence and scrambles every word, keeping only the first letter and the last letter the same.  Since it's random, the same phrase should come out different every time you run it.  Here's the phrase "I love learning computer science" scrambled five different times by the same program:
 
-::
+.. code-block:: none
 
     I lvoe lrnanieg cpueomtr sncceie 
     I lvoe liarnneg cpeoutmr scniece 
@@ -27,25 +31,23 @@ Regardless of whether you believe it or not, this kind of exercise is perfect fo
     
 As you can see, each one is slightly different from the last.
 
-This is not a large multi-step problem, like Hangman or Rock Paper Scissors or Craps.  This is an exercise in algorithmic thinking - coming up with a strategy to a single problem - how do you scramble a word keeping the first and last letters the same?
+This is not a large multi-step problem, like Hangman or Rock Paper Scissors or Craps.  This is an exercise in algorithmic thinking - coming up with a strategy to a single problem - how do you scramble a word keeping the first and last letters the same?  **Note that only words with length 4 or greater should be scrambled, as anything with 3 or less letters cannot be scrambled** as long as the first and last letter stay the same.
 
 In this program, I would only write two real functions:
     - A function ``scramble_word()`` that scrambles a single word
     - A function ``scramble_phrase()`` that uses ``scramble_word()`` to scramble a series of words
 
-As a reminder, you might find the following methods useful:
+As a reminder, you might find the following functions/methods useful:
     - ``list.shuffle()`` - rearranges items in list
     - ``list(string)`` - converts a string into a list of characters
     - ``string.split()`` - splits a string into a list, separating by the given delimiter
 
-Lab Requirements and Specifications
------------------------------------
-
-
-You should name your file ``FILN_rps.py``, where FILN is your first initial and last name, no space.
+You should name your file ``FILN_scramble.py``, where FILN is your first initial and last name, no space.
 
 Testing Your Program
 --------------------
+
+Your program should be fairly simple to test.  Simply look at the output and make sure that the letters are indeed scrambled, except for the first and last letter.  If any words have a different first or last letter, or are missing letters, then you know that something is wrong.
 
 The following space is provided in case you want to test code out or write it in the browser:
 
@@ -56,3 +58,6 @@ The following space is provided in case you want to test code out or write it in
 Taking it Further
 -----------------
 
+This program is made simple with the ``shuffle()`` function.  Many other languages don't have this function built in.  Try to solve this problem without using the ``shuffle()`` function.  It is difficult, but the mental exercise of working through the algorithm is very rewarding once you get it.
+
+Another part to add is to make sure that the word has been scrambled.  Especially with shorter words, it's possible that a randomly scrambled word still yields the same original word, since it is random.  Implement some check where it will re-scramble the word if the scrambled word is the same as the original.  This can be achieved with some clever loops, or, if you're feeling adventurous, with **recursion**.

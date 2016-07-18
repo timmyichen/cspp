@@ -1,0 +1,35 @@
+.. qnum::
+   :start: 1
+   :prefix: lab06-05-
+
+
+Lab 6-5: Bruteforcing the Transposition Cipher, Revisited
+=========================================================
+
+Lab Requirements and Specifications
+-----------------------------------
+
+This lab will be a modification on your previous 6-3 lab, ``FILN-brutetransposition.py``.  Copy and paste your code into a new file and name it ``FILN_brutetransposition2.py``, where FILN is your first initial and last name, no space.
+
+Similar to your brute forcing program from before, you'll want to cycle through every key possibility.  However, this time, every time you perform a decryption, you will also check to see if the decryption is English by using your ``detectEnglish.py`` program.  The target percentage threshold to set is up to you!  
+
+This time, if it detects a decrypted message that resembles English, it should use ``input()`` to ask the user what to do (continue / end) - using ``input()`` will also pause program execution.  If the user chooses to end the program, it should display the whole decrypted message, and then quit the program.  If the user chooses to continue, then the program will simply continue decrypting with each key until it hits another English output or it ends.
+
+Testing Your Program
+--------------------
+
+Below is a sample output using the message:
+
+::
+    
+    "aeeeiywvyhhil  nnoiicoevwagdtuloh reasusarllokeay y i  epn dsi uncbnaoys fwpioettwogc h nd  hsusotomgeap   hdh a   swwlk"
+
+.. code-block:: none
+
+    
+
+The following space is provided in case you want to test code out or write it in the browser:
+
+.. activecode:: labspace-06-05
+
+    #Write and run code here!
