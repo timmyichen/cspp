@@ -13,11 +13,13 @@ In this lab, you will be creating a program that can convert a number of seconds
 
 The program should use the ``input()`` function to allow the user to type in a number of seconds.  You can assume that the user will type in a non-negative integer.  The program will perform some math, then display an output formatted like:
 
-``"100 seconds is 0 hours, 1 minute, and 40 seconds."``
+.. code-block:: none
+
+   100 seconds is 0 hours, 1 minute, and 40 seconds.
 
 As a reminder:
-   - :math:`60 sec = 1 min`
-   - :math:`60 min = 1 hr`
+   - :math:`60 \textrm{sec} = 1 \textrm{min}`
+   - :math:`60 \textrm{min} = 1 \textrm{hr}`
 
 When thinking about how to calculate the number of hours, minutes, and seconds, try to think of these terms as **cups** - let's start by talking about the "minute" cup.
 

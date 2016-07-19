@@ -6,6 +6,8 @@
 Lab 4-3: Cracking the Caesar Cipher
 ===================================
 
+Note: Part of this lab came from Al Sweigart's great book, *Hacking Secret Ciphers with Python: A beginner's Guide to cryptography and computer programming with Python*, available online here at `Invent With Python <https://inventwithpython.com/>`_, among his other works.  Feel free to check them out if they interest you!
+
 Tutorial - Importing Custom Modules
 -----------------------------------
 

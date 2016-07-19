@@ -299,6 +299,9 @@
 <h1>TODO 7-2: Simple Search Engine<a class="headerlink" href="#todo-7-2-simple-search-engine" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="lab-requirements-and-specifications">
 <h2>Lab Requirements and Specifications<a class="headerlink" href="#lab-requirements-and-specifications" title="Permalink to this headline">¶</a></h2>
+<p>In this lab, you will be creating a module that contains functions relating to search engines and indexes.</p>
+<p>You already know how to search a text file to find a word; you basically did this in lab 7-1.  Searching many text files for a word is also something you could easily achieve using loops.  However, every time you search through a bunch of files to find a single word, you&#8217;re performing many operations, and this can quickly slow down with enough files or with large files.</p>
+<p>However, you can get around this by using an <strong>index</strong>.  An index in data is much like an index in the back of a textbook; it is there to help you find the location of specific things.  In our case, our index will tell us which files we can find certain words, and it will do this by going through all text files and keeping track of where each word will be found.  While it sounds just as cumbersome as before, and it is, it will only need to do this once!  You only need to go through every word of every file when you are creating the <strong>index</strong>.  Every other time, you can just access the index directly to find where things are, and that is a much easier operation.</p>
 <p>You should name your file <code class="docutils literal"><span class="pre">FILN_searchEngine.py</span></code>, where FILN is your first initial and last name, no space.</p>
 </div>
 <div class="section" id="testing-your-program">

@@ -3,6 +3,8 @@
 Table of Contents
 :::::::::::::::::
 
+`Link to curriculum outline with learning objectives <https://docs.google.com/document/d/1qL_saci0pUjPTB1xh9eTE2qLiQE1SPT6XnJ5wGIzdYI/edit?usp=sharing>`_
+
 Labs
 ====
 
@@ -23,6 +25,7 @@ Labs
     lab05-01.rst
     lab05-02.rst
     lab06-01.rst
+    lab06-02-1.rst
     lab06-02.rst
     lab06-03.rst
     lab06-04.rst

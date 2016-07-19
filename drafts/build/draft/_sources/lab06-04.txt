@@ -5,6 +5,8 @@
 Lab 6-4: Detecting English through Programming
 ==============================================
 
+Note: Part of this lab came from Al Sweigart's great book, *Hacking Secret Ciphers with Python: A beginner's Guide to cryptography and computer programming with Python*, available online here at `Invent With Python <https://inventwithpython.com/>`_, among his other works.  Feel free to check them out if they interest you!
+
 Lab Requirements and Specifications
 -----------------------------------
 
@@ -80,6 +82,23 @@ Below is the code that you should use as a template for your program.
     #   the modified message that no longer contains special chars
     def remove_non_letters(message):
         #code here
+    
+    # function: message_to_upperlist
+    # purpose: take in a message as a string and convert it all to
+    #   uppercase turn it into a list of words (this function
+    #   should call the remove_non_letters() function)
+    # arguments:
+    #   message: the message to convert
+    # returns:
+    #   a list of words in the original message, without special chars
+    def message_to_upperlist(message):
+        message = remove_non_letters(message.upper())
+        m = message.split(" ")
+        
+        while "" in m:
+            m.remove("")
+        
+        return m
     
     # function: is_english
     # purpose: determines whether a message is english based on

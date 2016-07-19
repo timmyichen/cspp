@@ -13,7 +13,9 @@ In this lab, you will be creating two different programs to convert temperature 
 
 Each program should use ``input()`` to allow the user to type in a number to convert.  The program will perform some math, then display an output formatted like:
 
-``"15 C is equal to 32 F"``
+.. code-block:: none
+	
+	15 C is equal to 32 F
 
 To convert from Celcius to Fahrenheit, you would use the following equation:
 
@@ -30,6 +32,7 @@ Where :math:`T_c` is the temperature in Celcius and :math:`T_f` is the temperatu
 You should create two files in your workspace:
 	- ``FILN_calcFtoC.py``
 	- ``FILN_calcCtoF.py``
+
 Where "FILN" is your first initial and last name, all lowercase, no space.
 
 As a reminder, you should be running this program using python3.  Running this program using python2 may give you unexpected results!  If you are getting errors, make sure you look over your code and double-check for typos.  If you are getting numbers that seem way off, make sure that the equations are entered in correctly!  Don't forget your PEMDAS!

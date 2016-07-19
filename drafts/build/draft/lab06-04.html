@@ -297,6 +297,7 @@
   
   <div class="section" id="lab-6-4-detecting-english-through-programming">
 <h1>Lab 6-4: Detecting English through Programming<a class="headerlink" href="#lab-6-4-detecting-english-through-programming" title="Permalink to this headline">¶</a></h1>
+<p>Note: Part of this lab came from Al Sweigart&#8217;s great book, <em>Hacking Secret Ciphers with Python: A beginner&#8217;s Guide to cryptography and computer programming with Python</em>, available online here at <a class="reference external" href="https://inventwithpython.com/">Invent With Python</a>, among his other works.  Feel free to check them out if they interest you!</p>
 <div class="section" id="lab-requirements-and-specifications">
 <h2>Lab Requirements and Specifications<a class="headerlink" href="#lab-requirements-and-specifications" title="Permalink to this headline">¶</a></h2>
 <p>As you saw from the previous lab, in the Transposition cipher there are far too many keys (especially in long messages) for us to sort through.  It&#8217;s quite a chore for us, but no sweat for our computers.  Sounds like a job that a program can do!</p>
@@ -372,7 +373,24 @@
 57
 58
 59
-60</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#Detect English module</span>
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#Detect English module</span>
 
 <span class="c1">#To use, type this code:</span>
 <span class="c1">#   import detectEnglish</span>
@@ -417,6 +435,23 @@
 <span class="c1">#   the modified message that no longer contains special chars</span>
 <span class="k">def</span> <span class="nf">remove_non_letters</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
     <span class="c1">#code here</span>
+
+<span class="c1"># function: message_to_upperlist</span>
+<span class="c1"># purpose: take in a message as a string and convert it all to</span>
+<span class="c1">#   uppercase turn it into a list of words (this function</span>
+<span class="c1">#   should call the remove_non_letters() function)</span>
+<span class="c1"># arguments:</span>
+<span class="c1">#   message: the message to convert</span>
+<span class="c1"># returns:</span>
+<span class="c1">#   a list of words in the original message, without special chars</span>
+<span class="k">def</span> <span class="nf">message_to_upperlist</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">remove_non_letters</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="s2">&quot;&quot;</span> <span class="ow">in</span> <span class="n">m</span><span class="p">:</span>
+        <span class="n">m</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">m</span>
 
 <span class="c1"># function: is_english</span>
 <span class="c1"># purpose: determines whether a message is english based on</span>

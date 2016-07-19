@@ -3,134 +3,227 @@
    :prefix: lab06-02-
 
 
-TODO 6-2: Transposition Cipher Cipher - Encrypting and Decrypting
-=================================================================
+Lab 6-2: Transposition Cipher Cipher - Encrypting and Decrypting
+================================================================
+
+Note: Part of this lab came from Al Sweigart's great book, *Hacking Secret Ciphers with Python: A beginner's Guide to cryptography and computer programming with Python*, available online here at `Invent With Python <https://inventwithpython.com/>`_, among his other works.  Feel free to check them out if they interest you!
 
 The Transposition Cipher
 ------------------------
 
+The first thing you should do is to create a new file in your unit 6 projects folder.  You should name your file ``FILN_transposition.py``, where FILN is your first initial and last name, no space.
+
 Encrypting with the Transposition Cipher
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Recall that the Caesar cipher only had 26 possible keys.  It's not very secure - easily bruteforced, as you have already written a script for.  The Transposition Cipher is slightly more secure, because its possible number of keys depends on the length of the message.
+Let's first go over the steps to our encryption algorithm:
 
-Let's dive into it.  Let's use the following quote by Martin Goldin as our message to be encrypted:
+1. Find the number of rows and columns for the grid based on the key and length of the message
+2. Create the table
+3. Fill the table with the characters in the message, in **row-major order**.
+4. Optional: fill the remaining empty characters with spaces or random characters.
+5. To get the encrypted message, read off the characters from the table in **column-major order**.
 
-``always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live"``
+Let's turn this into pseudocode:
 
-And let's use a **key** of **10**.
-
-The way it works is that we would start by writing 10 columns (because our key is 10) and enough rows to fill all our letters:
-
-.. image:: img/grid-empty.png
-    :scale: 50%
-    :alt: Empty 10-column grid
-    :align: center
-
-Then we begin writing our message, one character at a time, going across each row.  If we reach the end of a row, we just continue on the next one.  For spaces, I put underscores ``_`` so it is be easier to see.
-
-.. image:: img/grid-encrypt-start.png
-    :scale: 41%
-    :alt: Partially filled 10-column grid
-    :align: center
-
-We continue this process until the entire message is on the grid..
-
-.. image:: img/grid-filled.png
-    :scale: 50%
-    :alt: Filled 10-column grid
-    :align: center
-
-Finally, we have leftover space, so I fill it with some random characters:
-
-.. image:: img/grid-padded.png
-    :scale: 50%
-    :alt: Filled and padded 10-column grid
-    :align: center
-
-And now, to encrypt it, we just writing the letters, starting with the first column, then with the second, and so on.
-    - Column 1: ``aeeeiywvyhhi``
-    - Column 2: ``l__nnoiicoev``
-    - Column 3: ``wagdtuloh_re``
-
-And so on... until we have all of them, then we put them all together to get our final encrpyted message:
-
-::
-
-    aeeeiywvyhhil__nnoiicoevwagdtuloh_reasusarllokeay_y_i__epn_dsi_uncbnaoys_fwpioettwogc_h_nd__hsusotomgeap___hdh_a___swwlk
-
-And here's how it would look with spaces instead of underscores:
-
-::
+.. code-block:: python
     
-    aeeeiywvyhhil  nnoiicoevwagdtuloh reasusarllokeay y i  epn dsi uncbnaoys fwpioettwogc h nd  hsusotomgeap   hdh a   swwlk
+    import math
+    import random
+    
+    def encrypt(key,message):
+        # set rows (message length divided by key, rounded up)
+        # set columns (same as key)
+        #initialize relevant variables
+        
+        # create a 2D array as a table
+        
+        # for each row in the table
+        #   for each column in the table
+        #       if we haven't hit the end of the message yet
+        #           fill each element with the next character in the message
+        #       if we have hit the end of the message
+        #           fill each element with a random character
+    
+        # for each column in the table
+        #   for each row in the table
+        #       combine each character into a string
+        
+        # return the encrypted message
 
-Seems pretty random, right?  It has a few advantages over the Caesar cipher other than having more possible keys; it also cannot be broken through frequency analysis (looking at how often certain letters show up), which would work on many substitution ciphers, including the Caesar cipher.  It will also mix up punctuation and spaces, which the Caesar cipher will not.
+Here, some code will be provided to you:
+
+.. code-block:: python
+    :emphasize-lines: 8,9,10,13,24,26
+
+    import math
+    import random
+    
+    def encrypt(key,message):
+        # set rows (message length divided by key, rounded up)
+        # set columns (same as key)
+        
+        letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        pointer = 0
+        encrypted = ''
+        
+        # create a 2D array as a table
+        table = [[''] * cols for i in range(rows)]
+        
+        # for each row in the table
+        #   for each column in the table
+        #       if we haven't hit the end of the message yet
+        #           fill each element with the next character in the message
+        #       if we have hit the end of the message
+        #           fill each element with a random character
+    
+        # for each column in the table
+        #   for each row in the table
+        #       add the character to the encrypted message
+        
+        return encrypted
+    
+Some explanation for above:
+
+::
+
+    letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    
+This is just a string of letters, both uppercase and lowercase, so that we can randomly pull a character from it for the remaining part of our message.  You can use ``random.choice(letters)`` to return a random character from the string ``letters``.
+
+Pointers
+~~~~~~~~
+
+::
+
+    pointer = 0
+
+This is a variable wea re going to use as a 'pointer'.  In CS, a pointer is exactly what it sounds like - it's used to point at something.  In our case, we want to copy our entire string into a 2D array.  We need to use a for loop to cycle through the array, but those same for loops can't be used to cycle through the string.  That's where our pointer comes into play.
+
+Here's an example where we want to put the word "POKEMON" into a 2D array with 2 rows and 4 columns in row-major order.
+
+.. image:: img/pointers1.svg
+    :scale: 20%
+    :alt: pointer pointing at position 1
+    :align: center
+
+Our pointer starts at zero, which means the letter we are looking at (i.e. the next letter to add to the array) is at position 0 in the string.  We are going to loop through the 2D array in row-major order, which means that we go through all the columns in each row before moving onto the next row.
+
+.. image:: img/pointers2.svg
+    :scale: 20%
+    :alt: pointer pointing at position 1
+    :align: center
+    
+We start adding letters to the 2D array, and every time we do, we increment our pointer so we are looking at the next letter in the string.
+
+.. image:: img/pointers3.svg
+    :scale: 20%
+    :alt: pointer pointing at position 1
+    :align: center
+    
+.. image:: img/pointers5.svg
+    :scale: 20%
+    :alt: pointer pointing at position 1
+    :align: center
+
+Eventually, we reach the end of the row.  With our nested for loop, it will automatically move to the next row.  However, this is where the purpose of having a pointer is clear - our pointer just moves on to the next letter as normal!
+
+.. image:: img/pointers7.svg
+    :scale: 20%
+    :alt: pointer pointing at position 1
+    :align: center
+
+Finally, as a last note, you have to be careful with pointers - if the pointer runs past the end of the string, and you try to access it, you will encounter an error.  Becaues of this, you will have to add a conditional to handle what happens when the pointer is past the end of the string.
+
+Continuing with Encryption
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Now that pointers have been explained, you will have to use them, along with what you've learned about 2D arrays, to complete the rest of your the code.  The given code is below:
+
+.. code-block:: python
+
+    import math
+    import random
+    
+    def encrypt(key,message):
+        # set rows (message length divided by key, rounded up)
+        # set columns (same as key)
+        
+        letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        pointer = 0
+        encrypted = ''
+        
+        # create a 2D array as a table
+        table = [[''] * cols for i in range(rows)]
+        
+        # for each row in the table
+        #   for each column in the table
+        #       if we haven't hit the end of the message yet
+        #           fill each element with the next character in the message
+        #       if we have hit the end of the message
+        #           fill each element with a random character
+    
+        # for each column in the table
+        #   for each row in the table
+        #       add the character to the encrypted message
+        
+        return encrypted
 
 Decrypting with the Transposition Cipher
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As long as you know the key, decrypting with the Transposition Cipher is easy.  It uses a very similar method as above, except reversed.
+Let's review the algorithm for decrypting with the transposition cipher:
 
-Start by getting the length of the message and divide it by the key, or ``10``.  The length of this message is 120 characters (if it were an unpadded message, you would always round your number up), and so we divide the message into pieces of length ``120 / 10``, or ``12``. 
+1. Find the number of rows and columns for the grid based on the key and length of the message
+2. Create the table
+3. Fill the table with the characters in the message, in **column-major order**.
+4. To get the encrypted message, read off the characters from the table in **column-major order**.
 
-::
+As you probably noticed, it's very similar to the encryption algorithm, switching only the column-major and row-major ordering.
 
-    aeeeiywvyhhi
-    l__nnoiicoev
-    wagdtuloh_re
-    asusarllokea
-    y_y_i__epn_d
-    si_uncbnaoys
-    _fwpioettwog
-    c_h_nd__hsus
-    otomgeap___h
-    dh_a___swwlk
+Our partially-completed pseudocode would probably look something like this:
 
-Then draw up an empty grid 10 columns wide.
+.. code-block:: python
 
-.. image:: img/grid-empty.png
-    :scale: 50%
-    :alt: Empty 10-column grid
-    :align: center
+    #random and math are already imported
+    def decrypt(key,message):
+        # set rows (message length divided by key, rounded up)
+        # set columns (same as key)
+        
+        pointer = 0
+        decrypted = ''
+        
+        # create a 2D array as a table
+        table = [[''] * cols for i in range(rows)]
+        
+        # for each column in the table
+        #   for each row in the table
+        #       if we haven't hit the end of the message yet
+        #           fill each element with the next character in the message
+        #       if we have hit the end of the message
+        #           break
+    
+        # for each row in the table
+        #   for each column in the table
+        #       add the character to the decrypted message
+        
+        return decrypted
 
-Then begin filling in the grid with these messages, except this time, you'll want to write down and not across.  Each 12-character substring should fit into one column.
-
-.. image:: img/grid-decrypt-start.png
-    :scale: 41%
-    :alt: Partially filled 10-column grid
-    :align: center
-
-Continue until the entire message is filled in:
-
-.. image:: img/grid-padded.png
-    :scale: 50%
-    :alt: Filled and padded 10-column grid
-    :align: center
-
-Then we read off the message going left-right, top-down, and the original message is once again clear!
-
-::
-
-    always_code_as_if_the_guy_who_ends_up_maintaining_your_code_will_be_a_violent_psychopath_who_knows_where_you_liveadsgshk
-
-
-
-Encryption Walkthrough
-~~~~~~~~~~~~~~~~~~~~~~
-
-
-You should name your file ``FILN_transposition.py``, where FILN is your first initial and last name, no space.
+**Your lab assignment is to complete both the encrypted and decrypted functions.**
 
 Testing Your Program
 --------------------
 
+Similar to the Caesar cipher, you can test your program by encrypting and decrypting various messages.  If all is well, encrypting and decrypting the same message should give you the original message back.
+
+For some fun, here is also a message that has been encrypted with a key of 17.  Decrypt it to see what it says!
+
+.. code-block:: none
+
+    ' nl dln-Icd t  o  o hhoktJhufaefn iolavy,otmpdme  wh e o es eC guevot aeesve harvt ertanre ar htserrnyde wyyidtryieRbc he troohwiaw'.sd inmis'tyalgel  v
+    
 The following space is provided in case you want to test code out or write it in the browser:
 
 .. activecode:: labspace-06-02
 
     #Write and run code here!
-
-Taking it Further
------------------
-

@@ -296,6 +296,7 @@
   
   <div class="section" id="lab-6-3-bruteforcing-the-transposition-cipher">
 <h1>Lab 6-3: Bruteforcing the Transposition Cipher<a class="headerlink" href="#lab-6-3-bruteforcing-the-transposition-cipher" title="Permalink to this headline">¶</a></h1>
+<p>Note: Part of this lab came from Al Sweigart&#8217;s great book, <em>Hacking Secret Ciphers with Python: A beginner&#8217;s Guide to cryptography and computer programming with Python</em>, available online here at <a class="reference external" href="https://inventwithpython.com/">Invent With Python</a>, among his other works.  Feel free to check them out if they interest you!</p>
 <div class="section" id="lab-requirements-and-specifications">
 <h2>Lab Requirements and Specifications<a class="headerlink" href="#lab-requirements-and-specifications" title="Permalink to this headline">¶</a></h2>
 <p>Similar to the Caesar cipher bruteforcing, you are to try every possible key for the transposition cipher.  Unlike the Caesar cipher where there are only 26 possible keys, the number of possible keys in the transposition cipher is not a set number.  Instead, the number of possible keys is dependent on the length of the message.  A message with 150 characters can have 150 keys.  This makes it kind of a chore to brute force it and check each decryption manually, but that&#8217;s what our program is going to do.</p>

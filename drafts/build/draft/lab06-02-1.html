@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lab 6-5: Bruteforcing the Transposition Cipher, Revisited &mdash; Runestone Interactive Overview</title>
+    <title>Pre-Lab 6-2: Transposition Cipher Cipher - Encrypting and Decrypting &mdash; Runestone Interactive Overview</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -257,9 +257,9 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lab 6-5: Bruteforcing the Transposition Cipher, Revisited</a><ul>
-<li><a class="reference internal" href="#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
-<li><a class="reference internal" href="#testing-your-program">Testing Your Program</a></li>
+<li><a class="reference internal" href="#">Pre-Lab 6-2: Transposition Cipher Cipher - Encrypting and Decrypting</a><ul>
+<li><a class="reference internal" href="#encrypting-with-the-transposition-cipher">Encrypting with the Transposition Cipher</a></li>
+<li><a class="reference internal" href="#decrypting-with-the-transposition-cipher">Decrypting with the Transposition Cipher</a></li>
 </ul>
 </li>
 </ul>
@@ -294,42 +294,69 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="lab-6-5-bruteforcing-the-transposition-cipher-revisited">
-<h1>Lab 6-5: Bruteforcing the Transposition Cipher, Revisited<a class="headerlink" href="#lab-6-5-bruteforcing-the-transposition-cipher-revisited" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="pre-lab-6-2-transposition-cipher-cipher-encrypting-and-decrypting">
+<h1>Pre-Lab 6-2: Transposition Cipher Cipher - Encrypting and Decrypting<a class="headerlink" href="#pre-lab-6-2-transposition-cipher-cipher-encrypting-and-decrypting" title="Permalink to this headline">¶</a></h1>
 <p>Note: Part of this lab came from Al Sweigart&#8217;s great book, <em>Hacking Secret Ciphers with Python: A beginner&#8217;s Guide to cryptography and computer programming with Python</em>, available online here at <a class="reference external" href="https://inventwithpython.com/">Invent With Python</a>, among his other works.  Feel free to check them out if they interest you!</p>
-<div class="section" id="lab-requirements-and-specifications">
-<h2>Lab Requirements and Specifications<a class="headerlink" href="#lab-requirements-and-specifications" title="Permalink to this headline">¶</a></h2>
-<p>This lab will be a modification on your previous 6-3 lab, <code class="docutils literal"><span class="pre">FILN-brutetransposition.py</span></code>.  Copy and paste your code into a new file and name it <code class="docutils literal"><span class="pre">FILN_brutetransposition2.py</span></code>, where FILN is your first initial and last name, no space.</p>
-<p>Similar to your brute forcing program from before, you&#8217;ll want to cycle through every key possibility.  However, this time, every time you perform a decryption, you will also check to see if the decryption is English by using your <code class="docutils literal"><span class="pre">detectEnglish.py</span></code> program.  The target percentage threshold to set is up to you!</p>
-<p>This time, if it detects a decrypted message that resembles English, it should use <code class="docutils literal"><span class="pre">input()</span></code> to ask the user what to do (continue / end) - using <code class="docutils literal"><span class="pre">input()</span></code> will also pause program execution.  If the user chooses to end the program, it should display the whole decrypted message, and then quit the program.  If the user chooses to continue, then the program will simply continue decrypting with each key until it hits another English output or it ends.</p>
-</div>
-<div class="section" id="testing-your-program">
-<h2>Testing Your Program<a class="headerlink" href="#testing-your-program" title="Permalink to this headline">¶</a></h2>
-<p>Below is a sample output using the message:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;aeeeiywvyhhil  nnoiicoevwagdtuloh reasusarllokeay y i  epn dsi uncbnaoys fwpioettwogc h nd  hsusotomgeap   hdh a   swwlk&quot;</span>
+<div class="section" id="encrypting-with-the-transposition-cipher">
+<h2>Encrypting with the Transposition Cipher<a class="headerlink" href="#encrypting-with-the-transposition-cipher" title="Permalink to this headline">¶</a></h2>
+<p>Recall that the Caesar cipher only had 26 possible keys.  It&#8217;s not very secure - easily bruteforced, as you have already written a script for.  The Transposition Cipher is slightly more secure, because its possible number of keys depends on the length of the message.</p>
+<p>Let&#8217;s dive into it.  Let&#8217;s use the following quote by Martin Goldin as our message to be encrypted:</p>
+<p><code class="docutils literal"><span class="pre">always</span> <span class="pre">code</span> <span class="pre">as</span> <span class="pre">if</span> <span class="pre">the</span> <span class="pre">guy</span> <span class="pre">who</span> <span class="pre">ends</span> <span class="pre">up</span> <span class="pre">maintaining</span> <span class="pre">your</span> <span class="pre">code</span> <span class="pre">will</span> <span class="pre">be</span> <span class="pre">a</span> <span class="pre">violent</span> <span class="pre">psychopath</span> <span class="pre">who</span> <span class="pre">knows</span> <span class="pre">where</span> <span class="pre">you</span> <span class="pre">live&quot;</span></code></p>
+<p>And let&#8217;s use a <strong>key</strong> of <strong>10</strong>.</p>
+<p>The way it works is that we would start by writing 10 columns (because our key is 10) and enough rows to fill all our letters:</p>
+<a class="reference internal image-reference" href="_images/grid-empty.png"><img alt="Empty 10-column grid" class="align-center" src="_images/grid-empty.png" style="width: 261.5px; height: 274.0px;" /></a>
+<p>Then we begin writing our message, one character at a time, going across each row.  If we reach the end of a row, we just continue on the next one.  For spaces, I put underscores <code class="docutils literal"><span class="pre">_</span></code> so it is be easier to see.</p>
+<a class="reference internal image-reference" href="_images/grid-encrypt-start.png"><img alt="Partially filled 10-column grid" class="align-center" src="_images/grid-encrypt-start.png" style="width: 264.86px; height: 285.36px;" /></a>
+<p>We continue this process until the entire message is on the grid..</p>
+<a class="reference internal image-reference" href="_images/grid-filled.png"><img alt="Filled 10-column grid" class="align-center" src="_images/grid-filled.png" style="width: 261.0px; height: 274.0px;" /></a>
+<p>Finally, we have leftover space, so I fill it with some random characters:</p>
+<a class="reference internal image-reference" href="_images/grid-padded.png"><img alt="Filled and padded 10-column grid" class="align-center" src="_images/grid-padded.png" style="width: 260.0px; height: 273.5px;" /></a>
+<dl class="docutils">
+<dt>And now, to encrypt it, we just writing the letters, starting with the first column, then with the second, and so on.</dt>
+<dd><ul class="first last simple">
+<li>Column 1: <code class="docutils literal"><span class="pre">aeeeiywvyhhi</span></code></li>
+<li>Column 2: <code class="docutils literal"><span class="pre">l__nnoiicoev</span></code></li>
+<li>Column 3: <code class="docutils literal"><span class="pre">wagdtuloh_re</span></code></li>
+</ul>
+</dd>
+</dl>
+<p>And so on... until we have all of them, then we put them all together to get our final encrpyted message:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">aeeeiywvyhhil__nnoiicoevwagdtuloh_reasusarllokeay_y_i__epn_dsi_uncbnaoys_fwpioettwogc_h_nd__hsusotomgeap___hdh_a___swwlk</span>
 </pre></div>
 </div>
-<div class="highlight-none"><div class="highlight"><pre><span></span>Trying key #1: aeeeiywvyhhil  nnoiicoevwagdtuloh reasusarllokeay y i  ...
-Trying key #2: aseie euinycwbvnyahohyisl  f wnpniooieitctoweovgwca ghd...
-Trying key #3: aaterweloelgiocyk wehva yynh dhy i  lih  s  unesnpoonti...
-Trying key #4: als eoi eh he usirnuyecswabovsntyuaohsomhaygirsell a lf...
-Trying key #5: awy oea ftegywoed pmitiigyu oewl eavoetpyhpt h nw hr o ...
-Trying key #6: acastgeoriweeel oaevlugpiwonc yakc  wgebh vdan hytyandh...
-Trying key #7: aia   deisef hecupwh eosnpsaiea iu yvrdos wwlseo valitt...
-Trying key #8: anlksp  enoeii  eoha ohhei yuesdiir ntuhyceycts woa bwo...
-Trying key #9: a tlpyco enulns m enlo  hg eookdf esiiheswnawyi aipdpww...
-Trying key #10: always code as if the guy who ends up maintaining your ...
-Found potential solution with key 10, enter &#39;X&#39; to exit or just press Enter to continue: X
-Ending.  The selected key is 10
-The selected solution is:
-always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you liveadsgshk
+<p>And here&#8217;s how it would look with spaces instead of underscores:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">aeeeiywvyhhil</span>  <span class="n">nnoiicoevwagdtuloh</span> <span class="n">reasusarllokeay</span> <span class="n">y</span> <span class="n">i</span>  <span class="n">epn</span> <span class="n">dsi</span> <span class="n">uncbnaoys</span> <span class="n">fwpioettwogc</span> <span class="n">h</span> <span class="n">nd</span>  <span class="n">hsusotomgeap</span>   <span class="n">hdh</span> <span class="n">a</span>   <span class="n">swwlk</span>
 </pre></div>
 </div>
-<p>The following space is provided in case you want to test code out or write it in the browser:</p>
-
-<textarea data-component="activecode" id=labspace-06-05 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
-#Write and run code here!
-</textarea>
+<p>Seems pretty random, right?  It has a few advantages over the Caesar cipher other than having more possible keys; it also cannot be broken through frequency analysis (looking at how often certain letters show up), which would work on many substitution ciphers, including the Caesar cipher.  It will also mix up punctuation and spaces, which the Caesar cipher will not.</p>
+</div>
+<div class="section" id="decrypting-with-the-transposition-cipher">
+<h2>Decrypting with the Transposition Cipher<a class="headerlink" href="#decrypting-with-the-transposition-cipher" title="Permalink to this headline">¶</a></h2>
+<p>As long as you know the key, decrypting with the Transposition Cipher is easy.  It uses a very similar method as above, except reversed.</p>
+<p>Start by getting the length of the message and divide it by the key, or <code class="docutils literal"><span class="pre">10</span></code>.  The length of this message is 120 characters (if it were an unpadded message, you would always round your number up), and so we divide the message into pieces of length <code class="docutils literal"><span class="pre">120</span> <span class="pre">/</span> <span class="pre">10</span></code>, or <code class="docutils literal"><span class="pre">12</span></code>.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">aeeeiywvyhhi</span>
+<span class="n">l__nnoiicoev</span>
+<span class="n">wagdtuloh_re</span>
+<span class="n">asusarllokea</span>
+<span class="n">y_y_i__epn_d</span>
+<span class="n">si_uncbnaoys</span>
+<span class="n">_fwpioettwog</span>
+<span class="n">c_h_nd__hsus</span>
+<span class="n">otomgeap___h</span>
+<span class="n">dh_a___swwlk</span>
+</pre></div>
+</div>
+<p>Then draw up an empty grid 10 columns wide.</p>
+<a class="reference internal image-reference" href="_images/grid-empty.png"><img alt="Empty 10-column grid" class="align-center" src="_images/grid-empty.png" style="width: 261.5px; height: 274.0px;" /></a>
+<p>Then begin filling in the grid with these messages, except this time, you&#8217;ll want to write down and not across.  Each 12-character substring should fit into one column.</p>
+<a class="reference internal image-reference" href="_images/grid-decrypt-start.png"><img alt="Partially filled 10-column grid" class="align-center" src="_images/grid-decrypt-start.png" style="width: 264.86px; height: 284.54px;" /></a>
+<p>Continue until the entire message is filled in:</p>
+<a class="reference internal image-reference" href="_images/grid-padded.png"><img alt="Filled and padded 10-column grid" class="align-center" src="_images/grid-padded.png" style="width: 260.0px; height: 273.5px;" /></a>
+<p>Then we read off the message going left-right, top-down, and the original message is once again clear!</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">always_code_as_if_the_guy_who_ends_up_maintaining_your_code_will_be_a_violent_psychopath_who_knows_where_you_liveadsgshk</span>
+</pre></div>
+</div>
+<p>In the next lab, 6-2, you will be implementing the algorithm for encrypting and decrypting with the transposition cipher.</p>
 </div>
 </div>
 
