@@ -9,7 +9,7 @@ import json
 
 def create_index(files=txtfiles):
     for file in files:
-        words = open("other/"+file).read().split(" ")
+        words = open("search/"+file).read().split(" ")
         
         for i in range(len(words)):
             new_word = ""
@@ -26,14 +26,14 @@ def create_index(files=txtfiles):
             elif new_word.upper() not in stopwords:
                 index[new_word] = [file]
     try:
-        savefile = open('other/search_index.json','w')
+        savefile = open('search/search_index.json','w')
         json.dump(index,savefile)
         return "success creating index"
     except:
         return "failed creating index"
 
 def load_index(name='search_index.json'):
-    openfile = open('other/'+name, 'r')
+    openfile = open('search/'+name, 'r')
     global index
     try:
         index = json.load(openfile)
