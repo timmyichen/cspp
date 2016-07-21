@@ -13,6 +13,7 @@ The Old Way
 In order to print variables in a sentence, we know to use the ``+`` operator to combine strings.
 
 .. code-block:: none
+    :emphasize-lines: 2
 
     >>> name = "Mark"
     >>> print("His name is " + name)
@@ -21,6 +22,7 @@ In order to print variables in a sentence, we know to use the ``+`` operator to 
 However, this gets complicated when a lot of variables get involved, especially numbers - like so:
 
 .. code-block:: none
+    :emphasize-lines: 5
 
     >>> name = "Mark"
     >>> lastname = "Twain"
@@ -58,7 +60,9 @@ This time, we use the curly brace characters ``{}`` as a placeholder in our stri
 
 While it isn't much shorter in terms of length, it is much easier to read!  Not only that, but notice that we didn't have to convert the variable ``age``, which holds an integer, into a string to print it!
 
-:misc-hl:`In general, you should use string formatting when printing strings with variables.`  Other methods are messier and this is just best practice.  For the rest of this course you will be expected to use string formatting in print statements.
+:misc-hl:`In general, you should always use string formatting when printing strings with variables.`  Other methods are messier and this is just best practice.  For the rest of this course you will be expected to use string formatting in print statements.
+
+Note that there are other ways to use string formatting, but we will not be covering them at this time.
 
 Checks for Understanding
 ------------------------
@@ -68,7 +72,7 @@ Checks for Understanding
     :answer_a: It's easier to read and write
     :answer_b: It takes up less power
     :answer_c: It's much much shorter
-    :feedback_a: Correct! You can compare it against the older, harder-to-read way!
+    :feedback_a: You can compare it against the older, harder-to-read way!
     :feedback_b: Nothing was mentioned here about power and efficiency.
     :feedback_c: While it is shorter, it's not that much shorter.  Try again!
     

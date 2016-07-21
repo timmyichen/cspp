@@ -6,7 +6,7 @@
 Lesson 01-02: Python Operators
 ==============================
 
-**Learning Target: I can describe the ways in which Python can represent data.**
+**Learning Target: I can write mathematical expressions in python.**
 
 Basic Operators
 ---------------
@@ -29,6 +29,12 @@ New Operators
 
 In Python, there are two other operators we need to know.
 
+:vocab-word:`Power` is simply :vocab-def:`an exponent`.  ``3**2`` can be described as ``3 raised to the 2nd power``.  In math classes you've probably seen it as :math:`3^2`
+
+*Note: You can do square roots by using a power of one-half.  For example, the square root of 16 is the same as 16 raised to the 1/2th power, or ``16**(1/2)``*
+
+:vocab-word:`Modulo` represents :vocab-def:`remainder after division`. ``10%3`` can be described as ``the extra parts when 10 divided by 3``, or ``how much of 10 is not divisible by 3``.  In this case, 10 divided by 3 is 3 remainder 1 (or 3 fits into 10, 3 times, with 1 left over), so ``10 mod 3 = 1``.
+
 	+-----------------+--------+------------------------+
 	| Operator        | Symbol | Example                |
 	+=================+========+========================+
@@ -37,13 +43,7 @@ In Python, there are two other operators we need to know.
 	| Modulo (mod)    | ``%``  | ``10%3`` (result: 1)   |
 	+-----------------+--------+------------------------+
 
-:vocab-word:`Power` is simply :vocab-def:`an exponent`.  ``3**2`` can be described as ``3 raised to the 2nd power``, or 3^2
-
-*Note: You can do square roots by using a power of one-half.  For example, the square root of 16 is the same as 16 raised to the 1/2th power, or ``16**(1/2)``*
-
-:vocab-word:`Modulo` represents :vocab-def:`remainder after division`. ``10%3`` can be described as ``the extra parts when 10 divided by 3``, or ``how much of 10 is not divisible by 3``.  In this case, 10 divided by 3 is 3 remainder 1 (or 3 fits into 10, 3 times, with 1 left over), so ``10 mod 3 = 1``.
-
-Three more examples:
+Three more examples of modulo:
 	- 20 % 6
 
 	  6 fits into 20 three (3) times.  ``3 * 6 = 18``, which means that there is ``20 (total) - 18 (result) = 2 (remainder)`` left over.  The remainder of this expression is 2, so ``20 % 6 = 2``.

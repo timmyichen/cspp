@@ -25,8 +25,6 @@ To observe, run the following code:
 	print 1 + 1	#int + int => int
 	print 1.0 + 1.0	#float + float => float
 	print 1 + 1.0 	#int + float => float
-	print True + 1	#boolean + int => int
-	print True + 1.0 #boolean + float => float
 
 As an example, consider the expression ``1 + 2 / 4 + 0.5``.
 
@@ -100,3 +98,5 @@ The rule can basically be broken down into three parts:
 	- Adding a string to another string is allowed
 	- Multiplying a string by an integer is allowed
 	- **Everything else is not allowed**
+
+Any time we encounter code that generates an error, it's usually a good idea to find a way to make the code work without any errors.  So the big overarching question in our next lesson is: **How do we combine different types?**

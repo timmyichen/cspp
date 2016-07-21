@@ -19,7 +19,7 @@ Table of the conversion functions:
 	+-----------------------------------+-------------+
 	| To convert to a String, use...    | ``str()``   |
 	+-----------------------------------+-------------+
-	| To convert to a Boolean, use...   | ``str()``   |
+	| To convert to a Boolean, use...   | ``bool()``  |
 	+-----------------------------------+-------------+
 	| To convert to a Float, use...     | ``float()`` |
 	+-----------------------------------+-------------+

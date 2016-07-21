@@ -302,8 +302,8 @@
 <h2>The Old Way<a class="headerlink" href="#the-old-way" title="Permalink to this headline">¶</a></h2>
 <p>In order to print variables in a sentence, we know to use the <code class="docutils literal"><span class="pre">+</span></code> operator to combine strings.</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>&gt;&gt;&gt; name = &quot;Mark&quot;
-&gt;&gt;&gt; print(&quot;His name is &quot; + name)
-His name is Mark
+<span class="hll">&gt;&gt;&gt; print(&quot;His name is &quot; + name)
+</span>His name is Mark
 </pre></div>
 </div>
 <p>However, this gets complicated when a lot of variables get involved, especially numbers - like so:</p>
@@ -311,8 +311,8 @@ His name is Mark
 &gt;&gt;&gt; lastname = &quot;Twain&quot;
 &gt;&gt;&gt; job = &quot;Author&quot;
 &gt;&gt;&gt; age = 74
-&gt;&gt;&gt; print(&quot;His name is &quot; + name + &quot; &quot; + lastname + &quot; and he was an &quot; + job + &quot; and he died at age &quot; + str(age))
-His name is Mark Twain and he was an Author and he died at age 74
+<span class="hll">&gt;&gt;&gt; print(&quot;His name is &quot; + name + &quot; &quot; + lastname + &quot; and he was an &quot; + job + &quot; and he died at age &quot; + str(age))
+</span>His name is Mark Twain and he was an Author and he died at age 74
 </pre></div>
 </div>
 </div>
@@ -336,14 +336,15 @@ print("His name is {} {} and he was an {} and he died at age {}".format(name,las
 <a class="reference internal image-reference" href="../_images/strformat.svg"><div align="center" class="align-center"><img alt="This image shows which variable correlates with which placeholder" src="../_images/strformat.svg" /></div>
 </a>
 <p>While it isn&#8217;t much shorter in terms of length, it is much easier to read!  Not only that, but notice that we didn&#8217;t have to convert the variable <code class="docutils literal"><span class="pre">age</span></code>, which holds an integer, into a string to print it!</p>
-<p><span class="misc-hl">In general, you should use string formatting when printing strings with variables.</span>  Other methods are messier and this is just best practice.  For the rest of this course you will be expected to use string formatting in print statements.</p>
+<p><span class="misc-hl">In general, you should always use string formatting when printing strings with variables.</span>  Other methods are messier and this is just best practice.  For the rest of this course you will be expected to use string formatting in print statements.</p>
+<p>Note that there are other ways to use string formatting, but we will not be covering them at this time.</p>
 </div>
 <div class="section" id="checks-for-understanding">
 <h2>Checks for Understanding<a class="headerlink" href="#checks-for-understanding" title="Permalink to this headline">¶</a></h2>
 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="cfu_strformat_1">
             ch0201-1: What is the main advantage to using string formatting when printing strings?
-            <li data-component="answer" data-correct id="cfu_strformat_1_opt_a">(A) It's easier to read and write</li><li data-component="feedback" id="cfu_strformat_1_opt_a">Correct! You can compare it against the older, harder-to-read way!</li>
+            <li data-component="answer" data-correct id="cfu_strformat_1_opt_a">(A) It's easier to read and write</li><li data-component="feedback" id="cfu_strformat_1_opt_a">You can compare it against the older, harder-to-read way!</li>
             
             <li data-component="answer"  id="cfu_strformat_1_opt_b">(B) It takes up less power</li><li data-component="feedback" id="cfu_strformat_1_opt_b">Nothing was mentioned here about power and efficiency.</li>
             

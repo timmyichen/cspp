@@ -56,3 +56,6 @@ Chapter 2 Lessons
     :maxdepth: 2
     
     ch2/ch0201-strformat.rst
+    ch2/ch0202-strindex.rst
+    ch2/ch0203-strslice.rst
+    ch2/ch0204-escaping.rst

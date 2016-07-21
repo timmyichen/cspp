@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lesson 01-07: Variable Reassignment &mdash; Runestone Interactive Overview</title>
+    <title>Lesson 02-02: Specific Letters with String Indexing &mdash; Runestone Interactive Overview</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -257,9 +257,11 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lesson 01-07: Variable Reassignment</a><ul>
-<li><a class="reference internal" href="#increasing-or-decreasing-a-variable">Increasing or Decreasing a Variable</a></li>
-<li><a class="reference internal" href="#warning-error-ahead">Warning: Error Ahead!</a></li>
+<li><a class="reference internal" href="#">Lesson 02-02: Specific Letters with String Indexing</a><ul>
+<li><a class="reference internal" href="#length-of-a-string">Length of a String</a></li>
+<li><a class="reference internal" href="#finding-a-specific-letter-in-a-string">Finding a Specific Letter in a String</a></li>
+<li><a class="reference internal" href="#negative-string-indexing">Negative String Indexing</a></li>
+<li><a class="reference internal" href="#checks-for-understanding">Checks For Understanding</a></li>
 </ul>
 </li>
 </ul>
@@ -294,137 +296,111 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="lesson-01-07-variable-reassignment">
-<h1>Lesson 01-07: Variable Reassignment<a class="headerlink" href="#lesson-01-07-variable-reassignment" title="Permalink to this headline">¶</a></h1>
-<p><strong>Learning Target: I can reference a variable in its own reassignment statement.</strong></p>
-<p>With lots of experience in math and little experience in programming, when you see something like this:</p>
-<p><code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code></p>
-<p>Red flags should instantly go off in your head.  How can <code class="docutils literal"><span class="pre">x</span></code> be equal to itself plus 1??  Can <code class="docutils literal"><span class="pre">5</span></code> be equal to <code class="docutils literal"><span class="pre">6</span></code>?  No, of course not!</p>
-<div class="section" id="increasing-or-decreasing-a-variable">
-<h2>Increasing or Decreasing a Variable<a class="headerlink" href="#increasing-or-decreasing-a-variable" title="Permalink to this headline">¶</a></h2>
-<p>What you should not forget, however, is that the <code class="docutils literal"><span class="pre">=</span></code> symbol in programming is different from the <code class="docutils literal"><span class="pre">=</span></code> symbol in mathematics.</p>
-<p>To review, the equal sign means <strong>variable assignment</strong> - it has a very specific purpose.</p>
-<dl class="docutils">
-<dt>Recall the meaning of the left and right side of a variable assignment statement:</dt>
-<dd><ul class="first last simple">
-<li>Left side: the variable to store into</li>
-<li>Right side: the value <strong>or expression</strong> to store</li>
-</ul>
-</dd>
-</dl>
-<p>An important thing to note is that the right side is always evaluated <strong>before</strong> being saved into the variable on the left.  This gives the line of code <code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code> a whole new meaning.  Let&#8217;s break it down:</p>
-<p>Given a statement <code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code>, let&#8217;s assume the value of <code class="docutils literal"><span class="pre">x</span></code> is currently <code class="docutils literal"><span class="pre">0</span></code>.  Since it is an assignment statement, the right side of the equal sign, or <code class="docutils literal"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code>, gets evaluated first.  Since <code class="docutils literal"><span class="pre">x</span></code> is a variable being used in an expression, we use its actual value instead, which is <code class="docutils literal"><span class="pre">0</span></code>.  So the expression being evaluated is <code class="docutils literal"><span class="pre">0</span> <span class="pre">+</span> <span class="pre">1</span></code>, which is just <code class="docutils literal"><span class="pre">1</span></code>.</p>
-<p>This leaves us with the statement <code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">1</span></code>, which then allows us to store <code class="docutils literal"><span class="pre">1</span></code> in <code class="docutils literal"><span class="pre">x</span></code>, basically increasing the value of <code class="docutils literal"><span class="pre">x</span></code> by <code class="docutils literal"><span class="pre">1</span></code>.  Up until the beginning of this paragraph, <code class="docutils literal"><span class="pre">x</span></code> was still <code class="docutils literal"><span class="pre">0</span></code>!  It doesn&#8217;t actually change until you complete the assignment statement.</p>
-<p>However, this would have worked with any value of <code class="docutils literal"><span class="pre">x</span></code>!  Let&#8217;s say <code class="docutils literal"><span class="pre">x</span></code> was <code class="docutils literal"><span class="pre">28</span></code>.  The expression <code class="docutils literal"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code> would then be <code class="docutils literal"><span class="pre">28</span> <span class="pre">+</span> <span class="pre">1</span></code>, or <code class="docutils literal"><span class="pre">29</span></code>, which then gets saved back into <code class="docutils literal"><span class="pre">x</span></code>.  <code class="docutils literal"><span class="pre">x</span></code> is  changed from <code class="docutils literal"><span class="pre">28</span></code> to <code class="docutils literal"><span class="pre">29</span></code>, which is the same thing as increasing it by <code class="docutils literal"><span class="pre">1</span></code>.</p>
-<p>Let&#8217;s run through some example code below, step by step.</p>
+  <div class="section" id="lesson-02-02-specific-letters-with-string-indexing">
+<h1>Lesson 02-02: Specific Letters with String Indexing<a class="headerlink" href="#lesson-02-02-specific-letters-with-string-indexing" title="Permalink to this headline">¶</a></h1>
+<p><strong>Learning Target: I can use the len() function to find the length of a string.</strong>
+<strong>Learning Target: I can use string indexing to reference specific letters in a string.</strong></p>
+<div class="section" id="length-of-a-string">
+<h2>Length of a String<a class="headerlink" href="#length-of-a-string" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">len()</span></code> function is a function that will provide the length of a string.  The length of a string is basically the number of characters in the string, spaces included.  Here are a few quick examples:</p>
 
-<div class="alert alert-warning cd_section">
-<div id="cl_reassign_1"></div>
-<p class="cl_caption"><span class="cl_caption_text"> (cl_reassign_1)</span> </p>
-</div>
-<div id="cl_reassign_1_modal" class="modal fade codelens-modal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Check your understanding</h4>
-      </div>
-      <div class="modal-body">
-        <p>What is the value of num that will get printed?</p>
-        <input id="cl_reassign_1_textbox" type="textbox" class="form-control" style="width:200px;" />
-        <br />
-        <button id="cl_reassign_1_tracecheck" class='btn btn-default tracecheck' onclick="traceQCheckMe('cl_reassign_1_textbox','cl_reassign_1','globals.num')">
-          Check Me
-        </button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Continue</button>
-        <br />
-        <p id="cl_reassign_1_feedbacktext" class="feedbacktext alert alert-warning"></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<script type="text/javascript">
-var cl_reassign_1_trace = {"code": "num = 10\nnum = num + 5\nnum = num * 2\nprint num", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["num"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"num": 10}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["num"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"num": 15}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["num"], "question": {"text": "What is the value of num that will get printed?", "div": "cl_reassign_1_modal", "feedback": "Go through line by line, with num starting at 10.", "correct": "globals.num"}, "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"num": 30}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["num"], "question": {"text": "What is the value of num that will get printed?", "div": "cl_reassign_1_modal", "feedback": "Go through line by line, with num starting at 10.", "correct": "globals.num"}, "stdout": "30\n", "func_name": "<module>", "stack_to_render": [], "globals": {"num": 30}, "heap": {}, "line": 4, "event": "return"}]};
-var cl_reassign_1_vis;
-
-$(document).ready(function() {
-    try {
-        cl_reassign_1_vis = new ExecutionVisualizer('cl_reassign_1',cl_reassign_1_trace,
-                                    {embeddedMode: true,
-                                    verticalStack: false,
-                                    heightChangeCallback: redrawAllVisualizerArrows,
-                                    codeDivWidth: 500,
-                                    lang : 'py2'
-                                    });
-        attachLoggers(cl_reassign_1_vis,'cl_reassign_1');
-        styleButtons('cl_reassign_1');
-        allVisualizers.push(cl_reassign_1_vis);
-    } catch (e) {
-        console.log("Failed to Initialize CodeLens component cl_reassign_1_vis" );
-        console.log(e.toString());
-    }
-
-});
-
-$(document).ready(function() {
-    $("#cl_reassign_1_tracecheck").click(function() {
-        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'cl_reassign_1'});
-    });
-});
-
-if (allVisualizers === undefined) {
-   var allVisualizers = [];
-}
-
-
-$(window).resize(function() {
-    if (cl_reassign_1_vis) {
-        cl_reassign_1_vis.redrawConnectors();
-    }
-});
-</script>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">5</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">5</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">9</span>
-</pre></div>
-</div>
-
-        <p data-component="fillintheblank" data-casei="false" id="fill1512">
-            
-        <span data-blank>
-            What will the result of <code class="docutils literal"><span class="pre">x</span></code> be after the code above is run?
-        <span data-feedback="regex" style="display: none" id="cfu_reassign_2_feedback1">\b10\b</span>
-        <span data-feedback="text" style="display: none" for="cfu_reassign_2_feedback1">That's just the first line..</span>
-            
-        <span data-feedback="regex" style="display: none" id="cfu_reassign_2_feedback2">.*</span>
-        <span data-feedback="text" style="display: none" for="cfu_reassign_2_feedback2">Try again - be sure to go step by step!</span>
-            
-        <span data-answer style="display: none" id="cfu_reassign_2_answer">\\b5\\b</span>
-        </span>
-        
-        </p>
-            </div>
-<div class="section" id="warning-error-ahead">
-<h2>Warning: Error Ahead!<a class="headerlink" href="#warning-error-ahead" title="Permalink to this headline">¶</a></h2>
-<p>You&#8217;ll want to be careful about how you use variable reassignment.  For example, take the following program:</p>
-
-<textarea data-component="activecode" id=ac_reassign_1 data-lang="python"    data-timelimit=25000   data-audio=''     data-caption='Errors with reassignment'>
-x = x + 1
-print("x is now " + str(x))
+<textarea data-component="activecode" id=ex_strlen_1 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+print(len("hello!")) # ==> 6
+print(len("h e y there")) # ==> 11
+name = "Bobert"
+print("\n") #ignore this line
+print("The name {} has {} characters".format(name,len(name)))
+#should print "The name Bobert" has 6 characters"
 </textarea>
-<p>Notice how you get an error.  That&#8217;s because of how <em>regular variable assignment</em> works.</p>
-<p>Remember that the right side of the equal sign is evaluated <strong>first</strong>.  So it&#8217;s trying to evaluate <code class="docutils literal"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code>, but <code class="docutils literal"><span class="pre">x</span></code> doesn&#8217;t have a value yet!  So it will give you a <code class="docutils literal"><span class="pre">NameError</span></code>.</p>
-<p>You would have to <span class="vocab-def">give variables an initial value</span>.  This is called <span class="vocab-word">initializing</span> a variable.  So before you can use <code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code>, you will have to give <code class="docutils literal"><span class="pre">x</span></code> a value, using a regular assignment statement.  Maybe with <code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">0</span></code>.  The new code will look like this:</p>
+</div>
+<div class="section" id="finding-a-specific-letter-in-a-string">
+<h2>Finding a Specific Letter in a String<a class="headerlink" href="#finding-a-specific-letter-in-a-string" title="Permalink to this headline">¶</a></h2>
+<p>We can point to a specific character within a string by using string indexing.  Every letter, digit, space, or symbol in a string has a <span class="vocab-def">position in a string</span>, also known as its <span class="vocab-word">index</span>.</p>
+<p>We use <span class="vocab-word">string indexing</span> to <span class="vocab-def">reference a specific character in the string by using its index</span>.  The way that this is done is through brackets <code class="docutils literal"><span class="pre">[]</span></code> right after the string, with a number inside.</p>
+<p>Try to predict what the following code will print:</p>
 
-<textarea data-component="activecode" id=ac_reassign_2 data-lang="python"    data-timelimit=25000   data-audio=''     data-caption='No error here!'>
-x = 0
-x = x + 1
-print("x is now " + str(x))
+<textarea data-component="activecode" id=ex_strindex_1 data-lang="python"    data-timelimit=25000   data-audio=''     >
+print("Hello"[4]) #the 4th position of the string
+print("Hello"[1]) #the 1st position of the string
 </textarea>
-<p><span class="misc-hl">Always make sure that your variables are initialized!</span></p>
+<p>Was it what you expected?  If this is your first time seeing string indexing, you were probably off by one.  That&#8217;s because strings use <span class="vocab-word">zero-based indexing</span>, which is when <span class="vocab-def">the index always starts counting from zero</span>, instead of one.</p>
+<p>Here&#8217;s an example of the values of <code class="docutils literal"><span class="pre">word[0]</span></code>, <code class="docutils literal"><span class="pre">word[3]</span></code>, and <code class="docutils literal"><span class="pre">word[6]</span></code> for a variable <code class="docutils literal"><span class="pre">word</span> <span class="pre">=</span> <span class="pre">&quot;POKEMON&quot;</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/strindex.svg"><div align="center" class="align-center"><img alt="0 -&gt; &quot;P&quot;, 3 -&gt; &quot;E&quot;, 6 -&gt; &quot;N&quot;" src="../_images/strindex.svg" /></div>
+</a>
+<p>It&#8217;s worth noting that <span class="misc-hl">string indexing gives you a string as the result</span>.</p>
+<p><span class="misc-hl">Please keep in mind that from this point on, this book will use 0-based indexing as well.</span>  So if you read &#8220;the 4th position&#8221; or &#8220;the 4th letter&#8221;, it is the same as saying &#8220;the 4th index&#8221;</p>
+<p>What happens if you reference a position that&#8217;s greater than the length of the string itself?  Try running the code and see:</p>
+
+<textarea data-component="activecode" id=ex_strindex_2 data-lang="python"    data-timelimit=25000   data-audio=''     >
+word = "POKEMON"
+print(word[100])
+</textarea>
+<p><span class="misc-hl">Trying to reference a position that&#8217;s past the end of the string will give you an error!</span>  And it even gives us a descriptive error message as well.  Use this to your advantage when you come across it.</p>
+<p>Typically, to find the last character in a string <em>without knowing what the string is going to be</em>, we would use the expression <code class="docutils literal"><span class="pre">word[len(word)-1]</span></code>.  But in python, there&#8217;s an easier way.</p>
+</div>
+<div class="section" id="negative-string-indexing">
+<h2>Negative String Indexing<a class="headerlink" href="#negative-string-indexing" title="Permalink to this headline">¶</a></h2>
+<p>You can provide negative numbers as indexes as well.  Its behavior is interesting.  See the example below:</p>
+
+<textarea data-component="activecode" id=ex_negindex_1 data-lang="python"    data-timelimit=25000   data-audio=''     >
+word = "abcdef"
+print(word[-1])
+print(word[-2])
+print(word[-3])
+</textarea>
+<p>As you can see, <span class="misc-hl">when you provide a negative number, it starts counting from the end, with the last letter having an index of -1</span>.  This is very important because this allows us to use string indexing to things like &#8220;the second to last letter&#8221; of a string.</p>
+</div>
+<div class="section" id="checks-for-understanding">
+<h2>Checks For Understanding<a class="headerlink" href="#checks-for-understanding" title="Permalink to this headline">¶</a></h2>
+
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="cfu_strindex_1">
+            ch0202-1: With word = &#8220;duck tape&#8221;, what would the expression word[6] give us?
+            <li data-component="answer"  id="cfu_strindex_1_opt_a">(A) "p"</li><li data-component="feedback" id="cfu_strindex_1_opt_a">Remember that spaces count!</li>
+            
+            <li data-component="answer"  id="cfu_strindex_1_opt_b">(B) "t"</li><li data-component="feedback" id="cfu_strindex_1_opt_b">Don't forget to start counting from 0!</li>
+            
+            <li data-component="answer"  id="cfu_strindex_1_opt_c">(C) "A"</li><li data-component="feedback" id="cfu_strindex_1_opt_c">There are no capitals in this string..</li>
+            
+            <li data-component="answer" data-correct id="cfu_strindex_1_opt_d">(D) "a"</li><li data-component="feedback" id="cfu_strindex_1_opt_d">Great job!</li>
+            
+
+            </ul>
+            
+            <ul data-component="multiplechoice" data-multipleanswers="true"  id="cfu_strindex_2">
+            ch0202-2: With word = &#8220;battery&#8221;, which ways can we access the last letter?  Check all that apply.
+            <li data-component="answer"  id="cfu_strindex_2_opt_a">(A) word["last"]</li><li data-component="feedback" id="cfu_strindex_2_opt_a"></li>
+            
+            <li data-component="answer" data-correct id="cfu_strindex_2_opt_b">(B) word[-1]</li><li data-component="feedback" id="cfu_strindex_2_opt_b"></li>
+            
+            <li data-component="answer" data-correct id="cfu_strindex_2_opt_c">(C) word[len(word)-1]</li><li data-component="feedback" id="cfu_strindex_2_opt_c"></li>
+            
+            <li data-component="answer" data-correct id="cfu_strindex_2_opt_d">(D) word[6]</li><li data-component="feedback" id="cfu_strindex_2_opt_d"></li>
+            
+            <li data-component="answer"  id="cfu_strindex_2_opt_e">(E) word[7]</li><li data-component="feedback" id="cfu_strindex_2_opt_e">Don't forget to start counting from 0!</li>
+            
+
+            </ul>
+            
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="cfu_strindex_3">
+            ch0202-3: With word = &#8220;hello world&#8221;, which of the following will give an error?
+            <li data-component="answer"  id="cfu_strindex_3_opt_a">(A) word[5]</li><li data-component="feedback" id="cfu_strindex_3_opt_a"></li>
+            
+            <li data-component="answer"  id="cfu_strindex_3_opt_b">(B) word[0]</li><li data-component="feedback" id="cfu_strindex_3_opt_b"></li>
+            
+            <li data-component="answer" data-correct id="cfu_strindex_3_opt_c">(C) word[11]</li><li data-component="feedback" id="cfu_strindex_3_opt_c"></li>
+            
+
+            </ul>
+            <p>In the following area, complete the code so that the output matches what is stated in the comments <code class="docutils literal"><span class="pre">#</span></code>.</p>
+
+<textarea data-component="activecode" id=cfu_strindex_4 data-lang="python"    data-timelimit=25000   data-audio=''     >
+word = "yoloswag"
+print("\n")
+print() # ==> 'o'
+print() # ==> 'a'
+print() # the last letter
+print() # the 3rd to last letter
+</textarea>
 </div>
 </div>
 

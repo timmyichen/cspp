@@ -7,7 +7,9 @@ Lesson 01-06: Introduction to Variables
 
 **Learning Target: I can use variables to store Python data.**
 
-Now that we know how to express data, we can save them away using :vocab-word:`variables`.
+Now we know ow to express data in python.  But what if we need to save it for later?  What if we to ask the user for a lot of information, then do something with that information all at once?  We need some method of keeping data readily available.
+
+Luckily, we can save data using :vocab-word:`variables`.
 
 Think of variables as a storage box with labels.  Variables have the following characteristics:
 	- They can only hold one value at a time (although the value could be a list of values, which we will learn later)
@@ -61,11 +63,11 @@ Run the code below to observe the behavior of multiple assignment statements lin
 	:nocodelens:
 
 	num = 10
-	print "\n" #this is to make the output line up, ignore this line
-	print num
+	print("\n") #this is to make the output line up, ignore this line
+	print(num)
 	num = 15
-	print "\n" #same as before, ignore this line!
-	print num
+	print("\n") #same as before, ignore this line!
+	print(num)
 
 The four steps this code is executing are:
 	- Set ``num`` to 10
@@ -98,6 +100,9 @@ The following code will create three variables, ``x``, ``y``, and ``z``, setting
 	y = 2.0
 	z = x + y
 	print z
+	
+	a = 10
+	print a + 3.5
 
 If you tried changing the values of ``x`` and ``y`` and running the code again, you will have noticed that the output (``z``) changed.  That's because when it gets to ``line 3`` and we are executing a variable assignment statement for ``z``, we first have to evaluate the right side, which is ``x + y``.  Since ``x`` and ``y`` are variables, we pull the values from within the variables to use in their place.  So if ``x`` was ``1`` and ``y`` was ``2.0``, ``x + y`` would be the same as ``1 + 2.0``.
 

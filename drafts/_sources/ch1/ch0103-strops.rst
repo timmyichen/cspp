@@ -82,6 +82,14 @@ What can be concluded from your observations from above?  Use your observations 
 
 Multiplication with strings will just repeat that string. Order of operation still applies - multiplication before addition!
 
+Keep in mind strings still follows your normal order of operations.  In the following example:
+
+::
+	
+	print("hue " * 3 * 2)
+	
+It evalutes ``"hue " * 3`` first, which is ``"hue hue hue "``.  Then it takes that string ``"hue hue hue "`` and multiplies it by 2: ``"hue hue hue " * 2`` - which is ``"hue hue hue hue hue hue "``
+
 Practice: Check Your Understanding
 ----------------------------------
 

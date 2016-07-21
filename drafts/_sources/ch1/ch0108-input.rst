@@ -27,8 +27,8 @@ The built-in ``input()`` function is a way to prompt the user to type something 
 
 They should both do the exact same thing.  Notice how we put the ``input()`` function as part of a **variable assignment** statement.  This is because the ``input()`` function actually represents a value - the value being whatever was typed in to the prompt.  
 
-``input()``'s Datatype
-----------------------
+The Datatype of ``input()``
+---------------------------
 
 An important question here is: what *type of data* does ``input()`` give you?  We can easily find out using the ``type()`` function.  Try running the example below.
 

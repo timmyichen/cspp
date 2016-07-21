@@ -298,7 +298,7 @@
   
   <div class="section" id="lesson-01-02-python-operators">
 <h1>Lesson 01-02: Python Operators<a class="headerlink" href="#lesson-01-02-python-operators" title="Permalink to this headline">¶</a></h1>
-<p><strong>Learning Target: I can describe the ways in which Python can represent data.</strong></p>
+<p><strong>Learning Target: I can write mathematical expressions in python.</strong></p>
 <div class="section" id="basic-operators">
 <h2>Basic Operators<a class="headerlink" href="#basic-operators" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
@@ -340,6 +340,9 @@
 <div class="section" id="new-operators">
 <h2>New Operators<a class="headerlink" href="#new-operators" title="Permalink to this headline">¶</a></h2>
 <p>In Python, there are two other operators we need to know.</p>
+<p><span class="vocab-word">Power</span> is simply <span class="vocab-def">an exponent</span>.  <code class="docutils literal"><span class="pre">3**2</span></code> can be described as <code class="docutils literal"><span class="pre">3</span> <span class="pre">raised</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">2nd</span> <span class="pre">power</span></code>.  In math classes you&#8217;ve probably seen it as <span class="math">\(3^2\)</span></p>
+<p><em>Note: You can do square roots by using a power of one-half.  For example, the square root of 16 is the same as 16 raised to the 1/2th power, or ``16**(1/2)``</em></p>
+<p><span class="vocab-word">Modulo</span> represents <span class="vocab-def">remainder after division</span>. <code class="docutils literal"><span class="pre">10%3</span></code> can be described as <code class="docutils literal"><span class="pre">the</span> <span class="pre">extra</span> <span class="pre">parts</span> <span class="pre">when</span> <span class="pre">10</span> <span class="pre">divided</span> <span class="pre">by</span> <span class="pre">3</span></code>, or <code class="docutils literal"><span class="pre">how</span> <span class="pre">much</span> <span class="pre">of</span> <span class="pre">10</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">divisible</span> <span class="pre">by</span> <span class="pre">3</span></code>.  In this case, 10 divided by 3 is 3 remainder 1 (or 3 fits into 10, 3 times, with 1 left over), so <code class="docutils literal"><span class="pre">10</span> <span class="pre">mod</span> <span class="pre">3</span> <span class="pre">=</span> <span class="pre">1</span></code>.</p>
 <blockquote>
 <div><table border="1" class="docutils">
 <colgroup>
@@ -365,11 +368,8 @@
 </tbody>
 </table>
 </div></blockquote>
-<p><span class="vocab-word">Power</span> is simply <span class="vocab-def">an exponent</span>.  <code class="docutils literal"><span class="pre">3**2</span></code> can be described as <code class="docutils literal"><span class="pre">3</span> <span class="pre">raised</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">2nd</span> <span class="pre">power</span></code>, or 3^2</p>
-<p><em>Note: You can do square roots by using a power of one-half.  For example, the square root of 16 is the same as 16 raised to the 1/2th power, or ``16**(1/2)``</em></p>
-<p><span class="vocab-word">Modulo</span> represents <span class="vocab-def">remainder after division</span>. <code class="docutils literal"><span class="pre">10%3</span></code> can be described as <code class="docutils literal"><span class="pre">the</span> <span class="pre">extra</span> <span class="pre">parts</span> <span class="pre">when</span> <span class="pre">10</span> <span class="pre">divided</span> <span class="pre">by</span> <span class="pre">3</span></code>, or <code class="docutils literal"><span class="pre">how</span> <span class="pre">much</span> <span class="pre">of</span> <span class="pre">10</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">divisible</span> <span class="pre">by</span> <span class="pre">3</span></code>.  In this case, 10 divided by 3 is 3 remainder 1 (or 3 fits into 10, 3 times, with 1 left over), so <code class="docutils literal"><span class="pre">10</span> <span class="pre">mod</span> <span class="pre">3</span> <span class="pre">=</span> <span class="pre">1</span></code>.</p>
 <dl class="docutils">
-<dt>Three more examples:</dt>
+<dt>Three more examples of modulo:</dt>
 <dd><ul class="first last">
 <li><p class="first">20 % 6</p>
 <p>6 fits into 20 three (3) times.  <code class="docutils literal"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">6</span> <span class="pre">=</span> <span class="pre">18</span></code>, which means that there is <code class="docutils literal"><span class="pre">20</span> <span class="pre">(total)</span> <span class="pre">-</span> <span class="pre">18</span> <span class="pre">(result)</span> <span class="pre">=</span> <span class="pre">2</span> <span class="pre">(remainder)</span></code> left over.  The remainder of this expression is 2, so <code class="docutils literal"><span class="pre">20</span> <span class="pre">%</span> <span class="pre">6</span> <span class="pre">=</span> <span class="pre">2</span></code>.</p>

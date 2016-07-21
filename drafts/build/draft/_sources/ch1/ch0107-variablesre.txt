@@ -72,7 +72,7 @@ You'll want to be careful about how you use variable reassignment.  For example,
 	:caption: Errors with reassignment
 
 	x = x + 1
-	print "x is now " + str(x)
+	print("x is now " + str(x))
 
 Notice how you get an error.  That's because of how *regular variable assignment* works.
 
@@ -86,7 +86,7 @@ You would have to :vocab-def:`give variables an initial value`.  This is called 
 
 	x = 0
 	x = x + 1
-	print "x is now " + str(x)
+	print("x is now " + str(x))
 
 :misc-hl:`Always make sure that your variables are initialized!`
 

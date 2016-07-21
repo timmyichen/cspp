@@ -61,11 +61,11 @@ Run the code below to observe the behavior of multiple assignment statements lin
 	:nocodelens:
 
 	num = 10
-	print "\n" #this is to make the output line up, ignore this line
-	print num
+	print("\n") #this is to make the output line up, ignore this line
+	print(num)
 	num = 15
-	print "\n" #same as before, ignore this line!
-	print num
+	print("\n") #same as before, ignore this line!
+	print(num)
 
 The four steps this code is executing are:
 	- Set ``num`` to 10
