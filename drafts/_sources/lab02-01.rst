@@ -13,14 +13,14 @@ In this lab, you are going to be creating a simple calculator that will only ope
 
 The input will always be three characters long.  The first character will always be the first (single-digit) number, the third character will always be the second (single-digit) number, and the second character will always be the operator.
 
-Your program should be set up to handle the following operations:
+Write your program so that it can handle the following operations:
     - Addition +
     - Subtraction -
     - Multiplication *
     - Division /
     - Modulo %
 
-As an example, if given an input of ``"3*5"``, your program should perform the calculation and print out ``"The result is 15"``.  The result may have more than one digit.  The result may also be negative.
+As an example, if given an input of ``"3*5"``, your program should perform the calculation and print out ``"The result is 15"``.  The result may have more than one digit.  The result may also be negative, but only if you subtract one number from a number that is smaller. Your program does not need to accept negative numbers as inputs.
 
 Again, please remember that ``input()`` will always give you a string.  You will have to use conversion functions such as ``int()`` or ``float()`` in order to use a string (or its parts) as a number.
 
@@ -64,4 +64,4 @@ We will do this by asking the user for three things:
     - The length of the first term in terms of digits.  From the example above, that would be ``3``
     - The length of the second term in terms of digits.  From the example above, that would be ``2``.
     
-Using that information, you will do something similar to your original program, but this time, you will have to use string slicing.  As a reminder, string slicing is similar to string indexing, but you provide a range of indexes instead of a single index.  Example: ``"howdy"[1:4]`` will be ``"owd"`` because it starts at the first index ``"howdy"[1]``, or ``"o"`` and end at one less than the last index ``"howdy"[4-1]``, or ``"howdy"[3]``, or ``"d"``.  Everything from ``"o"`` to ``"d"`` is ``"owd"``.  You will use this to determine the two terms in the expression.
+Using that information, you will do something similar to your original program, but this time, you will have to use string slicing.  As a reminder, string slicing is similar to string indexing, but you provide a range of indexes instead of a single index.  Example: ``"492-52"[0:2]`` will be ``"492"`` because the slice expressions stipulates that we want the first three characters of the string. Please note that though the length of ``"492"`` is 3, because strings use zero-based indexing, we can't simply use the length of the string to determine the second number in the slice. You will need to do a little arithmetic to determine the start and end indexes of each number in the input expression.
