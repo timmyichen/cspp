@@ -1,0 +1,67 @@
+.. qnum::
+   :start: 1
+   :prefix: lab07-03-
+
+
+Lab 7-3: Word Frequency Counter
+===============================
+
+Lab Requirements and Specifications
+-----------------------------------
+
+Provided for you is a text file containing the lyrics to all of Taylor Swift's songs in her album *Fearless*.  The file can be downloaded by clicking here: :download:`tswiftlyrics.txt <resource/tswiftlyrics.txt>` or viewed by clicking here: `tswiftlyrics.txt <_downloads/tswiftlyrics.txt>`_.
+
+**This lab a three-step process.**
+
+The first step is to analyze the text provided, and count the number of times each word occurs in the text.  You should accomplish this using dictionaries.  As you are counting the words, make sure you make them all uppercase and remove all punctuation and newlines from the text.
+
+The second step is to read in a text file called ``exclude.txt`` and read in **"stop words"** to exclude from your search.  Stop words are words that are commonly excluded from language and text processing.  This text file will have one word per line, all uppercase, and will consist of common words ("the","a","an","is", etc).
+
+The third and final step is to print out the top 20 words along with the number of times they occurred.  This should be done by finding the maximum of all the words, printing and removing that word, then finding the maximum again (the previously top word being removed).
+
+You should name your file ``FILN_wordcounter.py``, where FILN is your first initial and last name, no space.
+
+Some tips to keep in mind:
+    - If you have a dictionary ``d``, the expression ``max(d, key=d.get)`` will return the key with the largest value.  Super big hint for step #3!
+    - If you have a dictionary ``d`` with a key of ``key``, the you can use ``d.pop(key, None)`` which will remove that key-value pair from ``d``.  Another big hint for step #3!
+    - After using ``.split()``, you will have a list, let's say the list is called ``array``.  You can use the list method ``array.remove(e)`` to remove ``e`` from the list.  Combine this with a while loop like ``while e in array:`` and you can easily remove ALL elements of ``e`` from the list.
+
+Testing Your Program
+--------------------
+
+Below is a sample output after analyzing the entire text of "The Gambler", by Fyodor Dostoyevsky.  The file can be downloaded by clicking here: :download:`thegambler.txt <resource/thegambler.txt>` or viewed by clicking here: `thegambler.txt <_downloads/thegambler.txt>`_.
+
+.. code-block:: none
+
+    GENERAL: 194
+    DID: 145
+    POLINA: 141
+    SAID: 135
+    MLLE: 132
+    MYSELF: 132
+    KNOW: 122
+    YES: 118
+    TIME: 117
+    OLD: 114
+    MONEY: 111
+    GRANDMOTHER: 107
+    COME: 101
+    THOUSAND: 100
+    GRIERS: 100
+    BLANCHE: 99
+    SAY: 92
+    ASTLEY: 84
+    LADY: 80
+    FACT: 79
+    Total Unique Words: 5880
+
+The following space is provided in case you want to test code out or write it in the browser:
+
+.. activecode:: labspace-07-03
+
+    #Write and run code here!
+
+Taking it Further
+-----------------
+
+Our proposed process of finding the top 20 words may take a while, because it is a very inefficient process.  Instead, research ways to **sort a dictionary by its value**, so that you can print out the entire list of words in order from most-frequent to least-frequent.  This way, you get a whole picture, and get to see every word that occurred in the text.

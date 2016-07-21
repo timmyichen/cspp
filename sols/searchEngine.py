@@ -7,6 +7,7 @@ INCLUDE_CHARACTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456
 
 import json
 
+#creates index as json file
 def create_index(files=txtfiles):
     for file in files:
         words = open("search/"+file).read().split(" ")
@@ -32,6 +33,7 @@ def create_index(files=txtfiles):
     except:
         return "failed creating index"
 
+#loads index from json file
 def load_index(name='search_index.json'):
     openfile = open('search/'+name, 'r')
     global index
@@ -42,6 +44,8 @@ def load_index(name='search_index.json'):
         return "failed loading index"
         index = {}
 
+#returns text files in which search term can be found,
+# blank if not found
 def search_index(search_term):
     if search_term.lower() in index:
         return index[search_term.lower()]

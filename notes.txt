@@ -1,0 +1,27 @@
+changes made to package:
+
+/usr/local/lib/python2.7/dist-packages/runestone/common/css
+    in runestone-custom-sphinx-bootstrap.css, add:
+        .vocab-word{
+            font-weight: bold;
+            text-decoration: underline;
+            backround: #ffff99;
+        }
+        
+        .vocab-def{
+            font-weight: bold;
+            background: #ffff99;
+        }
+        
+        .misc-hl{
+            background: #c3e6fc;
+            font-weight: bold;
+        }
+
+changes made to conf.py:
+    add to end:
+        rst_prolog = """
+        .. role:: vocab-def
+        .. role:: vocab-word
+        .. role:: misc-hl
+        """

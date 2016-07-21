@@ -215,3 +215,8 @@ html_show_sourcelink = False
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'PythonCoursewareProjectdoc'
 
+rst_prolog = """
+.. role:: vocab-def
+.. role:: vocab-word
+.. role:: misc-hl
+"""

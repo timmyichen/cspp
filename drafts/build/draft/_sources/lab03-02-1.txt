@@ -146,7 +146,4 @@ Now that we have our pseudocode, it becomes very easy to write the code.  Much o
     
 And that's it!  You may copy and paste this code into your file and work from there.  Complete the prompted areas, and run it to make sure it works.  Of course, you are allowed to add extra lines of code if necessary.
 
-*Please note that this is NOT the only way, nor is it the best way that this program can be written.  The purpose of this exercise is to get us used to breaking down problems in a systematic and logical manner.
-
-
-            
+*Please note that this is NOT the only way, nor is it the best way that this program can be written.  The purpose of this exercise is to get us used to breaking down problems in a systematic and logical manner.*

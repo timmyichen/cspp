@@ -3,29 +3,49 @@
    :prefix: lab07-02-
 
 
-TODO 7-2: Simple Search Engine
-==============================
+Lab 7-2: Bruteforcing the Transposition Cipher, Revisited
+=========================================================
+
+Note: Part of this lab came from Al Sweigart's great book, *Hacking Secret Ciphers with Python: A beginner's Guide to cryptography and computer programming with Python*, available online here at `Invent With Python <https://inventwithpython.com/>`_, among his other works.  Feel free to check them out if they interest you!
 
 Lab Requirements and Specifications
 -----------------------------------
 
-In this lab, you will be creating a module that contains functions relating to search engines and indexes.
+This lab will be a modification on your previous 6-3 lab, ``FILN-brutetransposition.py``.  Copy and paste your code into a new file and name it ``FILN_brutetransposition2.py``, where FILN is your first initial and last name, no space.
 
-You already know how to search a text file to find a word; you basically did this in lab 7-1.  Searching many text files for a word is also something you could easily achieve using loops.  However, every time you search through a bunch of files to find a single word, you're performing many operations, and this can quickly slow down with enough files or with large files.
+Similar to your brute forcing program from before, you'll want to cycle through every key possibility.  However, this time, every time you perform a decryption, you will also check to see if the decryption is English by using your ``detectEnglish.py`` program.  The target percentage threshold to set is up to you!  
 
-However, you can get around this by using an **index**.  An index in data is much like an index in the back of a textbook; it is there to help you find the location of specific things.  In our case, our index will tell us which files we can find certain words, and it will do this by going through all text files and keeping track of where each word will be found.  While it sounds just as cumbersome as before, and it is, it will only need to do this once!  You only need to go through every word of every file when you are creating the **index**.  Every other time, you can just access the index directly to find where things are, and that is a much easier operation.
-
-You should name your file ``FILN_searchEngine.py``, where FILN is your first initial and last name, no space.
+This time, if it detects a decrypted message that resembles English, it should use ``input()`` to ask the user what to do (continue / end) - using ``input()`` will also pause program execution.  If the user chooses to end the program, it should display the whole decrypted message, and then quit the program.  If the user chooses to continue, then the program will simply continue decrypting with each key until it hits another English output or it ends.
 
 Testing Your Program
 --------------------
+
+Below is a sample output using the message:
+
+::
+    
+    "aeeeiywvyhhil  nnoiicoevwagdtuloh reasusarllokeay y i  epn dsi uncbnaoys fwpioettwogc h nd  hsusotomgeap   hdh a   swwlk"
+
+.. code-block:: none
+
+    Trying key #1: aeeeiywvyhhil  nnoiicoevwagdtuloh reasusarllokeay y i  ...
+    Trying key #2: aseie euinycwbvnyahohyisl  f wnpniooieitctoweovgwca ghd...
+    Trying key #3: aaterweloelgiocyk wehva yynh dhy i  lih  s  unesnpoonti...
+    Trying key #4: als eoi eh he usirnuyecswabovsntyuaohsomhaygirsell a lf...
+    Trying key #5: awy oea ftegywoed pmitiigyu oewl eavoetpyhpt h nw hr o ...
+    Trying key #6: acastgeoriweeel oaevlugpiwonc yakc  wgebh vdan hytyandh...
+    Trying key #7: aia   deisef hecupwh eosnpsaiea iu yvrdos wwlseo valitt...
+    Trying key #8: anlksp  enoeii  eoha ohhei yuesdiir ntuhyceycts woa bwo...
+    Trying key #9: a tlpyco enulns m enlo  hg eookdf esiiheswnawyi aipdpww...
+    Trying key #10: always code as if the guy who ends up maintaining your ...
+    Found potential solution with key 10, enter 'X' to exit or just press Enter to continue: X
+    Ending.  The selected key is 10
+    The selected solution is: 
+    always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you liveadsgshk
+    
 
 The following space is provided in case you want to test code out or write it in the browser:
 
 .. activecode:: labspace-07-02
 
     #Write and run code here!
-
-Taking it Further
------------------
-

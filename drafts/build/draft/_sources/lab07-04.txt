@@ -1,0 +1,31 @@
+.. qnum::
+   :start: 1
+   :prefix: lab07-04-
+
+
+TODO 7-4: Simple Search Engine
+==============================
+
+Lab Requirements and Specifications
+-----------------------------------
+
+In this lab, you will be creating a module that contains functions relating to search engines and indexes.
+
+You already know how to search a text file to find a word; you basically did this in lab 7-1.  Searching many text files for a word is also something you could easily achieve using loops.  However, every time you search through a bunch of files to find a single word, you're performing many operations, and this can quickly slow down with enough files or with large files.
+
+However, you can get around this by using an **index**.  An index in data is much like an index in the back of a textbook; it is there to help you find the location of specific things.  In our case, our index will tell us in which files we can find certain words, and it will do this by going through all text files and keeping track of where each word will be found.  While it sounds just as cumbersome as before, and it is, it will only need to do this once!  You only need to go through every word of every file when you are creating the **index**.  Every other time, you can just access the index directly to find where things are, and that is a much easier operation.
+
+You should name your file ``FILN_searchEngine.py``, where FILN is your first initial and last name, no space.
+
+Testing Your Program
+--------------------
+
+The following space is provided in case you want to test code out or write it in the browser:
+
+.. activecode:: labspace-07-04
+
+    #Write and run code here!
+
+Taking it Further
+-----------------
+

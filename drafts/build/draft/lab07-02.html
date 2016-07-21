@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>TODO 7-2: Simple Search Engine &mdash; Runestone Interactive Overview</title>
+    <title>Lab 7-2: Bruteforcing the Transposition Cipher, Revisited &mdash; Runestone Interactive Overview</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -257,10 +257,9 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">TODO 7-2: Simple Search Engine</a><ul>
+<li><a class="reference internal" href="#">Lab 7-2: Bruteforcing the Transposition Cipher, Revisited</a><ul>
 <li><a class="reference internal" href="#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
 <li><a class="reference internal" href="#testing-your-program">Testing Your Program</a></li>
-<li><a class="reference internal" href="#taking-it-further">Taking it Further</a></li>
 </ul>
 </li>
 </ul>
@@ -295,25 +294,42 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="todo-7-2-simple-search-engine">
-<h1>TODO 7-2: Simple Search Engine<a class="headerlink" href="#todo-7-2-simple-search-engine" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="lab-7-2-bruteforcing-the-transposition-cipher-revisited">
+<h1>Lab 7-2: Bruteforcing the Transposition Cipher, Revisited<a class="headerlink" href="#lab-7-2-bruteforcing-the-transposition-cipher-revisited" title="Permalink to this headline">¶</a></h1>
+<p>Note: Part of this lab came from Al Sweigart&#8217;s great book, <em>Hacking Secret Ciphers with Python: A beginner&#8217;s Guide to cryptography and computer programming with Python</em>, available online here at <a class="reference external" href="https://inventwithpython.com/">Invent With Python</a>, among his other works.  Feel free to check them out if they interest you!</p>
 <div class="section" id="lab-requirements-and-specifications">
 <h2>Lab Requirements and Specifications<a class="headerlink" href="#lab-requirements-and-specifications" title="Permalink to this headline">¶</a></h2>
-<p>In this lab, you will be creating a module that contains functions relating to search engines and indexes.</p>
-<p>You already know how to search a text file to find a word; you basically did this in lab 7-1.  Searching many text files for a word is also something you could easily achieve using loops.  However, every time you search through a bunch of files to find a single word, you&#8217;re performing many operations, and this can quickly slow down with enough files or with large files.</p>
-<p>However, you can get around this by using an <strong>index</strong>.  An index in data is much like an index in the back of a textbook; it is there to help you find the location of specific things.  In our case, our index will tell us which files we can find certain words, and it will do this by going through all text files and keeping track of where each word will be found.  While it sounds just as cumbersome as before, and it is, it will only need to do this once!  You only need to go through every word of every file when you are creating the <strong>index</strong>.  Every other time, you can just access the index directly to find where things are, and that is a much easier operation.</p>
-<p>You should name your file <code class="docutils literal"><span class="pre">FILN_searchEngine.py</span></code>, where FILN is your first initial and last name, no space.</p>
+<p>This lab will be a modification on your previous 6-3 lab, <code class="docutils literal"><span class="pre">FILN-brutetransposition.py</span></code>.  Copy and paste your code into a new file and name it <code class="docutils literal"><span class="pre">FILN_brutetransposition2.py</span></code>, where FILN is your first initial and last name, no space.</p>
+<p>Similar to your brute forcing program from before, you&#8217;ll want to cycle through every key possibility.  However, this time, every time you perform a decryption, you will also check to see if the decryption is English by using your <code class="docutils literal"><span class="pre">detectEnglish.py</span></code> program.  The target percentage threshold to set is up to you!</p>
+<p>This time, if it detects a decrypted message that resembles English, it should use <code class="docutils literal"><span class="pre">input()</span></code> to ask the user what to do (continue / end) - using <code class="docutils literal"><span class="pre">input()</span></code> will also pause program execution.  If the user chooses to end the program, it should display the whole decrypted message, and then quit the program.  If the user chooses to continue, then the program will simply continue decrypting with each key until it hits another English output or it ends.</p>
 </div>
 <div class="section" id="testing-your-program">
 <h2>Testing Your Program<a class="headerlink" href="#testing-your-program" title="Permalink to this headline">¶</a></h2>
+<p>Below is a sample output using the message:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;aeeeiywvyhhil  nnoiicoevwagdtuloh reasusarllokeay y i  epn dsi uncbnaoys fwpioettwogc h nd  hsusotomgeap   hdh a   swwlk&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre><span></span>Trying key #1: aeeeiywvyhhil  nnoiicoevwagdtuloh reasusarllokeay y i  ...
+Trying key #2: aseie euinycwbvnyahohyisl  f wnpniooieitctoweovgwca ghd...
+Trying key #3: aaterweloelgiocyk wehva yynh dhy i  lih  s  unesnpoonti...
+Trying key #4: als eoi eh he usirnuyecswabovsntyuaohsomhaygirsell a lf...
+Trying key #5: awy oea ftegywoed pmitiigyu oewl eavoetpyhpt h nw hr o ...
+Trying key #6: acastgeoriweeel oaevlugpiwonc yakc  wgebh vdan hytyandh...
+Trying key #7: aia   deisef hecupwh eosnpsaiea iu yvrdos wwlseo valitt...
+Trying key #8: anlksp  enoeii  eoha ohhei yuesdiir ntuhyceycts woa bwo...
+Trying key #9: a tlpyco enulns m enlo  hg eookdf esiiheswnawyi aipdpww...
+Trying key #10: always code as if the guy who ends up maintaining your ...
+Found potential solution with key 10, enter &#39;X&#39; to exit or just press Enter to continue: X
+Ending.  The selected key is 10
+The selected solution is:
+always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you liveadsgshk
+</pre></div>
+</div>
 <p>The following space is provided in case you want to test code out or write it in the browser:</p>
 
 <textarea data-component="activecode" id=labspace-07-02 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
 #Write and run code here!
 </textarea>
-</div>
-<div class="section" id="taking-it-further">
-<h2>Taking it Further<a class="headerlink" href="#taking-it-further" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 

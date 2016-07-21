@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lab 7-1: Word Frequency Counter &mdash; Runestone Interactive Overview</title>
+    <title>Lab 7-1: Detecting English through Programming &mdash; Runestone Interactive Overview</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -257,10 +257,10 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lab 7-1: Word Frequency Counter</a><ul>
+<li><a class="reference internal" href="#">Lab 7-1: Detecting English through Programming</a><ul>
 <li><a class="reference internal" href="#lab-requirements-and-specifications">Lab Requirements and Specifications</a></li>
+<li><a class="reference internal" href="#code-template">Code Template</a></li>
 <li><a class="reference internal" href="#testing-your-program">Testing Your Program</a></li>
-<li><a class="reference internal" href="#taking-it-further">Taking it Further</a></li>
 </ul>
 </li>
 </ul>
@@ -295,61 +295,210 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="lab-7-1-word-frequency-counter">
-<h1>Lab 7-1: Word Frequency Counter<a class="headerlink" href="#lab-7-1-word-frequency-counter" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="lab-7-1-detecting-english-through-programming">
+<h1>Lab 7-1: Detecting English through Programming<a class="headerlink" href="#lab-7-1-detecting-english-through-programming" title="Permalink to this headline">¶</a></h1>
+<p>Note: Part of this lab came from Al Sweigart&#8217;s great book, <em>Hacking Secret Ciphers with Python: A beginner&#8217;s Guide to cryptography and computer programming with Python</em>, available online here at <a class="reference external" href="https://inventwithpython.com/">Invent With Python</a>, among his other works.  Feel free to check them out if they interest you!</p>
 <div class="section" id="lab-requirements-and-specifications">
 <h2>Lab Requirements and Specifications<a class="headerlink" href="#lab-requirements-and-specifications" title="Permalink to this headline">¶</a></h2>
-<p>Provided for you is a text file containing the lyrics to all of Taylor Swift&#8217;s songs in her album <em>Fearless</em>.  The file can be downloaded by clicking here: <a class="reference download internal" href="_downloads/tswiftlyrics.txt" download=""><code class="xref download docutils literal"><span class="pre">tswiftlyrics.txt</span></code></a> or viewed by clicking here: <a class="reference external" href="_downloads/tswiftlyrics.txt">tswiftlyrics.txt</a>.</p>
-<p><strong>This lab a three-step process.</strong></p>
-<p>The first step is to analyze the text provided, and count the number of times each word occurs in the text.  You should accomplish this using dictionaries.  As you are counting the words, make sure you make them all uppercase and remove all punctuation and newlines from the text.</p>
-<p>The second step is to read in a text file called <code class="docutils literal"><span class="pre">exclude.txt</span></code> and read in <strong>&#8220;stop words&#8221;</strong> to exclude from your search.  Stop words are words that are commonly excluded from language and text processing.  This text file will have one word per line, all uppercase, and will consist of common words (&#8220;the&#8221;,&#8221;a&#8221;,&#8221;an&#8221;,&#8221;is&#8221;, etc).</p>
-<p>The third and final step is to print out the top 20 words along with the number of times they occurred.  This should be done by finding the maximum of all the words, printing and removing that word, then finding the maximum again (the previously top word being removed).</p>
-<p>You should name your file <code class="docutils literal"><span class="pre">FILN_wordcounter.py</span></code>, where FILN is your first initial and last name, no space.</p>
+<p>As you saw from the previous chapter, in the Transposition cipher there are far too many keys (especially in long messages) for us to sort through.  It&#8217;s quite a chore for us, but no sweat for our computers.  Sounds like a job that a program can do!</p>
+<p>Provided for you is a dictionary file, with over 45,000 of the most common words in the English language.  You can access that file by clicking on the following link: <a class="reference download internal" href="_downloads/dictionary.txt" download=""><code class="xref download docutils literal"><span class="pre">dictionary.txt</span></code></a>.  To view the file, you can also see: <a class="reference external" href="_downloads/dictionary.txt">dictionary.txt</a>.</p>
+<p>Let&#8217;s start by making clear what it means for a sentence to be English.  Complex programs exist to analyze specific character patterns and frequencies to determine the language it is in, but we&#8217;re going to take the simpler route.  To us, a word is considered English if it is one of the words in our dictionary.  If not, then it is &#8220;not English&#8221;.  A sentence or paragraph or essay is then considered English if a specific percentage of words in the text are English.  We are going to call this percentage <code class="docutils literal"><span class="pre">target_percentage</span></code>, or in other words, <em>our minimum % of words that have to be English before we consider the entire text English</em>.  <code class="docutils literal"><span class="pre">target_percentage</span></code> is given to the function as a <code class="docutils literal"><span class="pre">float</span></code> between <code class="docutils literal"><span class="pre">0</span></code> and <code class="docutils literal"><span class="pre">1</span></code>.</p>
+<p>As a reminder, you can find the % of words that are English by counting the number of English words, counting the number of total words, and then performing the following calculation to find our <strong>actual percentage</strong>:</p>
+<div class="math">
+\[\textrm{actual threshold} = \frac{\textrm{english words}}{\textrm{total words}}\]</div>
+<p>As an example, let&#8217;s say we have a text with 100 words, 57 of which appear in our dictionary file.  Our target percentage is .5, indicating that at least 50% of the words have to be English for our program to consider it English.  Since our <strong>actual percentage</strong> is 57 / 100 is .57, or 57%, it is above our target, and passes - therefore, by our standards, it is English.</p>
+<p><strong>In this lab, you are creating a module for other programs to import and use.</strong>  The focus of this module will be a function called <code class="docutils literal"><span class="pre">is_english()</span></code>, which takes in <code class="docutils literal"><span class="pre">message</span></code> and <code class="docutils literal"><span class="pre">target_percentage</span></code> and will return <code class="docutils literal"><span class="pre">True</span></code> or <code class="docutils literal"><span class="pre">False</span></code> depending on whether it passes as English or not.</p>
+<p>Keep in mind that while 50% might seem like a pretty low target, the majority of the words being analyzed (like when bruteforcing the transposition and caesar cipher) will be complete gibberish.</p>
+<p>You should name your file <code class="docutils literal"><span class="pre">FILN_detectEnglish.py</span></code>, where FILN is your first initial and last name, no space.</p>
+</div>
+<div class="section" id="code-template">
+<h2>Code Template<a class="headerlink" href="#code-template" title="Permalink to this headline">¶</a></h2>
+<p>Below is the code that you should use as a template for your program.</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#Detect English module</span>
+
+<span class="c1">#To use, type this code:</span>
+<span class="c1">#   import detectEnglish</span>
+<span class="c1">#   detectEnglish.is_english(someString) #returns true/false</span>
+<span class="c1">#(There must be a dictionary.txt file in this directory with</span>
+<span class="c1"># all english words in it, one per line.  You can download</span>
+<span class="c1"># this file from http://invpy.com/dictionary.txt)</span>
+
+<span class="c1"># a string to hold all uppercase and lowercase letters,</span>
+<span class="c1">#   plus spaces, tabs, newlines</span>
+<span class="n">LETTERS_AND_SPACE</span> <span class="o">=</span> <span class="n">UPPERLETTERS</span> <span class="o">+</span> <span class="n">UPPERLETTERS</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span>
+
+<span class="k">def</span> <span class="nf">loadDictionary</span><span class="p">():</span>
+    <span class="n">dictionaryFile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;dictionary.txt&#39;</span><span class="p">)</span> <span class="c1"># opens file for reading</span>
+    <span class="n">englishWords</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1">#create empty dictionary</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">dictionaryFile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">):</span> <span class="c1">#read file and</span>
+                                                   <span class="c1">#  split by line</span>
+        <span class="n">englishWords</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span> <span class="c1"># add the word as a key</span>
+                                  <span class="c1">#   to the dictionary, no value</span>
+    <span class="n">dictionaryFile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">englishWords</span>
+
+<span class="c1"># a dictionary to hold all english words in given dictionary.txt file</span>
+<span class="n">ENGLISH_WORDS</span> <span class="o">=</span> <span class="n">loadDictionary</span><span class="p">()</span>
+
+<span class="c1"># function: get_english_count</span>
+<span class="c1"># purpose: gets the number of words that are found in the given</span>
+<span class="c1">#   dictionary file</span>
+<span class="c1"># arguments:</span>
+<span class="c1">#   message: the message to count</span>
+<span class="c1"># returns:</span>
+<span class="c1">#   the number of &quot;English&quot; words in the message</span>
+<span class="k">def</span> <span class="nf">get_english_count</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="c1">#code here</span>
+
+<span class="c1"># function: remove_non_letters</span>
+<span class="c1"># purpose: removes any character that is not a letter or a space</span>
+<span class="c1">#   from a string</span>
+<span class="c1"># arguments:</span>
+<span class="c1">#   message: the message in which to remove non-letter/space chars</span>
+<span class="c1"># returns:</span>
+<span class="c1">#   the modified message that no longer contains special chars</span>
+<span class="k">def</span> <span class="nf">remove_non_letters</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="c1">#code here</span>
+
+<span class="c1"># function: message_to_upperlist</span>
+<span class="c1"># purpose: take in a message as a string and convert it all to</span>
+<span class="c1">#   uppercase turn it into a list of words (this function</span>
+<span class="c1">#   should call the remove_non_letters() function)</span>
+<span class="c1"># arguments:</span>
+<span class="c1">#   message: the message to convert</span>
+<span class="c1"># returns:</span>
+<span class="c1">#   a list of words in the original message, without special chars</span>
+<span class="k">def</span> <span class="nf">message_to_upperlist</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="c1">#code here</span>
+
+<span class="c1"># function: is_english</span>
+<span class="c1"># purpose: determines whether a message is english based on</span>
+<span class="c1">#   the percentage of its words that are found in our</span>
+<span class="c1">#   provided dictionary file</span>
+<span class="c1"># arguments:</span>
+<span class="c1">#   message: the message to be analyzed</span>
+<span class="c1">#   target_percentage: the minimum percentage for message to be</span>
+<span class="c1">#       considered English. Default value if not provided is 30%</span>
+<span class="c1"># returns:</span>
+<span class="c1">#   True if the actual percentage is greater to or equal to the</span>
+<span class="c1">#       target_percentage</span>
+<span class="c1">#   False otherwise</span>
+<span class="k">def</span> <span class="nf">is_english</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">target_percentage</span><span class="o">=.</span><span class="mi">3</span><span class="p">):</span>
+    <span class="c1">#code here</span>
+</pre></div>
+</td></tr></table></div>
+<p>Your job is to code the three incomplete functions to their specifications.</p>
 <dl class="docutils">
-<dt>Some tips to keep in mind:</dt>
+<dt>You may want to keep the following tips in mind:</dt>
 <dd><ul class="first last simple">
-<li>If you have a dictionary <code class="docutils literal"><span class="pre">d</span></code>, the expression <code class="docutils literal"><span class="pre">max(d,</span> <span class="pre">key=d.get)</span></code> will return the key with the largest value.  Super big hint for step #3!</li>
-<li>If you have a dictionary <code class="docutils literal"><span class="pre">d</span></code> with a key of <code class="docutils literal"><span class="pre">key</span></code>, the you can use <code class="docutils literal"><span class="pre">d.pop(key,</span> <span class="pre">None)</span></code> which will remove that key-value pair from <code class="docutils literal"><span class="pre">d</span></code>.  Another big hint for step #3!</li>
-<li>After using <code class="docutils literal"><span class="pre">.split()</span></code>, you will have a list, let&#8217;s say the list is called <code class="docutils literal"><span class="pre">array</span></code>.  You can use the list method <code class="docutils literal"><span class="pre">array.remove(e)</span></code> to remove <code class="docutils literal"><span class="pre">e</span></code> from the list.  Combine this with a while loop like <code class="docutils literal"><span class="pre">while</span> <span class="pre">e</span> <span class="pre">in</span> <span class="pre">array:</span></code> and you can easily remove ALL elements of <code class="docutils literal"><span class="pre">e</span></code> from the list.</li>
+<li>the <code class="docutils literal"><span class="pre">dictionary.txt</span></code> file contains words that are all uppercase, so make sure you use the <code class="docutils literal"><span class="pre">.upper()</span></code> string method to convert words to uppercase to match.</li>
+<li>use the <code class="docutils literal"><span class="pre">.split(&quot;</span> <span class="pre">&quot;)</span></code> string method to turn a string into a list where items are separated by space.</li>
+<li>but be careful - <code class="docutils literal"><span class="pre">&quot;hello</span>&nbsp;&nbsp; <span class="pre">there&quot;.split(&quot;</span> <span class="pre">&quot;)</span></code> will return <code class="docutils literal"><span class="pre">['hello',</span> <span class="pre">'',</span> <span class="pre">'',</span> <span class="pre">'there']</span></code> since there are three spaces.  Remove empty list values, as those are not words!</li>
+<li>when thinking of ways to remove non letters, try thinking of it in a different way: instead of removing non-letters, what if we were to keep only letters and spaces?</li>
+<li>be careful of divide by zero errors!</li>
 </ul>
 </dd>
 </dl>
+<p>Since it is a module for other programs to import, you want to leave the instructions at the top of the code intact, so that other developers will know how to use it.  However, once you&#8217;ve written each function, feel free to delete the instructions for that function.</p>
 </div>
 <div class="section" id="testing-your-program">
 <h2>Testing Your Program<a class="headerlink" href="#testing-your-program" title="Permalink to this headline">¶</a></h2>
-<p>Below is a sample output after analyzing the entire text of &#8220;The Gambler&#8221;, by Fyodor Dostoyevsky.  The file can be downloaded by clicking here: <a class="reference download internal" href="_downloads/thegambler.txt" download=""><code class="xref download docutils literal"><span class="pre">thegambler.txt</span></code></a> or viewed by clicking here: <a class="reference external" href="_downloads/thegambler.txt">thegambler.txt</a>.</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>GENERAL: 194
-DID: 145
-POLINA: 141
-SAID: 135
-MLLE: 132
-MYSELF: 132
-KNOW: 122
-YES: 118
-TIME: 117
-OLD: 114
-MONEY: 111
-GRANDMOTHER: 107
-COME: 101
-THOUSAND: 100
-GRIERS: 100
-BLANCHE: 99
-SAY: 92
-ASTLEY: 84
-LADY: 80
-FACT: 79
-Total Unique Words: 5880
+<p>You can test your program by feeding it sample sentences and thresholds.  Sentences can be 10 words long to make your own calculations simple.  The following are a few tests:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;Hello these are ten words ajds ahasd haaaae jsldf nassl&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">is_english</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="mf">0.1</span><span class="p">))</span> <span class="c1"># should be True</span>
+<span class="k">print</span><span class="p">(</span><span class="n">is_english</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="mf">0.4</span><span class="p">))</span> <span class="c1"># should be True</span>
+<span class="k">print</span><span class="p">(</span><span class="n">is_english</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="mf">0.7</span><span class="p">))</span> <span class="c1"># should be False</span>
+
+<span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;now to include extras, with punctuation right? AAAAA abasdf YOLO&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">is_english</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="mf">0.4</span><span class="p">))</span> <span class="c1"># should be True</span>
+<span class="k">print</span><span class="p">(</span><span class="n">is_english</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="mf">0.7</span><span class="p">))</span> <span class="c1"># should be True</span>
+<span class="k">print</span><span class="p">(</span><span class="n">is_english</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="mf">0.9</span><span class="p">))</span> <span class="c1"># should be False</span>
+</pre></div>
+</div>
+<p>And of course, mid-development, you can test your functions individually.  For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;hello alksdf how sdf dsasasfd are you asdf&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">get_english_count</span><span class="p">(</span><span class="n">string</span><span class="p">))</span> <span class="c1"># should be 4</span>
+
+<span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;hello, alksdf ho^$3w sdf dsasasfd are you? asdf!!!!!&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">remove_non_letters</span><span class="p">(</span><span class="n">string</span><span class="p">))</span>
+<span class="c1"># should print &quot;hello alksdf how sdf dsasasfd are you asdf&quot;</span>
 </pre></div>
 </div>
 <p>The following space is provided in case you want to test code out or write it in the browser:</p>
 
-<textarea data-component="activecode" id=labspace-04-01 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+<textarea data-component="activecode" id=labspace-07-01 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
 #Write and run code here!
 </textarea>
-</div>
-<div class="section" id="taking-it-further">
-<h2>Taking it Further<a class="headerlink" href="#taking-it-further" title="Permalink to this headline">¶</a></h2>
-<p>Our proposed process of finding the top 20 words may take a while, because it is a very inefficient process.  Instead, research ways to <strong>sort a dictionary by its value</strong>, so that you can print out the entire list of words in order from most-frequent to least-frequent.  This way, you get a whole picture, and get to see every word that occurred in the text.</p>
 </div>
 </div>
 

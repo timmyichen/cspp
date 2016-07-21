@@ -13,8 +13,6 @@ Lab Requirements and Specifications
 
 Similar to the Caesar cipher bruteforcing, you are to try every possible key for the transposition cipher.  Unlike the Caesar cipher where there are only 26 possible keys, the number of possible keys in the transposition cipher is not a set number.  Instead, the number of possible keys is dependent on the length of the message.  A message with 150 characters can have 150 keys.  This makes it kind of a chore to brute force it and check each decryption manually, but that's what our program is going to do.
 
-In lab 6-5, we will be using strategies to check each encryption for us, so we don't have to.
-
 You should name your file ``FILN_brutetransposition.py``, where FILN is your first initial and last name, no space.
 
 Testing Your Program
