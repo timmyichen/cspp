@@ -17,6 +17,10 @@ changes made to package:
             background: #c3e6fc;
             font-weight: bold;
         }
+        
+        .uline{
+            text-decoration: underline;
+        }
 
 changes made to conf.py:
     add to end:
@@ -24,4 +28,5 @@ changes made to conf.py:
         .. role:: vocab-def
         .. role:: vocab-word
         .. role:: misc-hl
+        .. role:: uline
         """

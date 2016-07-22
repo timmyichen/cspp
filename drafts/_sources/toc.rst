@@ -59,3 +59,10 @@ Chapter 2 Lessons
     ch2/ch0202-strindex.rst
     ch2/ch0203-strslice.rst
     ch2/ch0204-escaping.rst
+    ch2/ch0205-booleanexp.rst
+    ch2/ch0206-booleanops.rst
+    ch2/ch0207-ifstatement.rst
+    ch2/ch0208-ifelse.rst
+    ch2/ch0209-ifelifelse.rst
+    ch2/ch0210-ifordering.rst
+    ch2/ch0211-divisibility.rst

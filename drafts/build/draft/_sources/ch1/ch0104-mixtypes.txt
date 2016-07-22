@@ -98,3 +98,5 @@ The rule can basically be broken down into three parts:
 	- Adding a string to another string is allowed
 	- Multiplying a string by an integer is allowed
 	- **Everything else is not allowed**
+
+Any time we encounter code that generates an error, it's usually a good idea to find a way to make the code work without any errors.  So the big overarching question in our next lesson is: **How do we combine different types?**

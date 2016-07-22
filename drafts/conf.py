@@ -219,4 +219,5 @@ rst_prolog = """
 .. role:: vocab-def
 .. role:: vocab-word
 .. role:: misc-hl
+.. role:: uline
 """

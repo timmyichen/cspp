@@ -702,6 +702,6 @@ span.caption-text {
 }
 
 .misc-hl{
-    color: #87cefa;
+    background: #c3e6fc;
     font-weight: bold;
 }

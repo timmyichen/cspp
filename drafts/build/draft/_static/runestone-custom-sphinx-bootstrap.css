@@ -705,3 +705,7 @@ span.caption-text {
     background: #c3e6fc;
     font-weight: bold;
 }
+
+.uline{
+    text-decoration: underline;
+}

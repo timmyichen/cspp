@@ -298,7 +298,8 @@
   <div class="section" id="lesson-01-06-introduction-to-variables">
 <h1>Lesson 01-06: Introduction to Variables<a class="headerlink" href="#lesson-01-06-introduction-to-variables" title="Permalink to this headline">¶</a></h1>
 <p><strong>Learning Target: I can use variables to store Python data.</strong></p>
-<p>Now that we know how to express data, we can save them away using <span class="vocab-word">variables</span>.</p>
+<p>Now we know ow to express data in python.  But what if we need to save it for later?  What if we to ask the user for a lot of information, then do something with that information all at once?  We need some method of keeping data readily available.</p>
+<p>Luckily, we can save data using <span class="vocab-word">variables</span>.</p>
 <dl class="docutils">
 <dt>Think of variables as a storage box with labels.  Variables have the following characteristics:</dt>
 <dd><ul class="first last simple">
@@ -392,6 +393,9 @@ x = 1
 y = 2.0
 z = x + y
 print z
+
+a = 10
+print a + 3.5
 </textarea>
 <p>If you tried changing the values of <code class="docutils literal"><span class="pre">x</span></code> and <code class="docutils literal"><span class="pre">y</span></code> and running the code again, you will have noticed that the output (<code class="docutils literal"><span class="pre">z</span></code>) changed.  That&#8217;s because when it gets to <code class="docutils literal"><span class="pre">line</span> <span class="pre">3</span></code> and we are executing a variable assignment statement for <code class="docutils literal"><span class="pre">z</span></code>, we first have to evaluate the right side, which is <code class="docutils literal"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code>.  Since <code class="docutils literal"><span class="pre">x</span></code> and <code class="docutils literal"><span class="pre">y</span></code> are variables, we pull the values from within the variables to use in their place.  So if <code class="docutils literal"><span class="pre">x</span></code> was <code class="docutils literal"><span class="pre">1</span></code> and <code class="docutils literal"><span class="pre">y</span></code> was <code class="docutils literal"><span class="pre">2.0</span></code>, <code class="docutils literal"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code> would be the same as <code class="docutils literal"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">2.0</span></code>.</p>
 <p>The important takeaway here is that <span class="misc-hl">variable names, when used in an expression, always represents the value stored inside</span>.</p>

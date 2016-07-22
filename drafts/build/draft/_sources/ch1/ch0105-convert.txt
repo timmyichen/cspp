@@ -7,7 +7,7 @@ Lesson 01-05: Conversion Functions
 
 **Learning Target: I can convert datatypes from one value to another.**
 
-Any time we encounter code that generates an error, it's usually a good idea to find a way to make the code work without any errors.  So the big overarching question in this lesson is: **How do we combine different types?**
+At times, you will be given datatype in one form, but you'll want to use it in another.  For example, later on you'll be learning how to use the ``input()`` function to get the user to type something in, and that always gives you data as a string.  But what if you wanted the user to type in a number?  How would you change that string to a number?
 
 The Conversion Functions
 ------------------------

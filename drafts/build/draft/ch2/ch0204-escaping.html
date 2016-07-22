@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>&lt;no title&gt; &mdash; Runestone Interactive Overview</title>
+    <title>Lesson 02-04: Escaping Sequences &mdash; Runestone Interactive Overview</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -256,7 +256,12 @@
         <!--
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
-  <ul class="dropdown-menu localtoc"><ul class="simple">
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Lesson 02-04: Escaping Sequences</a><ul>
+<li><a class="reference internal" href="#common-escape-sequences">Common Escape Sequences</a></li>
+<li><a class="reference internal" href="#checks-for-understanding">Checks For Understanding</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -289,7 +294,63 @@
 
 <div class="container" id="main-content">
   
-  
+  <div class="section" id="lesson-02-04-escaping-sequences">
+<h1>Lesson 02-04: Escaping Sequences<a class="headerlink" href="#lesson-02-04-escaping-sequences" title="Permalink to this headline">¶</a></h1>
+<p><strong>Learning Target: I can use escape sequences to represent special characters in strings.</strong></p>
+<p>You may have noticed that I sometimes include <code class="docutils literal"><span class="pre">&quot;\n&quot;</span></code> inside my print statements.  The backslash &#8220;&#8221; is used to display special characters.  This method is called an <span class="vocab-word">escape sequence</span>.</p>
+<div class="section" id="common-escape-sequences">
+<h2>Common Escape Sequences<a class="headerlink" href="#common-escape-sequences" title="Permalink to this headline">¶</a></h2>
+<p>Though there are many escape sequences, there are only a few that you will realistically be using in this book (you probably won&#8217;t use the last one):</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Escape Sequence</th>
+<th class="head">Result</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">\n</span></code></td>
+<td>New line</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">\t</span></code></td>
+<td>Tab</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">\\</span></code></td>
+<td>Single backslash </td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">\'</span></code></td>
+<td>Single quote `</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">\&quot;</span></code></td>
+<td>Double quote &#8220;</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">\uXXXX</span></code></td>
+<td>Special 32-bit unicode characters</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><code class="docutils literal"><span class="pre">\n</span></code> and <code class="docutils literal"><span class="pre">\t</span></code> are especially useful for formatting text.  <code class="docutils literal"><span class="pre">\\</span></code>, <code class="docutils literal"><span class="pre">\'</span></code>, and <code class="docutils literal"><span class="pre">\&quot;</span></code> are useful for printing out those symbols when you need them.  For example, you might need single quotation marks to correctly print words like &#8220;can&#8217;t&#8221;.  You might need double quotation marks if you&#8217;re quoting a person and you need to print the quotes.</p>
+<p>The last one is kind of a special case, but good to know in case you want to print out special unicode characters.  I&#8217;m sure you&#8217;ve seen this on the internet before:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>‾\_(ツ)_/‾
+</pre></div>
+</div>
+<p>That can be printed using the following print statement:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\u203E\\</span><span class="s2">_(</span><span class="se">\u30C4</span><span class="s2">)_/</span><span class="se">\u203E</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em>Note that it will not work through this site; you&#8217;ll have to run it on your computer or through some other (actual) python interpreter.</em></p>
+</div>
+<div class="section" id="checks-for-understanding">
+<h2>Checks For Understanding<a class="headerlink" href="#checks-for-understanding" title="Permalink to this headline">¶</a></h2>
+<p>TODO</p>
+</div>
+</div>
+
 
   
       

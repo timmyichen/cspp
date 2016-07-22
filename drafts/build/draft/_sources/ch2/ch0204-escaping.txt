@@ -1,0 +1,52 @@
+.. qnum::
+   :start: 1
+   :prefix: ch0204-
+
+Lesson 02-04: Escaping Sequences
+================================
+
+**Learning Target: I can use escape sequences to represent special characters in strings.**
+
+You may have noticed that I sometimes include ``"\n"`` inside my print statements.  The backslash "\" is used to display special characters.  This method is called an :vocab-word:`escape sequence`.
+
+Common Escape Sequences
+-----------------------
+
+Though there are many escape sequences, there are only a few that you will realistically be using in this book (you probably won't use the last one):
+
+    +-----------------+-----------------------------------+
+    | Escape Sequence | Result                            |
+    +=================+===================================+
+    | ``\n``          | New line                          |
+    +-----------------+-----------------------------------+
+    | ``\t``          | Tab                               |
+    +-----------------+-----------------------------------+
+    | ``\\``          | Single backslash \                |
+    +-----------------+-----------------------------------+
+    | ``\'``          | Single quote `                    |
+    +-----------------+-----------------------------------+
+    | ``\"``          | Double quote "                    |
+    +-----------------+-----------------------------------+
+    | ``\uXXXX``      | Special 32-bit unicode characters |
+    +-----------------+-----------------------------------+
+    
+``\n`` and ``\t`` are especially useful for formatting text.  ``\\``, ``\'``, and ``\"`` are useful for printing out those symbols when you need them.  For example, you might need single quotation marks to correctly print words like "can't".  You might need double quotation marks if you're quoting a person and you need to print the quotes.
+
+The last one is kind of a special case, but good to know in case you want to print out special unicode characters.  I'm sure you've seen this on the internet before:
+
+.. code-block:: none
+
+    ‾\_(ツ)_/‾
+
+That can be printed using the following print statement:
+
+.. code-block:: python
+
+    print("\u203E\\_(\u30C4)_/\u203E")
+
+*Note that it will not work through this site; you'll have to run it on your computer or through some other (actual) python interpreter.*
+
+Checks For Understanding
+------------------------
+
+TODO

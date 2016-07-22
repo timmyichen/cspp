@@ -257,7 +257,13 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lesson 02-03: Substrings with String Slicing</a></li>
+<li><a class="reference internal" href="#">Lesson 02-03: Substrings with String Slicing</a><ul>
+<li><a class="reference internal" href="#substrings">Substrings</a></li>
+<li><a class="reference internal" href="#string-slicing-notation">String Slicing Notation</a></li>
+<li><a class="reference internal" href="#special-python-syntax">Special Python Syntax</a></li>
+<li><a class="reference internal" href="#check-for-understanding">Check For Understanding</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -293,6 +299,97 @@
   <div class="section" id="lesson-02-03-substrings-with-string-slicing">
 <h1>Lesson 02-03: Substrings with String Slicing<a class="headerlink" href="#lesson-02-03-substrings-with-string-slicing" title="Permalink to this headline">¶</a></h1>
 <p><strong>Learning Target: I can string slicing notation to reference substrings.</strong></p>
+<div class="section" id="substrings">
+<h2>Substrings<a class="headerlink" href="#substrings" title="Permalink to this headline">¶</a></h2>
+<p>We can use string indexing to get a single character from a string.  Sometimes, though, we will want to get multiple letters, maybe a part of a string.  <span class="vocab-def">Any &#8220;string within a string&#8221;</span> is called a <span class="vocab-word">substring</span>.</p>
+<p>For example, the <code class="docutils literal"><span class="pre">&quot;pizza&quot;</span></code> contains the substrings:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;piz&quot;</span>
+<span class="s2">&quot;iz&quot;</span>
+<span class="s2">&quot;izza&quot;</span>
+<span class="s2">&quot;zz&quot;</span>
+</pre></div>
+</div>
+<p>and so on (there&#8217;s more)!</p>
+</div>
+<div class="section" id="string-slicing-notation">
+<h2>String Slicing Notation<a class="headerlink" href="#string-slicing-notation" title="Permalink to this headline">¶</a></h2>
+<p>To get a substring from a string, we still use <strong>string indexing</strong>, but this time, instead of giving a single number in the <code class="docutils literal"><span class="pre">[]</span></code> brackets, we give a range - two numbers, separated by a colon.  The syntax for string slicing is as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">some_string</span><span class="p">[</span><span class="n">a</span><span class="p">:</span><span class="n">b</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Where:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">some_string</span></code> is the original string</li>
+<li><code class="docutils literal"><span class="pre">a</span></code> is the index of where to begin slicing (includes this index)</li>
+<li><code class="docutils literal"><span class="pre">b</span></code> is the index of where to end slicing (<strong>excludes</strong> this index)</li>
+</ul>
+</div></blockquote>
+<p>Let&#8217;s look at some examples:</p>
+
+<textarea data-component="activecode" id=ex_strslice_1 data-lang="python" data-autorun="true"   data-timelimit=25000   data-audio=''     >
+phrase = "pants are cool"
+# index:  0123456789 123
+print("\n\n") #ignore this line
+print(phrase[0:4])
+print(phrase[6:8])
+print(phrase[10:13])
+print()
+print(phrase[3:7])
+print(phrase[2:3])
+</textarea>
+<p>The important thing to remember when slicing strings is that <span class="misc-hl">The range goes up to but does not include the second number</span>.</p>
+
+        <p data-component="fillintheblank" data-casei="false" id="cfu_strslice_1">
+            
+        <span data-blank>
+            What string slice would we have to use on &#8220;hippopotamus&#8221; to get the substring &#8220;ppopo&#8221;?  Give you answer in the form [a:b], where a and b are numbers.
+        <span data-feedback="regex" style="display: none" id="blank01_feedback1">\b[2:6]\b</span>
+        <span data-feedback="text" style="display: none" for="blank01_feedback1">Remember, the last index is not included!</span>
+            
+        <span data-feedback="regex" style="display: none" id="blank01_feedback2">.*</span>
+        <span data-feedback="text" style="display: none" for="blank01_feedback2">It helps to count through the indexes!</span>
+            
+        <span data-answer style="display: none" id="blank01_answer">\\b[2:7]\\b</span>
+        </span>
+        
+        </p>
+            </div>
+<div class="section" id="special-python-syntax">
+<h2>Special Python Syntax<a class="headerlink" href="#special-python-syntax" title="Permalink to this headline">¶</a></h2>
+<p>Similar to how python has negative indexes, it also has some tricks for quick slicing.  You don&#8217;t <em>need</em> to know this, but it might be helpful.</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Special Syntax</th>
+<th class="head">Meaning</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">[:x]</span></code></td>
+<td>The first x letters</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">[:-x]</span></code></td>
+<td>Everything except the last x letters</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">[x:]</span></code></td>
+<td>Everything except the first x letters</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">[-x:]</span></code></td>
+<td>The last 3 letters</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="check-for-understanding">
+<h2>Check For Understanding<a class="headerlink" href="#check-for-understanding" title="Permalink to this headline">¶</a></h2>
+<p>TODO</p>
+</div>
 </div>
 
 
