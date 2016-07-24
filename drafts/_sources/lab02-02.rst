@@ -11,7 +11,7 @@ Lab Requirements and Specifications
 
 Two horses.  Five monkeys.  Twenty flies.  One cat.  Nine lives.  Despite the English language being one of the most commonly used languages around the world, it is also quite complicated to learn if you are not a native speaker.  Taking a noun and converting it to its plural form has a dozen rules and even more special cases.
 
-In this lab, you will be creating a program that will take in two inputs: a non-negative number, and a singular-form noun.  If the number entered is 1, then you would just print out "1 noun".  However, if the number is 0 or greater than 1, you would print out the number and the pluralized version of the word - like "0 nouns" or "4 nouns".
+In this lab, you will be creating a program that will take in two inputs: a non-negative number, and a singular noun.  If the number entered is 1, then you would just print out "1 noun".  However, if the number is 0 or greater than 1, you would print out the number and the pluralized version of the word - like "0 nouns" or "4 nouns".
 
 Your program will be handling the following rules to pluralize nouns:
 
