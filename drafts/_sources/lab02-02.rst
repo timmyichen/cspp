@@ -41,12 +41,12 @@ You should name your file ``FILN_pluralizer.py``, where FILN is your first initi
 Testing Your Program
 --------------------
 
-Although it is a good idea to come up with some of your own test cases to realize the limitations our own programs the following are some inputs that can also be used to verify that your program works as intended.  I would also recommend using the examples in the table above.
+Although it is a good idea to come up with some of your own test cases to realize the limitations your own code for this lab (and other labs) the following are some inputs you can use to verify that your program works as intended.  I would also recommend using the examples in the table above.
 
     +-----------+----------------+-------------------+
     | Input (#) | Input (word)   | Result            |
     +-----------+----------------+-------------------+
-    | 0         | word           | 0 words           |
+    | 0         | dog            | 0 dogs            |
     +-----------+----------------+-------------------+
     | 1         | city           | 1 city            |
     +-----------+----------------+-------------------+
@@ -54,9 +54,9 @@ Although it is a good idea to come up with some of your own test cases to realiz
     +-----------+----------------+-------------------+
     | 33        | fly            | 33 flies          |
     +-----------+----------------+-------------------+
-    | 8         | wife           | 8 wives           |
+    | 8         | life           | 8 lives           |
     +-----------+----------------+-------------------+
-    | 20        | hippopotamus   | 20 hippopotami    |
+    | 20        | cactus         | 20 cacti          |
     +-----------+----------------+-------------------+
 
 Note that some words covered by special cases will look incorrect if used in this program.  Examples: bus - buses, foot, feets, etc.  It's important to realize that for now, you want to make sure that the words follow your rules, regardless of whether it is actually an English word or not.
