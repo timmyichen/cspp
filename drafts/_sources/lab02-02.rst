@@ -34,6 +34,8 @@ Your program will be handling the following rules to pluralize nouns:
     | All other cases    | Add "s" to the end             | cat, cats         |
     +--------------------+--------------------------------+-------------------+
 
+Note that in order to handle cases where the word ends in "y" correctly, you will need to take some care. It is important that you order your conditions so that your code will check for the special case endings of "ay", "oy", "ey", and "uy" before simply checking whether a word ends in "y".
+
 You should name your file ``FILN_pluralizer.py``, where FILN is your first initial and last name, all lowercase, no space.
 
 Testing Your Program
