@@ -7,7 +7,35 @@ Lesson 02-08: If/Else Statements
 
 **Learning Target: I can use if/else statements to execute code conditionally.**
 
-Else or Otherwise
------------------
+Adding to if Statements
+-----------------------
 
-Else 
+When you use ``if`` statements, you are testing to see if a boolean condition is ``True``.  What if you wanted to execute some code if it is ``True``, but to also execute some code if it is ``False?``  While you could use the following code:
+
+::
+   
+   if condition:
+       #do stuff
+   if not condition:
+       #do other stuff
+
+...it would be inefficient and difficult to read.  There's an easier way to do this, by using the ``else`` keyword.
+
+The ``else`` keyword is always attached to an ``if`` statement.  It basically means "otherwise", or "for all other cases".  It will only run if the ``if`` statement is false.
+
+Here's how the syntax looks:
+
+::
+   
+   if condition:
+       #code to run if condition is True
+       else:
+          #code to run if condition is False
+
+Notice that the ``else`` statement is on the same vertical level as the ``if`` statement.  Syntax with these control structures are very specific and very strict - they have to be, otherwise the computer would not understand your code.  :misc-hl:`Make sure that your else statement is always in line with the if statement, and the code that comes after it should be tabbed in, just like the if statement.`
+
+.. image:: img/ifelse.svg
+   :width: 400px
+   :alt: syntax is important!
+   :align: center
+

@@ -85,7 +85,7 @@ Q#3
     Me: "Becky said 'I can't even!'"
     You: "I can't odd!"
 
-Replicate the text above using a **single** ``print()`` statement.
+Replicate the text above using a **single** ``print()`` statement.  This might be a rather long print statement, and it might look messy.
 
 .. activecode:: 0204_cfu_3
 

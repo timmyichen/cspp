@@ -149,4 +149,16 @@ Here, we are combining the comparison operators and boolean operators from befor
 Checks for Understanding
 ------------------------
 
-TODO
+Q#1
+~~~
+
+.. dragndrop:: 0205_cfu_1
+   :feedback: Try again, review the lesson if you need to!
+   :match_1: ==|||equal to
+   :match_2: >|||greater than
+   :match_3: <|||less than
+   :match_4: !=|||not equal to
+   :match_5: >=|||greater than or equal to
+   :match_6: <=|||less than or equal to
+   
+   Drag the comparison operator to its description.
