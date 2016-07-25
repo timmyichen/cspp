@@ -1,0 +1,21 @@
+.. qnum::
+   :start: 1
+   :prefix: ch01LC-
+
+Unit 1 Pre-Lab Check
+====================
+
+Unit 1 Learning Targets
+-----------------------
+
+This is the end of Unit 1!  You are free to move onto the Unit 1 Labs, but before you do, please review the learning targets for Unit 1 and make sure you are comfortable with them.
+
+1. I can describe the ways in which Python can represent data
+2. I can write mathematical expressions in Python.
+3. I can use string concatenaiton to combine strings.
+4. I can predict the result of operations on strings.
+5. I can predict the behavior of two different datatypes that are operated upon.
+6. I can convert datatypes from one value to another.
+7. I can use variables to store Python data.
+8. I can reference a variable in its own reassignment statement.
+9. I can write a program to get user input.

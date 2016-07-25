@@ -57,7 +57,7 @@ Although it is a good idea to come up with some of your own test cases to realiz
     | 20        | hippopotamus   | 20 hippopotami    |
     +-----------+----------------+-------------------+
 
-Note that some words covered by special cases will look incorrect if used in this program.  Examples: bus - buses, foot, feets, etc.  It's important to realize that for now, you want to make sure that the words follow your rules, regardless of whether it is actually an English word or not.
+Note that some words covered by special cases will look incorrect if used in this program.  Examples: bus should be buses, not bi / foot should be feet, not foots, etc.  It's important to realize that for now, you want to make sure that the words follow your rules, regardless of whether it is actually an English word or not.
 
 The following space is provided in case you want to test code out or write it in the browser:
 

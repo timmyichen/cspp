@@ -5,6 +5,7 @@
 Lesson 01-03: Operators on Strings
 ==================================
 
+**Learning Target: I can use string concatenaiton to combine strings.**
 **Learning Target: I can predict the result of operations on strings.**
 
 Not all operators work with strings.  In Python, you can only use strings with the ``+`` addition and ``*``  multiplication operators.

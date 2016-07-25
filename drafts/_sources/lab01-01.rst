@@ -35,7 +35,7 @@ You should create two files in your workspace:
 
 Where "FILN" is your first initial and last name, all lowercase, no space.
 
-As a reminder, you should be running this program using python3.  Running this program using python2 may give you unexpected results!  If you are getting errors, make sure you look over your code and double-check for typos.  If you are getting numbers that seem way off, make sure that the equations are entered in correctly!  Don't forget your PEMDAS!
+As a reminder, you should be running this program using python3.  Running this program using python2 may give you unexpected results!  If you are getting errors, make sure you look over your code and double-check for typos.  If you are getting numbers that seem way off, make sure that the equations are entered in correctly!  Don't forget your order of operations!
 
 Testing Your Program
 --------------------

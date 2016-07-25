@@ -33,36 +33,38 @@ Labs
     lab07-03.rst
     lab07-04.rst
 
-Chapter 1 Lessons
-=================
+Unit 1 Lessons
+==============
 
 .. toctree::
     :maxdepth: 2
     
-    ch1/ch0101-datatypes.rst
-    ch1/ch0102-ops.rst
-    ch1/ch0103-strops.rst
-    ch1/ch0104-mixtypes.rst
-    ch1/ch0105-convert.rst
-    ch1/ch0106-variables.rst
-    ch1/ch0107-variablesre.rst
-    ch1/ch0108-input.rst
+    unit1/u0101-datatypes.rst
+    unit1/u0102-ops.rst
+    unit1/u0103-strops.rst
+    unit1/u0104-mixtypes.rst
+    unit1/u0105-convert.rst
+    unit1/u0106-variables.rst
+    unit1/u0107-variablesre.rst
+    unit1/u0108-input.rst
+    unit1/u01-labcheck.rst
 
 
-Chapter 2 Lessons
-=================
+Unit 2 Lessons
+==============
 
 .. toctree::
     :maxdepth: 2
     
-    ch2/ch0201-strformat.rst
-    ch2/ch0202-strindex.rst
-    ch2/ch0203-strslice.rst
-    ch2/ch0204-escaping.rst
-    ch2/ch0205-booleanexp.rst
-    ch2/ch0206-booleanops.rst
-    ch2/ch0207-ifstatement.rst
-    ch2/ch0208-ifelse.rst
-    ch2/ch0209-ifelifelse.rst
-    ch2/ch0210-ifordering.rst
-    ch2/ch0211-divisibility.rst
+    unit2/u0201-strformat.rst
+    unit2/u0202-strindex.rst
+    unit2/u0203-strslice.rst
+    unit2/u0204-escaping.rst
+    unit2/u0205-booleanexp.rst
+    unit2/u0206-compareops.rst
+    unit2/u0207-ifstatement.rst
+    unit2/u0208-ifelse.rst
+    unit2/u0209-ifelifelse.rst
+    unit2/u0210-ifordering.rst
+    unit2/u0211-divisibility.rst
+    unit2/u02-labcheck.rst

@@ -67,7 +67,7 @@ Three more examples of modulo:
 Order of Operations
 -------------------
 
-:vocab-word:`Order of operations` determines which operator is done first.  PEMDAS is followed by most programming languages, where the order of operations are:
+:vocab-word:`Order of operations` determines which operator is done first.  These order of operations are followed by most programming languages, where the order of operations are:
 
 	- :vocab-def:`P - Parentheses first, then`
 	- :vocab-def:`E - Exponents, then`
@@ -83,7 +83,7 @@ Practice: Check Your Understanding
 
 	.. blank:: blank1
 		:correct: \\b12\\b
-		:feedback1: (".*", "Don't forget your PEMDAS!")
+		:feedback1: (".*", "Don't forget your order of operations!!")
 
 		Evaluate the following expression: ``3 ** 2 + 3``
 

@@ -5,10 +5,10 @@ find datatypes from the wild (example: netflix and point out examples of types)
 more practice on 0102
 
 CFUs/practice for:
-
-0103
-0107
-0108
-0202
-0203
-0204
+    0103
+    0107
+    0108
+    0202
+    0203
+    0204
+    0206

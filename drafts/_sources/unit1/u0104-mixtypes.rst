@@ -34,7 +34,7 @@ You might look at this expression and think of the following steps:
 	- The result is ``2``!
 
 However, :misc-hl:`types change as they are evaluated`.  This means that the steps for the above are more like this:
-	- PEMDAS says that division happens first.
+	- Order of operations says that division happens first.
 	- ``2 / 4`` involves two integers, so the result is ``0.5``, removing everything after the decimal, or just ``0``
 	- All that's left is addition, so we can evaluate it left to right.
 	- ``1 + 0 + 0.5`` will be evaluated from left to right, making the ``1 + 0`` happen first (which equals ``1``)
@@ -62,11 +62,11 @@ Check For Understanding
 	.. blank:: blank1
 		:correct: 2.0
 		:feedback1: ("2", "Have you considered the ending datatype?")
-		:feedback2: ("16.0", "Don't forget about PEMDAS!")
-		:feedback3: ("16", "Don't forget about PEMDAS!")
+		:feedback2: ("16.0", "Don't forget about order of operations!")
+		:feedback3: ("16", "Don't forget about order of operations!")
 		:feedback4: (".*", "Try again!")
 
-		Evaluate the following expression: ``8 / 2 ** 2.0``.  Don't forget to consider PEMDAS as well as the datatypes.
+		Evaluate the following expression: ``8 / 2 ** 2.0``.  Don't forget to consider order of operations as well as the datatypes.
 
 .. fillintheblank:: cfu_mixtype_3
 	
@@ -74,10 +74,10 @@ Check For Understanding
 		:correct: 6.0
 		:feedback1: ("6.5", "Remember, integer division!")
 		:feedback2: ("6", "Have you considered the ending datatype?")
-		:feedback3: ("1.25", "Don't forget about PEMDAS!")
+		:feedback3: ("1.25", "Don't forget about order of operations!")
 		:feedback4: (".*", "Try again!")
 
-		Evaluate the following expression: ``10 / 4 + 4.0``.  Don't forget to consider PEMDAS as well as the datatypes.
+		Evaluate the following expression: ``10 / 4 + 4.0``.  Don't forget to consider order of operations as well as the datatypes.
 
 Mixing Strings with Anything
 ----------------------------
