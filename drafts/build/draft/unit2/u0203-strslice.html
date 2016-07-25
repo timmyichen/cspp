@@ -261,7 +261,13 @@
 <li><a class="reference internal" href="#substrings">Substrings</a></li>
 <li><a class="reference internal" href="#string-slicing-notation">String Slicing Notation</a></li>
 <li><a class="reference internal" href="#special-python-syntax">Special Python Syntax</a></li>
-<li><a class="reference internal" href="#check-for-understanding">Check For Understanding</a></li>
+<li><a class="reference internal" href="#check-for-understanding">Check For Understanding</a><ul>
+<li><a class="reference internal" href="#q-1">Q#1</a></li>
+<li><a class="reference internal" href="#q-2">Q#2</a></li>
+<li><a class="reference internal" href="#q-3">Q#3</a></li>
+<li><a class="reference internal" href="#q-4">Q#4</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -350,7 +356,7 @@ print(phrase[2:3])
         <span data-feedback="regex" style="display: none" id="blank01_feedback2">.*</span>
         <span data-feedback="text" style="display: none" for="blank01_feedback2">It helps to count through the indexes!</span>
             
-        <span data-answer style="display: none" id="blank01_answer">\\b[2:7]\\b</span>
+        <span data-answer style="display: none" id="blank01_answer">[2:7]</span>
         </span>
         
         </p>
@@ -388,7 +394,84 @@ print(phrase[2:3])
 </div>
 <div class="section" id="check-for-understanding">
 <h2>Check For Understanding<a class="headerlink" href="#check-for-understanding" title="Permalink to this headline">¶</a></h2>
-<p>TODO</p>
+<div class="section" id="q-1">
+<h3>Q#1<a class="headerlink" href="#q-1" title="Permalink to this headline">¶</a></h3>
+
+        <p data-component="fillintheblank" data-casei="false" id="cfu_strslice_1">
+            
+        <span data-blank>
+            What string slice would we have to use on &#8220;How are you?&#8221; to get the substring &#8220;How&#8221;?  Give you answer in the form <code class="docutils literal"><span class="pre">[a:b]</span></code>, where a and b are numbers.
+        <span data-feedback="regex" style="display: none" id="blank01_feedback1">[0:2]</span>
+        <span data-feedback="text" style="display: none" for="blank01_feedback1">Remember, the last index is not included!</span>
+            
+        <span data-feedback="regex" style="display: none" id="blank01_feedback2">[1:4]</span>
+        <span data-feedback="text" style="display: none" for="blank01_feedback2">Remember, we start counting from zero!</span>
+            
+        <span data-feedback="regex" style="display: none" id="blank01_feedback3">.*</span>
+        <span data-feedback="text" style="display: none" for="blank01_feedback3">It helps to count through the indexes!</span>
+            
+        <span data-answer style="display: none" id="blank01_answer">[0:3]</span>
+        </span>
+        
+        </p>
+            </div>
+<div class="section" id="q-2">
+<h3>Q#2<a class="headerlink" href="#q-2" title="Permalink to this headline">¶</a></h3>
+
+        <p data-component="fillintheblank" data-casei="false" id="cfu_strslice_2">
+            
+        <span data-blank>
+            What string slice would we have to use on &#8220;How are you?&#8221; to get the substring &#8220;are&#8221;?  Give you answer in the form <code class="docutils literal"><span class="pre">[a:b]</span></code>, where a and b are numbers.
+        <span data-feedback="regex" style="display: none" id="blank01_feedback1">[4:6]</span>
+        <span data-feedback="text" style="display: none" for="blank01_feedback1">Remember, the last index is not included!</span>
+            
+        <span data-feedback="regex" style="display: none" id="blank01_feedback2">[5:8]</span>
+        <span data-feedback="text" style="display: none" for="blank01_feedback2">Remember, we start counting from zero!</span>
+            
+        <span data-feedback="regex" style="display: none" id="blank01_feedback3">.*</span>
+        <span data-feedback="text" style="display: none" for="blank01_feedback3">It helps to count through the indexes!</span>
+            
+        <span data-answer style="display: none" id="blank01_answer">[4:7]</span>
+        </span>
+        
+        </p>
+            </div>
+<div class="section" id="q-3">
+<h3>Q#3<a class="headerlink" href="#q-3" title="Permalink to this headline">¶</a></h3>
+
+        <p data-component="fillintheblank" data-casei="false" id="cfu_strslice_3">
+            
+        <span data-blank>
+            What string slice would we have to use on &#8220;How are you?&#8221; to get the substring &#8220;you&#8221;?  Give you answer in the form <code class="docutils literal"><span class="pre">[a:b]</span></code>, where a and b are numbers.
+        <span data-feedback="regex" style="display: none" id="blank01_feedback1">[8:10]</span>
+        <span data-feedback="text" style="display: none" for="blank01_feedback1">Remember, the last index is not included!</span>
+            
+        <span data-feedback="regex" style="display: none" id="blank01_feedback2">[9:12]</span>
+        <span data-feedback="text" style="display: none" for="blank01_feedback2">Remember, we start counting from zero!</span>
+            
+        <span data-feedback="regex" style="display: none" id="blank01_feedback3">.*</span>
+        <span data-feedback="text" style="display: none" for="blank01_feedback3">It helps to count through the indexes!</span>
+            
+        <span data-answer style="display: none" id="blank01_answer">[8:11]</span>
+        </span>
+        
+        </p>
+            </div>
+<div class="section" id="q-4">
+<h3>Q#4<a class="headerlink" href="#q-4" title="Permalink to this headline">¶</a></h3>
+
+        <p data-component="fillintheblank" data-casei="false" id="cfu_strslice_3">
+            
+        <span data-blank>
+            What string slice would we have to use on any string to get the substring equal to the last 3 letters?  Give you answer in the form <code class="docutils literal"><span class="pre">[]</span></code>, where anything can go between the brackets. (hint: use the special syntax above!)
+        <span data-feedback="regex" style="display: none" id="blank01_feedback1">.*</span>
+        <span data-feedback="text" style="display: none" for="blank01_feedback1">Be sure to review the lesson if you need help!</span>
+            
+        <span data-answer style="display: none" id="blank01_answer">[-3:]</span>
+        </span>
+        
+        </p>
+            </div>
 </div>
 </div>
 

@@ -1,23 +1,26 @@
 
+def get_cipherletter(new_key,letter):
+    alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    
+    if letter in alpha:
+        letter_index = (new_key)
+        return alpha[letter_index]
+    else:
+        return + letter
+    
+    
+
 def encrypt(key, message):
     # key = 1
     # message = "IFMMP UIFSF"
     
     message = message.upper()
-    
     alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    
     result = ""
     
     for letter in message:
-        if letter in alpha:
-            letter_index = alpha.find(letter) + key
-            
-            if letter_index > len(alpha)-1:
-                letter_index = letter_index - len(alpha)
-            result = result + alpha[letter_index]
-        else:
-            result = result + letter
+        new_key = (alpha.find(letter) + key) % 26
+        result = result + get_cipherletter(new_key,letter)
     return result
 
 def decrypt(key, message):
@@ -25,18 +28,11 @@ def decrypt(key, message):
     # message = "IFMMP UIFSF"
     
     message = message.upper()
-    
     alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    
     result = ""
     
     for letter in message:
-        if letter in alpha:
-            letter_index = alpha.find(letter) - key
-            
-            if letter_index < 0:
-                letter_index = letter_index + len(alpha)
-            result = result + alpha[letter_index]
-        else:
-            result = result + letter
+        new_key = (alpha.find(letter) - key) % 26
+        result = result + get_cipherletter(new_key,letter)
     return result
+# do()

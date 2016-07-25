@@ -17,7 +17,7 @@ In this lesson, you will be learning your first :vocab-word:`control-structure` 
 The syntax of an if statement can be broken down into five parts:
 
 .. image:: img/ifsyntax.svg
-   :scale: 70%
+   :scale: 60%
    :alt: the keyword, condition, colon, whitespace, and code to be executed
    :align: center
 
@@ -46,8 +46,11 @@ Here's an example of an if statement being used.  Run the code below, then try c
    
    Which of the following values of "num" will print NO output? Feel free to experiment before answering.
 
-A Note on Whitespace
---------------------
+Whitespace
+----------
+
+Readability of Whitespace
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The whitespace that is required when dealing with ``if`` statements, or control structures as a whole, is very important in programming.
 
@@ -83,6 +86,13 @@ It should be pretty clear that the second one is easier to read.  It allows us t
 
 To recap, :misc-hl:`whitespace is important because it is required in Python, but it also helps organize our code and make it easier to read and follow.`
 
+Word of Caution on Whitespace
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Although a tab is typically four spaces in text editors, Python will interpret it differently.  As we learned in the escape characters lesson, a space and a tab are two different characters.  Specifically in Python, a tab is equivalent to 8 spaces.  This means that :misc-hl:`if you mix tabs and spaces, you may end up with errors and/or unexpected results`.
+
+Note that this is very dependent on the editor.  For example, if you are using Sublime Text, it will keep everything you typed exactly as it is, and therefore cause errors if you mix tabs and spaces.  However, in editors such as the c9 editor, IDLE, or PyCharm CE, it will automatically covert the tabs to spaces, preventing any consistency errors.  This is not to say that any one editor is better than another; simply that you should be aware of how each handles spacing.
+
 Nested If Statements
 --------------------
 
@@ -91,7 +101,7 @@ If statements can go inside other if statements!
 .. image:: img/nestedif.svg
    :alt: three if statements inside of one large if statement
    :align: center
-   :width: 550px
+   :width: 400px
 
 In the example above, each if statement is colored with the code that it controls.  Note how the blue, red, and pink if statements are all inside the green if statement.  This simply means that the green condition has to be true in order for the blue/red/pink conditions to even be looked at.  
 

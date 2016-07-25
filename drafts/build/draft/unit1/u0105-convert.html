@@ -259,7 +259,12 @@
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">Lesson 01-05: Conversion Functions</a><ul>
 <li><a class="reference internal" href="#the-conversion-functions">The Conversion Functions</a></li>
-<li><a class="reference internal" href="#checks-for-understanding">Checks for Understanding</a></li>
+<li><a class="reference internal" href="#checks-for-understanding">Checks for Understanding</a><ul>
+<li><a class="reference internal" href="#q-1">Q#1</a></li>
+<li><a class="reference internal" href="#q-2">Q#2</a></li>
+<li><a class="reference internal" href="#q-3">Q#3</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#the-type-function">The <code class="docutils literal"><span class="pre">type()</span></code> Function</a></li>
 <li><a class="reference internal" href="#a-note-on-errors">A Note on Errors</a></li>
 </ul>
@@ -298,7 +303,7 @@
   
   <div class="section" id="lesson-01-05-conversion-functions">
 <h1>Lesson 01-05: Conversion Functions<a class="headerlink" href="#lesson-01-05-conversion-functions" title="Permalink to this headline">¶</a></h1>
-<p><strong>Learning Target: I can convert datatypes from one value to another.</strong></p>
+<p><strong>Learning Target: I can convert datatypes from one type to another.</strong></p>
 <p>At times, you will be given datatype in one form, but you&#8217;ll want to use it in another.  For example, later on you&#8217;ll be learning how to use the <code class="docutils literal"><span class="pre">input()</span></code> function to get the user to type something in, and that always gives you data as a string.  But what if you wanted the user to type in a number?  How would you change that string to a number?</p>
 <div class="section" id="the-conversion-functions">
 <h2>The Conversion Functions<a class="headerlink" href="#the-conversion-functions" title="Permalink to this headline">¶</a></h2>
@@ -380,6 +385,8 @@ print(bool("True")) # string to boolean
 </div>
 <div class="section" id="checks-for-understanding">
 <h2>Checks for Understanding<a class="headerlink" href="#checks-for-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="q-1">
+<h3>Q#1<a class="headerlink" href="#q-1" title="Permalink to this headline">¶</a></h3>
 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="mc_convfunc_1">
             ch0105-1: What is the resulting datatype of the following expression? <code class="docutils literal"><span class="pre">float(&quot;10&quot;)</span></code>
@@ -391,7 +398,10 @@ print(bool("True")) # string to boolean
             
 
             </ul>
-            
+            </div>
+<div class="section" id="q-2">
+<h3>Q#2<a class="headerlink" href="#q-2" title="Permalink to this headline">¶</a></h3>
+
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="mc_convfunc_2">
             ch0105-2: What is the resulting datatype of the following expression? <code class="docutils literal"><span class="pre">str(False)</span></code>
             <li data-component="answer"  id="mc_convfunc_2_opt_a">(A) int</li><li data-component="feedback" id="mc_convfunc_2_opt_a">Which conversion function is being used?</li>
@@ -402,7 +412,10 @@ print(bool("True")) # string to boolean
             
 
             </ul>
-            
+            </div>
+<div class="section" id="q-3">
+<h3>Q#3<a class="headerlink" href="#q-3" title="Permalink to this headline">¶</a></h3>
+
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="mc_convfunc_3">
             ch0105-3: What is the result of the following expression? <code class="docutils literal"><span class="pre">str(2.3)</span></code>
             <li data-component="answer"  id="mc_convfunc_3_opt_a">(A) 2</li><li data-component="feedback" id="mc_convfunc_3_opt_a">What's the rule when the str() function is used?</li>
@@ -416,6 +429,7 @@ print(bool("True")) # string to boolean
 
             </ul>
             </div>
+</div>
 <div class="section" id="the-type-function">
 <h2>The <code class="docutils literal"><span class="pre">type()</span></code> Function<a class="headerlink" href="#the-type-function" title="Permalink to this headline">¶</a></h2>
 <p>There is a function, <code class="docutils literal"><span class="pre">type()</span></code>, that will tell you the datatype of a value.  Run the following code as an example:</p>

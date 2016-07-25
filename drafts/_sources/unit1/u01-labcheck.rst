@@ -15,7 +15,7 @@ This is the end of Unit 1!  You are free to move onto the Unit 1 Labs, but befor
 3. I can use string concatenaiton to combine strings.
 4. I can predict the result of operations on strings.
 5. I can predict the behavior of two different datatypes that are operated upon.
-6. I can convert datatypes from one value to another.
+6. I can convert datatypes from one type to another.
 7. I can use variables to store Python data.
 8. I can reference a variable in its own reassignment statement.
 9. I can write a program to get user input.

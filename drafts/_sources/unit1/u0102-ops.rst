@@ -79,6 +79,9 @@ Note that Modulo is on the same level as multiplication and division.
 Practice: Check Your Understanding
 ----------------------------------
 
+Q#1
+~~~
+
 .. fillintheblank:: question_01_05_01
 
 	.. blank:: blank1
@@ -86,6 +89,9 @@ Practice: Check Your Understanding
 		:feedback1: (".*", "Don't forget your order of operations!!")
 
 		Evaluate the following expression: ``3 ** 2 + 3``
+
+Q#2
+~~~
 
 .. fillintheblank:: question_01_05_02
 
@@ -95,6 +101,9 @@ Practice: Check Your Understanding
 
 		Evaluate the following expression: ``3 ** (2 % 3)``
 
+Q#3
+~~~
+
 .. parsonsprob:: question_01_05_03
 	
 	Order the groups of operations in the order that they should be evaluated.  Top is evaluated first, while bottom is evaluated last.
@@ -103,3 +112,53 @@ Practice: Check Your Understanding
 	exponents
 	mult/div/mod
 	add/sub
+
+Q#4
+~~~
+
+.. fillintheblank:: question_01_05_04
+
+	.. blank:: blank3
+		:correct: 4
+
+		Evaluate the following expression: ``(3 * 2) % 5 + 3``
+
+Q#5
+~~~
+
+.. fillintheblank:: question_01_05_05
+
+	.. blank:: blank4
+		:correct: 12
+
+		Evaluate the following expression: ``((10 / 2) + 5 % 2 ) * 2``
+
+Q#6
+~~~
+		
+.. fillintheblank:: question_01_05_06
+
+	.. blank:: blank5
+		:correct: 3
+
+		Evaluate the following expression: ``2 * 3 - 6 / 2 % 8``
+
+Q#7
+~~~
+
+.. fillintheblank:: question_01_05_07
+
+	.. blank:: blank6
+		:correct: 97
+
+		Evaluate the following expression: ``100 - (24 % 5) * 3 / 4``
+
+Q#8
+~~~
+
+.. fillintheblank:: question_01_05_08
+
+	.. blank:: blank7
+		:correct: 2
+
+		Evaluate the following expression: ``2 * ((4 * 2) + 3 / 6) % 10 - 5``

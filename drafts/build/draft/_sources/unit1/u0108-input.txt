@@ -51,3 +51,29 @@ Still a string!  We then know that :misc-hl:`The input function will always retu
    num = input("Enter a number and I will tell you 10 times that number: ")
    new_num = float(num) * 10
    print(new_num)
+
+Checks for Understanding
+------------------------
+
+Q#1
+~~~
+
+In the space below on line 2, write a statement that will ask the user to enter in their favorite food using ``input()`` and save it in a variable called ``fav_food``.
+
+.. activecode:: cfu_0108_1
+   
+   #
+   
+   print("Your favorite food is " + fav_food)
+
+Q#2
+~~~
+
+In the space below on line 2, write a statement that will ask the user to guess a number between 1 and 10 using ``input()``, convert it to an integer, and save it in a variable called ``guess``.
+
+.. activecode:: cfu_0108_2
+   
+   #
+   
+   print("You guessed: " + str(guess))
+

@@ -2,8 +2,8 @@
    :start: 1
    :prefix: ch0204-
 
-Lesson 02-04: Escaping Sequences
-================================
+Lesson 02-04: Escape Sequences
+==============================
 
 **Learning Target: I can use escape sequences to represent special characters in strings.**
 
@@ -49,4 +49,44 @@ That can be printed using the following print statement:
 Checks For Understanding
 ------------------------
 
-TODO
+Q#1
+~~~
+
+.. fillintheblank:: 0204_cfu_1
+
+   .. blank:: blank01
+      :correct: "    "
+      :feedback1: ("[8:10]", "Remember, the last index is not included!")
+      :feedback2: ("[7:10]", "Remember, we start counting from zero!")
+      :feedback3: (".*", "It helps to count through the indexes!")
+      
+      What will the output of the following string: ``"\"\t\""``?  You may treat tabs as four individual spaces.
+
+Q#2
+~~~
+
+.. code-block:: none
+    
+    '"'"
+    hello
+    '"'"
+
+Replicate the text above using a **single** ``print()`` statement.
+
+.. activecode:: 0204_cfu_2
+
+    #write solution here - remember, one print statement!
+
+Q#3
+~~~
+
+.. code-block:: none
+    
+    Me: "Becky said 'I can't even!'"
+    You: "I can't odd!"
+
+Replicate the text above using a **single** ``print()`` statement.  This might be a rather long print statement, and it might look messy.
+
+.. activecode:: 0204_cfu_3
+
+    #write solution here - remember, one print statement!

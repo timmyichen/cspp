@@ -90,3 +90,43 @@ You would have to :vocab-def:`give variables an initial value`.  This is called 
 
 :misc-hl:`Always make sure that your variables are initialized!`
 
+Checks for Understanding
+------------------------
+
+Q#1
+~~~
+.. fillintheblank:: 0107_cfu_1
+
+	.. blank:: blank1
+		:correct: x=x+1
+		:feedback1: (".*","Make sure you don't include spaces!  Your solution should have five characters total")
+
+		Given a variable ``x``, write an expression that will increase ``x`` by 1.  Include no spaces in your solution.
+
+Q#2
+~~~
+
+In the space below, write code on line 2 that will double the value of ``x``.  If done correctly, the output should be 10.  Please do **not** just put ``x = 10``, as your solution should work for all values of ``x``.
+
+.. activecode:: 0107_cfu_2
+
+	x = 5
+	
+	print(x) #10
+
+Q#3
+~~~
+
+::
+
+	x = 10
+	x = x + 4
+	x = x / 2
+	print(x)
+
+.. fillintheblank:: 0107_cfu_3
+
+	.. blank:: blank1
+		:correct: 7
+
+		What will be printed from the block of code given above?

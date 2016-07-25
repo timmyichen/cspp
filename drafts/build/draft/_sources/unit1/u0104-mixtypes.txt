@@ -43,8 +43,11 @@ However, :misc-hl:`types change as they are evaluated`.  This means that the ste
 
 This may get tricky in specific formulas that require certain numbers to already have a decimal place.
 
-Check For Understanding
------------------------
+Checks For Understanding
+------------------------
+
+Q#1
+~~~
 
 .. mchoice:: cfu_mixtype_1
 	:correct: c
@@ -57,6 +60,9 @@ Check For Understanding
 
 	What datatype will result from the following expression? ``4 * 2.0``
 
+Q#2
+~~~
+
 .. fillintheblank:: cfu_mixtype_2
 	
 	.. blank:: blank1
@@ -67,6 +73,9 @@ Check For Understanding
 		:feedback4: (".*", "Try again!")
 
 		Evaluate the following expression: ``8 / 2 ** 2.0``.  Don't forget to consider order of operations as well as the datatypes.
+
+Q#3
+~~~
 
 .. fillintheblank:: cfu_mixtype_3
 	

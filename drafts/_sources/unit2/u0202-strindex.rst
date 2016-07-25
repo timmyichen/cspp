@@ -81,6 +81,9 @@ As you can see, :misc-hl:`when you provide a negative number, it starts counting
 Checks For Understanding
 ------------------------
 
+Q#1
+~~~
+
 .. mchoice:: cfu_strindex_1
     :correct: d
     :answer_a: "p"
@@ -94,6 +97,9 @@ Checks For Understanding
     
     With word = "duck tape", what would the expression word[6] give us?
 
+Q#2
+~~~
+
 .. mchoice:: cfu_strindex_2
     :multiple_answers:
     :correct: b,c,d
@@ -106,6 +112,9 @@ Checks For Understanding
     
     With word = "battery", which ways can we access the last letter?  Check all that apply.
 
+Q#3
+~~~
+
 .. mchoice:: cfu_strindex_3
     :correct: c
     :answer_a: word[5]
@@ -113,6 +122,9 @@ Checks For Understanding
     :answer_c: word[11]
     
     With word = "hello world", which of the following will give an error?
+
+Q#4
+~~~
 
 In the following area, complete the code so that the output matches what is stated in the comments ``#``.
 

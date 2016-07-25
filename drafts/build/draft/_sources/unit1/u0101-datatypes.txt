@@ -47,6 +47,9 @@ In Python, the five basic datatypes that we will be learning are:
 Practice: Check For Understanding
 ---------------------------------
 
+Q#1
+~~~
+
 .. mchoice:: question01_04_01
 	:correct: c
 	:answer_a: int
@@ -59,6 +62,9 @@ Practice: Check For Understanding
 	:feedback_d: There are only two values for boolean - True and False. Try again! Hint: What datatype uses quotes?
 
 	What datatype would ``"Nice to meet you!"`` be?
+
+Q#2
+~~~
 
 .. mchoice:: question01_04_02
 	:multiple_answers:
@@ -74,6 +80,9 @@ Practice: Check For Understanding
 
 	Which of the following datatypes represent types of numbers?
 
+Q#3
+~~~
+
 .. dragndrop:: question_01_04_03
 	:feedback: You can look back to the notes if you need to!
 	:match_1: float|||Decimal number
@@ -83,6 +92,9 @@ Practice: Check For Understanding
 	:match_5: string|||Text, uses quotes
 
 	Drag the datatypes on the left to the description on the right.
+
+Q#4
+~~~
 
 .. dragndrop:: question_01_04_04
 	:feedback: You can look back to the notes if you need to!

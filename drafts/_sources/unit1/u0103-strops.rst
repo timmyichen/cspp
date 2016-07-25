@@ -90,8 +90,3 @@ Keep in mind strings still follows your normal order of operations.  In the foll
 	print("hue " * 3 * 2)
 	
 It evalutes ``"hue " * 3`` first, which is ``"hue hue hue "``.  Then it takes that string ``"hue hue hue "`` and multiplies it by 2: ``"hue hue hue " * 2`` - which is ``"hue hue hue hue hue hue "``
-
-Practice: Check Your Understanding
-----------------------------------
-
-TODO

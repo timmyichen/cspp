@@ -5,7 +5,7 @@
 Lesson 01-05: Conversion Functions
 ==================================
 
-**Learning Target: I can convert datatypes from one value to another.**
+**Learning Target: I can convert datatypes from one type to another.**
 
 At times, you will be given datatype in one form, but you'll want to use it in another.  For example, later on you'll be learning how to use the ``input()`` function to get the user to type something in, and that always gives you data as a string.  But what if you wanted the user to type in a number?  How would you change that string to a number?
 
@@ -60,6 +60,9 @@ Here are a few notes for specific type to type conversions:
 Checks for Understanding
 ------------------------
 
+Q#1
+~~~
+
 .. mchoice:: mc_convfunc_1
 	:correct: b
 	:answer_a: int
@@ -71,6 +74,9 @@ Checks for Understanding
 
 	What is the resulting datatype of the following expression? ``float("10")``
 
+Q#2
+~~~
+
 .. mchoice:: mc_convfunc_2
 	:correct: c
 	:answer_a: int
@@ -81,6 +87,9 @@ Checks for Understanding
 	:feedback_c: Nice job!
 
 	What is the resulting datatype of the following expression? ``str(False)``
+
+Q#3
+~~~
 
 .. mchoice:: mc_convfunc_3
 	:correct: c
