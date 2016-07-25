@@ -9,13 +9,13 @@ Pre-Lab 3-2: Mock ATM
 Lab Requirements and Specifications
 -----------------------------------
 
-The "Mock" ATM program is supposed to simulate a simple ATM interface.  You have $10,000 in your bank account.  The ATM should present the user with three options:
+This "Mock" ATM program simulates a simple ATM.  Assume a user has $10,000 in their bank account.  The ATM should present the user with three options:
 
-    - Withdraw (take out money) from account
-    - Deposit (put money) into account
-    - Exit (ends program)
+    - **Withdraw** (take out money) from account
+    - **Deposit** (put money) into account
+    - **Exit** (ends program)
 
-The program should repeatedly ask the user for a choice until a valid choice is made.  If the user selects either Withdraw or Deposit, the program should ask them how much they want to deposit.  Your account is not allowed to fall into a negative balance, so the user can't withdraw more money than they have in their bank account.  There is no limit to how much the user can deposit into the account.
+The program should repeatedly ask the user for a choice until a valid choice is made.  If the user selects either Withdraw or Deposit, the program should ask them how much they want to deposit.  The account is not allowed to fall into a negative balance, so the user can't withdraw more money than they have in their bank account.  There is no limit to how much the user can deposit into the account.
 
 A heavily documented, partial solution to this lab will be given to you below, as well as the rationale behind the planning.  You are to complete the gaps in the planning, then implement those ideas in code.
 
@@ -27,11 +27,11 @@ Partial Solution
 Planning
 ~~~~~~~~
 
-The first thing I ask myself is - what control structures will I need to use?  From the description above, I know that I will need a loop *(key word: repeatedly)* and at least one conditional *(user is making a choice, program will do different things for each choice)*.  Since I don't know how many times I will be looping since it depends on the user choosing "exit", I know that I will need a ``while`` loop.
+The first thing I ask myself is - what control structures will I need to use?  From the description above, I know that I will need a loop *(key word: repeatedly)* and at least one conditional *(user is making a choice, program will do different things for each choice)*.  The loop is necessary to ensure the program continues to ask the user for input until they select **Exit**. Since we don't know how many times the program must loop, we should use  a ``while`` loop.
 
-Next, I need to figure out what my program is doing first.  Since the user is doing is making choices at a menu, the first thing that needs to be done is to present the user with their choices.  Then I'll probably want to ask the user to make their choice.
+Next, we need to figure out what our program should do first.  Since the user is making choices from a menu, the first thing we need the program to do is print the menu. Then the program should ask the user to make their choice.
 
-Then, since I know that I'll be using a ``while`` loop, I will need some kind of condition to keep it looping as long as the user doesn't choose to exit.  We can leave it blank for now, but we should definitely revisit it later down the line.
+Since we know that we'll be using a ``while`` loop, we will need some kind of condition to keep it looping as long as the user doesn't choose to exit.  We can leave it blank for now, but we should definitely revisit it later down the line.
 
 Here's how my pseudocode would start:
 
