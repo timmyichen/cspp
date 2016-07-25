@@ -23,7 +23,25 @@ You should name your file ``FILN_fizzbuzz.py``, where FILN is your first initial
 Testing Your Program
 --------------------
 
-The example above is the fizzbuzz output up to 16 inclusive.  Theoretically, if your fizzbuzz works up to 15 inclusive, it will work for any number, since the sequence above will just repeat.
+The following is the fizzbuzz output up to 15 inclusive.
+
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+
+Theoretically, if your fizzbuzz works up to 15 inclusive, it will work for any number, since the sequence above will just repeat.
 
 The following space is provided in case you want to test code out or write it in the browser:
 
@@ -34,7 +52,7 @@ The following space is provided in case you want to test code out or write it in
 Taking it Further
 -----------------
 
-The original FizzBuzz game is pretty easy.  After all, the sequence is predictable and repeating.  HardMode FizzBuzz incorporates a whole new level of unpredictability:
+The original FizzBuzz game is pretty easy.  After all, the sequence is predictable and repeating.  HardMode FizzBuzz incorporates a new level of challenges:
    - If a number is a multiple of 3, or contains a 3: Fizz
    - If a number is a multiple of 5, or contains a 5: Buzz
    - If a number satisfies both of the above: FizzBuzz
