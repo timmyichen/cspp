@@ -11,7 +11,7 @@ Lab Requirements and Specifications
 
 Two horses.  Five monkeys.  Twenty flies.  One cat.  Nine lives.  Despite the English language being one of the most commonly used languages around the world, it is also quite complicated to learn if you are not a native speaker.  Taking a noun and converting it to its plural form has a dozen rules and even more special cases.
 
-In this lab, you will be creating a program that will take in two inputs: a non-negative number, and a singular-form noun.  If the number entered is 1, then you would just print out "1 noun".  However, if the number is 0 or greater than 1, you would print out the number and the pluralized version of the word - like "0 nouns" or "4 nouns".
+In this lab, you will be creating a program that will take in two inputs: a non-negative number, and a singular noun.  If the number entered is 1, then you would just print out "1 noun".  However, if the number is 0 or greater than 1, you would print out the number and the pluralized version of the word - like "0 nouns" or "4 nouns".
 
 Your program will be handling the following rules to pluralize nouns:
 
@@ -34,17 +34,19 @@ Your program will be handling the following rules to pluralize nouns:
     | All other cases    | Add "s" to the end             | cat, cats         |
     +--------------------+--------------------------------+-------------------+
 
+Note that in order to handle cases where the word ends in "y" correctly, you will need to take some care. It is important that you order your conditions so that your code will check for the special case endings of "ay", "oy", "ey", and "uy" before simply checking whether a word ends in "y".
+
 You should name your file ``FILN_pluralizer.py``, where FILN is your first initial and last name, all lowercase, no space.
 
 Testing Your Program
 --------------------
 
-Although it is a good idea to come up with some of your own test cases to realize the limitations our own programs the following are some inputs that can also be used to verify that your program works as intended.  I would also recommend using the examples in the table above.
+Although it is a good idea to come up with some of your own test cases to realize the limitations your own code for this lab (and other labs) the following are some inputs you can use to verify that your program works as intended.  I would also recommend using the examples in the table above.
 
     +-----------+----------------+-------------------+
     | Input (#) | Input (word)   | Result            |
     +-----------+----------------+-------------------+
-    | 0         | word           | 0 words           |
+    | 0         | dog            | 0 dogs            |
     +-----------+----------------+-------------------+
     | 1         | city           | 1 city            |
     +-----------+----------------+-------------------+
@@ -52,9 +54,9 @@ Although it is a good idea to come up with some of your own test cases to realiz
     +-----------+----------------+-------------------+
     | 33        | fly            | 33 flies          |
     +-----------+----------------+-------------------+
-    | 8         | wife           | 8 wives           |
+    | 8         | life           | 8 lives           |
     +-----------+----------------+-------------------+
-    | 20        | hippopotamus   | 20 hippopotami    |
+    | 20        | cactus         | 20 cacti          |
     +-----------+----------------+-------------------+
 
 Note that some words covered by special cases will look incorrect if used in this program.  Examples: bus should be buses, not bi / foot should be feet, not foots, etc.  It's important to realize that for now, you want to make sure that the words follow your rules, regardless of whether it is actually an English word or not.
