@@ -59,9 +59,10 @@ The important thing to remember when slicing strings is that :misc-hl:`The range
 .. fillintheblank:: cfu_strslice_1
 
    .. blank:: blank01
-      :correct: [2:7]
-      :feedback1: ("\\b[2:6]\\b", "Remember, the last index is not included!")
-      :feedback2: (".*", "It helps to count through the indexes!")
+      :correct: ^\[2:7\]$
+      :feedback1: (":6\]$", "Remember, the last index is not included!")
+      :feedback2: ("^\[1:", "Remember, we start counting from zero!")
+      :feedback3: (".*", "Try again - It helps to count through the indexes!")
       
       What string slice would we have to use on "hippopotamus" to get the substring "ppopo"?  Give you answer in the form [a:b], where a and b are numbers.
       
@@ -91,23 +92,23 @@ Q#1
 .. fillintheblank:: cfu_strslice_1
 
    .. blank:: blank01
-      :correct: [0:3]
-      :feedback1: ("[0:2]", "Remember, the last index is not included!")
-      :feedback2: ("[1:4]", "Remember, we start counting from zero!")
-      :feedback3: (".*", "It helps to count through the indexes!")
+      :correct: ^\[0:3\]$
+      :feedback1: (":2\]$", "Remember, the last index is not included!")
+      :feedback2: ("^\[1:", "Remember, we start counting from zero!")
+      :feedback3: (".*", "Try again - It helps to count through the indexes!")
       
       What string slice would we have to use on "How are you?" to get the substring "How"?  Give you answer in the form ``[a:b]``, where a and b are numbers.
 
 Q#2
 ~~~
 
-.. fillintheblank:: cfu_strslice_2
+.. fillintheblank:: cfu_strslice_2_1
 
    .. blank:: blank01
-      :correct: [4:7]
-      :feedback1: ("[4:6]", "Remember, the last index is not included!")
-      :feedback2: ("[5:8]", "Remember, we start counting from zero!")
-      :feedback3: (".*", "It helps to count through the indexes!")
+      :correct: ^\[4:7\]$
+      :feedback1: (":6\]$", "Remember, the last index is not included!")
+      :feedback2: ("^\[5:", "Remember, we start counting from zero!")
+      :feedback3: (".*", "Try again - It helps to count through the indexes!")
       
       What string slice would we have to use on "How are you?" to get the substring "are"?  Give you answer in the form ``[a:b]``, where a and b are numbers.
 
@@ -117,10 +118,10 @@ Q#3
 .. fillintheblank:: cfu_strslice_3
 
    .. blank:: blank01
-      :correct: [8:11]
-      :feedback1: ("[8:10]", "Remember, the last index is not included!")
-      :feedback2: ("[9:12]", "Remember, we start counting from zero!")
-      :feedback3: (".*", "It helps to count through the indexes!")
+      :correct: ^\[8:11\]$
+      :feedback1: (":10\]$", "Remember, the last index is not included!")
+      :feedback2: ("^\[9:", "Remember, we start counting from zero!")
+      :feedback3: (".*", "Try again - It helps to count through the indexes!")
       
       What string slice would we have to use on "How are you?" to get the substring "you"?  Give you answer in the form ``[a:b]``, where a and b are numbers.
 
@@ -130,7 +131,7 @@ Q#4
 .. fillintheblank:: cfu_strslice_3
 
    .. blank:: blank01
-      :correct: [-3:]
+      :correct: ^\[-3:\]$
       :feedback2: (".*", "Be sure to review the lesson if you need help!")
       
       What string slice would we have to use on any string to get the substring equal to the last 3 letters?  Give you answer in the form ``[]``, where anything can go between the brackets. (hint: use the special syntax above!)

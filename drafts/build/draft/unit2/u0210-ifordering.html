@@ -257,7 +257,11 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lesson 02-10: Ordering of Conditionals</a></li>
+<li><a class="reference internal" href="#">Lesson 02-10: Ordering of Conditionals</a><ul>
+<li><a class="reference internal" href="#order-matters">Order Matters</a></li>
+<li><a class="reference internal" href="#checks-for-understanding">Checks For Understanding</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -293,6 +297,38 @@
   <div class="section" id="lesson-02-10-ordering-of-conditionals">
 <h1>Lesson 02-10: Ordering of Conditionals<a class="headerlink" href="#lesson-02-10-ordering-of-conditionals" title="Permalink to this headline">¶</a></h1>
 <p><strong>Learning Target: I can predict the outcome of if/elif/else statements based on their order.</strong></p>
+<div class="section" id="order-matters">
+<h2>Order Matters<a class="headerlink" href="#order-matters" title="Permalink to this headline">¶</a></h2>
+<p>What happens if multiple conditions throughout the <code class="docutils literal"><span class="pre">if</span></code>/<code class="docutils literal"><span class="pre">/elif</span></code> conditions are being satisfied?  Run the code below:</p>
+
+<textarea data-component="activecode" id=0210_ex_1 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+number = 10
+
+if number > 2:
+    print("Greater than 2!")
+elif number > 5:
+    print("Greater than 5!")
+elif number > 8:
+    print("Greater than 8!")
+</textarea>
+<p>Notice that even though <code class="docutils literal"><span class="pre">number</span></code> is greater than 2, 4, and 8, satisfying all three conditions, only <code class="docutils literal"><span class="pre">&quot;Greater</span> <span class="pre">than</span> <span class="pre">2!&quot;</span></code> gets printed.  Why is that?</p>
+
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="0210_cfu_1">
+            ch0210-1: Why is &#8220;Greater than 2!&#8221; printed instead of any of the other options?
+            <li data-component="answer" data-correct id="0210_cfu_1_opt_a">(A) the "if number greater than 2" is checked first</li><li data-component="feedback" id="0210_cfu_1_opt_a">Order matters!</li>
+            
+            <li data-component="answer"  id="0210_cfu_1_opt_b">(B) 2 is the smallest of (2,5,8)</li><li data-component="feedback" id="0210_cfu_1_opt_b">The value itself doesn't matter much here.</li>
+            
+            <li data-component="answer"  id="0210_cfu_1_opt_c">(C) it only checks the if statement</li><li data-component="feedback" id="0210_cfu_1_opt_c">If the if statement were false, it would still continue!</li>
+            
+
+            </ul>
+            <p>Here we can see clearly that <span class="misc-hl">the ordering within if statements matter!  This is especially true for conditionals that &#8220;overlap&#8221; in some ways</span></p>
+</div>
+<div class="section" id="checks-for-understanding">
+<h2>Checks For Understanding<a class="headerlink" href="#checks-for-understanding" title="Permalink to this headline">¶</a></h2>
+<p>TODO</p>
+</div>
 </div>
 
 

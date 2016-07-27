@@ -48,11 +48,11 @@ Three more examples of modulo:
 
 	  6 fits into 20 three (3) times.  ``3 * 6 = 18``, which means that there is ``20 (total) - 18 (result) = 2 (remainder)`` left over.  The remainder of this expression is 2, so ``20 % 6 = 2``.
 
-	  Another way of saying it is: 20 divided by 6 is 2.666, rounded down is 3, and 20 - (6 * 3) = 2.
+	  Another way of saying it is: 20 divided by 6 is 3.333, rounded down is 3, and 20 - (6 * 3) = 2.
 
 	- 27 % 9
 
-	  9 fits into 27 five (3) times.  ``9 * 3 = 27``, which means that there is ``27 (total) - 27 (result) = 0 (remainder)`` left over.  Since 9 divides 27 evenly, there is no remainder, so ``27 % 9 = 0``.
+	  9 fits into 27 three (3) times.  ``9 * 3 = 27``, which means that there is ``27 (total) - 27 (result) = 0 (remainder)`` left over.  Since 9 divides 27 evenly, there is no remainder, so ``27 % 9 = 0``.
 
 	  Another way of saying it is: 27 divided by 9 is exactly 3, so there is no remainder, so it is 0.
 
@@ -62,7 +62,7 @@ Three more examples of modulo:
 
 	  Another way of saying it is: 4 divided by 7 is .571, rounded down is 0, and 4 - (7 * 0) = 4.
 
-	  We can develop a general rule for this case, which is this: **Given the expression** ``a % b`` **, where** ``a`` **and** ``b`` **are positive integers, if** ``a < b`` **, the result is always** ``a``.
+	  **We can develop a general rule for this case, which is this: Given the expression** ``a % b`` **, where** ``a`` **and** ``b`` **are positive integers, if** ``a < b`` **, the result is always** ``a``.
 
 Order of Operations
 -------------------
@@ -85,7 +85,7 @@ Q#1
 .. fillintheblank:: question_01_05_01
 
 	.. blank:: blank1
-		:correct: \\b12\\b
+		:correct: ^12$
 		:feedback1: (".*", "Don't forget your order of operations!!")
 
 		Evaluate the following expression: ``3 ** 2 + 3``
@@ -96,7 +96,7 @@ Q#2
 .. fillintheblank:: question_01_05_02
 
 	.. blank:: blank2
-		:correct: \\b9\\b
+		:correct: ^9$
 		:feedback1: (".*", "Make sure you do the parentheses first!")
 
 		Evaluate the following expression: ``3 ** (2 % 3)``
@@ -106,7 +106,7 @@ Q#3
 
 .. parsonsprob:: question_01_05_03
 	
-	Order the groups of operations in the order that they should be evaluated.  Top is evaluated first, while bottom is evaluated last.
+	Order the groups of operations in the order that they should be evaluated.  Top is evaluated first, while bottom is evaluated last.  Make sure that all the blocks are the same size! (keep them all the way to the left)
 	-----
 	parentheses
 	exponents
@@ -119,9 +119,9 @@ Q#4
 .. fillintheblank:: question_01_05_04
 
 	.. blank:: blank3
-		:correct: 4
+		:correct: ^4$
 
-		Evaluate the following expression: ``(3 * 2) % 5 + 3``
+		Evaluate the following expression (answer will be an integer): ``(3 * 2) % 5 + 3``
 
 Q#5
 ~~~
@@ -129,9 +129,9 @@ Q#5
 .. fillintheblank:: question_01_05_05
 
 	.. blank:: blank4
-		:correct: 12
+		:correct: ^12$
 
-		Evaluate the following expression: ``((10 / 2) + 5 % 2 ) * 2``
+		Evaluate the following expression (answer will be an integer): ``((10 / 2) + 5 % 2 ) * 2``
 
 Q#6
 ~~~
@@ -139,9 +139,9 @@ Q#6
 .. fillintheblank:: question_01_05_06
 
 	.. blank:: blank5
-		:correct: 3
+		:correct: ^3$
 
-		Evaluate the following expression: ``2 * 3 - 6 / 2 % 8``
+		Evaluate the following expression (answer will be an integer): ``2 * 3 - 6 / 2 % 8``
 
 Q#7
 ~~~
@@ -149,9 +149,9 @@ Q#7
 .. fillintheblank:: question_01_05_07
 
 	.. blank:: blank6
-		:correct: 97
+		:correct: ^97$
 
-		Evaluate the following expression: ``100 - (24 % 5) * 3 / 4``
+		Evaluate the following expression (answer will be an integer): ``100 - (24 % 5) * 3 / 4``
 
 Q#8
 ~~~
@@ -159,6 +159,6 @@ Q#8
 .. fillintheblank:: question_01_05_08
 
 	.. blank:: blank7
-		:correct: 2
+		:correct: ^2$
 
-		Evaluate the following expression: ``2 * ((4 * 2) + 3 / 6) % 10 - 5``
+		Evaluate the following expression (answer will be an integer): ``2 * ((4 * 2) + 3 / 6) % 10 - 5``

@@ -315,27 +315,6 @@ print 1 + 1     #int + int => int
 print 1.0 + 1.0 #float + float => float
 print 1 + 1.0   #int + float => float
 </textarea>
-<p>As an example, consider the expression <code class="docutils literal"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">/</span> <span class="pre">4</span> <span class="pre">+</span> <span class="pre">0.5</span></code>.</p>
-<dl class="docutils">
-<dt>You might look at this expression and think of the following steps:</dt>
-<dd><ul class="first last simple">
-<li>There is a float in there, so the result should be a float.</li>
-<li><code class="docutils literal"><span class="pre">2</span> <span class="pre">/</span> <span class="pre">4</span></code> is <code class="docutils literal"><span class="pre">0.5</span></code>, so the entire thing is <code class="docutils literal"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">0.5</span> <span class="pre">+</span> <span class="pre">0.5</span></code>, or <code class="docutils literal"><span class="pre">2</span></code>.</li>
-<li>The result is <code class="docutils literal"><span class="pre">2</span></code>!</li>
-</ul>
-</dd>
-<dt>However, <span class="misc-hl">types change as they are evaluated</span>.  This means that the steps for the above are more like this:</dt>
-<dd><ul class="first last simple">
-<li>Order of operations says that division happens first.</li>
-<li><code class="docutils literal"><span class="pre">2</span> <span class="pre">/</span> <span class="pre">4</span></code> involves two integers, so the result is <code class="docutils literal"><span class="pre">0.5</span></code>, removing everything after the decimal, or just <code class="docutils literal"><span class="pre">0</span></code></li>
-<li>All that&#8217;s left is addition, so we can evaluate it left to right.</li>
-<li><code class="docutils literal"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">0</span> <span class="pre">+</span> <span class="pre">0.5</span></code> will be evaluated from left to right, making the <code class="docutils literal"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">0</span></code> happen first (which equals <code class="docutils literal"><span class="pre">1</span></code>)</li>
-<li><code class="docutils literal"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">0.5</span></code> is what remains, which is an int plus a float, so the result will be a float (decimal): <code class="docutils literal"><span class="pre">1.5</span></code></li>
-<li>The result is <code class="docutils literal"><span class="pre">1.5</span></code></li>
-</ul>
-</dd>
-</dl>
-<p>This may get tricky in specific formulas that require certain numbers to already have a decimal place.</p>
 </div>
 <div class="section" id="checks-for-understanding">
 <h2>Checks For Understanding<a class="headerlink" href="#checks-for-understanding" title="Permalink to this headline">¶</a></h2>
@@ -348,7 +327,7 @@ print 1 + 1.0   #int + float => float
             
             <li data-component="answer"  id="cfu_mixtype_1_opt_b">(B) Integer</li><li data-component="feedback" id="cfu_mixtype_1_opt_b">Which is greater, Floats or Integers?</li>
             
-            <li data-component="answer" data-correct id="cfu_mixtype_1_opt_c">(C) Float</li><li data-component="feedback" id="cfu_mixtype_1_opt_c">The float turns everything into an integer!</li>
+            <li data-component="answer" data-correct id="cfu_mixtype_1_opt_c">(C) Float</li><li data-component="feedback" id="cfu_mixtype_1_opt_c">The float turns everything into a float!</li>
             
 
             </ul>
@@ -360,19 +339,19 @@ print 1 + 1.0   #int + float => float
             
         <span data-blank>
             Evaluate the following expression: <code class="docutils literal"><span class="pre">8</span> <span class="pre">/</span> <span class="pre">2</span> <span class="pre">**</span> <span class="pre">2.0</span></code>.  Don&#8217;t forget to consider order of operations as well as the datatypes.
-        <span data-feedback="regex" style="display: none" id="blank1_feedback1">2</span>
+        <span data-feedback="regex" style="display: none" id="blank1_feedback1">^2$</span>
         <span data-feedback="text" style="display: none" for="blank1_feedback1">Have you considered the ending datatype?</span>
             
-        <span data-feedback="regex" style="display: none" id="blank1_feedback2">16.0</span>
+        <span data-feedback="regex" style="display: none" id="blank1_feedback2">^16\.0$</span>
         <span data-feedback="text" style="display: none" for="blank1_feedback2">Don't forget about order of operations!</span>
             
-        <span data-feedback="regex" style="display: none" id="blank1_feedback3">16</span>
+        <span data-feedback="regex" style="display: none" id="blank1_feedback3">$16^</span>
         <span data-feedback="text" style="display: none" for="blank1_feedback3">Don't forget about order of operations!</span>
             
         <span data-feedback="regex" style="display: none" id="blank1_feedback4">.*</span>
         <span data-feedback="text" style="display: none" for="blank1_feedback4">Try again!</span>
             
-        <span data-answer style="display: none" id="blank1_answer">2.0</span>
+        <span data-answer style="display: none" id="blank1_answer">^2\.0$</span>
         </span>
         
         </p>
@@ -384,19 +363,16 @@ print 1 + 1.0   #int + float => float
             
         <span data-blank>
             Evaluate the following expression: <code class="docutils literal"><span class="pre">10</span> <span class="pre">/</span> <span class="pre">4</span> <span class="pre">+</span> <span class="pre">4.0</span></code>.  Don&#8217;t forget to consider order of operations as well as the datatypes.
-        <span data-feedback="regex" style="display: none" id="blank2_feedback1">6.5</span>
-        <span data-feedback="text" style="display: none" for="blank2_feedback1">Remember, integer division!</span>
+        <span data-feedback="regex" style="display: none" id="blank2_feedback1">^6$</span>
+        <span data-feedback="text" style="display: none" for="blank2_feedback1">Have you considered the ending datatype?</span>
             
-        <span data-feedback="regex" style="display: none" id="blank2_feedback2">6</span>
-        <span data-feedback="text" style="display: none" for="blank2_feedback2">Have you considered the ending datatype?</span>
+        <span data-feedback="regex" style="display: none" id="blank2_feedback2">^1\.25$</span>
+        <span data-feedback="text" style="display: none" for="blank2_feedback2">Don't forget about order of operations!</span>
             
-        <span data-feedback="regex" style="display: none" id="blank2_feedback3">1.25</span>
-        <span data-feedback="text" style="display: none" for="blank2_feedback3">Don't forget about order of operations!</span>
+        <span data-feedback="regex" style="display: none" id="blank2_feedback3">.*</span>
+        <span data-feedback="text" style="display: none" for="blank2_feedback3">Try again!</span>
             
-        <span data-feedback="regex" style="display: none" id="blank2_feedback4">.*</span>
-        <span data-feedback="text" style="display: none" for="blank2_feedback4">Try again!</span>
-            
-        <span data-answer style="display: none" id="blank2_answer">6.0</span>
+        <span data-answer style="display: none" id="blank2_answer">^6\.5$</span>
         </span>
         
         </p>

@@ -55,8 +55,8 @@ Let's run through some example code below, step by step.
 .. fillintheblank:: fill1512
 
     .. blank:: cfu_reassign_2
-        :correct: \\b5\\b
-        :feedback1: ("\\b10\\b", "That's just the first line..")
+        :correct: ^5$
+        :feedback1: ("^10$", "That's just the first line..")
         :feedback2: (".*", "Try again - be sure to go step by step!")
         
         What will the result of ``x`` be after the code above is run?
@@ -98,7 +98,7 @@ Q#1
 .. fillintheblank:: 0107_cfu_1
 
 	.. blank:: blank1
-		:correct: x=x+1
+		:correct: ^x=x\+1$
 		:feedback1: (".*","Make sure you don't include spaces!  Your solution should have five characters total")
 
 		Given a variable ``x``, write an expression that will increase ``x`` by 1.  Include no spaces in your solution.
@@ -127,6 +127,6 @@ Q#3
 .. fillintheblank:: 0107_cfu_3
 
 	.. blank:: blank1
-		:correct: 7
+		:correct: ^7$
 
 		What will be printed from the block of code given above?

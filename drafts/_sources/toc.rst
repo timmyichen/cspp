@@ -33,6 +33,16 @@ Labs
     lab07-03.rst
     lab07-04.rst
 
+Unit 0 Prep
+===========
+
+.. toctree::
+    :maxdepth: 2
+    
+    unit0/u0001-basicpy.rst
+    unit0/u0002-installpy.rst
+    unit0/u0003-runpy.rst
+
 Unit 1 Lessons
 ==============
 
@@ -68,3 +78,24 @@ Unit 2 Lessons
     unit2/u0210-ifordering.rst
     unit2/u0211-divisibility.rst
     unit2/u02-labcheck.rst
+    
+Unit 3 Lessons
+==============
+
+.. toctree::
+    :maxdepth: 2
+    
+    unit3/u0301-errortypes.rst
+    unit3/u0302-errormsg.rst
+    unit3/u0303-progdesign.rst
+    unit3/u0304-forloop.rst
+    unit3/u0305-range.rst
+    unit3/u0306-foriter.rst
+    unit3/u0307-accumulator.rst
+    unit3/u0308-whileloop.rst
+    unit3/u0309-infloop.rst
+    unit3/u0310-break.rst
+    unit3/u0311-forelse.rst
+    unit3/u0312-inpvalid.rst
+    unit3/u03-labcheck.rst
+    

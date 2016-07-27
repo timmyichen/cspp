@@ -257,7 +257,17 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lesson 02-11: Checking for Divisibility</a></li>
+<li><a class="reference internal" href="#">Lesson 02-11: Checking for Divisibility</a><ul>
+<li><a class="reference internal" href="#odd-even">Odd / Even</a></li>
+<li><a class="reference internal" href="#checking-for-divisibility">Checking For Divisibility</a></li>
+<li><a class="reference internal" href="#checks-for-understanding">Checks for Understanding</a><ul>
+<li><a class="reference internal" href="#q-1">Q#1</a></li>
+<li><a class="reference internal" href="#q-2">Q#2</a></li>
+<li><a class="reference internal" href="#q-3">Q#3</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -293,6 +303,133 @@
   <div class="section" id="lesson-02-11-checking-for-divisibility">
 <h1>Lesson 02-11: Checking for Divisibility<a class="headerlink" href="#lesson-02-11-checking-for-divisibility" title="Permalink to this headline">¶</a></h1>
 <p><strong>Learning Target: I can create a conditional to check for divisibility.</strong></p>
+<p>One of the first skills a programmer learns using conditionals is the skill of <em>testing for divisibility</em>.  The first most basic example is to check whether a number is odd or even.</p>
+<div class="section" id="odd-even">
+<h2>Odd / Even<a class="headerlink" href="#odd-even" title="Permalink to this headline">¶</a></h2>
+<p>Recall that a number is even if it is divisible by two, and a number is odd if it is not divisible by two.</p>
+<p>To check whether a number is divisible by two, let&#8217;s first explore our own thought processes.  Let&#8217;s take a few examples and examine them.</p>
+<blockquote>
+<div><ul class="simple">
+<li><span class="math">\(5\div2 = 2.5 \Longrightarrow\)</span> is 5 divisible by 2?  How do you know?</li>
+<li><span class="math">\(37\div2 = 18.5 \Longrightarrow\)</span> is 5 divisible by 2?  How do you know?</li>
+<li><span class="math">\(14\div2 = 7.5 \Longrightarrow\)</span> is 5 divisible by 2?  How do you know?</li>
+<li><span class="math">\(100\div2 = 50 \Longrightarrow\)</span> is 5 divisible by 2?  How do you know?</li>
+<li><span class="math">\(26\div2 = 13 \Longrightarrow\)</span> is 5 divisible by 2?  How do you know?</li>
+<li><span class="math">\(44\div2 = 22 \Longrightarrow\)</span> is 5 divisible by 2?  How do you know?</li>
+</ul>
+</div></blockquote>
+<p>Notice the pattern?  Whenever a number is not divisible by 2, it has a decimal - or in other words, it has a <strong>remainder</strong>.  We have something that can calculate remainder - what was it?</p>
+
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="0211_cfu_1">
+            ch0211-1: What can we use to calculate remainder after division?
+            <li data-component="answer"  id="0211_cfu_1_opt_a">(A) **</li><li data-component="feedback" id="0211_cfu_1_opt_a">That represents an exponent!</li>
+            
+            <li data-component="answer"  id="0211_cfu_1_opt_b">(B) float()</li><li data-component="feedback" id="0211_cfu_1_opt_b">That's a conversion function!</li>
+            
+            <li data-component="answer" data-correct id="0211_cfu_1_opt_c">(C) %</li><li data-component="feedback" id="0211_cfu_1_opt_c">That's Modulo!</li>
+            
+            <li data-component="answer"  id="0211_cfu_1_opt_d">(D) remainder()</li><li data-component="feedback" id="0211_cfu_1_opt_d">That doesn't exist!</li>
+            
+
+            </ul>
+            <p>Great!  Except this time, we want to check if an expression has NO remainder.  Let&#8217;s start by writing what we know.</p>
+<p>In order to check whether an integer <code class="docutils literal"><span class="pre">number</span></code> is divisible by 2, the expression <code class="docutils literal"><span class="pre">number</span> <span class="pre">%</span> <span class="pre">2</span></code> will give us the remainder after division.  If <code class="docutils literal"><span class="pre">number</span></code> is even, then it means 2 goes into it without remainder.  This means that the remainder should be zero.  So we want to check if <code class="docutils literal"><span class="pre">number</span> <span class="pre">%</span> <span class="pre">2</span></code> will be zero.</p>
+
+        <p data-component="fillintheblank" data-casei="false" id="0211_cfu_2">
+            
+        <span data-blank>
+            How do you represent <code class="docutils literal"><span class="pre">number</span> <span class="pre">%</span> <span class="pre">2</span></code> equals zero as a boolean expression?
+        <span data-feedback="regex" style="display: none" id="0211_fitb_2_feedback1">^ *number *% *2 *= *0 *$</span>
+        <span data-feedback="text" style="display: none" for="0211_fitb_2_feedback1">don't forget how to represent 'equals' in python!</span>
+            
+        <span data-feedback="regex" style="display: none" id="0211_fitb_2_feedback2">.*</span>
+        <span data-feedback="text" style="display: none" for="0211_fitb_2_feedback2">Try again! You should be writing a valid boolean expression.</span>
+            
+        <span data-answer style="display: none" id="0211_fitb_2_answer">^ *number *% *2 *== *0 *$</span>
+        </span>
+        
+        </p>
+            <p>If you&#8217;re at this point, great job!  We have a boolean expression to represent whether a number is divisible by a 2 or not!  Feel free to try it out in the space below:</p>
+
+<textarea data-component="activecode" id=0211_ex_1 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+number = 10 #replace this number with anything!
+if number % 2 == 0:
+    print("{} is even!".format(number))
+else:
+    print("{} is odd!".format(number))
+</textarea>
+</div>
+<div class="section" id="checking-for-divisibility">
+<h2>Checking For Divisibility<a class="headerlink" href="#checking-for-divisibility" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s try to generalize this rule so it will work with any number:</p>
+<p>Right now, <code class="docutils literal"><span class="pre">number</span> <span class="pre">%</span> <span class="pre">2</span> <span class="pre">==</span> <span class="pre">0</span></code> checks for divisibility by 2.</p>
+<blockquote>
+<div><ul class="simple">
+<li>If we wanted to check for divisibility by 3, we would use the expression <code class="docutils literal"><span class="pre">number</span> <span class="pre">%</span> <span class="pre">3</span> <span class="pre">==</span> <span class="pre">0</span></code></li>
+<li>If we wanted to check for divisibility by 4, we would use the expression <code class="docutils literal"><span class="pre">number</span> <span class="pre">%</span> <span class="pre">4</span> <span class="pre">==</span> <span class="pre">0</span></code></li>
+<li>If we wanted to check for divisibility by 5, we would use the expression <code class="docutils literal"><span class="pre">number</span> <span class="pre">%</span> <span class="pre">5</span> <span class="pre">==</span> <span class="pre">0</span></code></li>
+</ul>
+</div></blockquote>
+<p>Notice the pattern?</p>
+<p>So we can generalize by saying: <span class="misc-hl">If we want to check for divisibility by N, we can use the expression</span> <code class="docutils literal"><span class="pre">number</span> <span class="pre">%</span> <span class="pre">N</span> <span class="pre">==</span> <span class="pre">0</span></code> <span class="misc-hl">that will be True if it is divisible and False otherwise.</span></p>
+</div>
+<div class="section" id="checks-for-understanding">
+<h2>Checks for Understanding<a class="headerlink" href="#checks-for-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="q-1">
+<h3>Q#1<a class="headerlink" href="#q-1" title="Permalink to this headline">¶</a></h3>
+
+        <p data-component="fillintheblank" data-casei="false" id="0211_cfu_3">
+            
+        <span data-blank>
+            Write a boolean expression that represents divisibility by 10.
+        <span data-feedback="regex" style="display: none" id="0211_fitb_3_feedback1">^ *number *% *10 *= *0 *$</span>
+        <span data-feedback="text" style="display: none" for="0211_fitb_3_feedback1">don't forget how to represent 'equals' in python!</span>
+            
+        <span data-feedback="regex" style="display: none" id="0211_fitb_3_feedback2">.*</span>
+        <span data-feedback="text" style="display: none" for="0211_fitb_3_feedback2">Try again! You should be writing a valid boolean expression.</span>
+            
+        <span data-answer style="display: none" id="0211_fitb_3_answer">^ *number *% *10 *== *0 *$</span>
+        </span>
+        
+        </p>
+            </div>
+<div class="section" id="q-2">
+<h3>Q#2<a class="headerlink" href="#q-2" title="Permalink to this headline">¶</a></h3>
+
+        <p data-component="fillintheblank" data-casei="false" id="0211_cfu_4">
+            
+        <span data-blank>
+            Write a boolean expression that represents divisibility by 7.
+        <span data-feedback="regex" style="display: none" id="0211_fitb_4_feedback1">^ *number *% *7 *= *0 *$</span>
+        <span data-feedback="text" style="display: none" for="0211_fitb_4_feedback1">don't forget how to represent 'equals' in python!</span>
+            
+        <span data-feedback="regex" style="display: none" id="0211_fitb_4_feedback2">.*</span>
+        <span data-feedback="text" style="display: none" for="0211_fitb_4_feedback2">Try again! You should be writing a valid boolean expression.</span>
+            
+        <span data-answer style="display: none" id="0211_fitb_4_answer">^ *number *% *7 *== *0 *$</span>
+        </span>
+        
+        </p>
+            </div>
+<div class="section" id="q-3">
+<h3>Q#3<a class="headerlink" href="#q-3" title="Permalink to this headline">¶</a></h3>
+
+        <p data-component="fillintheblank" data-casei="false" id="0211_cfu_5">
+            
+        <span data-blank>
+            Write a boolean expression that represents divisibility by 12.
+        <span data-feedback="regex" style="display: none" id="0211_fitb_5_feedback1">^ *number *% *2 *= *0 *$</span>
+        <span data-feedback="text" style="display: none" for="0211_fitb_5_feedback1">don't forget how to represent 'equals' in python!</span>
+            
+        <span data-feedback="regex" style="display: none" id="0211_fitb_5_feedback2">.*</span>
+        <span data-feedback="text" style="display: none" for="0211_fitb_5_feedback2">Try again! You should be writing a valid boolean expression.</span>
+            
+        <span data-answer style="display: none" id="0211_fitb_5_answer">^ *number *% *12 *== *0 *$</span>
+        </span>
+        
+        </p>
+            </div>
+</div>
 </div>
 
 

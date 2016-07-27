@@ -5,7 +5,7 @@
 Lesson 02-06: Comparison Operators
 ==================================
 
-**Learning Target: I can use boolean operators to compare values**
+**Learning Target: I can use boolean operators to compare values.**
 
 Comparison Operators
 --------------------

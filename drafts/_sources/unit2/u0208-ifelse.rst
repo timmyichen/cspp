@@ -7,8 +7,8 @@ Lesson 02-08: If/Else Statements
 
 **Learning Target: I can use if/else statements to execute code conditionally.**
 
-Adding to if Statements
------------------------
+The ``else`` Keyword
+--------------------
 
 When you use ``if`` statements, you are testing to see if a boolean condition is ``True``.  What if you wanted to execute some code if it is ``True``, but to also execute some code if it is ``False?``  While you could use the following code:
 
@@ -21,7 +21,7 @@ When you use ``if`` statements, you are testing to see if a boolean condition is
 
 ...it would be inefficient and difficult to read.  There's an easier way to do this, by using the ``else`` keyword.
 
-The ``else`` keyword is always attached to an ``if`` statement.  It basically means "otherwise", or "for all other cases".  It will only run if the ``if`` statement is false.
+The ``else`` keyword is always attached to an ``if`` statement.  It basically means "otherwise", or "for all other cases".  It will only run if the ``if`` statement is false.  Also, you cannot have more than one ``else`` statement for each ``if`` statement.
 
 Here's how the syntax looks:
 
@@ -58,3 +58,5 @@ Take the following example:
 
 Try running it, and try putting in different inputs!  You might try typing "Yes", which the program will print out "You picked yes!".  If you typed in "No", the program will print "You picked no..".  But if you typed in anything else, you might've noticed that the program will still print "You picked no..".  This is because the ``else`` statement doesn't actually check the input at all!
 
+Checks For Understanding
+------------------------

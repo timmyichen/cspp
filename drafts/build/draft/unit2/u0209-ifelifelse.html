@@ -257,7 +257,11 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lesson 02-09: If/Elif/Else Statements</a></li>
+<li><a class="reference internal" href="#">Lesson 02-09: If/Elif/Else Statements</a><ul>
+<li><a class="reference internal" href="#the-elif-keyword">The <code class="docutils literal"><span class="pre">elif</span></code> Keyword</a></li>
+<li><a class="reference internal" href="#checks-for-understanding">Checks For Understanding</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -293,6 +297,173 @@
   <div class="section" id="lesson-02-09-if-elif-else-statements">
 <h1>Lesson 02-09: If/Elif/Else Statements<a class="headerlink" href="#lesson-02-09-if-elif-else-statements" title="Permalink to this headline">¶</a></h1>
 <p><strong>Learning Target: I can use if/elif/else statements to execute code conditionally.</strong></p>
+<div class="section" id="the-elif-keyword">
+<h2>The <code class="docutils literal"><span class="pre">elif</span></code> Keyword<a class="headerlink" href="#the-elif-keyword" title="Permalink to this headline">¶</a></h2>
+<p>Any series of <code class="docutils literal"><span class="pre">if</span></code> statements are inefficient.  Take the following for example:</p>
+
+<div class="alert alert-warning cd_section">
+<div id="0209_ex_1"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (0209_ex_1)</span> </p>
+</div>
+<script type="text/javascript">
+var 0209_ex_1_trace = {"code": "state = \"California\"\n\nif state == \"New York\":\n    initials = \"NY\"\nif state == \"California\":\n    initials = \"CA\"\nif state == \"Georgia\":\n    initials = \"GA\"\nif state == \"Texas\":\n    initials = \"TX\"\n\nprint(initials)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["state"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"state": "California"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["state"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"state": "California"}, "heap": {}, "line": 5, "event": "step_line"}, {"ordered_globals": ["state"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"state": "California"}, "heap": {}, "line": 6, "event": "step_line"}, {"ordered_globals": ["state", "initials"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"state": "California", "initials": "CA"}, "heap": {}, "line": 7, "event": "step_line"}, {"ordered_globals": ["state", "initials"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"state": "California", "initials": "CA"}, "heap": {}, "line": 9, "event": "step_line"}, {"ordered_globals": ["state", "initials"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"state": "California", "initials": "CA"}, "heap": {}, "line": 12, "event": "step_line"}, {"ordered_globals": ["state", "initials"], "stdout": "CA\n", "func_name": "<module>", "stack_to_render": [], "globals": {"state": "California", "initials": "CA"}, "heap": {}, "line": 12, "event": "return"}]};
+var 0209_ex_1_vis;
+
+$(document).ready(function() {
+    try {
+        0209_ex_1_vis = new ExecutionVisualizer('0209_ex_1',0209_ex_1_trace,
+                                    {embeddedMode: true,
+                                    verticalStack: false,
+                                    heightChangeCallback: redrawAllVisualizerArrows,
+                                    codeDivWidth: 500,
+                                    lang : 'py2'
+                                    });
+        attachLoggers(0209_ex_1_vis,'0209_ex_1');
+        styleButtons('0209_ex_1');
+        allVisualizers.push(0209_ex_1_vis);
+    } catch (e) {
+        console.log("Failed to Initialize CodeLens component 0209_ex_1_vis" );
+        console.log(e.toString());
+    }
+
+});
+
+$(document).ready(function() {
+    $("#0209_ex_1_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'0209_ex_1'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    if (0209_ex_1_vis) {
+        0209_ex_1_vis.redrawConnectors();
+    }
+});
+</script>
+<p>This code is inefficient because each of these four <code class="docutils literal"><span class="pre">if</span></code> statements will be checked, regardless of which one is actually True!  For example, if <code class="docutils literal"><span class="pre">state</span></code> is <code class="docutils literal"><span class="pre">&quot;New</span> <span class="pre">York&quot;</span></code>, then there&#8217;s no reason to check the other <code class="docutils literal"><span class="pre">if</span></code> statements, because we know they are false!</p>
+<p>This is where the <code class="docutils literal"><span class="pre">elif</span></code> statement comes into play.  The <code class="docutils literal"><span class="pre">elif</span></code> statement is short for &#8220;else if&#8221;, and has similarities to both <code class="docutils literal"><span class="pre">else</span></code> and <code class="docutils literal"><span class="pre">if</span></code>.  The syntax looks something like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">some_condition</span><span class="p">:</span>
+    <span class="c1">#do stuff if some_condition is True</span>
+<span class="k">elif</span> <span class="n">some_other_condition</span><span class="p">:</span>
+    <span class="c1">#do stuff if some_other_condition is True</span>
+<span class="c1">#the else is optional</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1">#do stuff if neither some_condition nor some_other_condition are True</span>
+</pre></div>
+</div>
+<p>A few things to note:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The <code class="docutils literal"><span class="pre">elif</span></code> is optional!  Only use it if you need it.</li>
+<li>Similar to <code class="docutils literal"><span class="pre">else</span></code>, each <code class="docutils literal"><span class="pre">elif</span></code> statement must directly follow an <code class="docutils literal"><span class="pre">if</span></code> statement.</li>
+<li>Each <code class="docutils literal"><span class="pre">elif</span></code> statement must have a condition.</li>
+<li>Tabbing rules and etiquette for <code class="docutils literal"><span class="pre">elif</span></code> statements are the same as <code class="docutils literal"><span class="pre">if</span></code> and <code class="docutils literal"><span class="pre">else</span></code> statements.</li>
+</ul>
+</div></blockquote>
+<p>Additionally, you can have as many <code class="docutils literal"><span class="pre">elif</span></code> statements as you want!  Walk through the following example and carefully note which <code class="docutils literal"><span class="pre">if</span></code> statements are &#8220;checked&#8221;:</p>
+
+<div class="alert alert-warning cd_section">
+<div id="0209_ex_2"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (0209_ex_2)</span> </p>
+</div>
+<script type="text/javascript">
+var 0209_ex_2_trace = {"code": "state = \"California\"\n\nif state == \"New York\":\n    initials = \"NY\"\nif state == \"California\":\n    initials = \"CA\"\nif state == \"Georgia\":\n    initials = \"GA\"\nif state == \"Texas\":\n    initials = \"TX\"\n\nprint(initials)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["state"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"state": "California"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["state"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"state": "California"}, "heap": {}, "line": 5, "event": "step_line"}, {"ordered_globals": ["state"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"state": "California"}, "heap": {}, "line": 6, "event": "step_line"}, {"ordered_globals": ["state", "initials"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"state": "California", "initials": "CA"}, "heap": {}, "line": 7, "event": "step_line"}, {"ordered_globals": ["state", "initials"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"state": "California", "initials": "CA"}, "heap": {}, "line": 9, "event": "step_line"}, {"ordered_globals": ["state", "initials"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"state": "California", "initials": "CA"}, "heap": {}, "line": 12, "event": "step_line"}, {"ordered_globals": ["state", "initials"], "stdout": "CA\n", "func_name": "<module>", "stack_to_render": [], "globals": {"state": "California", "initials": "CA"}, "heap": {}, "line": 12, "event": "return"}]};
+var 0209_ex_2_vis;
+
+$(document).ready(function() {
+    try {
+        0209_ex_2_vis = new ExecutionVisualizer('0209_ex_2',0209_ex_2_trace,
+                                    {embeddedMode: true,
+                                    verticalStack: false,
+                                    heightChangeCallback: redrawAllVisualizerArrows,
+                                    codeDivWidth: 500,
+                                    lang : 'py2'
+                                    });
+        attachLoggers(0209_ex_2_vis,'0209_ex_2');
+        styleButtons('0209_ex_2');
+        allVisualizers.push(0209_ex_2_vis);
+    } catch (e) {
+        console.log("Failed to Initialize CodeLens component 0209_ex_2_vis" );
+        console.log(e.toString());
+    }
+
+});
+
+$(document).ready(function() {
+    $("#0209_ex_2_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'0209_ex_2'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    if (0209_ex_2_vis) {
+        0209_ex_2_vis.redrawConnectors();
+    }
+});
+</script>
+<p>Can now be rewritten as the following.  Walk through the example again, but this time, watch which <code class="docutils literal"><span class="pre">if</span></code> statements are checked:</p>
+
+<div class="alert alert-warning cd_section">
+<div id="0209_ex_3"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (0209_ex_3)</span> </p>
+</div>
+<script type="text/javascript">
+var 0209_ex_3_trace = {"code": "state = \"California\"\n\nif state == \"New York\":\n    initials = \"NY\"\nelif state == \"California\":\n    initials = \"CA\"\nelif state == \"Georgia\":\n    initials = \"GA\"\nelif state == \"Texas\":\n    initials = \"TX\"\n\nprint(initials)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["state"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"state": "California"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["state"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"state": "California"}, "heap": {}, "line": 5, "event": "step_line"}, {"ordered_globals": ["state"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"state": "California"}, "heap": {}, "line": 6, "event": "step_line"}, {"ordered_globals": ["state", "initials"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"state": "California", "initials": "CA"}, "heap": {}, "line": 12, "event": "step_line"}, {"ordered_globals": ["state", "initials"], "stdout": "CA\n", "func_name": "<module>", "stack_to_render": [], "globals": {"state": "California", "initials": "CA"}, "heap": {}, "line": 12, "event": "return"}]};
+var 0209_ex_3_vis;
+
+$(document).ready(function() {
+    try {
+        0209_ex_3_vis = new ExecutionVisualizer('0209_ex_3',0209_ex_3_trace,
+                                    {embeddedMode: true,
+                                    verticalStack: false,
+                                    heightChangeCallback: redrawAllVisualizerArrows,
+                                    codeDivWidth: 500,
+                                    lang : 'py2'
+                                    });
+        attachLoggers(0209_ex_3_vis,'0209_ex_3');
+        styleButtons('0209_ex_3');
+        allVisualizers.push(0209_ex_3_vis);
+    } catch (e) {
+        console.log("Failed to Initialize CodeLens component 0209_ex_3_vis" );
+        console.log(e.toString());
+    }
+
+});
+
+$(document).ready(function() {
+    $("#0209_ex_3_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'0209_ex_3'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    if (0209_ex_3_vis) {
+        0209_ex_3_vis.redrawConnectors();
+    }
+});
+</script>
+<p>You may have noticed that the check for &#8220;Georgia&#8221; and &#8220;Texas&#8221; were skipped - and it makes sense that they were!  The important thing here is that <span class="misc-hl">Given any single set of if-elif-else statements, only one block of code will execute</span>.</p>
+<p>Also note that an <code class="docutils literal"><span class="pre">elif</span></code> cannot come after an <code class="docutils literal"><span class="pre">else</span></code>, because <code class="docutils literal"><span class="pre">else</span></code> is used to capture <strong>all other possibilities</strong>.  The ordering is always <code class="docutils literal"><span class="pre">if</span></code>-<code class="docutils literal"><span class="pre">elif(s)</span></code>-<code class="docutils literal"><span class="pre">else</span></code>.</p>
+</div>
+<div class="section" id="checks-for-understanding">
+<h2>Checks For Understanding<a class="headerlink" href="#checks-for-understanding" title="Permalink to this headline">¶</a></h2>
+<p>TODO</p>
+</div>
 </div>
 
 

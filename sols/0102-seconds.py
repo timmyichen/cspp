@@ -1,3 +1,5 @@
+
+
 def solution1(sec):
     mins = int(sec / 60) % 60
     hrs = int(sec / 3600)
@@ -18,7 +20,7 @@ def solution3(sec):
 
 def main():
     sec = input("Enter seconds: ")
-    solution3(sec)
+    extension(sec)
     
 if __name__ == "__main__":
-    main
+    main()

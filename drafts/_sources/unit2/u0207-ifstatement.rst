@@ -5,7 +5,7 @@
 Lesson 02-07: If Statements
 ===========================
 
-**Learning Target: I can use if statements to execute code conditionally**
+**Learning Target: I can use if statements to execute code conditionally.**
 
 If Statement Syntax
 -------------------

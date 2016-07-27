@@ -46,7 +46,7 @@ Here are a few notes for specific type to type conversions:
 	+--------+--------+--------------------------------------------+
 	| From   | To     | Resulting Effect                           |
 	+========+========+============================================+
-	| any    | string | put quotes around int                      |
+	| any    | string | put quotes around the value                |
 	+--------+--------+--------------------------------------------+
 	| int    | float  | put a .0 at the end                        |
 	+--------+--------+--------------------------------------------+
@@ -92,7 +92,7 @@ Q#3
 ~~~
 
 .. mchoice:: mc_convfunc_3
-	:correct: c
+	:correct: b
 	:answer_a: 2
 	:answer_b: "2.3"
 	:answer_c: 2.3

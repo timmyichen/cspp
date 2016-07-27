@@ -26,22 +26,6 @@ To observe, run the following code:
 	print 1.0 + 1.0	#float + float => float
 	print 1 + 1.0 	#int + float => float
 
-As an example, consider the expression ``1 + 2 / 4 + 0.5``.
-
-You might look at this expression and think of the following steps:
-	- There is a float in there, so the result should be a float.
-	- ``2 / 4`` is ``0.5``, so the entire thing is ``1 + 0.5 + 0.5``, or ``2``.
-	- The result is ``2``!
-
-However, :misc-hl:`types change as they are evaluated`.  This means that the steps for the above are more like this:
-	- Order of operations says that division happens first.
-	- ``2 / 4`` involves two integers, so the result is ``0.5``, removing everything after the decimal, or just ``0``
-	- All that's left is addition, so we can evaluate it left to right.
-	- ``1 + 0 + 0.5`` will be evaluated from left to right, making the ``1 + 0`` happen first (which equals ``1``)
-	- ``1 + 0.5`` is what remains, which is an int plus a float, so the result will be a float (decimal): ``1.5``
-	- The result is ``1.5``
-
-This may get tricky in specific formulas that require certain numbers to already have a decimal place.
 
 Checks For Understanding
 ------------------------
@@ -56,7 +40,7 @@ Q#1
 	:answer_c: Float
 	:feedback_a: Remember that a boolean is True/False, which isn't in this expression.
 	:feedback_b: Which is greater, Floats or Integers?
-	:feedback_c: The float turns everything into an integer!
+	:feedback_c: The float turns everything into a float!
 
 	What datatype will result from the following expression? ``4 * 2.0``
 
@@ -66,10 +50,10 @@ Q#2
 .. fillintheblank:: cfu_mixtype_2
 	
 	.. blank:: blank1
-		:correct: 2.0
-		:feedback1: ("2", "Have you considered the ending datatype?")
-		:feedback2: ("16.0", "Don't forget about order of operations!")
-		:feedback3: ("16", "Don't forget about order of operations!")
+		:correct: ^2\.0$
+		:feedback1: ("^2$", "Have you considered the ending datatype?")
+		:feedback2: ("^16\.0$", "Don't forget about order of operations!")
+		:feedback3: ("$16^", "Don't forget about order of operations!")
 		:feedback4: (".*", "Try again!")
 
 		Evaluate the following expression: ``8 / 2 ** 2.0``.  Don't forget to consider order of operations as well as the datatypes.
@@ -80,11 +64,10 @@ Q#3
 .. fillintheblank:: cfu_mixtype_3
 	
 	.. blank:: blank2
-		:correct: 6.0
-		:feedback1: ("6.5", "Remember, integer division!")
-		:feedback2: ("6", "Have you considered the ending datatype?")
-		:feedback3: ("1.25", "Don't forget about order of operations!")
-		:feedback4: (".*", "Try again!")
+		:correct: ^6\.5$
+		:feedback1: ("^6$", "Have you considered the ending datatype?")
+		:feedback2: ("^1\.25$", "Don't forget about order of operations!")
+		:feedback3: (".*", "Try again!")
 
 		Evaluate the following expression: ``10 / 4 + 4.0``.  Don't forget to consider order of operations as well as the datatypes.
 

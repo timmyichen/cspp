@@ -258,7 +258,9 @@
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">Lesson 02-08: If/Else Statements</a><ul>
-<li><a class="reference internal" href="#adding-to-if-statements">Adding to if Statements</a></li>
+<li><a class="reference internal" href="#the-else-keyword">The <code class="docutils literal"><span class="pre">else</span></code> Keyword</a></li>
+<li><a class="reference internal" href="#an-example-in-code">An Example in Code</a></li>
+<li><a class="reference internal" href="#checks-for-understanding">Checks For Understanding</a></li>
 </ul>
 </li>
 </ul>
@@ -296,8 +298,8 @@
   <div class="section" id="lesson-02-08-if-else-statements">
 <h1>Lesson 02-08: If/Else Statements<a class="headerlink" href="#lesson-02-08-if-else-statements" title="Permalink to this headline">¶</a></h1>
 <p><strong>Learning Target: I can use if/else statements to execute code conditionally.</strong></p>
-<div class="section" id="adding-to-if-statements">
-<h2>Adding to if Statements<a class="headerlink" href="#adding-to-if-statements" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-else-keyword">
+<h2>The <code class="docutils literal"><span class="pre">else</span></code> Keyword<a class="headerlink" href="#the-else-keyword" title="Permalink to this headline">¶</a></h2>
 <p>When you use <code class="docutils literal"><span class="pre">if</span></code> statements, you are testing to see if a boolean condition is <code class="docutils literal"><span class="pre">True</span></code>.  What if you wanted to execute some code if it is <code class="docutils literal"><span class="pre">True</span></code>, but to also execute some code if it is <code class="docutils literal"><span class="pre">False?</span></code>  While you could use the following code:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
     <span class="c1">#do stuff</span>
@@ -306,7 +308,7 @@
 </pre></div>
 </div>
 <p>...it would be inefficient and difficult to read.  There&#8217;s an easier way to do this, by using the <code class="docutils literal"><span class="pre">else</span></code> keyword.</p>
-<p>The <code class="docutils literal"><span class="pre">else</span></code> keyword is always attached to an <code class="docutils literal"><span class="pre">if</span></code> statement.  It basically means &#8220;otherwise&#8221;, or &#8220;for all other cases&#8221;.  It will only run if the <code class="docutils literal"><span class="pre">if</span></code> statement is false.</p>
+<p>The <code class="docutils literal"><span class="pre">else</span></code> keyword is always attached to an <code class="docutils literal"><span class="pre">if</span></code> statement.  It basically means &#8220;otherwise&#8221;, or &#8220;for all other cases&#8221;.  It will only run if the <code class="docutils literal"><span class="pre">if</span></code> statement is false.  Also, you cannot have more than one <code class="docutils literal"><span class="pre">else</span></code> statement for each <code class="docutils literal"><span class="pre">if</span></code> statement.</p>
 <p>Here&#8217;s how the syntax looks:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
     <span class="c1">#code to run if condition is True</span>
@@ -315,8 +317,26 @@
 </pre></div>
 </div>
 <p>Notice that the <code class="docutils literal"><span class="pre">else</span></code> statement is on the same vertical level as the <code class="docutils literal"><span class="pre">if</span></code> statement.  Syntax with these control structures are very specific and very strict - they have to be, otherwise the computer would not understand your code.  <span class="misc-hl">Make sure that your else statement is always in line with the if statement, and the code that comes after it should be tabbed in, just like the if statement.</span></p>
+<p>Here are two examples of common errors when it comes to aligning text with if/else statements.</p>
 <a class="reference internal image-reference" href="../_images/ifelse.svg"><div align="center" class="align-center"><img alt="syntax is important!" src="../_images/ifelse.svg" width="400px" /></div>
 </a>
+<p>Note that when it comes to if/else statements, only one outcome will be run.  It is not possible for both the <code class="docutils literal"><span class="pre">if</span></code> statement and the <code class="docutils literal"><span class="pre">else</span></code> statement to run right after each other.  In fact, if the first <code class="docutils literal"><span class="pre">if</span></code> statement is true, it won&#8217;t even check the <code class="docutils literal"><span class="pre">else</span></code> - it will skip right over it.</p>
+</div>
+<div class="section" id="an-example-in-code">
+<h2>An Example in Code<a class="headerlink" href="#an-example-in-code" title="Permalink to this headline">¶</a></h2>
+<p>Take the following example:</p>
+
+<textarea data-component="activecode" id=0205_ex_1 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+choice = input("Yes or No?")
+if choice == "Yes":
+    print("You picked yes!")
+else:
+    print("You picked no..")
+</textarea>
+<p>Try running it, and try putting in different inputs!  You might try typing &#8220;Yes&#8221;, which the program will print out &#8220;You picked yes!&#8221;.  If you typed in &#8220;No&#8221;, the program will print &#8220;You picked no..&#8221;.  But if you typed in anything else, you might&#8217;ve noticed that the program will still print &#8220;You picked no..&#8221;.  This is because the <code class="docutils literal"><span class="pre">else</span></code> statement doesn&#8217;t actually check the input at all!</p>
+</div>
+<div class="section" id="checks-for-understanding">
+<h2>Checks For Understanding<a class="headerlink" href="#checks-for-understanding" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 

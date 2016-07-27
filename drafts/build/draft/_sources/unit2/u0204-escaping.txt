@@ -55,7 +55,7 @@ Q#1
 .. fillintheblank:: 0204_cfu_1
 
    .. blank:: blank01
-      :correct: "    "
+      :correct: ^" {4}"$
       :feedback1: ("[8:10]", "Remember, the last index is not included!")
       :feedback2: ("[7:10]", "Remember, we start counting from zero!")
       :feedback3: (".*", "It helps to count through the indexes!")

@@ -4,5 +4,11 @@ find datatypes from the wild (example: netflix and point out examples of types)
 
 CFUs/practice for:
     0206 (maybe need more)
+    0208
+    0209
+    0210
 
-
+find someplace to fit in:
+    variables cant be named keywords
+    syntax stuff
+    printing statements

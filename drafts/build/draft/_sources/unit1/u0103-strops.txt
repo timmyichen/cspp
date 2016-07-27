@@ -5,8 +5,8 @@
 Lesson 01-03: Operators on Strings
 ==================================
 
-**Learning Target: I can use string concatenaiton to combine strings.**
-**Learning Target: I can predict the result of operations on strings.**
+| **Learning Target: I can use string concatenaiton to combine strings.**
+| **Learning Target: I can predict the result of operations on strings.**
 
 Not all operators work with strings.  In Python, you can only use strings with the ``+`` addition and ``*``  multiplication operators.
 
@@ -48,7 +48,7 @@ Great!  So notice that there is a clear difference between the two values: ``100
 
 	What will be the result of the following code? print "John" + "Smith"
 
-Using :vocab-def:`addition with strings, or joining them together`, is called :vocab-word:`string concatenation`.
+Using :vocab-def:`Adding strings will join them together to become one string` - this is called :vocab-word:`string concatenation`.
 
 One important thing to note when using string concatenation is that they are combined character for character.  That means that if you are combining a first and last name, one of your strings has to have a space, or the result will not have any spaces!
 
@@ -76,7 +76,7 @@ What can be concluded from your observations from above?  Use your observations 
 .. fillintheblank:: cfu_multstring_1
 
 	.. blank:: blank1
-		:correct: heyheyheythere
+		:correct: ^heyheyheythere$
 		:feedback1: (".*", "Keep in mind the order of operations!")
 
 		What will be the result of the following code? ``print "hey" * 3 + "there"``

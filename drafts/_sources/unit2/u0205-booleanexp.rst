@@ -5,7 +5,7 @@
 Lesson 02-05: Boolean Expressions
 =================================
 
-**Learning Target: I can predict the outcome of boolean expressions**
+**Learning Target: I can predict the outcome of boolean expressions.**
 
 Right now the programs that we've been writing have beem very straightforward - they run instruction after instruction, in the order that it was written.  Computers act smart when they can make decisions, and in order to make decisions, we have to learn about **boolean expressions**.
 
