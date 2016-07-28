@@ -257,7 +257,21 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lesson 03-05: The <code class="docutils literal"><span class="pre">range()</span></code> Function</a></li>
+<li><a class="reference internal" href="#">Lesson 03-05: The <code class="docutils literal"><span class="pre">range()</span></code> Function</a><ul>
+<li><a class="reference internal" href="#a-basic-range">A Basic <code class="docutils literal"><span class="pre">range()</span></code></a></li>
+<li><a class="reference internal" href="#generating-ranges">Generating Ranges</a><ul>
+<li><a class="reference internal" href="#with-range-b">With <code class="docutils literal"><span class="pre">range(b)</span></code></a></li>
+<li><a class="reference internal" href="#with-range-a-b">With <code class="docutils literal"><span class="pre">range(a,b)</span></code></a></li>
+<li><a class="reference internal" href="#with-range-a-b-c">With <code class="docutils literal"><span class="pre">range(a,b,c)</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#checks-for-understanding">Checks For Understanding</a><ul>
+<li><a class="reference internal" href="#q-1">Q#1</a></li>
+<li><a class="reference internal" href="#q-2">Q#2</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -293,6 +307,134 @@
   <div class="section" id="lesson-03-05-the-range-function">
 <h1>Lesson 03-05: The <code class="docutils literal"><span class="pre">range()</span></code> Function<a class="headerlink" href="#lesson-03-05-the-range-function" title="Permalink to this headline">¶</a></h1>
 <p><strong>Learning Target: I can use the range function to generate a specific list of numbers.</strong></p>
+<p>In the last lesson, we learned about basic <code class="docutils literal"><span class="pre">for</span></code> loop syntax, using the <code class="docutils literal"><span class="pre">range()</span></code> function.  But what does the <code class="docutils literal"><span class="pre">range()</span></code> function actually do?</p>
+<div class="section" id="a-basic-range">
+<h2>A Basic <code class="docutils literal"><span class="pre">range()</span></code><a class="headerlink" href="#a-basic-range" title="Permalink to this headline">¶</a></h2>
+<p>If we print <code class="docutils literal"><span class="pre">list(range(5))</span></code>, we&#8217;ll see the following (don&#8217;t worry about <code class="docutils literal"><span class="pre">list</span></code> yet, that&#8217;s just how we visualize it):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>If we print <code class="docutils literal"><span class="pre">list(range(8))</span></code>, we&#8217;ll see the following:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Notice a pattern?</p>
+
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="0305_cfu_1">
+            u0305-1: What will list(range(11)) be?
+            <li data-component="answer"  id="0305_cfu_1_opt_a">(A) [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]</li><li data-component="feedback" id="0305_cfu_1_opt_a">In the examples above, what do you notice about the last number compared to the number in range?</li>
+            
+            <li data-component="answer" data-correct id="0305_cfu_1_opt_b">(B) [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</li><li data-component="feedback" id="0305_cfu_1_opt_b"></li>
+            
+            <li data-component="answer"  id="0305_cfu_1_opt_c">(C) [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</li><li data-component="feedback" id="0305_cfu_1_opt_c"></li>
+            
+
+            </ul>
+            <p>So the <code class="docutils literal"><span class="pre">range()</span></code> function returns a list of numbers, which we use the <code class="docutils literal"><span class="pre">for</span></code> loop to loop through.  This is very powerful, because it allows us to specify almost any range of numbers.</p>
+</div>
+<div class="section" id="generating-ranges">
+<h2>Generating Ranges<a class="headerlink" href="#generating-ranges" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">range()</span></code> function can take anywhere between one and three numbers.  Let&#8217;s review how each one works.</p>
+<div class="section" id="with-range-b">
+<h3>With <code class="docutils literal"><span class="pre">range(b)</span></code><a class="headerlink" href="#with-range-b" title="Permalink to this headline">¶</a></h3>
+<p>The rule for <code class="docutils literal"><span class="pre">range(b)</span></code> should be familiar. <code class="docutils literal"><span class="pre">range(b)</span></code> can be referred to as <code class="docutils literal"><span class="pre">range(end)</span></code>.</p>
+<p><strong>Using</strong> <code class="docutils literal"><span class="pre">range(end)</span></code> <strong>will produce a list of integers starting at 0 and ending at</strong> <code class="docutils literal"><span class="pre">end-1</span></code>.</p>
+</div>
+<div class="section" id="with-range-a-b">
+<h3>With <code class="docutils literal"><span class="pre">range(a,b)</span></code><a class="headerlink" href="#with-range-a-b" title="Permalink to this headline">¶</a></h3>
+<p>Let&#8217;s look at a few examples when we feed the <code class="docutils literal"><span class="pre">range()</span></code> function two numbers:</p>
+
+<textarea data-component="activecode" id=0305_ex_1 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+print(list(range(5,7)))
+print(list(range(2,10)))
+print(list(range(-5,5)))
+print(list(range(10,20)))
+print(list(range(10,3)))
+</textarea>
+<p>Notice the pattern?  Let&#8217;s see if you got it:</p>
+
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="0305_cfu_2">
+            u0305-2: What will list(range(3,8)) be?
+            <li data-component="answer"  id="0305_cfu_2_opt_a">(A) [3, 4, 5, 6, 7, 8]</li><li data-component="feedback" id="0305_cfu_2_opt_a">In the examples above, what do you notice about the first and last number compared to the two numbers in range?</li>
+            
+            <li data-component="answer"  id="0305_cfu_2_opt_b">(B) [4, 5, 6, 7, 8]</li><li data-component="feedback" id="0305_cfu_2_opt_b">In the examples above, what do you notice about the last number compared to the two numbers in range?</li>
+            
+            <li data-component="answer" data-correct id="0305_cfu_2_opt_c">(C) [3, 4, 5, 6, 7]</li><li data-component="feedback" id="0305_cfu_2_opt_c"></li>
+            
+            <li data-component="answer"  id="0305_cfu_2_opt_d">(D) [4, 5, 6, 7]</li><li data-component="feedback" id="0305_cfu_2_opt_d">In the examples above, what do you notice about the first number compared to the two numbers in range?</li>
+            
+
+            </ul>
+            <p>A <code class="docutils literal"><span class="pre">range()</span></code> function with 2 numbers can be referred to as <code class="docutils literal"><span class="pre">range(start,</span> <span class="pre">end)</span></code></p>
+<p>As a general rule for <code class="docutils literal"><span class="pre">range(start,end)</span></code>, <strong>Using</strong> <code class="docutils literal"><span class="pre">range(start,end)</span></code> <strong>will produce a list of integers starting at</strong> <code class="docutils literal"><span class="pre">start</span></code> <strong>and ending at</strong> <code class="docutils literal"><span class="pre">end-1</span></code>.</p>
+</div>
+<div class="section" id="with-range-a-b-c">
+<h3>With <code class="docutils literal"><span class="pre">range(a,b,c)</span></code><a class="headerlink" href="#with-range-a-b-c" title="Permalink to this headline">¶</a></h3>
+<p>Let&#8217;s look at a few examples when we feed the <code class="docutils literal"><span class="pre">range()</span></code> function three numbers:</p>
+
+<textarea data-component="activecode" id=0305_ex_2 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+print(list(range(1,10,1)))
+print(list(range(1,10,2)))
+print(list(range(1,10,3)))
+print(list(range(20,5,-2)))
+print(list(range(20,71,10)))
+</textarea>
+<p>Notice the pattern?  Let&#8217;s see if you got it:</p>
+
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="0305_cfu_3">
+            u0305-3: What will list(range(10,-8,-3)) be?
+            <li data-component="answer"  id="0305_cfu_3_opt_a">(A) [10, 7, 4, 1, -2, -5, -8]</li><li data-component="feedback" id="0305_cfu_3_opt_a"></li>
+            
+            <li data-component="answer" data-correct id="0305_cfu_3_opt_b">(B) [10, 7, 4, 1, -2, -5]</li><li data-component="feedback" id="0305_cfu_3_opt_b"></li>
+            
+            <li data-component="answer"  id="0305_cfu_3_opt_c">(C) [7, 4, 1, -2, -5]</li><li data-component="feedback" id="0305_cfu_3_opt_c"></li>
+            
+
+            </ul>
+            <p>Hopefully you noticed that the third number determines how much the next number in the list will change by.  This is called the <strong>step</strong>.  A step can be positive or negative.</p>
+<p>A <code class="docutils literal"><span class="pre">range()</span></code> function with 3 numbers can be referred to as <code class="docutils literal"><span class="pre">range(start,</span> <span class="pre">end,</span> <span class="pre">step)</span></code></p>
+<p>As a general rule for <code class="docutils literal"><span class="pre">range(start,end,step)</span></code>, <strong>Using</strong> <code class="docutils literal"><span class="pre">range(start,end,step)</span></code> <strong>will produce a list of integers starting at</strong> <code class="docutils literal"><span class="pre">start</span></code>, <strong>changing by</strong> <code class="docutils literal"><span class="pre">step</span></code> <strong>with each number, and stopping before we get past</strong> <code class="docutils literal"><span class="pre">end</span></code>.</p>
+</div>
+</div>
+<div class="section" id="checks-for-understanding">
+<h2>Checks For Understanding<a class="headerlink" href="#checks-for-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="q-1">
+<h3>Q#1<a class="headerlink" href="#q-1" title="Permalink to this headline">¶</a></h3>
+
+        <p data-component="fillintheblank" data-casei="false" id="0305_cfu_4">
+            
+        <span data-blank>
+            Come up with a range function that will produce the following numbers: <code class="docutils literal"><span class="pre">[-2,-1,0,1,2,3,4]</span></code>
+        <span data-feedback="regex" style="display: none" id="0305_4_1_feedback1">list</span>
+        <span data-feedback="text" style="display: none" for="0305_4_1_feedback1">Make sure you aren't including any list conversions!</span>
+            
+        <span data-feedback="regex" style="display: none" id="0305_4_1_feedback2">.*</span>
+        <span data-feedback="text" style="display: none" for="0305_4_1_feedback2">Try again!</span>
+            
+        <span data-answer style="display: none" id="0305_4_1_answer">^range\( *-2 *, *5 *\)$|^range\( *-2 *, *5 *, *1 *\)$</span>
+        </span>
+        
+        </p>
+            </div>
+<div class="section" id="q-2">
+<h3>Q#2<a class="headerlink" href="#q-2" title="Permalink to this headline">¶</a></h3>
+
+        <p data-component="fillintheblank" data-casei="false" id="0305_cfu_5">
+            
+        <span data-blank>
+            Come up with a range function that will produce the following numbers: <code class="docutils literal"><span class="pre">[1,4,7,10,13,16,19,22]</span></code>
+        <span data-feedback="regex" style="display: none" id="0305_5_1_feedback1">list</span>
+        <span data-feedback="text" style="display: none" for="0305_5_1_feedback1">Make sure you aren't including any list conversions!</span>
+            
+        <span data-feedback="regex" style="display: none" id="0305_5_1_feedback2">.*</span>
+        <span data-feedback="text" style="display: none" for="0305_5_1_feedback2">Keep in mind how much the numbers are changing by!</span>
+            
+        <span data-answer style="display: none" id="0305_5_1_answer">^range\( *1 *, *23 *, *3 *\)$|^range\( *1 *, *24 *, *3 *\)$|^range\( *1 *, *25 *, *3 *\)$</span>
+        </span>
+        
+        </p>
+            </div>
+</div>
 </div>
 
 

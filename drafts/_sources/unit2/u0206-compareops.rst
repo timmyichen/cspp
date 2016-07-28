@@ -15,9 +15,9 @@ Now that we've famliarized ourselves with the basic boolean operators, let's div
    +--------------------------+----------+
    | Description              | Operator |
    +==========================+==========+
-   | Equals                   | ``==``   |
+   | Equal To                 | ``==``   |
    +--------------------------+----------+
-   | Not Equals               | ``!=``   |
+   | Not Equal To             | ``!=``   |
    +--------------------------+----------+
    | Greater Than             | ``>``    |
    +--------------------------+----------+

@@ -257,7 +257,12 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lesson 03-03: Program Design Tips: Part I</a></li>
+<li><a class="reference internal" href="#">Lesson 03-03: Program Design Tips: Part I</a><ul>
+<li><a class="reference internal" href="#the-use-of-comments">The Use of Comments</a></li>
+<li><a class="reference internal" href="#variable-naming-conventions">Variable Naming Conventions</a></li>
+<li><a class="reference internal" href="#variables-vs-hard-coding-numbers">Variables vs Hard-Coding Numbers</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -294,7 +299,53 @@
 <h1>Lesson 03-03: Program Design Tips: Part I<a class="headerlink" href="#lesson-03-03-program-design-tips-part-i" title="Permalink to this headline">¶</a></h1>
 <p><strong>Learning Target: I can document my code with appropriate comments.</strong>
 <strong>Learning Target: I can use good naming conventions with variables.</strong>
-<strong>Learning Target: I can know when to use variables instead of constants.</strong></p>
+<strong>Learning Target: I can know when to use variables instead of hard-coding numbers.</strong></p>
+<div class="section" id="the-use-of-comments">
+<h2>The Use of Comments<a class="headerlink" href="#the-use-of-comments" title="Permalink to this headline">¶</a></h2>
+<p>Comments can be used in a number of ways.  The most important thing to remember is that <span class="misc-hl">comments are used to enhance readability of your program to other programmers, not to non-programmers</span>.  This means that ideally, especially with python, since it is such an easy-to-read language, people should be able to know what your program is doing simply by reading your code.  Good variables names and good code structure will help them understand.</p>
+<p>However, it also helps to put little comments here and there to explain an algorithm, especially if it&#8217;s tricky or hard to understand on its own.  If you&#8217;re ever not sure whether you should be commenting something - just comment it.  It&#8217;s a lot easier to read code with a lot of explanation than it is to read code with no explanation.</p>
+</div>
+<div class="section" id="variable-naming-conventions">
+<h2>Variable Naming Conventions<a class="headerlink" href="#variable-naming-conventions" title="Permalink to this headline">¶</a></h2>
+<p>Although there is an <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#naming-conventions">entire guide</a> on python naming conventions, we&#8217;re going to keep it simple and give you only a few guidelines to follow in order to improve your code readability.</p>
+<ol class="arabic">
+<li><p class="first"><span class="misc-hl">Variable names should be descriptive of what they are, but not too long in length.</span></p>
+</li>
+<li><p class="first"><span class="misc-hl">Variable names should be all lowercase, with words separated by underscores.</span></p>
+<blockquote>
+<div><ul class="simple">
+<li>For example, <code class="docutils literal"><span class="pre">sum_of_prices</span></code> is preferrable to <code class="docutils literal"><span class="pre">sumofprices</span></code> or <code class="docutils literal"><span class="pre">SumOfPrices</span></code>.</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<p>Following these guidelines will improve your code readability, which is useful when others are reviewing your code, or when you look back on your code after a while - when you use single letters or nondescriptive names in your code, you will eventually forget what they mean.</p>
+</div>
+<div class="section" id="variables-vs-hard-coding-numbers">
+<h2>Variables vs Hard-Coding Numbers<a class="headerlink" href="#variables-vs-hard-coding-numbers" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes you will have programs that have a constant value.  For example, let&#8217;s say that you&#8217;re writing a program that checks your age to see if you are allowed to drive (assuming 17 is the minimum).</p>
+
+<textarea data-component="activecode" id=0303_ex_1 data-lang="python"    data-timelimit=25000   data-audio=''     >
+age = int(input("Enter your age: "))
+if age >= 17:
+    print("You can drive!")
+else:
+    print("Sorry!")
+</textarea>
+<p>On line 2, when you put <code class="docutils literal"><span class="pre">age</span> <span class="pre">&gt;=</span> <span class="pre">17</span></code>, we are making the assumption that 17 will never change.  In this context, we are <span class="vocab-word">hard-coding</span> the number 17 into the program.  This means that it <span class="vocab-def">cannot be changed at all without diving into the source code</span>.  Let&#8217;s say that this number is used again and again throughout the program.  It&#8217;s better to put the value in a variable, and use the variable instead.  Like so:</p>
+
+<textarea data-component="activecode" id=0303_ex_2 data-lang="python"    data-timelimit=25000   data-audio=''     >
+age_min = 17
+
+age = int(input("Enter your age: "))
+if age >= age_min:
+    print("You can drive!")
+else:
+    print("Sorry!")
+</textarea>
+<p>This way, if the minimum age to drive were to ever change, we would only need to change one variable instead of all of them.  Additionally, a user could be given the opportunity to change the value of <code class="docutils literal"><span class="pre">age_min</span></code> - no need to change the source code.</p>
+<p><span class="misc-hl">It is generally good practice to avoid hard-coding constant values, especially if those values are repeated throughout the program.</span></p>
+</div>
 </div>
 
 

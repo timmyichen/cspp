@@ -7,7 +7,7 @@ Lesson 02-04: Escape Sequences
 
 **Learning Target: I can use escape sequences to represent special characters in strings.**
 
-You may have noticed that I sometimes include ``"\n"`` inside my print statements.  The backslash "\" is used to display special characters.  This method is called an :vocab-word:`escape sequence`.
+You may have noticed that I sometimes include ``"\n"`` inside my print statements.  The backslash ``\`` is used to display special characters.  This method is called an :vocab-word:`escape sequence`.
 
 Common Escape Sequences
 -----------------------

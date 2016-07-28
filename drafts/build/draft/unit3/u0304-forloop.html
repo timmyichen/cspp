@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lesson 03-04: The for() Loop &mdash; Runestone Interactive Overview</title>
+    <title>Lesson 03-04: The for Loop &mdash; Runestone Interactive Overview</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -257,7 +257,16 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lesson 03-04: The <code class="docutils literal"><span class="pre">for()</span></code> Loop</a></li>
+<li><a class="reference internal" href="#">Lesson 03-04: The <code class="docutils literal"><span class="pre">for</span></code> Loop</a><ul>
+<li><a class="reference internal" href="#for-loop-syntax"><code class="docutils literal"><span class="pre">for</span></code> Loop Syntax</a></li>
+<li><a class="reference internal" href="#checks-for-understanding">Checks For Understanding</a><ul>
+<li><a class="reference internal" href="#q-1">Q#1</a></li>
+<li><a class="reference internal" href="#q-2">Q#2</a></li>
+<li><a class="reference internal" href="#q-3">Q#3</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -291,8 +300,88 @@
 <div class="container" id="main-content">
   
   <div class="section" id="lesson-03-04-the-for-loop">
-<h1>Lesson 03-04: The <code class="docutils literal"><span class="pre">for()</span></code> Loop<a class="headerlink" href="#lesson-03-04-the-for-loop" title="Permalink to this headline">¶</a></h1>
+<h1>Lesson 03-04: The <code class="docutils literal"><span class="pre">for</span></code> Loop<a class="headerlink" href="#lesson-03-04-the-for-loop" title="Permalink to this headline">¶</a></h1>
 <p><strong>Learning Target: I can use for loops to repeat a set of instructions.</strong></p>
+<div class="section" id="for-loop-syntax">
+<h2><code class="docutils literal"><span class="pre">for</span></code> Loop Syntax<a class="headerlink" href="#for-loop-syntax" title="Permalink to this headline">¶</a></h2>
+<p>In addition to conditionals (<code class="docutils literal"><span class="pre">if</span></code> statements), another type of control structure are loops. Loops, as the name implies, will repeat some code based on certain conditions!  The first loop we are going to learn is the <code class="docutils literal"><span class="pre">for</span></code> loop.</p>
+<p>At a very basic level, the syntax of a <code class="docutils literal"><span class="pre">for</span></code> loop looks like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">times_to_repeat</span><span class="p">):</span>
+    <span class="c1">#code to repeat</span>
+</pre></div>
+</div>
+<p>So for example, running the code below will print <code class="docutils literal"><span class="pre">&quot;Hello!&quot;</span></code> five times:</p>
+
+<textarea data-component="activecode" id=0304_ex_1 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+for x in range(5):
+    print("Hello!")
+</textarea>
+<p>Note that similar to <code class="docutils literal"><span class="pre">if</span></code> statements, <code class="docutils literal"><span class="pre">for</span></code> loops require a colon at the end and a tab on the next line.  This is true anytime you see a colon.  But what it also means is, <span class="misc-hl">the only part that is looped is the part that is tabbed in!</span>.  Take the following as an example:</p>
+
+<textarea data-component="activecode" id=0304_ex_2 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+for x in range(5):
+    print("Inside the loop")
+print("Outside the loop")
+</textarea>
+<p>Hopefully you notice that the &#8220;Outside the loop&#8221; is only printed once - because it is not considered within the loop.  When looping, you wait for the loop to continue executing, then you continue on after the loop.</p>
+</div>
+<div class="section" id="checks-for-understanding">
+<h2>Checks For Understanding<a class="headerlink" href="#checks-for-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="q-1">
+<h3>Q#1<a class="headerlink" href="#q-1" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;boo&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;boo&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;boo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="0304_cfu_1">
+            u0304-1: How many times does &#8220;boo&#8221; get printed in the block of code above?
+            <li data-component="answer"  id="0304_cfu_1_opt_a">(A) 3</li><li data-component="feedback" id="0304_cfu_1_opt_a"></li>
+            
+            <li data-component="answer"  id="0304_cfu_1_opt_b">(B) 5</li><li data-component="feedback" id="0304_cfu_1_opt_b">Don't forget to count the ones outside the loop!</li>
+            
+            <li data-component="answer"  id="0304_cfu_1_opt_c">(C) 6</li><li data-component="feedback" id="0304_cfu_1_opt_c"></li>
+            
+            <li data-component="answer" data-correct id="0304_cfu_1_opt_d">(D) 7</li><li data-component="feedback" id="0304_cfu_1_opt_d"></li>
+            
+            <li data-component="answer"  id="0304_cfu_1_opt_e">(E) 9</li><li data-component="feedback" id="0304_cfu_1_opt_e"></li>
+            
+
+            </ul>
+            </div>
+<div class="section" id="q-2">
+<h3>Q#2<a class="headerlink" href="#q-2" title="Permalink to this headline">¶</a></h3>
+<p>In the space below, write a <code class="docutils literal"><span class="pre">for</span></code> loop that will print out <code class="docutils literal"><span class="pre">&quot;Baking</span> <span class="pre">soda!&quot;</span></code> three times.</p>
+
+<textarea data-component="activecode" id=0304_cfu_2 data-lang="python"    data-timelimit=25000   data-audio=''     >
+#write your code here!
+</textarea>
+<p>Your code should only contain two lines.  The output when run will look like:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>Baking soda!
+Baking soda!
+Baking soda!
+</pre></div>
+</div>
+</div>
+<div class="section" id="q-3">
+<h3>Q#3<a class="headerlink" href="#q-3" title="Permalink to this headline">¶</a></h3>
+<p>Beyonce&#8217;s hit single, <em>Single Ladies</em>, starts off like this:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>All the single ladies (All the single ladies)
+All the single ladies (All the single ladies)
+All the single ladies (All the single ladies)
+All the single ladies
+Now put your hands up
+</pre></div>
+</div>
+<p>Write a short program using <code class="docutils literal"><span class="pre">print()</span></code> statements and a <code class="docutils literal"><span class="pre">for</span></code> loop that will print out the lyrics to the introduction of this song.  You can have <code class="docutils literal"><span class="pre">print()</span></code> statement outside the loop, but no two <code class="docutils literal"><span class="pre">print()</span></code> statements can be the same.</p>
+
+<textarea data-component="activecode" id=0304_cfu_3 data-lang="python"    data-timelimit=25000   data-audio=''     >
+#write your code here!
+</textarea>
+</div>
+</div>
 </div>
 
 

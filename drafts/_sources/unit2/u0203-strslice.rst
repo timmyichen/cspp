@@ -97,7 +97,7 @@ Q#1
       :feedback2: ("^\[1:", "Remember, we start counting from zero!")
       :feedback3: (".*", "Try again - It helps to count through the indexes!")
       
-      What string slice would we have to use on "How are you?" to get the substring "How"?  Give you answer in the form ``[a:b]``, where a and b are numbers.
+      What string slice would we have to use on "How are you?" to get the substring "How"?  Give your answer in the form ``[a:b]``, where a and b are numbers.
 
 Q#2
 ~~~
@@ -110,7 +110,7 @@ Q#2
       :feedback2: ("^\[5:", "Remember, we start counting from zero!")
       :feedback3: (".*", "Try again - It helps to count through the indexes!")
       
-      What string slice would we have to use on "How are you?" to get the substring "are"?  Give you answer in the form ``[a:b]``, where a and b are numbers.
+      What string slice would we have to use on "How are you?" to get the substring "are"?  Give your answer in the form ``[a:b]``, where a and b are numbers.
 
 Q#3
 ~~~
@@ -123,7 +123,7 @@ Q#3
       :feedback2: ("^\[9:", "Remember, we start counting from zero!")
       :feedback3: (".*", "Try again - It helps to count through the indexes!")
       
-      What string slice would we have to use on "How are you?" to get the substring "you"?  Give you answer in the form ``[a:b]``, where a and b are numbers.
+      What string slice would we have to use on "How are you?" to get the substring "you"?  Give your answer in the form ``[a:b]``, where a and b are numbers.
 
 Q#4
 ~~~
@@ -134,4 +134,4 @@ Q#4
       :correct: ^\[-3:\]$
       :feedback2: (".*", "Be sure to review the lesson if you need help!")
       
-      What string slice would we have to use on any string to get the substring equal to the last 3 letters?  Give you answer in the form ``[]``, where anything can go between the brackets. (hint: use the special syntax above!)
+      What string slice would we have to use on any string to get the substring equal to the last 3 letters?  Give your answer in the form ``[]``, where anything can go between the brackets. (hint: use the special syntax above!)

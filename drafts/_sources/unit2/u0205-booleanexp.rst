@@ -142,6 +142,9 @@ Checks for Understanding
 
 With booleans, each question really only has one answer - True or False.  Therefore, try to make sure you are *certain* of the answer before you attempt it, otherwise it will be ruined!  Try not to guess - guessing will not help you get more comfortable with booleans.  Use paper and pencil if you need it - it's good to show your steps, just like in math class. 
 
+Q#1
+~~~
+
 .. parsonsprob:: cfu_orderops_1
 
    Drag the blocks in the order in which they would be evaluated.
@@ -152,13 +155,19 @@ With booleans, each question really only has one answer - True or False.  Theref
    OR
   
 
+Q#2
+~~~
+
 .. mchoice:: cfu_boolexp_1
    :correct: a
    :answer_a: True
    :answer_b: False
    :feedback_b: Feel free to check the charts above for reference.  Make sure you go step by step!
    
-   Evaluate the following boolean expression:  True and False or True
+   Evaluate: True and False or True
+
+Q#3
+~~~
 
 .. mchoice:: cfu_boolexp_2
    :correct: b
@@ -166,16 +175,22 @@ With booleans, each question really only has one answer - True or False.  Theref
    :answer_b: False
    :feedback_a: Feel free to check the charts above for reference.  Make sure you go step by step!
    
-   Evaluate the following boolean expression:  False or False and not True
+   Evaluate:  False or False and not True
    
+Q#4
+~~~
+
 .. mchoice:: cfu_boolexp_3
    :correct: b
    :answer_a: True
    :answer_b: False
    :feedback_a: Feel free to check the charts above for reference.  Make sure you go step by step!
    
-   Evaluate the following boolean expression:  not (True or True and False and True)
+   Evaluate:  not (True or True and False and True)
    
+Q#5
+~~~
+
 .. mchoice:: cfu_boolexp_4
    :correct: a
    :answer_a: True
@@ -184,6 +199,9 @@ With booleans, each question really only has one answer - True or False.  Theref
    
    Evaluate:  True and False and (True and False) or not False or False
    
+Q#6
+~~~
+
 .. mchoice:: cfu_boolexp_5
    :correct: b
    :answer_a: True

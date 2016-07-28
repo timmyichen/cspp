@@ -159,6 +159,6 @@ Q#8
 .. fillintheblank:: question_01_05_08
 
 	.. blank:: blank7
-		:correct: ^2$
+		:correct: ^2\.0+$|^2$
 
 		Evaluate the following expression (answer will be an integer): ``2 * ((4 * 2) + 3 / 6) % 10 - 5``

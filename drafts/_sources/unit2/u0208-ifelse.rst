@@ -29,8 +29,8 @@ Here's how the syntax looks:
    
    if condition:
        #code to run if condition is True
-       else:
-          #code to run if condition is False
+   else:
+       #code to run if condition is False
 
 Notice that the ``else`` statement is on the same vertical level as the ``if`` statement.  Syntax with these control structures are very specific and very strict - they have to be, otherwise the computer would not understand your code.  :misc-hl:`Make sure that your else statement is always in line with the if statement, and the code that comes after it should be tabbed in, just like the if statement.`
 

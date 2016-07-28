@@ -257,7 +257,17 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lesson 03-07: Accumulator Algorithms</a></li>
+<li><a class="reference internal" href="#">Lesson 03-07: Accumulator Algorithms</a><ul>
+<li><a class="reference internal" href="#an-example-of-an-accumulator-algorithm">An Example of an Accumulator Algorithm</a></li>
+<li><a class="reference internal" href="#breaking-down-the-accumulator-algorithm">Breaking Down the Accumulator Algorithm</a></li>
+<li><a class="reference internal" href="#checks-for-understanding">Checks For Understanding</a><ul>
+<li><a class="reference internal" href="#q-1">Q#1</a></li>
+<li><a class="reference internal" href="#q-2">Q#2</a></li>
+<li><a class="reference internal" href="#q-3-extension">Q#3 (extension)</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -293,6 +303,117 @@
   <div class="section" id="lesson-03-07-accumulator-algorithms">
 <h1>Lesson 03-07: Accumulator Algorithms<a class="headerlink" href="#lesson-03-07-accumulator-algorithms" title="Permalink to this headline">¶</a></h1>
 <p><strong>Learning Target: I can write an accumulator algorithm.</strong></p>
+<div class="section" id="an-example-of-an-accumulator-algorithm">
+<h2>An Example of an Accumulator Algorithm<a class="headerlink" href="#an-example-of-an-accumulator-algorithm" title="Permalink to this headline">¶</a></h2>
+<p>Accumulator comes from the word accumulate, which means &#8220;gradually gather or acquire&#8221;.  In programming, we use accumulator algorithms for the same purpose.  For example, if we wanted to use loops to add up all positive integers up to 10, how would we do that?</p>
+
+<textarea data-component="activecode" id=0307_ex_1 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+sum = 0
+for num in range(1,21):
+    sum = sum + num
+
+print("The sum is {}".format(sum))
+</textarea>
+<p>Here is that same code, except with added print statements to detail the process:</p>
+
+<textarea data-component="activecode" id=0307_ex_2 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+print("# initialize the sum at zero")
+sum = 0
+print("# running a for loop from 1 to 11, which will end at 10")
+for num in range(1,11):
+    print("# adding {} to {}, resulting in {}".format(num,sum,num+sum))
+    sum = sum + num
+    print("# saved result {} in our running total (sum)".format(sum))
+
+print("The sum is {}".format(sum))
+</textarea>
+</div>
+<div class="section" id="breaking-down-the-accumulator-algorithm">
+<h2>Breaking Down the Accumulator Algorithm<a class="headerlink" href="#breaking-down-the-accumulator-algorithm" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/accumulator.svg"><div align="center" class="align-center"><img alt="3 parts to the accumulator algorithm" src="../_images/accumulator.svg" width="400px" /></div>
+</a>
+<p>The accumulator algorithm can be broken down into three parts:</p>
+<ol class="arabic simple">
+<li><strong>Variable Initialization</strong> - You will have to have a variable that keeps track of your running total.  This variable has to be initialized outside the loop.  If you initialize it inside the loop, you will be repeatedly setting it to 0.</li>
+<li><strong>The Iterator</strong> - You need to figure out what iterator (in these cases, a range) will work best for your loop.  Need to look at all the even numbers between 2 and 100?  Better use a <code class="docutils literal"><span class="pre">range(2,101,2)</span></code>.  Later on, we&#8217;ll learn how to iterate over strings and lists as well.</li>
+<li><strong>The Update Statement</strong> - Since this is an accumulator algorithm, you should probably be accumulating something!  This statement is for updating your running total with the new total.  This doesn&#8217;t have to happen <em>every time</em> the loop runs, for example, if it&#8217;s inside of an <code class="docutils literal"><span class="pre">if</span></code> statement.</li>
+</ol>
+<p>Let&#8217;s do an example: Let&#8217;s get the product (multiplication) all the numbers that end in &#8220;4&#8221; from 1 to 100.</p>
+<p>We start with our variable initialization - I&#8217;m gonna call mine <code class="docutils literal"><span class="pre">total</span></code> and set it to 1.  I don&#8217;t want to set it to zero because I know I&#8217;m going to be multiplying, and if I multiply anything by zero, it will always be zero!</p>
+<div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="hll"><span class="n">total</span> <span class="o">=</span> <span class="mi">1</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>Next, I have to think about what I want to look at - in this case, what numbers do I need to look at?  I could look at every number between 1 and 100, and that would be a waste - but I&#8217;m going to do it anyway to illustrate a point.  Our range will therefore be <code class="docutils literal"><span class="pre">range(1,101)</span></code>, since we want to include 100.</p>
+<div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="hll"><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>Next is the update statement. I know my update statement is multiplication, and that statement would look like <code class="docutils literal"><span class="pre">total</span> <span class="pre">=</span> <span class="pre">total</span> <span class="pre">*</span> <span class="pre">num</span></code>.  However, I only want to do that when the number ends in 4.  How do we know if a number ends in 4?  Well, it&#8217;s a bit tricky, but we can do this:</p>
+<p><code class="docutils literal"><span class="pre">n</span> <span class="pre">%</span> <span class="pre">10</span> <span class="pre">==</span> <span class="pre">4</span></code></p>
+<p>This will take the remainder of dividing the number by 10, which drops everything except for the last digit 10, 100, 100, etc are all divisible by 10, so they all go away).  This boolean expression will tell us if a number ends in 4 or not.</p>
+<div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
+<span class="hll">    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+</span><span class="hll">        <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">*</span> <span class="n">num</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>Finally, I want to make sure I&#8217;m correct, so I print out the number and run it!.</p>
+
+<textarea data-component="activecode" id=0307_ex_3 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+total = 1
+for n in range(1,101):
+    if n % 10 == 4:
+        total = total * n
+
+print("The total is {}".format(total))
+</textarea>
+<p>Although I don&#8217;t know what the actual answer is, so I will just punch the following into <a class="reference external" href="https://wolframalpha.com">wolframalpha</a>:</p>
+<p><code class="docutils literal"><span class="pre">4</span> <span class="pre">*</span> <span class="pre">14</span> <span class="pre">*</span> <span class="pre">24</span> <span class="pre">*</span> <span class="pre">34</span> <span class="pre">*</span> <span class="pre">44</span> <span class="pre">*</span> <span class="pre">54</span> <span class="pre">*</span> <span class="pre">64</span> <span class="pre">*</span> <span class="pre">74</span> <span class="pre">*</span> <span class="pre">84</span> <span class="pre">*</span> <span class="pre">94</span></code></p>
+<p>And I get <code class="docutils literal"><span class="pre">4060162871525376</span></code> as my answer.  It matches!</p>
+<p>What I did was the inefficient way as well - a clever programmer may have figured out that I could simply make a better range and come to the same conclusion:</p>
+
+<textarea data-component="activecode" id=0307_ex_4 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+total = 1
+for n in range(4,101,10):
+    total = total * n
+
+print("The total is {}".format(total))
+</textarea>
+<p>(This code will loop 10 times, whereas the other loops 100 times)</p>
+</div>
+<div class="section" id="checks-for-understanding">
+<h2>Checks For Understanding<a class="headerlink" href="#checks-for-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="q-1">
+<h3>Q#1<a class="headerlink" href="#q-1" title="Permalink to this headline">¶</a></h3>
+<p>Using an accumulator algorithm, find the sum of all odd positive integers from 1 to 1000.  Print out the result.  If the result matches <code class="docutils literal"><span class="pre">250000</span></code>, then you got it correct!  If you want to use codelens/pythontutor for help, you can find it by <a class="reference external" href="http://pythontutor.com/visualize.html#mode=edit">clicking here</a>.  Be sure to switch over to Python 3.3!</p>
+
+<textarea data-component="activecode" id=0307_cfu_1 data-lang="python"    data-timelimit=25000   data-audio=''     >
+#write solution here
+</textarea>
+</div>
+<div class="section" id="q-2">
+<h3>Q#2<a class="headerlink" href="#q-2" title="Permalink to this headline">¶</a></h3>
+<p>A factorial <code class="docutils literal"><span class="pre">!</span></code> of an integer is the product of all positive integers up to and including the integer.  For example, <span class="math">\(3! = 3 \times 2 \times 1\)</span> and <span class="math">\(5! = 5 \times 4 \times 3 \times 2 \times 1\)</span>.  Using an accumulator algorithm, find the result of <span class="math">\(10!\)</span>.  If the result matches <code class="docutils literal"><span class="pre">3628800</span></code>, then you got it correct!  If you want to use codelens/pythontutor for help, you can find it by <a class="reference external" href="http://pythontutor.com/visualize.html#mode=edit">clicking here</a>.  Be sure to switch over to Python 3.3!</p>
+
+<textarea data-component="activecode" id=0307_cfu_2 data-lang="python"    data-timelimit=25000   data-audio=''     >
+#write solution here
+</textarea>
+</div>
+<div class="section" id="q-3-extension">
+<h3>Q#3 (extension)<a class="headerlink" href="#q-3-extension" title="Permalink to this headline">¶</a></h3>
+<p>Not exactly an algorithm, as nothing is accumulated, but it has a similar algorithm.  Use a for loop to test if <code class="docutils literal"><span class="pre">990023</span></code> is a prime number or not.  Have it print out either <code class="docutils literal"><span class="pre">&quot;990023</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">prime</span> <span class="pre">number!&quot;</span></code> or <code class="docutils literal"><span class="pre">&quot;990023</span> <span class="pre">is</span> <span class="pre">NOT</span> <span class="pre">a</span> <span class="pre">prime</span> <span class="pre">number!&quot;</span></code>.  Note that your <code class="docutils literal"><span class="pre">range</span></code> will only have to reach <span class="math">\(990023 \div 2\)</span> at maximum since there can&#8217;t be any factors greater than that.</p>
+<p>Try to implement tricks into your range to reduce the number of times it has to loop!</p>
+
+<textarea data-component="activecode" id=0307_cfu_3 data-lang="python"    data-timelimit=25000   data-audio=''     >
+#write solution here
+</textarea>
+<p><em>(yes - 990023 is prime - but you should write your program as it should work for any number!)</em></p>
+</div>
+</div>
 </div>
 
 

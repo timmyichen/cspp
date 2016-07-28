@@ -258,7 +258,8 @@
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">Lesson 03-02: Python&#8217;s Error Messages</a><ul>
-<li><a class="reference internal" href="#types-of-errors">Types of Errors</a></li>
+<li><a class="reference internal" href="#error-messages">Error Messages</a></li>
+<li><a class="reference internal" href="#common-error-types">Common Error Types</a></li>
 </ul>
 </li>
 </ul>
@@ -297,8 +298,8 @@
 <h1>Lesson 03-02: Python&#8217;s Error Messages<a class="headerlink" href="#lesson-03-02-python-s-error-messages" title="Permalink to this headline">¶</a></h1>
 <p><strong>Learning Target: I can interpret error messages to debug code.</strong></p>
 <p><em>Note: All errors and screenshots in this lesson are from a python console, and may not be the exact same message from the errors you would get from this site.</em></p>
-<div class="section" id="types-of-errors">
-<h2>Types of Errors<a class="headerlink" href="#types-of-errors" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="error-messages">
+<h2>Error Messages<a class="headerlink" href="#error-messages" title="Permalink to this headline">¶</a></h2>
 <p>Over the course of learning programming, you will come across many different types of errors.  In most programming languages, whenever an error stops program execution, you will also see an <span class="vocab-word">error message</span> - which <span class="vocab-def">provides information about the error, including where it is and what type of error it is</span>.</p>
 <p>For example, if we were to run the following code in a as a python program:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>
@@ -315,6 +316,29 @@ SyntaxError: Missing parentheses in call to &#39;print&#39;
 <p>There is some very important information here!  Let&#8217;s break it down.</p>
 <a class="reference internal image-reference" href="../_images/errormsg.svg"><div align="center" class="align-center"><img alt="Five parts to the error message" src="../_images/errormsg.svg" width="700px" /></div>
 </a>
+<ol class="arabic simple">
+<li><strong>Location</strong> - This points to the file where the error is happening.  It&#8217;s important because later on, we&#8217;ll be working with multiple files, and we will want to pinpoint exactly where the error is.</li>
+<li><strong>Location</strong> (again) - This time, it tells you exactly which line on the file is causing the error.</li>
+<li><strong>Location</strong> (again) - And again, the message is telling you exactly where in the line the error is occurring.  Note that here, it may be a little inaccurate, but is generally in the right area.</li>
+<li><strong>Type of Error</strong> - The name of the error - covered in this lesson.</li>
+<li><strong>Error Description</strong> - It gives a short description as to where the error occurred.</li>
+</ol>
+<p>As you can see, error messages provide a LOT of information about where the error is, so you can easily find the location and debug it!</p>
+<p>The only thing that we haven&#8217;t quite learned about yet are the Types of Errors.</p>
+</div>
+<div class="section" id="common-error-types">
+<h2>Common Error Types<a class="headerlink" href="#common-error-types" title="Permalink to this headline">¶</a></h2>
+<p>Now these are not going to be the only types of errors you come across, but the following list are errors that you will likely find to be the most common:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>ParseError / SyntaxError</strong> - This is a normal syntax error, meaning that there is something wrong with the way that the code is written.  Exactly the same as in the last lesson.</li>
+<li><strong>TypeError</strong> - This typically has to do with incompatible datatypes.</li>
+<li><strong>NameError</strong> - &#8220;Names&#8221; refer to variable names - generally, you will often see this when you forget to initialize a variable, or if you incorrectly typed a variable name.</li>
+<li><strong>ValueError</strong> - Means that the given value will not work - for example, you will encounter this error if you try to use convert <code class="docutils literal"><span class="pre">&quot;five&quot;</span></code> to an integer with <code class="docutils literal"><span class="pre">int(&quot;five&quot;)</span></code>.</li>
+<li><strong>IndentationError</strong> - This error usually has to do with spacing - either when there is an unexpected indent, or if it&#8217;s supposed to be indented but isn&#8217;t.  This is a type of SyntaxError.</li>
+</ul>
+</div></blockquote>
+<p>It is valuable to quickly recognize what is wrong with your program and to slowly memorize these types of errors, as it will greatly speed up your debugging process.</p>
 </div>
 </div>
 
