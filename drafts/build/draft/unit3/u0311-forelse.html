@@ -257,7 +257,11 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lesson 03-11: <code class="docutils literal"><span class="pre">for</span></code>-<code class="docutils literal"><span class="pre">else</span></code> Loops</a></li>
+<li><a class="reference internal" href="#">Lesson 03-11: <code class="docutils literal"><span class="pre">for</span></code>-<code class="docutils literal"><span class="pre">else</span></code> Loops</a><ul>
+<li><a class="reference internal" href="#for-else"><code class="docutils literal"><span class="pre">for</span></code>-<code class="docutils literal"><span class="pre">else</span></code></a></li>
+<li><a class="reference internal" href="#when-to-use-it">When to use it?</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -293,6 +297,69 @@
   <div class="section" id="lesson-03-11-for-else-loops">
 <h1>Lesson 03-11: <code class="docutils literal"><span class="pre">for</span></code>-<code class="docutils literal"><span class="pre">else</span></code> Loops<a class="headerlink" href="#lesson-03-11-for-else-loops" title="Permalink to this headline">¶</a></h1>
 <p><strong>Learning Target: I can use for-else loops to test whether a for loop has completed or not.</strong></p>
+<p>Now that we&#8217;ve learned the <code class="docutils literal"><span class="pre">break</span></code> keyword, we&#8217;re going to add something to our friend, the <code class="docutils literal"><span class="pre">for</span></code> loop - an <code class="docutils literal"><span class="pre">else</span></code> statement.</p>
+<div class="section" id="for-else">
+<h2><code class="docutils literal"><span class="pre">for</span></code>-<code class="docutils literal"><span class="pre">else</span></code><a class="headerlink" href="#for-else" title="Permalink to this headline">¶</a></h2>
+<p>It may seem weird, but it has a purpose.  Adding an <code class="docutils literal"><span class="pre">else</span></code> to a <code class="docutils literal"><span class="pre">for</span></code> loop is not as intuitive as the typical <code class="docutils literal"><span class="pre">if</span></code>-<code class="docutils literal"><span class="pre">else</span></code> usage.</p>
+<p>The <code class="docutils literal"><span class="pre">else</span></code> keyword when used with a <code class="docutils literal"><span class="pre">for</span></code> loop can be described as: &#8220;Do this if the loop was allowed to run its full course.&#8221;  As an example:</p>
+
+<textarea data-component="activecode" id=0311_ex_1 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+for x in range(5):
+    print(x)
+    if x == 2:
+        print("Reached 2, breaking")
+        break
+else:
+    print("This won't get printed")
+    print("Since we broke out of the loop")
+</textarea>
+<p>Here&#8217;s another example, where we don&#8217;t break out of the loop:</p>
+
+<textarea data-component="activecode" id=0311_ex_2 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+for x in range(5):
+    print(x)
+else:
+    print("This will get printed!")
+    print("Since the for loop was able to complete.")
+</textarea>
+</div>
+<div class="section" id="when-to-use-it">
+<h2>When to use it?<a class="headerlink" href="#when-to-use-it" title="Permalink to this headline">¶</a></h2>
+<p>You might be thinking: &#8220;Well, that&#8217;s some really specific usage.  When would I ever need this?&#8221;</p>
+<p>Here&#8217;s an example where we test if a number is prime or not:</p>
+<p>(The <code class="docutils literal"><span class="pre">//</span></code> is integer division, which means it divides, but always rounds down)</p>
+
+<textarea data-component="activecode" id=0311_ex_3 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+num = 20
+for x in range(2,num//2):
+    if num % x == 0: #if x divides num evenly
+        print("{} is not prime".format(num))
+        break
+else:
+    print("{} is prime".format(num))
+</textarea>
+<p>Here&#8217;s that same code, except with <code class="docutils literal"><span class="pre">num</span></code> as a prime number.  I highly recommend going through the codelens to see how the program determines execution.</p>
+
+<textarea data-component="activecode" id=0311_ex_4 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+num = 19
+for x in range(2,num//2):
+    if num % x == 0: #if x divides num evenly
+        print("{} is not prime".format(num))
+        break
+else:
+    print("{} is prime".format(num))
+</textarea>
+<p>Our algorithm for this program can be written as the following:</p>
+<ol class="arabic simple">
+<li>Start looping x starting at 2 and ending at the number divided by 2, rounded down</li>
+<li>If x divides the number evenly, it means that it&#8217;s not prime, so:<ol class="loweralpha">
+<li>print that it&#8217;s not prime, and then break out of the loop</li>
+</ol>
+</li>
+<li>If we completed the loop (means we tested all values of x and none divided the number), then we can safely say that the number is prime.</li>
+</ol>
+<p>Don&#8217;t worry if you can&#8217;t think of many places where you would use it.  As a programmer, it is important to know which tools are available for you to use, even if you don&#8217;t end up using them!  Eventually (and perhaps in an upcoming lab), you will find the <code class="docutils literal"><span class="pre">for</span></code>-<code class="docutils literal"><span class="pre">else</span></code> loop to be useful.</p>
+</div>
 </div>
 
 
@@ -316,7 +383,7 @@
     </p>
     <p>
         &copy; Copyright 2015 ubuntu.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.4.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
     </p>
   </div>
 </footer>

@@ -10,9 +10,9 @@ Lesson 02-09: If/Elif/Else Statements
 The ``elif`` Keyword
 --------------------
 
-Any series of ``if`` statements are inefficient.  Take the following for example:
+Any series of ``if`` statements are inefficient.  Take the following for example (use Show Codelens to step through code):
 
-.. codelens:: 0209_ex_1
+.. activecode:: 0209_ex_1
 
    state = "California"
    
@@ -48,9 +48,9 @@ A few things to note:
    - Each ``elif`` statement must have a condition.
    - Tabbing rules and etiquette for ``elif`` statements are the same as ``if`` and ``else`` statements.
 
-Additionally, you can have as many ``elif`` statements as you want!  Walk through the following example and carefully note which ``if`` statements are "checked":
+Additionally, you can have as many ``elif`` statements as you want!  Walk through the following example and carefully note which ``if`` statements are "checked"  (use Show Codelens to step through code):
 
-.. codelens:: 0209_ex_2
+.. activecode:: 0209_ex_2
 
    state = "California"
    
@@ -65,9 +65,9 @@ Additionally, you can have as many ``elif`` statements as you want!  Walk throug
        
    print(initials)
 
-Can now be rewritten as the following.  Walk through the example again, but this time, watch which ``if`` statements are checked:
+Can now be rewritten as the following.  Walk through the example again, but this time, watch which ``if`` statements are checked  (use Show Codelens to step through code):
 
-.. codelens:: 0209_ex_3
+.. activecode:: 0209_ex_3
 
    state = "California"
    

@@ -9,6 +9,8 @@ Lesson 01-08: User Input
 
 The best kinds of programs are often the interactive ones.  Basic interactivity is easy to implement in python using the ``input`` function.
 
+:misc-hl:`An important note: using the input function in the ActiveCode windows in the browser may have unintended side effects.  For best results (and most accurate results), I highly advise you run this code in your own text-based python IDE.`
+
 The ``input()`` Function
 ------------------------
 

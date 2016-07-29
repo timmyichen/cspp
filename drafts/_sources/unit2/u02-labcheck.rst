@@ -8,7 +8,7 @@ Unit 2 Pre-Lab Check
 Unit 2 Learning Targets
 -----------------------
 
-This is the end of Unit 2!  You are free to move onto the Unit 2 Labs, but before you do, please review the learning targets for Unit 1 and make sure you are comfortable with them.
+This is the end of Unit 2!  You are free to move onto the Unit 2 Labs, but before you do, please review the learning targets for Unit 2 and make sure you are comfortable with them.
 
 1. Learning Target: I can use string formatting to print strings with variables.
 2. Learning Target: I can use the len() function to find the length of a string.

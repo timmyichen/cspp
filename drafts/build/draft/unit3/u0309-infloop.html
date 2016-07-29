@@ -257,7 +257,18 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lesson 03-09: Danger: Infinite Loops!</a></li>
+<li><a class="reference internal" href="#">Lesson 03-09: Danger: Infinite Loops!</a><ul>
+<li><a class="reference internal" href="#recognizing-an-infinite-loop">Recognizing an Infinite Loop</a></li>
+<li><a class="reference internal" href="#what-happens-if-you-run-an-infinite-loop">What Happens If You Run an Infinite Loop?</a></li>
+<li><a class="reference internal" href="#sample-problem-solving-with-for-loops">Sample Problem - Solving with For Loops</a></li>
+<li><a class="reference internal" href="#checks-for-understanding">Checks For Understanding</a><ul>
+<li><a class="reference internal" href="#q-1">Q#1</a></li>
+<li><a class="reference internal" href="#q-2">Q#2</a></li>
+<li><a class="reference internal" href="#q-3">Q#3</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -293,6 +304,139 @@
   <div class="section" id="lesson-03-09-danger-infinite-loops">
 <h1>Lesson 03-09: Danger: Infinite Loops!<a class="headerlink" href="#lesson-03-09-danger-infinite-loops" title="Permalink to this headline">¶</a></h1>
 <p><strong>Learning Target: I can ensure that my while loop does not run forever.</strong></p>
+<div class="section" id="recognizing-an-infinite-loop">
+<h2>Recognizing an Infinite Loop<a class="headerlink" href="#recognizing-an-infinite-loop" title="Permalink to this headline">¶</a></h2>
+<p>Given the following code:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is less than 10!&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;end&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>What is wrong with this code?  <code class="docutils literal"><span class="pre">x</span></code> is initialized at 5, and <code class="docutils literal"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">10</span></code> is the condition in which to run the loop.  5 is indeed less then 10, and so we enter the loop - but inside the loop, the value of <code class="docutils literal"><span class="pre">x</span></code> never changes.  We don&#8217;t have any reassignment statement to change the value of <code class="docutils literal"><span class="pre">x</span></code>, so the boolean <code class="docutils literal"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">10</span></code> will always be <code class="docutils literal"><span class="pre">5</span> <span class="pre">&lt;</span> <span class="pre">10</span></code> which will always be True.</p>
+<p>To fix this, we need to make sure that <code class="docutils literal"><span class="pre">x</span></code> changes in a way that gives it a chance to make the <code class="docutils literal"><span class="pre">while</span></code> condition False.</p>
+<p>And that is the general strategy behind preventing infinite loops - <span class="misc-hl">inside your loop, variables should change (or at least be given a chance to change) so that the loop condition might become False.</span>  If you don&#8217;t do this, then as soon as your <code class="docutils literal"><span class="pre">while</span></code> condition becomes True, it will always be True, creating an infinite loop.</p>
+</div>
+<div class="section" id="what-happens-if-you-run-an-infinite-loop">
+<h2>What Happens If You Run an Infinite Loop?<a class="headerlink" href="#what-happens-if-you-run-an-infinite-loop" title="Permalink to this headline">¶</a></h2>
+<p>If you run an activecode module on this site that has an infinite loop, it will crash the page.  You&#8217;ll have to close the tab/page and re-open it.</p>
+<p>If you run an infinite loop in a python IDE or through the terminal, you can use CTRL+C to stop it.  If it slows down your entire computer to the point where you can&#8217;t act, you may have to make more drastic measures (varies from case to case).</p>
+<p>In general, it&#8217;s a good idea to avoid infinite loops. :)</p>
+</div>
+<div class="section" id="sample-problem-solving-with-for-loops">
+<h2>Sample Problem - Solving with For Loops<a class="headerlink" href="#sample-problem-solving-with-for-loops" title="Permalink to this headline">¶</a></h2>
+<p>Write a program that repeatedly asks the user for a number and keeps track of the sum of all the numbers that the user has entered.  The loop should only run as long as the sum is less than 100.</p>
+<p>We would start by initializing our sum variable, since that should be set to 0 outside the loop:</p>
+<div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="hll"><span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>Now our condition for running the loop is &#8220;as long as the sum is less than 100&#8221; - or in other words, when <code class="docutils literal"><span class="pre">sum</span> <span class="pre">&lt;</span> <span class="pre">100</span></code>.  We can write in our for loop.</p>
+<div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="hll"><span class="k">while</span> <span class="nb">sum</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>Next, what is the action that we want to repeat?  Well, we want to get a number from the user - and we want to add it to the sum.  When we ask them for a number, let&#8217;s also print out the sum, just so the user knows where he/she stands.</p>
+<div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="nb">sum</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+<span class="hll">    <span class="n">num</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Your total is </span><span class="si">{}</span><span class="s2">. Enter a number: &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">sum</span><span class="p">)))</span>
+</span><span class="hll">    <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="n">num</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>Finally, at the end, let&#8217;s print out our final total.</p>
+<div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="nb">sum</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Your total is </span><span class="si">{}</span><span class="s2">. Enter a number: &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">sum</span><span class="p">)))</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="n">num</span>
+<span class="hll"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loop ended, your total is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">sum</span><span class="p">))</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>We know that we are safe from an infinite loop because <code class="docutils literal"><span class="pre">sum</span></code> is changing within the loop, changing by the value of <code class="docutils literal"><span class="pre">num</span></code>, which the user has full control over.  Feel free to try it out by copy-pasting the code into your own IDE!</p>
+</div>
+<div class="section" id="checks-for-understanding">
+<h2>Checks For Understanding<a class="headerlink" href="#checks-for-understanding" title="Permalink to this headline">¶</a></h2>
+<p><em>Please note - feel free to write these in your own separate IDE if you&#8217;re not comfortable with writing it using the ActiveCode module!  You can always paste it back in afterwards.</em></p>
+<div class="section" id="q-1">
+<h3>Q#1<a class="headerlink" href="#q-1" title="Permalink to this headline">¶</a></h3>
+<p>Given the following block of code:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">counter</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The counter is at </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">counter</span><span class="p">))</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;end&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="0309_cfu_1">
+            u0309-1: What&#8217;s wrong with the while loop written above?
+            <li data-component="answer"  id="0309_cfu_1_opt_a">(A) It has an infinite loop</li><li data-component="feedback" id="0309_cfu_1_opt_a">Double-check to see if counter changes inside the loop!</li>
+            
+            <li data-component="answer" data-correct id="0309_cfu_1_opt_b">(B) The while loop is false to start with</li><li data-component="feedback" id="0309_cfu_1_opt_b">Nice job!  0 is not > 10!</li>
+            
+            <li data-component="answer"  id="0309_cfu_1_opt_c">(C) The loop won't run due to a syntax error</li><li data-component="feedback" id="0309_cfu_1_opt_c">Can you identify any syntax errors?</li>
+            
+
+            </ul>
+            </div>
+<div class="section" id="q-2">
+<h3>Q#2<a class="headerlink" href="#q-2" title="Permalink to this headline">¶</a></h3>
+<p>Write the output produced by the following while loop:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="k">while</span> <span class="n">start</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="c1"># the ,end=&quot;&quot; part means that there is no new line after</span>
+    <span class="c1"># each print statement, so your answer should be all in a</span>
+    <span class="c1"># row, no spaces</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">start</span> <span class="o">/</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>I would recommend using pencil and paper to work through the output.</p>
+
+        <p data-component="fillintheblank" data-casei="false" id="0309_cfu_2">
+            
+        <span data-blank>
+            What is the output produced by the code above?
+        <span data-feedback="regex" style="display: none" id="0309_cfu_2_1_feedback1"> +</span>
+        <span data-feedback="text" style="display: none" for="0309_cfu_2_1_feedback1">Remember - no spaces!</span>
+            
+        <span data-feedback="regex" style="display: none" id="0309_cfu_2_1_feedback2">^1263$</span>
+        <span data-feedback="text" style="display: none" for="0309_cfu_2_1_feedback2">Double check the condition in the while loop!</span>
+            
+        <span data-feedback="regex" style="display: none" id="0309_cfu_2_1_feedback3">.*</span>
+        <span data-feedback="text" style="display: none" for="0309_cfu_2_1_feedback3">Try again!</span>
+            
+        <span data-answer style="display: none" id="0309_cfu_2_1_answer">^12631\.5$</span>
+        </span>
+        
+        </p>
+            </div>
+<div class="section" id="q-3">
+<h3>Q#3<a class="headerlink" href="#q-3" title="Permalink to this headline">¶</a></h3>
+<p>Write a program that asks the user to enter a positive number.  The program will then repeatedly subtract 0.9 until as long as the number is positive.  For example, if the user enters 4 as their number, it will print:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>4
+3.1
+2.2
+1.3
+0.4
+</pre></div>
+</div>
+<p>At the end, it calculates <code class="docutils literal"><span class="pre">0.4</span> <span class="pre">-</span> <span class="pre">0.9</span></code> and stops because it results in a negative number.  As a reminder, only numbers greater than 0 are considered positive: 0 is not considered positive.  Don&#8217;t forget to convert the input to a number!</p>
+<p>Feel free to write your solution below:</p>
+
+<textarea data-component="activecode" id=0309_cfu_3 data-lang="python"    data-timelimit=25000   data-audio=''     >
+#write your code here!
+</textarea>
+</div>
+</div>
 </div>
 
 
@@ -316,7 +460,7 @@
     </p>
     <p>
         &copy; Copyright 2015 ubuntu.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.4.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
     </p>
   </div>
 </footer>

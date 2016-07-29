@@ -96,6 +96,26 @@ Unit 3 Lessons
     unit3/u0309-infloop.rst
     unit3/u0310-break.rst
     unit3/u0311-forelse.rst
-    unit3/u0312-inpvalid.rst
     unit3/u03-labcheck.rst
+
+Unit 4 Lessons
+==============
+
+.. toctree::
+    :maxdepth: 2
     
+    unit4/u0401-functions.rst
+    unit4/u0402-funcargs.rst
+    unit4/u0403-return.rst
+    unit4/u0404-scope.rst
+    unit4/u0405-funcval.rst
+    unit4/u0406-synchexec.rst
+    unit4/u0407-functests.rst
+    unit4/u0408-callfuncs.rst
+    unit4/u0409-progdesign2.rst
+    unit4/u0410-pseudocode.rst
+    unit4/u0411-decomp.rst
+    unit4/u0412-abstraction.rst
+    unit4/u0413-mainfunc.rst
+    unit4/u0414-inpvalid.rst
+    unit4/u04-labcheck.rst

@@ -257,7 +257,11 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lesson 03-10: The <code class="docutils literal"><span class="pre">break</span></code> Keyword</a></li>
+<li><a class="reference internal" href="#">Lesson 03-10: The <code class="docutils literal"><span class="pre">break</span></code> Keyword</a><ul>
+<li><a class="reference internal" href="#what-does-break-do">What does <code class="docutils literal"><span class="pre">break</span></code> do?</a></li>
+<li><a class="reference internal" href="#when-to-use-break">When to use <code class="docutils literal"><span class="pre">break</span></code>?</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -293,6 +297,51 @@
   <div class="section" id="lesson-03-10-the-break-keyword">
 <h1>Lesson 03-10: The <code class="docutils literal"><span class="pre">break</span></code> Keyword<a class="headerlink" href="#lesson-03-10-the-break-keyword" title="Permalink to this headline">¶</a></h1>
 <p><strong>Learning Target: I can use the break keyword to end a loop early.</strong></p>
+<div class="section" id="what-does-break-do">
+<h2>What does <code class="docutils literal"><span class="pre">break</span></code> do?<a class="headerlink" href="#what-does-break-do" title="Permalink to this headline">¶</a></h2>
+<p>On occasion, there comes a time when you want to stop your loop <em>right away</em>.  That&#8217;s what the <code class="docutils literal"><span class="pre">break</span> <span class="pre">keyword</span></code> does.  Take the following as an example:</p>
+
+<textarea data-component="activecode" id=0310_ex_1 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+x = 7
+
+while True:
+    print(x)
+    if x < 3:
+        break
+    x = x - 1
+print("end")
+</textarea>
+<p>This also works for <code class="docutils literal"><span class="pre">for</span></code> loops as well:</p>
+
+<textarea data-component="activecode" id=0310_ex_2 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+for x in range(7,0,-1):
+    print(x)
+    if x < 3:
+        break
+print("end")
+</textarea>
+<p>The <code class="docutils literal"><span class="pre">break</span></code> keyword only quits out of the &#8220;innermost&#8221; loop.  This means that if you have a loop inside of a loop (also covered later), using <code class="docutils literal"><span class="pre">break</span></code> will only quit out of the most recently-used loop.</p>
+</div>
+<div class="section" id="when-to-use-break">
+<h2>When to use <code class="docutils literal"><span class="pre">break</span></code>?<a class="headerlink" href="#when-to-use-break" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">break</span></code> is not a keyword you should be using often in your programs.  In general, you want to follow the following guidelines when you are thinking about using <code class="docutils literal"><span class="pre">break</span></code>:</p>
+<ul>
+<li><p class="first">Use <code class="docutils literal"><span class="pre">break</span></code> to exit a <code class="docutils literal"><span class="pre">for</span></code> loop early - because there is no other way to do this.</p>
+<blockquote>
+<div><ul class="simple">
+<li>This is nice because it allows us to provide two ways for a for loop to end - either it loops through everything, or it breaks due to some condition.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">In general, you should avoid using <code class="docutils literal"><span class="pre">break</span></code> in a <code class="docutils literal"><span class="pre">while</span></code> loop, because it is an indicator that you could just write a better condition for the loop.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Take the first example above as an example of BAD <code class="docutils literal"><span class="pre">break</span></code> usage.  Instead of using a conditional to break out of the loop, you could&#8217;ve rewritten line 3 to <code class="docutils literal"><span class="pre">while</span> <span class="pre">x</span> <span class="pre">&gt;=</span> <span class="pre">3:</span></code>.  This makes it easier to read and understand the purpose of the loop, and it eliminates the need of the <code class="docutils literal"><span class="pre">break</span></code> keyword.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
 </div>
 
 
@@ -316,7 +365,7 @@
     </p>
     <p>
         &copy; Copyright 2015 ubuntu.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.4.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
     </p>
   </div>
 </footer>

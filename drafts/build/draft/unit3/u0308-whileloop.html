@@ -257,7 +257,11 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lesson 03-08: The <code class="docutils literal"><span class="pre">while</span></code> Loop</a></li>
+<li><a class="reference internal" href="#">Lesson 03-08: The <code class="docutils literal"><span class="pre">while</span></code> Loop</a><ul>
+<li><a class="reference internal" href="#while-loop-syntax"><code class="docutils literal"><span class="pre">while</span></code> Loop Syntax</a></li>
+<li><a class="reference internal" href="#for-vs-while"><code class="docutils literal"><span class="pre">for</span></code> VS. <code class="docutils literal"><span class="pre">while</span></code></a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -293,6 +297,85 @@
   <div class="section" id="lesson-03-08-the-while-loop">
 <h1>Lesson 03-08: The <code class="docutils literal"><span class="pre">while</span></code> Loop<a class="headerlink" href="#lesson-03-08-the-while-loop" title="Permalink to this headline">¶</a></h1>
 <p><strong>Learning Target: I can use while loops to repeat a set of instructions.</strong></p>
+<p>While <code class="docutils literal"><span class="pre">for</span></code> loops are useful when you know exactly how many times you want to iterate, what if you don&#8217;t?</p>
+<div class="section" id="while-loop-syntax">
+<h2><code class="docutils literal"><span class="pre">while</span></code> Loop Syntax<a class="headerlink" href="#while-loop-syntax" title="Permalink to this headline">¶</a></h2>
+<p>Here is a <code class="docutils literal"><span class="pre">for</span></code> loop and a <code class="docutils literal"><span class="pre">while</span></code> loop that does the exact same thing:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Done!&quot;</span><span class="p">)</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Done!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Let&#8217;s take the second one and look at the step-by-step process.  Click on &#8220;Show Codelens&#8221; below to step through the code:</p>
+
+<textarea data-component="activecode" id=0308_ex_1 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+n = 0
+while n < 5:
+    print(n)
+    n = n + 1
+print("Done!")
+</textarea>
+<p>Let&#8217;s go over how the <code class="docutils literal"><span class="pre">while</span></code> loop works:</p>
+<p>A while loop works very similarly to an <code class="docutils literal"><span class="pre">if</span></code> statement, with one big difference: as long as the statemet following <code class="docutils literal"><span class="pre">while</span></code> is <code class="docutils literal"><span class="pre">True</span></code>, it will loop the code inside!</p>
+<p><span class="misc-hl">WARNING: If you get caught in an infinite loop in the terminal, you can use CTRL+C to stop code execution!  But it&#8217;s best to avoid infinite loops - which will be explored in the next lesson.</span></p>
+<p>Here&#8217;s an example that isn&#8217;t based on numbers.</p>
+
+<textarea data-component="activecode" id=0308_ex_2 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+word = input("Enter any word that's not 'quit': ")
+
+# this loop will continue as long as the user's input
+#  is not "quit"
+while word != "quit":
+    print("You said: {}".format(word))
+    word = input("Now enter 'quit' to quit! Or enter anything else to keep going!")
+print("Quitting loop")
+</textarea>
+<p>Here, we write a loop that waits for a user to type &#8220;quit&#8221; and repeatedly asks the user to type something in until that happens.  You might notice on line 1 that we actually ask the user for an input before we even start looping - this is because on line 5, our condition is <code class="docutils literal"><span class="pre">word</span> <span class="pre">!=</span> <span class="pre">&quot;quit&quot;</span></code>, so <code class="docutils literal"><span class="pre">word</span></code> needs a value (needs to be initialized).  Then, on line 7, we have to re-ask the user to type in something else, so that the user can type in &#8220;quit&#8221; to quit.</p>
+<p>Write a while loop on line 4 below so that the loop will continue as long as <code class="docutils literal"><span class="pre">x</span></code> is less than 200.  If done correctly, it should print: <code class="docutils literal"><span class="pre">2</span> <span class="pre">4</span> <span class="pre">8</span> <span class="pre">16</span> <span class="pre">32</span> <span class="pre">64</span> <span class="pre">128</span> <span class="pre">done</span></code></p>
+
+<textarea data-component="activecode" id=0308_cfu_1 data-lang="python"    data-timelimit=25000   data-audio=''     >
+x = 2
+
+
+    print(x, end=" ")
+    x = x * 2
+print("done")
+</textarea>
+</div>
+<div class="section" id="for-vs-while">
+<h2><code class="docutils literal"><span class="pre">for</span></code> VS. <code class="docutils literal"><span class="pre">while</span></code><a class="headerlink" href="#for-vs-while" title="Permalink to this headline">¶</a></h2>
+<p>Now that we know how to use both <code class="docutils literal"><span class="pre">for</span></code> loops and <code class="docutils literal"><span class="pre">while</span></code> loops, it&#8217;s important to understand when to use each one.  While they are both similar in the sense that they both repeat code, they are used in different situations.</p>
+<p>In <code class="docutils literal"><span class="pre">for</span></code> loops, you know exactly how many times you are looping.  This is defined either within the <code class="docutils literal"><span class="pre">range()</span></code> function or in another iterable (which we will learn about later).  In <code class="docutils literal"><span class="pre">while</span></code> loops, you continue to loop until a certain condition is met - it is not always clear exactly how many times the code will loop.</p>
+<p>Therefore, when choosing between <code class="docutils literal"><span class="pre">for</span></code> and <code class="docutils literal"><span class="pre">while</span></code> loops, you should follow the following guidelines:</p>
+<ul class="simple">
+<li>If you know exactly how many times you need to loop, use a <code class="docutils literal"><span class="pre">for</span></code> loop.</li>
+<li>If not, use a <code class="docutils literal"><span class="pre">while</span></code> loop.</li>
+</ul>
+
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="0308_cfu_2">
+            u0308-1: Let&#8217;s say you need to create a program to add up all prime numbers up to 1000.  What kind of loop should you use?
+            <li data-component="answer" data-correct id="0308_cfu_2_opt_a">(A) for</li><li data-component="feedback" id="0308_cfu_2_opt_a"></li>
+            
+            <li data-component="answer"  id="0308_cfu_2_opt_b">(B) while</li><li data-component="feedback" id="0308_cfu_2_opt_b">Do you know exactly how many times you'll need to loop?</li>
+            
+
+            </ul>
+            
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="0308_cfu_3">
+            u0308-2: Let&#8217;s say you need to create a program to add up all powers of two as long as the sum is less than 5000.  What kind of loop should you use?
+            <li data-component="answer"  id="0308_cfu_3_opt_a">(A) for</li><li data-component="feedback" id="0308_cfu_3_opt_a">Do you know exactly how many times you'll need to loop? Be especially careful of the wording "as long as"</li>
+            
+            <li data-component="answer" data-correct id="0308_cfu_3_opt_b">(B) while</li><li data-component="feedback" id="0308_cfu_3_opt_b">Nice job!  The key phrase is "as long as"</li>
+            
+
+            </ul>
+            </div>
 </div>
 
 
@@ -316,7 +399,7 @@
     </p>
     <p>
         &copy; Copyright 2015 ubuntu.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.4.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
     </p>
   </div>
 </footer>

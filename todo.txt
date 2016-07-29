@@ -12,3 +12,7 @@ find someplace to fit in:
     variables cant be named keywords
     syntax stuff
     printing statements
+
+input validation:
+    move to end of u4
+    change unit 04-04 to include
