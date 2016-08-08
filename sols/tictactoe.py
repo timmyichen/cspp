@@ -69,6 +69,7 @@ def ttt():
             break
         player = swap_player(player)
     
+    print_board(board)
     print("Tic Tac Toe, 3 in a row!")
     print("Player {} wins!".format(player))
     

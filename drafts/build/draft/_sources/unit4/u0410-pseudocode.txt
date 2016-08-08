@@ -7,3 +7,12 @@ Lesson 04-10: Pseudocode
 ========================
 
 **Learning Target: I can use pseudocode to plan out an algorithm/solution to a problem.**
+
+Planning Your Algorithm
+-----------------------
+
+
+
+What is Pseudocode?
+-------------------
+

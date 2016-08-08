@@ -1,9 +1,9 @@
 .. qnum::
    :start: 1
-   :prefix: u0312-
+   :prefix: u0414-
 
 
-Lesson 03-12: Simple Input Validation
+Lesson 04-14: Simple Input Validation
 =====================================
 
 **Learning Target: I can validate a user's input by checking its datatype and value.**
@@ -17,7 +17,7 @@ One of the basics of cybersecurity and writing code is that: nobody should be ab
 
 For example, let's say we want to ask the user for a number.  When you run the following code, enter in a word or letter instead.
 
-.. activecode:: 0312_ex_1
+.. activecode:: 0414_ex_1
    :nocodelens:
    
    num = input("Enter a number")
@@ -32,7 +32,7 @@ Normally, when we ask for input and we want to use it as a number, we would conv
 
 Strings have specific functions - you already know of one and use it often (hopefully), ``.format()``.  We will cover many string functions later, but today we will only show you two.  The first is called ``isdigit()`` and represents True or False based on whether all the characters are digits or not.  See the following example:
 
-.. activecode:: 0312_ex_2
+.. activecode:: 0414_ex_2
    :autorun:
    
    print("hi".isdigit())
@@ -42,7 +42,7 @@ Strings have specific functions - you already know of one and use it often (hope
 
 Looks like it works pretty well.  We can then use the following to get user input:
 
-.. activecode:: 0312_ex_3
+.. activecode:: 0414_ex_3
    
    num = input("Enter a number: ")
    while not num.isdigit(): # while the number is not made of digits
@@ -53,7 +53,7 @@ Looks like it works pretty well.  We can then use the following to get user inpu
 
 However, with a few examples, we can see that this doesn't work as well as we'd like:
 
-.. activecode:: 0312_ex_4
+.. activecode:: 0414_ex_4
    :autorun:
    
    print("-20".isdigit())

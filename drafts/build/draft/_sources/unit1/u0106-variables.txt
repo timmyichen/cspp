@@ -27,6 +27,7 @@ Variable Creation
 Let's start with how to name variables.  There are a few rules we have to follow when naming variables:
 	- Variable names can only consist of uppercase letters, lowercase letters, digits, and underscores ( the character _ ).
 	- Variable names cannot start with digits
+	- Variable names cannot be any special keyword (such as ``print``)
 
 .. mchoice:: cfu_var_1
 	:multiple_answers:

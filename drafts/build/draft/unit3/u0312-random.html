@@ -257,7 +257,12 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lesson 03-12: The <code class="docutils literal"><span class="pre">random</span></code> module</a></li>
+<li><a class="reference internal" href="#">Lesson 03-12: The <code class="docutils literal"><span class="pre">random</span></code> module</a><ul>
+<li><a class="reference internal" href="#importing-the-random-module">Importing The <code class="docutils literal"><span class="pre">random</span></code> Module</a></li>
+<li><a class="reference internal" href="#using-randint">Using <code class="docutils literal"><span class="pre">randint()</span></code></a></li>
+<li><a class="reference internal" href="#an-example-of-randomness">An Example Of Randomness</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -293,6 +298,47 @@
   <div class="section" id="lesson-03-12-the-random-module">
 <h1>Lesson 03-12: The <code class="docutils literal"><span class="pre">random</span></code> module<a class="headerlink" href="#lesson-03-12-the-random-module" title="Permalink to this headline">¶</a></h1>
 <p><strong>Learning Target: I can use the random module to generate random numbers.</strong></p>
+<div class="section" id="importing-the-random-module">
+<h2>Importing The <code class="docutils literal"><span class="pre">random</span></code> Module<a class="headerlink" href="#importing-the-random-module" title="Permalink to this headline">¶</a></h2>
+<p>When you import modules, you should always do so at the beginning of your file, at the very top.  The syntax is usually:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">module_name</span>
+</pre></div>
+</div>
+<p>In this case, our module is named <code class="docutils literal"><span class="pre">random</span></code>, so we would use this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+</pre></div>
+</div>
+<p>Once we have this code, this gives us access to a bunch of functions that are packaged within the <code class="docutils literal"><span class="pre">random</span></code> module.  Although there are many, the one we are probably going to use the most is called <code class="docutils literal"><span class="pre">randint()</span></code>.</p>
+</div>
+<div class="section" id="using-randint">
+<h2>Using <code class="docutils literal"><span class="pre">randint()</span></code><a class="headerlink" href="#using-randint" title="Permalink to this headline">¶</a></h2>
+<p>Using the function <code class="docutils literal"><span class="pre">random.randint(a,b)</span></code> will give you a random integer between <code class="docutils literal"><span class="pre">a</span></code> and <code class="docutils literal"><span class="pre">b</span></code>, inclusive.  Here are a few examples.  Feel free to re-run them to generate different numbers.</p>
+
+<textarea data-component="activecode" id=0312_ex_1 data-lang="python" data-autorun="true"   data-timelimit=25000   data-audio=''     >
+import random
+#this will generate 5 #s between 1 and 10
+for x in range(5):
+    print(random.randint(1,10))
+</textarea>
+<p>Please note that unlike the <code class="docutils literal"><span class="pre">range()</span></code> function, where <code class="docutils literal"><span class="pre">range(1,10)</span></code> would not include 10, <code class="docutils literal"><span class="pre">random.randint(1,10)</span></code> DOES include the 10.</p>
+</div>
+<div class="section" id="an-example-of-randomness">
+<h2>An Example Of Randomness<a class="headerlink" href="#an-example-of-randomness" title="Permalink to this headline">¶</a></h2>
+<p>The following is an example of a bit of code that uses random number generation.  This code will continuously roll two imaginary dice until it rolls a double (two of the same number).</p>
+
+<textarea data-component="activecode" id=0312_ex_2 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+import random
+
+die1 = 1
+die2 = 2
+while die1 != die2:
+    die1 = random.randint(1,6)
+    die2 = random.randint(1,6)
+    print("Rolled a {},{}".format(die1,die2))
+
+print("Got doubles!")
+</textarea>
+</div>
 </div>
 
 

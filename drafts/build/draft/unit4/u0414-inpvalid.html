@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lesson 03-12: Simple Input Validation &mdash; Runestone Interactive Overview</title>
+    <title>Lesson 04-14: Simple Input Validation &mdash; Runestone Interactive Overview</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -257,7 +257,7 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lesson 03-12: Simple Input Validation</a><ul>
+<li><a class="reference internal" href="#">Lesson 04-14: Simple Input Validation</a><ul>
 <li><a class="reference internal" href="#why-validate-input">Why Validate Input?</a></li>
 <li><a class="reference internal" href="#validating-numbers">Validating Numbers</a><ul>
 <li><a class="reference internal" href="#negative-numbers">Negative Numbers</a></li>
@@ -297,8 +297,8 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="lesson-03-12-simple-input-validation">
-<h1>Lesson 03-12: Simple Input Validation<a class="headerlink" href="#lesson-03-12-simple-input-validation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="lesson-04-14-simple-input-validation">
+<h1>Lesson 04-14: Simple Input Validation<a class="headerlink" href="#lesson-04-14-simple-input-validation" title="Permalink to this headline">¶</a></h1>
 <p><strong>Learning Target: I can validate a user&#8217;s input by checking its datatype and value.</strong></p>
 <div class="section" id="why-validate-input">
 <h2>Why Validate Input?<a class="headerlink" href="#why-validate-input" title="Permalink to this headline">¶</a></h2>
@@ -306,7 +306,7 @@
 <p>One of the basics of cybersecurity and writing code is that: nobody should be able to crash your code.  Whenever you ask a user for input, you have to assume every possible case that they can throw at you.  Breakable code is not secure code.</p>
 <p>For example, let&#8217;s say we want to ask the user for a number.  When you run the following code, enter in a word or letter instead.</p>
 
-<textarea data-component="activecode" id=0312_ex_1 data-lang="python"    data-timelimit=25000   data-audio=''     >
+<textarea data-component="activecode" id=0414_ex_1 data-lang="python"    data-timelimit=25000   data-audio=''     >
 num = input("Enter a number")
 print("You entered {}".format(num))
 </textarea>
@@ -317,7 +317,7 @@ print("You entered {}".format(num))
 <p>Normally, when we ask for input and we want to use it as a number, we would convert it using the <code class="docutils literal"><span class="pre">float()</span></code> or <code class="docutils literal"><span class="pre">int()</span></code> conversion functions.  However, if you try to convert a word or letter into a float or int, it will give you an error, as demonstrated above.  There are a few ways to combat this, and here we will show you one of those ways.</p>
 <p>Strings have specific functions - you already know of one and use it often (hopefully), <code class="docutils literal"><span class="pre">.format()</span></code>.  We will cover many string functions later, but today we will only show you two.  The first is called <code class="docutils literal"><span class="pre">isdigit()</span></code> and represents True or False based on whether all the characters are digits or not.  See the following example:</p>
 
-<textarea data-component="activecode" id=0312_ex_2 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+<textarea data-component="activecode" id=0414_ex_2 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
 print("hi".isdigit())
 print("100".isdigit())
 print(".".isdigit())
@@ -325,7 +325,7 @@ print("123456789".isdigit())
 </textarea>
 <p>Looks like it works pretty well.  We can then use the following to get user input:</p>
 
-<textarea data-component="activecode" id=0312_ex_3 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+<textarea data-component="activecode" id=0414_ex_3 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
 num = input("Enter a number: ")
 while not num.isdigit(): # while the number is not made of digits
     num = input("Invalid! Enter another: ")
@@ -335,7 +335,7 @@ num = float(num)
 </textarea>
 <p>However, with a few examples, we can see that this doesn&#8217;t work as well as we&#8217;d like:</p>
 
-<textarea data-component="activecode" id=0312_ex_4 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+<textarea data-component="activecode" id=0414_ex_4 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
 print("-20".isdigit())
 print("1.6".isdigit())
 print("-3.0".isdigit())

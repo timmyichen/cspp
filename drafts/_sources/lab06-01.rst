@@ -117,67 +117,79 @@ Below is a sample runthrough:
     ---+---+---
      7 | 8 | 9
     
-    Player X, enter your move as a number from 1 to 9: -5
+    Player X, enter your move as a number from 1 to 9: -1
     Invalid input, try again
-    Player X, enter your move as a number from 1 to 9: 11
+    Player X, enter your move as a number from 1 to 9: ahasdf
     Invalid input, try again
-    Player X, enter your move as a number from 1 to 9: 3.6223
+    Player X, enter your move as a number from 1 to 9: 3.3
     Invalid input, try again
-    Player X, enter your move as a number from 1 to 9: what
+    Player X, enter your move as a number from 1 to 9: * 
     Invalid input, try again
-    Player X, enter your move as a number from 1 to 9: 5
+    Player X, enter your move as a number from 1 to 9: 4
     
      1 | 2 | 3
     ---+---+---
-     4 | X | 6
+     X | 5 | 6
     ---+---+---
      7 | 8 | 9
     
-    Player O, enter your move as a number from 1 to 9: 1
-    
-     O | 2 | 3
-    ---+---+---
-     4 | X | 6
-    ---+---+---
-     7 | 8 | 9
-    
-    Player X, enter your move as a number from 1 to 9: 9
-    
-     O | 2 | 3
-    ---+---+---
-     4 | X | 6
-    ---+---+---
-     7 | 8 | X
-    
-    Player O, enter your move as a number from 1 to 9: 2
-    
-     O | O | 3
-    ---+---+---
-     4 | X | 6
-    ---+---+---
-     7 | 8 | X
-    
-    Player X, enter your move as a number from 1 to 9: 3
-    
-     O | O | X
-    ---+---+---
-     4 | X | 6
-    ---+---+---
-     7 | 8 | X
-    
-    Player O, enter your move as a number from 1 to 9: darn it
-    Invalid input, try again
     Player O, enter your move as a number from 1 to 9: 6
     
-     O | O | X
+     1 | 2 | 3
     ---+---+---
-     4 | X | O
+     X | 5 | O
     ---+---+---
-     7 | 8 | X
+     7 | 8 | 9
     
-    Player X, enter your move as a number from 1 to 9: 7
+    Player X, enter your move as a number from 1 to 9: 1
+    
+     X | 2 | 3
+    ---+---+---
+     X | 5 | O
+    ---+---+---
+     7 | 8 | 9
+    
+    Player O, enter your move as a number from 1 to 9: 7
+    
+     X | 2 | 3
+    ---+---+---
+     X | 5 | O
+    ---+---+---
+     O | 8 | 9
+    
+    Player X, enter your move as a number from 1 to 9: 5
+    
+     X | 2 | 3
+    ---+---+---
+     X | X | O
+    ---+---+---
+     O | 8 | 9
+    
+    Player O, enter your move as a number from 1 to 9: 9
+    
+     X | 2 | 3
+    ---+---+---
+     X | X | O
+    ---+---+---
+     O | 8 | O
+    
+    Player X, enter your move as a number from 1 to 9: 8
+    
+     X | 2 | 3
+    ---+---+---
+     X | X | O
+    ---+---+---
+     O | X | O
+    
+     X | 2 | O
+    ---+---+---
+     X | X | O
+    ---+---+---
+     O | X | O
+    
+    Player O, enter your move as a number from 1 to 9: 3
     Tic Tac Toe, 3 in a row!
-    Player X wins!
+    Player O wins!
 
 The following space is provided in case you want to test code out or write it in the browser:
 

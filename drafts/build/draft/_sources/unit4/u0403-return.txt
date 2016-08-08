@@ -7,3 +7,13 @@ Lesson 04-03: The ``return`` Statement
 ======================================
 
 **Learning Target: I can utilize functions that return values.**
+
+Using The ``return`` Keyword
+----------------------------
+
+Functions Represent Values
+--------------------------
+
+Checks For Understanding
+------------------------
+

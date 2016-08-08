@@ -7,3 +7,13 @@ Lesson 04-02: Passing Data to Functions
 =======================================
 
 **Learning Target: I can pass data to functions using arguments.**
+
+Accepting Function Arguments
+----------------------------
+
+Passing Function Arguments
+--------------------------
+
+What Actually Gets Passed?
+--------------------------
+

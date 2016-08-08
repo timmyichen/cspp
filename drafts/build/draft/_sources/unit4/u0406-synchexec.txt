@@ -7,3 +7,6 @@ Lesson 04-06: Functions & Synchronous Execution
 ===============================================
 
 **Learning Target: I can predict function code execution.**
+
+One Instruction At A Time
+-------------------------

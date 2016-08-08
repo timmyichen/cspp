@@ -7,3 +7,6 @@ Lesson 04-05: Functions are Values
 ==================================
 
 **Learning Target: I can understand the value representation of a function.**
+
+Printing Functions Without Parentheses
+--------------------------------------

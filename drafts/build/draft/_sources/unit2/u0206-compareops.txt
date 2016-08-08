@@ -152,7 +152,7 @@ Checks for Understanding
 Q#1
 ~~~
 
-.. dragndrop:: 0205_cfu_1
+.. dragndrop:: 0206_cfu_1
    :feedback: Try again, review the lesson if you need to!
    :match_1: ==|||equal to
    :match_2: >|||greater than
@@ -162,3 +162,51 @@ Q#1
    :match_6: <=|||less than or equal to
    
    Drag the comparison operator to its description.
+
+Q#2
+~~~
+
+.. fillintheblank:: 0206_cfu_2
+   
+   .. blank:: 0205_cfu_2_1
+      :correct: ^12\.3 *== *x$|^x *== *12\.3$
+      :feedback1: ("^12\.3 *= *x$|^x *= *12\.3$", "Close - what's the equals to operator?")
+      :feedback2: (".*", "Try again!")
+      
+      Write an expression that tests if the variable ``x`` is equivalent to 12.3
+
+Q#3
+~~~
+
+.. fillintheblank:: 0206_cfu_3_1
+
+   .. blank:: 0206_cfu_3_1
+      :correct: ^True$
+      :feedback1: ("^true$", "Remember - uppercase T in True!")
+      
+      Evaluate True or False: ``1 == 1.0``
+
+.. fillintheblank:: 0206_cfu_3_2
+   
+   .. blank:: 0206_cfu_3_2
+      :correct: ^False$
+      :feedback1: ("^false$", "Remember - uppercase F in False!")
+      
+      Evaluate True or False: ``1 > 1.01``
+
+.. fillintheblank:: 0206_cfu_3_3
+
+   .. blank:: 0206_cfu_3_3
+      :correct: ^False$
+      :feedback1: ("^false$", "Remember - uppercase F in False!")
+
+      Evaluate True or False: ``-1 <= -2``
+      
+.. fillintheblank:: 0206_cfu_3_4
+
+   .. blank:: 0206_cfu_3_4
+      :correct: 
+      :feedback1: ("^true$", "Remember - uppercase T in True!")
+      
+      Evaluate True or False: ``3 != "3"``
+      

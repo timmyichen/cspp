@@ -96,6 +96,7 @@ Unit 3 Lessons
     unit3/u0309-infloop.rst
     unit3/u0310-break.rst
     unit3/u0311-forelse.rst
+    unit3/u0312-random.rst
     unit3/u03-labcheck.rst
 
 Unit 4 Lessons
