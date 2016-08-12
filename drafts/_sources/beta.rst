@@ -1,37 +1,9 @@
-.. _t_o_c:
+.. _t_o_c_beta:
 
-Table of Contents
-:::::::::::::::::
+Table of Contents for Testers
+:::::::::::::::::::::::::::::
 
-`Link to curriculum outline with learning objectives <https://docs.google.com/document/d/1qL_saci0pUjPTB1xh9eTE2qLiQE1SPT6XnJ5wGIzdYI/edit?usp=sharing>`_
-
-Labs
-====
-
-.. toctree::
-    :maxdepth: 2
-       
-    lab01-01.rst
-    lab01-02.rst
-    lab02-01.rst
-    lab02-02.rst
-    lab03-01.rst
-    lab03-02-1.rst
-    lab03-02.rst
-    lab04-01.rst
-    lab04-02.rst
-    lab04-03.rst
-    lab04-04.rst
-    lab05-01.rst
-    lab05-02.rst
-    lab06-01.rst
-    lab06-02-1.rst
-    lab06-02.rst
-    lab06-03.rst
-    lab07-01.rst
-    lab07-02.rst
-    lab07-03.rst
-    lab07-04.rst
+Please use `this form <https://goo.gl/forms/zIIv2RZFzgDQUBJf1>`_ to report bugs or provide feedback.
 
 Unit 0 Prep
 ===========
@@ -60,6 +32,16 @@ Unit 1 Lessons
     unit1/u0108-input.rst
     unit1/u01-labcheck.rst
 
+Unit 1 Labs
+===========
+
+.. toctree::
+    :maxdepth: 2
+       
+    lab01-01.rst
+    lab01-02.rst
+    
+Please submit `this survey <https://goo.gl/forms/ix6skYC3XlsEV8l92>`_ at the end of each unit 
 
 Unit 2 Lessons
 ==============
@@ -79,6 +61,18 @@ Unit 2 Lessons
     unit2/u0210-ifordering.rst
     unit2/u0211-divisibility.rst
     unit2/u02-labcheck.rst
+    
+Unit 2 Labs
+===========
+
+.. toctree::
+    :maxdepth: 2
+
+    lab02-01.rst
+    lab02-02.rst
+    
+Please submit `this survey <https://goo.gl/forms/ix6skYC3XlsEV8l92>`_ at the end of each unit 
+       
     
 Unit 3 Lessons
 ==============
@@ -100,8 +94,20 @@ Unit 3 Lessons
     unit3/u0312-random.rst
     unit3/u03-labcheck.rst
 
-Unit 4 Lessons
-==============
+Unit 3 Labs
+===========
+
+.. toctree::
+    :maxdepth: 2
+       
+    lab03-01.rst
+    lab03-02-1.rst
+    lab03-02.rst
+    
+Please submit `this survey <https://goo.gl/forms/ix6skYC3XlsEV8l92>`_ at the end of each unit 
+    
+Unit 4 Lessons (IN PROGRESS)
+============================
 
 .. toctree::
     :maxdepth: 2
@@ -121,3 +127,33 @@ Unit 4 Lessons
     unit4/u0413-mainfunc.rst
     unit4/u0414-inpvalid.rst
     unit4/u04-labcheck.rst
+
+Unit 4 Labs
+===========
+
+.. toctree::
+    :maxdepth: 2
+    
+    lab04-01.rst
+    lab04-02.rst
+    lab04-03.rst
+    lab04-04.rst
+    
+Please submit `this survey <https://goo.gl/forms/ix6skYC3XlsEV8l92>`_ at the end of each unit 
+       
+Unused Labs
+===========
+
+.. toctree::
+    :maxdepth: 2
+
+    lab05-01.rst
+    lab05-02.rst
+    lab06-01.rst
+    lab06-02-1.rst
+    lab06-02.rst
+    lab06-03.rst
+    lab07-01.rst
+    lab07-02.rst
+    lab07-03.rst
+    lab07-04.rst

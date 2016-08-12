@@ -687,22 +687,22 @@ span.caption-text {
     font-weight: bold;
     font-size: large;
 }
-vocab-word{
+.vocab-word{
    font-weight: bold;
    text-decoration: underline;
    backround: #ffff99;
 }
 
-vocab-def{
+.vocab-def{
    font-weight: bold;
    background: #ffff99;
 }
 
-misc-hl{
+.misc-hl{
    background: #c3e6fc;
    font-weight: bold;
 }
 
-uline{
+.uline{
    text-decoration: underline;
 }

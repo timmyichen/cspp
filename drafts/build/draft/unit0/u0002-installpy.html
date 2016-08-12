@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Todo &mdash; Runestone Interactive Overview</title>
+    <title>Lesson 00-02: Installing Python &mdash; Runestone Interactive Overview</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -257,7 +257,11 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Todo</a></li>
+<li><a class="reference internal" href="#">Lesson 00-02: Installing Python</a><ul>
+<li><a class="reference internal" href="#on-your-local-computer">On Your Local Computer</a></li>
+<li><a class="reference internal" href="#using-an-online-ide">Using an Online IDE</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -290,8 +294,34 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="todo">
-<h1>Todo<a class="headerlink" href="#todo" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="lesson-00-02-installing-python">
+<h1>Lesson 00-02: Installing Python<a class="headerlink" href="#lesson-00-02-installing-python" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="on-your-local-computer">
+<h2>On Your Local Computer<a class="headerlink" href="#on-your-local-computer" title="Permalink to this headline">¶</a></h2>
+<p>This book uses Python 3.x syntax.  You can download and install python <a class="reference external" href="https://www.python.org/downloads/">here.</a>.  Please make sure you choose to install python version 3.x.</p>
+<p>If you&#8217;re not sure whether you have python installed or not, you can open up your terminal (mac) or command prompt (windows) and enter the following commands:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>python --version
+python3 --version
+</pre></div>
+</div>
+<p>The first command, <code class="docutils literal"><span class="pre">python</span> <span class="pre">--version</span></code>, will provide the default python version installed, which is typically version 2.x.  The second command, <code class="docutils literal"><span class="pre">python3</span> <span class="pre">--version</span></code>, will provide the version of python3 if it is installed.  If you see something like the following, you will be good to go.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>user:~/workspace/sols (master) $ python --version
+Python 2.7.6
+
+user:~/workspace/sols (master) $ python3 --version
+Python 3.4.3
+</pre></div>
+</div>
+<p>Python comes with IDLE, which is the packaged python IDE.  If you are totally new, you can use this, but be careful of how you space things out.  More on this later.  But important: Make sure you are using IDLE3!  If you use the regular IDLE, it will run with python 2.x, which won&#8217;t work with some of the code that we use.  On a mac, you&#8217;ll know that it&#8217;s IDLE3 when you see the version number:</p>
+<a class="reference internal image-reference" href="../_images/idle3.png"><img alt="screenshot of idle3 version in search" class="align-center" src="../_images/idle3.png" style="width: 400px;" /></a>
+<p>If you are familiar with some simple terminal commands (knowing how to traverse directories), I would recommend using a text editor instead.  <a class="reference external" href="https://www.sublimetext.com/3">Sublime Text</a> and <a class="reference external" href="https://atom.io/">Atom</a> are two robust, popular text editors.  If you are on Windows, <a class="reference external" href="https://notepad-plus-plus.org/">Notepad++</a> is also good.</p>
+<p>If you are looking for a fully-featured python IDE, I recommend <a class="reference external" href="https://www.jetbrains.com/pycharm/download/">Pycharm</a>, but only if you know what you are doing.  If you are new to python and programming, just stick with one of the text editors above.</p>
+</div>
+<div class="section" id="using-an-online-ide">
+<h2>Using an Online IDE<a class="headerlink" href="#using-an-online-ide" title="Permalink to this headline">¶</a></h2>
+<p>If you choose to write your code online, I highly suggest using <a class="reference external" href="https://c9.io/">c9.io</a>.  Not only is it a fully-fledged linux virtual machine, but the interface is great.  This entire book, along with all of the lab solutions, were written on a c9 workspace.  An account is free, but a credit card is required at signup. VISA/Amex gift cards should work to get around it, but if you don&#8217;t feel safe with it, or if you need a way around it, please don&#8217;t hesitate to contact me.</p>
+<p>Please be aware that the examples in this online book (as well as many other online python sites) use <a class="reference external" href="http://www.skulpt.org/">Skulpt</a>, which is a Javascript implementation of Python, and behavior here may not reflect how python is actually run.  For this reason, I highly suggest doing labs in an actual python environment (like c9 or on your local machine).</p>
+</div>
 </div>
 
 

@@ -52,7 +52,7 @@ Our function could have multiple lines of code in it as well:
    
    def say_hi():
        print("Hey bestest buddy")
-       print("You're the best")
+       print("You are the best")
        print("Super best")
 
 But if you try to run this code, you'll notice that nothing happens.
@@ -62,7 +62,7 @@ But if you try to run this code, you'll notice that nothing happens.
 
    def say_hi():
        print("Hey bestest buddy")
-       print("You're the best")
+       print("You are the best")
        print("Super best")
    
    print("Program ended.")
@@ -81,7 +81,7 @@ Observe:
 
    def say_hi():
        print("Hey bestest buddy")
-       print("You're the best")
+       print("You are the best")
        print("Super best")
    
    say_hi()
@@ -94,7 +94,7 @@ This is where the repeatability comes into play.  We can call upon three lines o
 
    def say_hi():
        print("Hey bestest buddy")
-       print("You're the best")
+       print("You are the best")
        print("Super best")
    
    say_hi()
@@ -111,7 +111,7 @@ However, note that :misc-hl:`we cannot call a function before it is defined`.  T
 
    def say_hi():
        print("Hey bestest buddy")
-       print("You're the best")
+       print("You are the best")
        print("Super best")
    
    print("Program ended.")
@@ -124,7 +124,7 @@ Checks For Understanding
 Q#1
 ~~~
 
-On lines 1 and 2, write a function called ``print_hw`` that just prints ``"Hello World!"``.  Running the code below should result in the following output:
+On lines 2 and 3, write a function called ``print_hw`` that just prints ``"Hello World!"``.  Running the code below should result in the following output:
 
 ::
 
@@ -135,6 +135,7 @@ On lines 1 and 2, write a function called ``print_hw`` that just prints ``"Hello
 .. activecode:: 0401_cfu_1
    
    #write here
+   def
    
    
    for x in range(3):
@@ -156,6 +157,6 @@ Starting on line 1, write a function called count_to_5 that will print the numbe
 .. activecode:: 0401_cfu_2
 
    #write here
-   
+   def 
    
    count_to_5()

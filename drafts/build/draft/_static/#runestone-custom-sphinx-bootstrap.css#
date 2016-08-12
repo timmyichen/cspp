@@ -1,5 +1,5 @@
 /* Runestone custom modifications */
-
+[1;2C
 body {
     padding-top: 60px;
     background-color: #eeeeee;
@@ -690,7 +690,7 @@ span.caption-text {
 .vocab-word{
    font-weight: bold;
    text-decoration: underline;
-   background: #ffff99;
+   backround: #ffff99;
 }
 
 .vocab-def{

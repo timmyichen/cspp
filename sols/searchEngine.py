@@ -17,9 +17,7 @@ def create_index(files=txtfiles):
             
             for letter in words[i]:
                 if letter in INCLUDE_CHARACTERS:
-                    new_word += letter
-            
-            new_word = new_word.lower()
+                    new_word += letter.lower()
             
             if new_word in index:
                 if file not in index[new_word]:
@@ -41,8 +39,9 @@ def load_index(name='search_index.json'):
         index = json.load(openfile)
         return "success loading index"
     except ValueError:
-        return "failed loading index"
         index = {}
+        return "failed loading index"
+        
 
 #returns text files in which search term can be found,
 # blank if not found

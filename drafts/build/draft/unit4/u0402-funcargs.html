@@ -261,6 +261,12 @@
 <li><a class="reference internal" href="#accepting-function-arguments">Accepting Function Arguments</a></li>
 <li><a class="reference internal" href="#passing-function-arguments">Passing Function Arguments</a></li>
 <li><a class="reference internal" href="#what-actually-gets-passed">What Actually Gets Passed?</a></li>
+<li><a class="reference internal" href="#checks-for-understanding">Checks For Understanding</a><ul>
+<li><a class="reference internal" href="#q-1">Q#1</a></li>
+<li><a class="reference internal" href="#q-2">Q#2</a></li>
+<li><a class="reference internal" href="#q-3">Q#3</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -300,12 +306,127 @@
 <p><strong>Learning Target: I can pass data to functions using arguments.</strong></p>
 <div class="section" id="accepting-function-arguments">
 <h2>Accepting Function Arguments<a class="headerlink" href="#accepting-function-arguments" title="Permalink to this headline">¶</a></h2>
+<p>Our previous functions weren&#8217;t very useful, and rightly so - all it was doing was repeating code or printing something static (unchanging).  In this lesson, we will learn how to pass data to a function.</p>
+<p><span class="vocab-word">Arguments</span> are <span class="vocab-def">data that is passed to a function</span>.  To allow a function to accept arguments, we have to include it in the function definition (header).  An example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello </span><span class="si">{}</span><span class="s2">!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The arguments in the function arguments are <strong>variable names</strong>.  These variables are declared as part of the function header, and are basically telling the function to expect some data to be sent.  You can have more than one argument too - they would just be separated by variables.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The sum of </span><span class="si">{}</span><span class="s2">, </span><span class="si">{}</span><span class="s2">, and </span><span class="si">{}</span><span class="s2">, is </span><span class="si">{}</span><span class="s2">!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="nb">sum</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The above function takes three pieces of data and saves it in the variables <code class="docutils literal"><span class="pre">a</span></code>, <code class="docutils literal"><span class="pre">b</span></code>, and <code class="docutils literal"><span class="pre">c</span></code> respectively.  So how do we actually send data to a function that&#8217;s ready to accept data?</p>
 </div>
 <div class="section" id="passing-function-arguments">
 <h2>Passing Function Arguments<a class="headerlink" href="#passing-function-arguments" title="Permalink to this headline">¶</a></h2>
+<p>When we call upon a function that has arguments, we have to supply the same number of arguments.  Let&#8217;s take a look at a few examples from above:</p>
+
+<textarea data-component="activecode" id=0402_ex_1 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+def say_hello(name):
+    print("Hello {}!".format(name))
+
+say_hello("Bob")
+
+other_name = "Hannah"
+say_hello(other_name)
+</textarea>
+<p>Notice that I call this function twice - one just by passing a string (&#8220;Bob&#8221;) and another by passing a variable (other_name) that represents a string (&#8220;Hannah&#8221;).  Both ways work, for now.</p>
+
+<textarea data-component="activecode" id=0402_ex_2 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+def add(a,b,c):
+    sum = a + b + c
+    print("The sum of {}, {}, and {}, is {}!".format(a,b,c,sum))
+
+add(1,2,3)
+
+x = 1
+y = 2
+z = 3
+add(x,y,z)
+add(z,y,x)
+</textarea>
+<p>Note that the ordering of the arguments matter.  When I run <code class="docutils literal"><span class="pre">add(x,y,z)</span></code> it prints out the numbers in the order of <code class="docutils literal"><span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">and</span> <span class="pre">3</span></code>.  However, when I run <code class="docutils literal"><span class="pre">add(z,y,x)</span></code>, it prints out the numbers in the order of <code class="docutils literal"><span class="pre">3,</span> <span class="pre">2,</span> <span class="pre">and</span> <span class="pre">1</span></code>.</p>
 </div>
 <div class="section" id="what-actually-gets-passed">
 <h2>What Actually Gets Passed?<a class="headerlink" href="#what-actually-gets-passed" title="Permalink to this headline">¶</a></h2>
+<p>Although it might seem like we are passing variables, it&#8217;s very important to remember that we are just passing the value within a variable.  The variable itself will not be changed.  Let&#8217;s look at this example:</p>
+
+<textarea data-component="activecode" id=0402_ex_3 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+def add_one(a):
+    print("in function: a is {}".format(a))
+    a = a + 1
+    print("in function: a is now {}".format(a))
+
+x = 20
+print("before function: x is {}".format(x))
+add_one(x)
+print("after function: x is now {}".format(x))
+</textarea>
+<p>In this code, we are sending (the value of) <code class="docutils literal"><span class="pre">x</span></code> to the function <code class="docutils literal"><span class="pre">add_one</span></code>, which stores it in a variable <code class="docutils literal"><span class="pre">a</span></code> and increases is by one.  We can see that <code class="docutils literal"><span class="pre">a</span></code> was increased by 1 because of the output.  However, the value of <code class="docutils literal"><span class="pre">x</span></code> is not changed.</p>
+</div>
+<div class="section" id="checks-for-understanding">
+<h2>Checks For Understanding<a class="headerlink" href="#checks-for-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="q-1">
+<h3>Q#1<a class="headerlink" href="#q-1" title="Permalink to this headline">¶</a></h3>
+<p>In the space below, write a function called <code class="docutils literal"><span class="pre">times_10</span></code> that takes in a single number argument and prints the value of the number times ten (you can assume that the data passed to the function will be a number).  Do not change any of the function calls.  If done correctly, you should see the following as output:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>30
+500
+15.0
+</pre></div>
+</div>
+
+<textarea data-component="activecode" id=0402_cfu_1 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+#write function below
+
+
+#dont change tests below
+times_10(3)
+times_10(50)
+times_10(1.5)
+</textarea>
+</div>
+<div class="section" id="q-2">
+<h3>Q#2<a class="headerlink" href="#q-2" title="Permalink to this headline">¶</a></h3>
+<p>In the space below, write a function called <code class="docutils literal"><span class="pre">compare</span></code> that takes two number arguments and prints the value of the higher one.  You can assume that the data passed to the function will be numbers.  Do not change any of the function calls.  If done correctly, you should see the following as output:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>5
+100
+10.001
+</pre></div>
+</div>
+
+<textarea data-component="activecode" id=0402_cfu_2 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+#write function below
+
+
+#dont change tests below
+compare(5,2)
+compare(100,100)
+compare(10.10.001)
+</textarea>
+</div>
+<div class="section" id="q-3">
+<h3>Q#3<a class="headerlink" href="#q-3" title="Permalink to this headline">¶</a></h3>
+<p>In the space below, write a function called <code class="docutils literal"><span class="pre">compare3</span></code> that takes three number arguments and prints out the highest one.  You can assume that the data passed to the function will be numbers.  Do not change any of the function calls.  If done correctly, you should see the following as output:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>3
+10
+-6
+</pre></div>
+</div>
+<p>As a hint, given <code class="docutils literal"><span class="pre">a</span></code>, <code class="docutils literal"><span class="pre">b</span></code>, and <code class="docutils literal"><span class="pre">c</span></code>, you would know that <code class="docutils literal"><span class="pre">a</span></code> is the highest number if <code class="docutils literal"><span class="pre">a</span></code> is greater than both <code class="docutils literal"><span class="pre">b</span></code> and <code class="docutils literal"><span class="pre">c</span></code>.</p>
+
+<textarea data-component="activecode" id=0402_cfu_3 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+#write function below
+
+
+#dont change tests below
+compare3(1,2,3)
+compare3(7,3,10)
+compare3(-6,-22,-6)
+</textarea>
+</div>
 </div>
 </div>
 

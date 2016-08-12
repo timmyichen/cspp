@@ -261,7 +261,11 @@
 <li><a class="reference internal" href="#what-are-functions">What are Functions?</a></li>
 <li><a class="reference internal" href="#creating-a-function">Creating a Function</a></li>
 <li><a class="reference internal" href="#using-a-function">Using a Function</a></li>
-<li><a class="reference internal" href="#checks-for-understanding">Checks For Understanding</a></li>
+<li><a class="reference internal" href="#checks-for-understanding">Checks For Understanding</a><ul>
+<li><a class="reference internal" href="#q-1">Q#1</a></li>
+<li><a class="reference internal" href="#q-2">Q#2</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -303,16 +307,128 @@
 <p>Two of the core pillars of computational thinking are the concepts of <span class="vocab-word">decomposition</span> and <span class="vocab-word">abstraction</span>.  Through functions, you will learn to implement both in your work.</p>
 <div class="section" id="what-are-functions">
 <h2>What are Functions?<a class="headerlink" href="#what-are-functions" title="Permalink to this headline">¶</a></h2>
-<p>Functions are a way of setting aside code that you can use repeatedly.</p>
+<p>Functions are a way of setting aside code that you can use repeatedly.  They exist in almost every programming language, and are a huge part of learning how to program.  While there are many things you can do with functions, this lesson will only cover the basics: how to create a function and how to use (call) a function.</p>
 </div>
 <div class="section" id="creating-a-function">
 <h2>Creating a Function<a class="headerlink" href="#creating-a-function" title="Permalink to this headline">¶</a></h2>
+<p>To create a function, you would have to first write a function header.  A function header looks like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="c1">#code in function</span>
+</pre></div>
+</div>
+<p>Let&#8217;s break it down:</p>
+<a class="reference internal image-reference" href="../_images/funcheader.svg"><div align="center" class="align-center"><img alt="parts of a function header" src="../_images/funcheader.svg" width="500px" /></div>
+</a>
+<ol class="arabic simple">
+<li>The <code class="docutils literal"><span class="pre">def</span></code> keyword just indicates that we are starting to write a function header</li>
+<li>The name of the function goes here. You can name a function in the same ways you can name a variable.</li>
+<li>Arguments go here. This is covered in the next lesson, so here you would usually leave it as blank parentheses <code class="docutils literal"><span class="pre">()</span></code></li>
+<li>Colon is required! Don&#8217;t forget!</li>
+<li>The code underneath that is tabbed is the code inside the function.</li>
+</ol>
+<p>Here&#8217;s an example of a function that will print &#8220;Hey bestest buddy&#8221; every time it is run.  We&#8217;ll call it <code class="docutils literal"><span class="pre">say_hi</span></code>.  The function definition might look something like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say_hi</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hey bestest buddy&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Our function could have multiple lines of code in it as well:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say_hi</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hey bestest buddy&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are the best&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Super best&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>But if you try to run this code, you&#8217;ll notice that nothing happens.</p>
+
+<textarea data-component="activecode" id=0401_ex_1 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+def say_hi():
+    print("Hey bestest buddy")
+    print("You are the best")
+    print("Super best")
+
+print("Program ended.")
+</textarea>
 </div>
 <div class="section" id="using-a-function">
 <h2>Using a Function<a class="headerlink" href="#using-a-function" title="Permalink to this headline">¶</a></h2>
+<p>When you define a function, you are creating a block of code that can be used later on.  Just defining a function will NOT use that function!  To use a function, we have to <span class="vocab-word">call</span> it - using a <span class="vocab-word">function call</span>.</p>
+<p>A function call is performed by using the function&#8217;s name, followed by parentheses.  In our above example, to call the function, we would use the command <code class="docutils literal"><span class="pre">say_hi()</span></code>.</p>
+<p>Observe:</p>
+
+<textarea data-component="activecode" id=0401_ex_2 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+def say_hi():
+    print("Hey bestest buddy")
+    print("You are the best")
+    print("Super best")
+
+say_hi()
+print("Program ended.")
+</textarea>
+<p>This is where the repeatability comes into play.  We can call upon three lines of code just by using one!  What if we wanted to call it a bunch of times?</p>
+
+<textarea data-component="activecode" id=0401_ex_3 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+def say_hi():
+    print("Hey bestest buddy")
+    print("You are the best")
+    print("Super best")
+
+say_hi()
+say_hi()
+say_hi()
+say_hi()
+print("Program ended.")
+</textarea>
+<p>However, note that <span class="misc-hl">we cannot call a function before it is defined</span>.  Try running the following; you will get an error.</p>
+
+<textarea data-component="activecode" id=0401_ex_4 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+say_hi()
+
+def say_hi():
+    print("Hey bestest buddy")
+    print("You are the best")
+    print("Super best")
+
+print("Program ended.")
+</textarea>
 </div>
 <div class="section" id="checks-for-understanding">
 <h2>Checks For Understanding<a class="headerlink" href="#checks-for-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="q-1">
+<h3>Q#1<a class="headerlink" href="#q-1" title="Permalink to this headline">¶</a></h3>
+<p>On lines 2 and 3, write a function called <code class="docutils literal"><span class="pre">print_hw</span></code> that just prints <code class="docutils literal"><span class="pre">&quot;Hello</span> <span class="pre">World!&quot;</span></code>.  Running the code below should result in the following output:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>Hello World!
+Hello World!
+Hello World!
+</pre></div>
+</div>
+
+<textarea data-component="activecode" id=0401_cfu_1 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+#write here
+def
+
+
+for x in range(3):
+    print_hw()
+</textarea>
+</div>
+<div class="section" id="q-2">
+<h3>Q#2<a class="headerlink" href="#q-2" title="Permalink to this headline">¶</a></h3>
+<p>Starting on line 1, write a function called count_to_5 that will print the numbers 1 up to 5, one on each line, using a for loop.  Running the code below should result in the following output:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">1</span>
+<span class="mi">2</span>
+<span class="mi">3</span>
+<span class="mi">4</span>
+<span class="mi">5</span>
+</pre></div>
+</div>
+
+<textarea data-component="activecode" id=0401_cfu_2 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+#write here
+def
+
+count_to_5()
+</textarea>
+</div>
 </div>
 </div>
 
