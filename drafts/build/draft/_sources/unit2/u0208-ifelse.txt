@@ -61,3 +61,37 @@ Try running it, and try putting in different inputs!  You might try typing "Yes"
 Checks For Understanding
 ------------------------
 
+Q#1
+~~~
+
+.. parsonsprob:: 0208_cfu_1
+   
+   Rearrange the blocks of code to create an error-free if statement.  The output should also make logical sense.
+   -----
+   num = 0
+   if num > 0:
+       print("Positive!")
+   else:
+       print("Not positive!")
+
+Q#2
+~~~
+
+::
+
+   if word[0] == "a" :
+       print("wow!")
+   else:
+       print("meh.")
+   
+.. mchoice:: 0208_cfu_2
+   :multiple_answers:
+   :correct: a,d
+   :answer_a: "aardvark"
+   :answer_b: "crazy"
+   :answer_c: "Netflix"
+   :answer_d: "armOR"
+   :answer_e: "Art"
+   :feedback_e: Keep in mind the case!
+   
+   In the if statement above, for which values of word will "wow!" be printed? Check all that apply.

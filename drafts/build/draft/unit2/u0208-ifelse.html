@@ -10,21 +10,21 @@
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
@@ -43,16 +43,8 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/clickable.js"></script>
-    <script type="text/javascript" src="../_static/timedclickable.js"></script>
-    <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/shortanswer.js"></script>
-    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
-    <script type="text/javascript" src="../_static/mchoice.js"></script>
-    <script type="text/javascript" src="../_static/timedmc.js"></script>
-    <script type="text/javascript" src="../_static/fitb.js"></script>
-    <script type="text/javascript" src="../_static/timedfitb.js"></script>
-    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
     <script type="text/javascript" src="../_static/bookfuncs.js"></script>
@@ -67,12 +59,9 @@
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/timed_activecode.js"></script>
-    <script type="text/javascript" src="../_static/poll.js"></script>
-    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
-    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
-    <script type="text/javascript" src="../_static/parsons.js"></script>
-    <script type="text/javascript" src="../_static/timedparsons.js"></script>
     <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
@@ -80,11 +69,22 @@
     <script type="text/javascript" src="../_static/codelens.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
-    <script type="text/javascript" src="../_static/dragndrop.js"></script>
-    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
     <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -100,6 +100,8 @@
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
     <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
+    <link rel="next" title="Lesson 02-09: If/Elif/Else Statements" href="u0209-ifelifelse.html" />
+    <link rel="prev" title="Lesson 02-07: If Statements" href="u0207-ifstatement.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -260,7 +262,11 @@
 <li><a class="reference internal" href="#">Lesson 02-08: If/Else Statements</a><ul>
 <li><a class="reference internal" href="#the-else-keyword">The <code class="docutils literal"><span class="pre">else</span></code> Keyword</a></li>
 <li><a class="reference internal" href="#an-example-in-code">An Example in Code</a></li>
-<li><a class="reference internal" href="#checks-for-understanding">Checks For Understanding</a></li>
+<li><a class="reference internal" href="#checks-for-understanding">Checks For Understanding</a><ul>
+<li><a class="reference internal" href="#q-1">Q#1</a></li>
+<li><a class="reference internal" href="#q-2">Q#2</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -270,6 +276,18 @@
         
         
           
+  <li id="relations-prev" title="Previous Chapter - Lesson 02-07: If Statements" data-toggle="tooltip">
+    <a href="u0207-ifstatement.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Lesson 02-09: If/Elif/Else Statements' data-toggle="tooltip" >
+    <a href="u0209-ifelifelse.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -337,12 +355,59 @@ else:
 </div>
 <div class="section" id="checks-for-understanding">
 <h2>Checks For Understanding<a class="headerlink" href="#checks-for-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="q-1">
+<h3>Q#1<a class="headerlink" href="#q-1" title="Permalink to this headline">¶</a></h3>
+
+    <pre data-component="parsons" id="0208_cfu_1">
+        <span data-question>ch0208-1: Rearrange the blocks of code to create an error-free if statement.  The output should also make logical sense.</span>num = 0
+if num > 0:
+    print("Positive!")
+else:
+    print("Not positive!")</pre>
+    </div>
+<div class="section" id="q-2">
+<h3>Q#2<a class="headerlink" href="#q-2" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;a&quot;</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;wow!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;meh.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+
+            <ul data-component="multiplechoice" data-multipleanswers="true"  id="0208_cfu_2">
+            ch0208-2: In the if statement above, for which values of word will &#8220;wow!&#8221; be printed? Check all that apply.
+            <li data-component="answer" data-correct id="0208_cfu_2_opt_a">(A) "aardvark"</li><li data-component="feedback" id="0208_cfu_2_opt_a"></li>
+            
+            <li data-component="answer"  id="0208_cfu_2_opt_b">(B) "crazy"</li><li data-component="feedback" id="0208_cfu_2_opt_b"></li>
+            
+            <li data-component="answer"  id="0208_cfu_2_opt_c">(C) "Netflix"</li><li data-component="feedback" id="0208_cfu_2_opt_c"></li>
+            
+            <li data-component="answer" data-correct id="0208_cfu_2_opt_d">(D) "armOR"</li><li data-component="feedback" id="0208_cfu_2_opt_d"></li>
+            
+            <li data-component="answer"  id="0208_cfu_2_opt_e">(E) "Art"</li><li data-component="feedback" id="0208_cfu_2_opt_e">Keep in mind the case!</li>
+            
+
+            </ul>
+            </div>
 </div>
 </div>
 
 
   
       
+  <li id="relations-prev" class="navLink" title='Previous Section - Lesson 02-07: If Statements' data-toggle="tooltip">
+    <a href="u0207-ifstatement.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="u0207-ifstatement.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - Lesson 02-09: If/Elif/Else Statements' data-toggle="tooltip" >
+    <a href="u0209-ifelifelse.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="u0209-ifelifelse.html" >Next Section - Lesson 02-09: If/Elif/Else Statements</a>
 
 <script type="text/javascript">
 

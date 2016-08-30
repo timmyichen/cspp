@@ -111,6 +111,9 @@ The blue/red/pink ``if`` statements have no affect on each other.  They are chec
 Checks for Understanding
 ------------------------
 
+Q#1
+~~~
+
 .. parsonsprob:: cfu_if_1
    
    Rearrange the blocks of code to create an error-free if statement.
@@ -118,6 +121,9 @@ Checks for Understanding
    name = "Bob"
    if len(name) > 5:
        print("What a long name!")
+
+Q#2
+~~~
 
 ::
 
@@ -136,6 +142,9 @@ Checks for Understanding
    
    In the if statement above, for which values of x will x be printed? Check all that apply.
 
+Q#3
+~~~
+
 .. mchoice:: cfu_if_3
    :correct: b
    :answer_a: x is less than 5 and greater than 10 and not equal to 9
@@ -143,6 +152,9 @@ Checks for Understanding
    :answer_c: x is greater than 5 and less than or equal to 10 and not equal to 9
    
    In the if statement above, which of the following accurately describes the boolean expression?
+
+Q#4
+~~~
 
 Write an ``if`` statement on line 2 to check if the variable ``pwrd`` is equal to ``pass1234``.  Do not change lines 1 or 3.  If done correctly, the output should say ``Access Granted``.  If not done correctly, it will say ``Access Denied``.
 

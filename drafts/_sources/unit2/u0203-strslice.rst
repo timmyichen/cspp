@@ -80,7 +80,7 @@ Similar to how python has negative indexes, it also has some tricks for quick sl
    +----------------+-----------------------------------------+
    | ``[x:]``       | Everything except the first x letters   |
    +----------------+-----------------------------------------+
-   | ``[-x:]``      | The last 3 letters                      |
+   | ``[-x:]``      | The last x letters                      |
    +----------------+-----------------------------------------+
 
 Check For Understanding

@@ -10,21 +10,21 @@
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="_static/clickable.css" type="text/css" />
-    <link rel="stylesheet" href="_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="_static/activecode.css" type="text/css" />
     <link rel="stylesheet" href="_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="_static/parsons.css" type="text/css" />
-    <link rel="stylesheet" href="_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="_static/modal-basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="_static/livecode.css" type="text/css" />
-    <link rel="stylesheet" href="_static/video.css" type="text/css" />
-    <link rel="stylesheet" href="_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
@@ -43,16 +43,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/clickable.js"></script>
-    <script type="text/javascript" src="_static/timedclickable.js"></script>
-    <script type="text/javascript" src="_static/animationbase.js"></script>
-    <script type="text/javascript" src="_static/shortanswer.js"></script>
-    <script type="text/javascript" src="_static/timed_shortanswer.js"></script>
-    <script type="text/javascript" src="_static/mchoice.js"></script>
-    <script type="text/javascript" src="_static/timedmc.js"></script>
-    <script type="text/javascript" src="_static/fitb.js"></script>
-    <script type="text/javascript" src="_static/timedfitb.js"></script>
-    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/dragndrop.js"></script>
+    <script type="text/javascript" src="_static/timeddnd.js"></script>
     <script type="text/javascript" src="_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="_static/jquery.highlight.js"></script>
     <script type="text/javascript" src="_static/bookfuncs.js"></script>
@@ -67,12 +59,9 @@
     <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
     <script type="text/javascript" src="_static/clike.js"></script>
     <script type="text/javascript" src="_static/timed_activecode.js"></script>
-    <script type="text/javascript" src="_static/poll.js"></script>
-    <script type="text/javascript" src="_static/lib/prettify.js"></script>
-    <script type="text/javascript" src="_static/lib/hammer.min.js"></script>
-    <script type="text/javascript" src="_static/parsons.js"></script>
-    <script type="text/javascript" src="_static/timedparsons.js"></script>
     <script type="text/javascript" src="_static/reveal.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
     <script type="text/javascript" src="_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
@@ -80,11 +69,22 @@
     <script type="text/javascript" src="_static/codelens.js"></script>
     <script type="text/javascript" src="_static/livecode.js"></script>
     <script type="text/javascript" src="_static/clike.js"></script>
-    <script type="text/javascript" src="_static/dragndrop.js"></script>
-    <script type="text/javascript" src="_static/timeddnd.js"></script>
+    <script type="text/javascript" src="_static/clickable.js"></script>
+    <script type="text/javascript" src="_static/timedclickable.js"></script>
     <script type="text/javascript" src="_static/skulpt.min.js"></script>
     <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
     <script type="text/javascript" src="_static/datafile.js"></script>
+    <script type="text/javascript" src="_static/mchoice.js"></script>
+    <script type="text/javascript" src="_static/timedmc.js"></script>
+    <script type="text/javascript" src="_static/fitb.js"></script>
+    <script type="text/javascript" src="_static/timedfitb.js"></script>
+    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/timedparsons.js"></script>
+    <script type="text/javascript" src="_static/shortanswer.js"></script>
+    <script type="text/javascript" src="_static/timed_shortanswer.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="_static/jquery-fix.js"></script>
@@ -409,7 +409,7 @@
 </li>
 </ul>
 </div>
-<p>Please submit <a class="reference external" href="https://goo.gl/forms/ix6skYC3XlsEV8l92">this survey</a> at the end of each unit</p>
+<p>Please submit <a class="reference external" href="https://goo.gl/forms/ix6skYC3XlsEV8l92">this survey</a> at the end of each unit.</p>
 </div>
 <div class="section" id="unit-2-lessons">
 <h2>Unit 2 Lessons<a class="headerlink" href="#unit-2-lessons" title="Permalink to this headline">¶</a></h2>
@@ -507,7 +507,7 @@
 </li>
 </ul>
 </div>
-<p>Please submit <a class="reference external" href="https://goo.gl/forms/ix6skYC3XlsEV8l92">this survey</a> at the end of each unit</p>
+<p>Please submit <a class="reference external" href="https://goo.gl/forms/ix6skYC3XlsEV8l92">this survey</a> at the end of each unit.</p>
 </div>
 <div class="section" id="unit-3-lessons">
 <h2>Unit 3 Lessons<a class="headerlink" href="#unit-3-lessons" title="Permalink to this headline">¶</a></h2>
@@ -611,7 +611,7 @@
 </li>
 </ul>
 </div>
-<p>Please submit <a class="reference external" href="https://goo.gl/forms/ix6skYC3XlsEV8l92">this survey</a> at the end of each unit</p>
+<p>Please submit <a class="reference external" href="https://goo.gl/forms/ix6skYC3XlsEV8l92">this survey</a> at the end of each unit.</p>
 </div>
 <div class="section" id="unit-4-lessons-in-progress">
 <h2>Unit 4 Lessons (IN PROGRESS)<a class="headerlink" href="#unit-4-lessons-in-progress" title="Permalink to this headline">¶</a></h2>
@@ -732,7 +732,7 @@
 </li>
 </ul>
 </div>
-<p>Please submit <a class="reference external" href="https://goo.gl/forms/ix6skYC3XlsEV8l92">this survey</a> at the end of each unit</p>
+<p>Please submit <a class="reference external" href="https://goo.gl/forms/ix6skYC3XlsEV8l92">this survey</a> at the end of each unit.</p>
 </div>
 <div class="section" id="unused-labs">
 <h2>Unused Labs<a class="headerlink" href="#unused-labs" title="Permalink to this headline">¶</a></h2>

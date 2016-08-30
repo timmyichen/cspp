@@ -68,14 +68,14 @@ On c9, you create a new file by clicking on the ``+`` icon, or by going to ``Fil
 Save your file as ``helloworld.py``.  To run the file, click on ``Run`` > ``Run With`` > ``Python 3``.  If you just hit ``> Run`` at the top, it will default to python2.  You want python3.
 
 .. image:: img/c9run.png
-   :width: 400px
+   :width: 500px
    :alt: screenshot of helloworld.py output
    :align: center
 
 Your output should look like this:
 
 .. image:: img/c9output.png
-   :width: 400px
+   :width: 600px
    :alt: screenshot of helloworld.py output
    :align: center
 

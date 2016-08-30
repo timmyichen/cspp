@@ -89,4 +89,14 @@ Also note that an ``elif`` cannot come after an ``else``, because ``else`` is us
 Checks For Understanding
 ------------------------
 
-TODO
+Q#1
+~~~
+
+In the space below, write an ``if``/``elif``/``else`` statement that will check if a letter is a vowel or not.  If ``letter`` is a vowel, print "Vowel!", and if not, print "Not a vowel!" Note that there are other, simpler ways to do this.  As a reminder, ``a``, ``e``, ``i``, ``o``, and ``u`` are vowels.
+
+.. activecode:: 0209_cfu_1
+   :nocodelens:
+   
+   vowel = 'a'
+   
+   #Write your solution here!

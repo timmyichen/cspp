@@ -41,4 +41,14 @@ Here we can see clearly that :misc-hl:`the ordering within if statements matter!
 Checks For Understanding
 ------------------------
 
-TODO
+Q#1
+~~~
+
+.. parsonsprob:: 0210_cfu_2
+   
+   Rearrange the following conditions to ensure that every if statement is accessible.
+   -----
+   if x > 100: print("hundreds")
+   elif x > 50: print("fiftys")
+   elif x > 10: print("tens")
+   elif x > 1: print("ones")

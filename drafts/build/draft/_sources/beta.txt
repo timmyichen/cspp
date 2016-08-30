@@ -41,7 +41,7 @@ Unit 1 Labs
     lab01-01.rst
     lab01-02.rst
     
-Please submit `this survey <https://goo.gl/forms/ix6skYC3XlsEV8l92>`_ at the end of each unit 
+Please submit `this survey <https://goo.gl/forms/ix6skYC3XlsEV8l92>`_ at the end of each unit.
 
 Unit 2 Lessons
 ==============
@@ -71,7 +71,7 @@ Unit 2 Labs
     lab02-01.rst
     lab02-02.rst
     
-Please submit `this survey <https://goo.gl/forms/ix6skYC3XlsEV8l92>`_ at the end of each unit 
+Please submit `this survey <https://goo.gl/forms/ix6skYC3XlsEV8l92>`_ at the end of each unit.
        
     
 Unit 3 Lessons
@@ -104,7 +104,7 @@ Unit 3 Labs
     lab03-02-1.rst
     lab03-02.rst
     
-Please submit `this survey <https://goo.gl/forms/ix6skYC3XlsEV8l92>`_ at the end of each unit 
+Please submit `this survey <https://goo.gl/forms/ix6skYC3XlsEV8l92>`_ at the end of each unit.
     
 Unit 4 Lessons (IN PROGRESS)
 ============================
@@ -139,7 +139,7 @@ Unit 4 Labs
     lab04-03.rst
     lab04-04.rst
     
-Please submit `this survey <https://goo.gl/forms/ix6skYC3XlsEV8l92>`_ at the end of each unit 
+Please submit `this survey <https://goo.gl/forms/ix6skYC3XlsEV8l92>`_ at the end of each unit.
        
 Unused Labs
 ===========
