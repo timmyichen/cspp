@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lesson 04-04: Variable Scope &mdash; Runestone Interactive Overview</title>
+    <title>Lesson 04-04: Variable Scope &mdash; CSP Python</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -99,7 +99,9 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
-    <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
+    <link rel="top" title="CSP Python" href="../index.html" />
+    <link rel="next" title="Lesson 04-05: Functions are Values" href="u0405-funcval.html" />
+    <link rel="prev" title="Lesson 04-03: The return Statement" href="u0403-return.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -150,7 +152,7 @@
 
       <div>
         <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
-        <a class="navbar-brand" href="../index.html">Runestone Default</a>
+        <a class="navbar-brand" href="../index.html">CSP Python</a>
       </div>
     </div>
 
@@ -260,7 +262,7 @@
 <li><a class="reference internal" href="#">Lesson 04-04: Variable Scope</a><ul>
 <li><a class="reference internal" href="#local-variables">Local Variables</a></li>
 <li><a class="reference internal" href="#global-variables">Global Variables</a></li>
-<li><a class="reference internal" href="#checks-for-understanding">Checks For Understanding</a></li>
+<li><a class="reference internal" href="#best-practices-with-global">Best Practices with <code class="docutils literal"><span class="pre">global</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -270,6 +272,18 @@
         
         
           
+  <li id="relations-prev" title="Previous Chapter - Lesson 04-03: The <code class="docutils literal"><span class="pre">return</span></code> Statement" data-toggle="tooltip">
+    <a href="u0403-return.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Lesson 04-05: Functions are Values' data-toggle="tooltip" >
+    <a href="u0405-funcval.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -295,24 +309,137 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="lesson-04-04-variable-scope">
+  <script type=text/javascript>
+localStorage.clear()
+</script><div class="section" id="lesson-04-04-variable-scope">
 <h1>Lesson 04-04: Variable Scope<a class="headerlink" href="#lesson-04-04-variable-scope" title="Permalink to this headline">¶</a></h1>
 <p><strong>Learning Target: I can understand the scope of a variable.</strong>
 <strong>Learning Target: I can reference global variables within functions.</strong></p>
+<p>Whenever we create a variable in python, it&#8217;s important to <span class="vocab-def">know where it (the variable) can be accessed from</span> - this is called the <span class="vocab-word">variable scope</span>.  At a basic level, there are two different types of variable scope that we&#8217;ll be working with: <strong>local</strong> and <strong>global</strong>.</p>
 <div class="section" id="local-variables">
 <h2>Local Variables<a class="headerlink" href="#local-variables" title="Permalink to this headline">¶</a></h2>
+<p>When a variable is <span class="vocab-word">local</span>, it means that <span class="vocab-def">it can only be accessed from the function that it&#8217;s in</span>.</p>
+<p>The rule for local variables are: <span class="misc-hl">variables within a function can only be accessed from within that function.</span>  Check out the following example:</p>
+
+<textarea data-component="activecode" id=0404_ex_1 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+def blah():
+    num = 20
+
+blah()
+print(num)
+</textarea>
+<p>You get an error telling you that the variable <code class="docutils literal"><span class="pre">num</span></code> isn&#8217;t defined!  However, if we consider what appears to be happening in this script, we&#8217;re defining a function that sets <code class="docutils literal"><span class="pre">num</span></code> to 20.  Then we call that function, creating a variable called <code class="docutils literal"><span class="pre">num</span></code> and setting it to 20.  Our function then ends, returning nothing, and we print out the value of <code class="docutils literal"><span class="pre">num</span></code>.</p>
+<p>But since <code class="docutils literal"><span class="pre">num</span></code> only exists within the function <code class="docutils literal"><span class="pre">blah</span></code>, we can&#8217;t access it from outside of <code class="docutils literal"><span class="pre">blah</span></code>!</p>
+<p>Here&#8217;s another example:</p>
+
+<textarea data-component="activecode" id=0404_ex_2 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+def blah():
+    num = 20
+
+num = 10
+blah()
+print(num)
+</textarea>
+<p>Here, we don&#8217;t come across any error, but it&#8217;s clear that the output is not what we might expect.  After defining the same function as above, the code appears to be creating a variable <code class="docutils literal"><span class="pre">num</span></code>, calling <code class="docutils literal"><span class="pre">blah()</span></code> (which should set <code class="docutils literal"><span class="pre">num</span></code> to 20), and then printing <code class="docutils literal"><span class="pre">num</span></code> - but we see that 10 gets printed!</p>
+<p>This is because the <code class="docutils literal"><span class="pre">num</span></code> that exists in the function <code class="docutils literal"><span class="pre">blah</span></code> is not the same as the <code class="docutils literal"><span class="pre">num</span></code> that exists in the main part of the program.  We can observe this by looking at the codelens of the program.</p>
+<img alt="image showing the scope of each variable" class="align-center" src="../_images/scope-CL-ex.PNG" />
+<p>You&#8217;ll notice that both the <strong>Global Frame</strong> and <code class="docutils literal"><span class="pre">blah</span></code> have separate values for <code class="docutils literal"><span class="pre">num</span></code>.  The <code class="docutils literal"><span class="pre">num</span></code> that gets set to 20 only exists in <code class="docutils literal"><span class="pre">blah</span></code>, and doesn&#8217;t have any affect on the <code class="docutils literal"><span class="pre">num</span></code> in the Global Frame.</p>
+<p>Arguments in a function are always local.  So in the following example:</p>
+<div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add3</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">add3</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+<p>The variables <code class="docutils literal"><span class="pre">a</span></code>, <code class="docutils literal"><span class="pre">b</span></code>, and <code class="docutils literal"><span class="pre">c</span></code> are local only to the <code class="docutils literal"><span class="pre">add3</span></code> function.</p>
 </div>
 <div class="section" id="global-variables">
 <h2>Global Variables<a class="headerlink" href="#global-variables" title="Permalink to this headline">¶</a></h2>
+<p>So what is a global variable?  In python, a <span class="vocab-word">global variable</span> is <span class="vocab-def">a variable that is defined outside of any function</span>.</p>
+<div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function1</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="k">def</span> <span class="nf">function2</span><span class="p">():</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">20</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="n">number</span> <span class="o">=</span> <span class="mi">256</span>
+<span class="n">number2</span> <span class="o">=</span> <span class="mi">512</span>
+</pre></div>
+</td></tr></table></div>
+<p>In the above example, <code class="docutils literal"><span class="pre">number</span></code> and <code class="docutils literal"><span class="pre">number2</span></code> are global variables.  Our next question is, how do we access a global variable from within the function?</p>
+<p>We use the <code class="docutils literal"><span class="pre">global</span></code> keyword.  Used only in functions, <code class="docutils literal"><span class="pre">global</span></code> tells the program to interpret a variable as a global variable, rather than a local one.  Here&#8217;s an example from earlier in the lesson:</p>
+
+<textarea data-component="activecode" id=0404_ex_3 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+def blah():
+    global num
+    num = 20
+
+num = 10
+blah()
+print(num)
+</textarea>
+<p>The code prints <code class="docutils literal"><span class="pre">20</span></code>, as we originally expected.  Since we have line 2, <code class="docutils literal"><span class="pre">global</span> <span class="pre">num</span></code>, it indicates that the variable <code class="docutils literal"><span class="pre">num</span></code> points to a global variable, not a local one limited to the <code class="docutils literal"><span class="pre">blah</span></code> function.  This also works when declaring a global variable for the first time:</p>
+
+<textarea data-component="activecode" id=0404_ex_4 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+def blah():
+    global x
+    x = 10
+
+blah()
+print(x)
+</textarea>
+<p>Here, <code class="docutils literal"><span class="pre">x</span></code> isn&#8217;t defined when we call <code class="docutils literal"><span class="pre">blah()</span></code>, but by writing <code class="docutils literal"><span class="pre">global</span> <span class="pre">x</span></code> in the function and giving it a value, it can now be accessed from outside the funciton, even though the variable was defined inside the function.</p>
 </div>
-<div class="section" id="checks-for-understanding">
-<h2>Checks For Understanding<a class="headerlink" href="#checks-for-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="best-practices-with-global">
+<h2>Best Practices with <code class="docutils literal"><span class="pre">global</span></code><a class="headerlink" href="#best-practices-with-global" title="Permalink to this headline">¶</a></h2>
+<p>Despite learning about them, <span class="misc-hl">global variables should rarely be used</span>.  This is for a few reasons (plus more, unlisted!):</p>
+<blockquote>
+<div><ul class="simple">
+<li>Functions allow you to compartmentalize your program, breaking it up into individual pieces.  By introducing global variables, the functions are harder to debug.</li>
+<li>Related to the first point, it will also make your functions less predictable.</li>
+<li>As your program increases with size, it will become more and more confusing what variables have been declared / are accessible</li>
+</ul>
+</div></blockquote>
+<p>In other programming languages, you can write <em>constant variables</em>, which are variables that cannot be changed after being initialized, but that is not possible (without importing modules) in python.  For the scope of this class, you will not need to use global variables, and you are expected to not use them.  The purpose of this lesson was to demonstrate where variables can or cannot be accessed from within functions.</p>
 </div>
 </div>
 
 
   
       
+  <li id="relations-prev" class="navLink" title='Previous Section - Lesson 04-03: The <code class="docutils literal"><span class="pre">return</span></code> Statement' data-toggle="tooltip">
+    <a href="u0403-return.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="u0403-return.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - Lesson 04-05: Functions are Values' data-toggle="tooltip" >
+    <a href="u0405-funcval.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="u0405-funcval.html" >Next Section - Lesson 04-05: Functions are Values</a>
 
 <script type="text/javascript">
 
@@ -330,7 +457,7 @@
       
     </p>
     <p>
-        &copy; Copyright 2015 ubuntu.
+        &copy; Copyright 2016 Timothy Chen.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
     </p>
   </div>

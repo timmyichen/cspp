@@ -44,8 +44,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Runestone Interactive Overview'
-copyright = '2015 ubuntu'
+project = 'Computer Science Principles in Python'
+copyright = '2016 Timothy Chen'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -103,7 +103,7 @@ html_theme = 'sphinx_bootstrap'
 #html_theme_options = {'nosidebar': 'true'}
 html_theme_options = {
     # Navigation bar title. (Default: ``project`` value)
-    'navbar_title': "Runestone Default",
+    'navbar_title': "CSP Python",
 
     # Tab name for entire site. (Default: "Site")
     'navbar_site_name': "Chapters",
@@ -149,10 +149,10 @@ html_theme_path = ["_templates/plugin_layouts"]
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = 'Runestone Interactive Overview'
+html_title = 'CSP Python'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
-html_short_title ='Runestone Interactive Overview'
+html_short_title ='CSP Python'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
@@ -220,4 +220,11 @@ rst_prolog = """
 .. role:: vocab-word
 .. role:: misc-hl
 .. role:: uline
+.. role:: ans-hl
+
+.. raw:: html
+
+   <script type=text/javascript>
+   localStorage.clear()
+   </script>
 """

@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lesson 04-14: Simple Input Validation &mdash; Runestone Interactive Overview</title>
+    <title>Lesson 04-14: Simple Input Validation &mdash; CSP Python</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -99,7 +99,9 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
-    <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
+    <link rel="top" title="CSP Python" href="../index.html" />
+    <link rel="next" title="Unit 4 Pre-Lab Check" href="u04-labcheck.html" />
+    <link rel="prev" title="Lesson 04-13: main functions" href="u0413-mainfunc.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -150,7 +152,7 @@
 
       <div>
         <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
-        <a class="navbar-brand" href="../index.html">Runestone Default</a>
+        <a class="navbar-brand" href="../index.html">CSP Python</a>
       </div>
     </div>
 
@@ -272,6 +274,18 @@
         
         
           
+  <li id="relations-prev" title="Previous Chapter - Lesson 04-13: <code class="docutils literal"><span class="pre">main</span></code> functions" data-toggle="tooltip">
+    <a href="u0413-mainfunc.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Unit 4 Pre-Lab Check' data-toggle="tooltip" >
+    <a href="u04-labcheck.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -297,7 +311,9 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="lesson-04-14-simple-input-validation">
+  <script type=text/javascript>
+localStorage.clear()
+</script><div class="section" id="lesson-04-14-simple-input-validation">
 <h1>Lesson 04-14: Simple Input Validation<a class="headerlink" href="#lesson-04-14-simple-input-validation" title="Permalink to this headline">¶</a></h1>
 <p><strong>Learning Target: I can validate a user&#8217;s input by checking its datatype and value.</strong></p>
 <div class="section" id="why-validate-input">
@@ -307,7 +323,7 @@
 <p>For example, let&#8217;s say we want to ask the user for a number.  When you run the following code, enter in a word or letter instead.</p>
 
 <textarea data-component="activecode" id=0414_ex_1 data-lang="python"    data-timelimit=25000   data-audio=''     >
-num = input("Enter a number")
+num = int(input("Enter a number"))
 print("You entered {}".format(num))
 </textarea>
 <p>You&#8217;ll notice that it came up with an error.  No good!  In this lesson, we&#8217;ll show you a way to make your code input-proof when asking for numbers.</p>
@@ -345,14 +361,59 @@ print(".".isdigit())
 <p>As you can see, it doesn&#8217;t handle decimals or negative numbers very well, probably because neither <code class="docutils literal"><span class="pre">-</span></code> nor <code class="docutils literal"><span class="pre">.</span></code> are digits.  Let&#8217;s handle each case one at a time.</p>
 <div class="section" id="negative-numbers">
 <h3>Negative Numbers<a class="headerlink" href="#negative-numbers" title="Permalink to this headline">¶</a></h3>
-<p>With negative numbers, we know that the negative sign will always be in the front of the number.  This is good because it allows us to write a quick test to see if that is true:</p>
-</div>
+<p>With negative numbers, we know that the negative sign will always be in the front of the number.  This is good because we know how to check the first character in a string.</p>
+
+        <p data-component="fillintheblank" data-casei="false" id="cfu_0414_1">
+            
+        <span data-blank>
+            Given a string called <code class="docutils literal"><span class="pre">string</span></code>, what expression would give us the first character of <code class="docutils literal"><span class="pre">string</span></code>?
+        <span data-feedback="regex" style="display: none" id="cfu_0414_1_1_feedback1">\[1\]</span>
+        <span data-feedback="text" style="display: none" for="cfu_0414_1_1_feedback1">Remember, indeces start counting at 0!</span>
+            
+        <span data-feedback="regex" style="display: none" id="cfu_0414_1_1_feedback2">.*</span>
+        <span data-feedback="text" style="display: none" for="cfu_0414_1_1_feedback2">Try again! Think of string indexing.</span>
+            
+        <span data-answer style="display: none" id="cfu_0414_1_1_answer">^string\[0\]$|^string\[0:1\]$</span>
+        </span>
+        
+        </p>
+            <p>Highlight for answer: <span class="ans-hl">string[0]</span></p>
+<p>Great!  Now come up with an expression that checks whether the first character of string is equal to <code class="docutils literal"><span class="pre">&quot;-&quot;</span></code>.  As a reminder, you use <code class="docutils literal"><span class="pre">==</span></code> to check for equality.</p>
+
+        <p data-component="fillintheblank" data-casei="false" id="cfu_0414_2">
+            
+        <span data-blank>
+            What boolean expression can you use to check  whether the first character of <code class="docutils literal"><span class="pre">string</span></code> is equal to <code class="docutils literal"><span class="pre">&quot;-&quot;</span></code>?
+        <span data-feedback="regex" style="display: none" id="cfu_0414_2_1_feedback1">[^=]=[^=]</span>
+        <span data-feedback="text" style="display: none" for="cfu_0414_2_1_feedback1">Remember - two equal signs for equality!</span>
+            
+        <span data-feedback="regex" style="display: none" id="cfu_0414_2_1_feedback2">.*</span>
+        <span data-feedback="text" style="display: none" for="cfu_0414_2_1_feedback2">Try again!</span>
+            
+        <span data-answer style="display: none" id="cfu_0414_2_1_answer">^string\[0\] *== *(('-')|("-"))$|^string\[0:1\] *== *(('-')|("-"))$</span>
+        </span>
+        
+        </p>
+            </div>
 </div>
 </div>
 
 
   
       
+  <li id="relations-prev" class="navLink" title='Previous Section - Lesson 04-13: <code class="docutils literal"><span class="pre">main</span></code> functions' data-toggle="tooltip">
+    <a href="u0413-mainfunc.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="u0413-mainfunc.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - Unit 4 Pre-Lab Check' data-toggle="tooltip" >
+    <a href="u04-labcheck.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="u04-labcheck.html" >Next Section - Unit 4 Pre-Lab Check</a>
 
 <script type="text/javascript">
 
@@ -370,7 +431,7 @@ print(".".isdigit())
       
     </p>
     <p>
-        &copy; Copyright 2015 ubuntu.
+        &copy; Copyright 2016 Timothy Chen.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
     </p>
   </div>

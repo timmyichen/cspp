@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lesson 04-06: Functions &amp; Synchronous Execution &mdash; Runestone Interactive Overview</title>
+    <title>Lesson 04-06: Functions &amp; Synchronous Execution &mdash; CSP Python</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -99,7 +99,9 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
-    <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
+    <link rel="top" title="CSP Python" href="../index.html" />
+    <link rel="next" title="Lesson 04-07: Testing Functions" href="u0407-functests.html" />
+    <link rel="prev" title="Lesson 04-05: Functions are Values" href="u0405-funcval.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -150,7 +152,7 @@
 
       <div>
         <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
-        <a class="navbar-brand" href="../index.html">Runestone Default</a>
+        <a class="navbar-brand" href="../index.html">CSP Python</a>
       </div>
     </div>
 
@@ -259,6 +261,10 @@
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">Lesson 04-06: Functions &amp; Synchronous Execution</a><ul>
 <li><a class="reference internal" href="#one-instruction-at-a-time">One Instruction At A Time</a></li>
+<li><a class="reference internal" href="#checks-for-understanding">Checks For Understanding</a><ul>
+<li><a class="reference internal" href="#q-1">Q#1</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -268,6 +274,18 @@
         
         
           
+  <li id="relations-prev" title="Previous Chapter - Lesson 04-05: Functions are Values" data-toggle="tooltip">
+    <a href="u0405-funcval.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Lesson 04-07: Testing Functions' data-toggle="tooltip" >
+    <a href="u0407-functests.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -293,17 +311,212 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="lesson-04-06-functions-synchronous-execution">
+  <script type=text/javascript>
+localStorage.clear()
+</script><div class="section" id="lesson-04-06-functions-synchronous-execution">
 <h1>Lesson 04-06: Functions &amp; Synchronous Execution<a class="headerlink" href="#lesson-04-06-functions-synchronous-execution" title="Permalink to this headline">¶</a></h1>
 <p><strong>Learning Target: I can predict function code execution.</strong></p>
 <div class="section" id="one-instruction-at-a-time">
 <h2>One Instruction At A Time<a class="headerlink" href="#one-instruction-at-a-time" title="Permalink to this headline">¶</a></h2>
+<p>In this book, we&#8217;ll be running python synchronously on a single thread.  What this means is that <span class="misc-hl">our programs will only ever be executing one instruction at a time, going in the exact order that we tell it to</span>.  Before we learned functions, programs were easy to follow.  We would read instructions top-down, occasionally going back up to repeat a loop, or skipping some code in a conditional.  However, with functions, suddenly we&#8217;re all over the place!  Being able to manually trace through our code is vital to efficient debugging.</p>
+<p>In learning how the code moves around, our best friend here is codelens, or <a class="reference external" href="http://pythontutor.com/visualize.html#mode=edit">PythonTutor</a>.</p>
+<p>Let&#8217;s look at a simple example of a function call and determine what the program is doing:</p>
+
+<div class="alert alert-warning cd_section">
+<div id="cl_0406_1"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (cl_0406_1)</span> </p>
+</div>
+<script type="text/javascript">
+var cl_0406_1_trace = {"code": "def add2(x,y):\n    return x + y\n\nsum = add2(5,6)\nprint(sum)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["add2"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"add2": ["REF", 1]}, "heap": {"1": ["FUNCTION", "add2(x, y)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["add2"], "stdout": "", "func_name": "add2", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 6, "x": 5}, "is_highlighted": true, "is_parent": false, "func_name": "add2", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "add2_f1", "ordered_varnames": ["x", "y"]}], "globals": {"add2": ["REF", 1]}, "heap": {"1": ["FUNCTION", "add2(x, y)", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["add2"], "stdout": "", "func_name": "add2", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 6, "x": 5}, "is_highlighted": true, "is_parent": false, "func_name": "add2", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "add2_f1", "ordered_varnames": ["x", "y"]}], "globals": {"add2": ["REF", 1]}, "heap": {"1": ["FUNCTION", "add2(x, y)", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["add2"], "stdout": "", "func_name": "add2", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 6, "x": 5, "__return__": 11}, "is_highlighted": true, "is_parent": false, "func_name": "add2", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "add2_f1", "ordered_varnames": ["x", "y", "__return__"]}], "globals": {"add2": ["REF", 1]}, "heap": {"1": ["FUNCTION", "add2(x, y)", null]}, "line": 2, "event": "return"}, {"ordered_globals": ["add2", "sum"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 11, "add2": ["REF", 1]}, "heap": {"1": ["FUNCTION", "add2(x, y)", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["add2", "sum"], "stdout": "11\n", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 11, "add2": ["REF", 1]}, "heap": {"1": ["FUNCTION", "add2(x, y)", null]}, "line": 5, "event": "return"}]};
+var cl_0406_1_vis;
+
+$(document).ready(function() {
+    try {
+        cl_0406_1_vis = new ExecutionVisualizer('cl_0406_1',cl_0406_1_trace,
+                                    {embeddedMode: true,
+                                    verticalStack: false,
+                                    heightChangeCallback: redrawAllVisualizerArrows,
+                                    codeDivWidth: 500,
+                                    lang : 'py2'
+                                    });
+        attachLoggers(cl_0406_1_vis,'cl_0406_1');
+        styleButtons('cl_0406_1');
+        allVisualizers.push(cl_0406_1_vis);
+    } catch (e) {
+        console.log("Failed to Initialize CodeLens component cl_0406_1_vis" );
+        console.log(e.toString());
+    }
+
+});
+
+$(document).ready(function() {
+    $("#cl_0406_1_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'cl_0406_1'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    if (cl_0406_1_vis) {
+        cl_0406_1_vis.redrawConnectors();
+    }
+});
+</script>
+<p>There are six steps here.  Let&#8217;s break them down (following the red arrow):</p>
+<ol class="arabic simple">
+<li>Define the function <code class="docutils literal"><span class="pre">add2</span></code>.</li>
+<li>Call the function <code class="docutils literal"><span class="pre">add2</span></code> with arguments <code class="docutils literal"><span class="pre">5</span></code> and <code class="docutils literal"><span class="pre">6</span></code>.</li>
+<li>Entering the function assign the arguments <code class="docutils literal"><span class="pre">5</span></code> and <code class="docutils literal"><span class="pre">6</span></code> to the variables <code class="docutils literal"><span class="pre">x</span></code> and <code class="docutils literal"><span class="pre">y</span></code> respectively.</li>
+<li>Return the sum of <code class="docutils literal"><span class="pre">x+y</span></code>, which is <code class="docutils literal"><span class="pre">11</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">11</span></code> gets returned to the function call on line 4.</li>
+<li>Now that we&#8217;ve evaluated the function, we continue with line 4 by storing the value <code class="docutils literal"><span class="pre">11</span></code> in <code class="docutils literal"><span class="pre">sum</span></code>.</li>
+<li>(last) We print out the value of <code class="docutils literal"><span class="pre">sum</span></code>, which is <code class="docutils literal"><span class="pre">11</span></code>.</li>
+</ol>
+<p>Notice how on line 4, when we reach the function call, we save our spot while we execute the function - and when we&#8217;re done with the function, we go right back to where we were (on line 4).  This principle is very important when trying to trace through code.  Here&#8217;s a slightly more complex one:</p>
+
+<div class="alert alert-warning cd_section">
+<div id="cl_0406_2"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (cl_0406_2)</span> </p>
+</div>
+<script type="text/javascript">
+var cl_0406_2_trace = {"code": "def is_integer(n):\n    if int(n) == n:\n        return True\n    else:\n        return False\n\ndef is_even(n):\n    if n % 2 == 0:\n        return True\n    else:\n        return False\n\nnum = 10\nif is_integer(num) and is_even(num):\n    print(\"The number {} is an even whole number!\".format(num))\nelse:\n    print(\"The number {} is either not even or not an integer\".format(num))", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["is_integer"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"is_integer": ["REF", 1]}, "heap": {"1": ["FUNCTION", "is_integer(n)", null]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["is_integer", "is_even"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"is_even": ["REF", 2], "is_integer": ["REF", 1]}, "heap": {"1": ["FUNCTION", "is_integer(n)", null], "2": ["FUNCTION", "is_even(n)", null]}, "line": 13, "event": "step_line"}, {"ordered_globals": ["is_integer", "is_even", "num"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"num": 10, "is_even": ["REF", 2], "is_integer": ["REF", 1]}, "heap": {"1": ["FUNCTION", "is_integer(n)", null], "2": ["FUNCTION", "is_even(n)", null]}, "line": 14, "event": "step_line"}, {"ordered_globals": ["is_integer", "is_even", "num"], "stdout": "", "func_name": "is_integer", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "is_integer", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "is_integer_f1", "ordered_varnames": ["n"]}], "globals": {"num": 10, "is_even": ["REF", 2], "is_integer": ["REF", 1]}, "heap": {"1": ["FUNCTION", "is_integer(n)", null], "2": ["FUNCTION", "is_even(n)", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["is_integer", "is_even", "num"], "stdout": "", "func_name": "is_integer", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "is_integer", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "is_integer_f1", "ordered_varnames": ["n"]}], "globals": {"num": 10, "is_even": ["REF", 2], "is_integer": ["REF", 1]}, "heap": {"1": ["FUNCTION", "is_integer(n)", null], "2": ["FUNCTION", "is_even(n)", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["is_integer", "is_even", "num"], "stdout": "", "func_name": "is_integer", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "is_integer", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "is_integer_f1", "ordered_varnames": ["n"]}], "globals": {"num": 10, "is_even": ["REF", 2], "is_integer": ["REF", 1]}, "heap": {"1": ["FUNCTION", "is_integer(n)", null], "2": ["FUNCTION", "is_even(n)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["is_integer", "is_even", "num"], "stdout": "", "func_name": "is_integer", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"__return__": true, "n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "is_integer", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "is_integer_f1", "ordered_varnames": ["n", "__return__"]}], "globals": {"num": 10, "is_even": ["REF", 2], "is_integer": ["REF", 1]}, "heap": {"1": ["FUNCTION", "is_integer(n)", null], "2": ["FUNCTION", "is_even(n)", null]}, "line": 3, "event": "return"}, {"ordered_globals": ["is_integer", "is_even", "num"], "stdout": "", "func_name": "is_even", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "is_even", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "is_even_f2", "ordered_varnames": ["n"]}], "globals": {"num": 10, "is_even": ["REF", 2], "is_integer": ["REF", 1]}, "heap": {"1": ["FUNCTION", "is_integer(n)", null], "2": ["FUNCTION", "is_even(n)", null]}, "line": 7, "event": "call"}, {"ordered_globals": ["is_integer", "is_even", "num"], "stdout": "", "func_name": "is_even", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "is_even", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "is_even_f2", "ordered_varnames": ["n"]}], "globals": {"num": 10, "is_even": ["REF", 2], "is_integer": ["REF", 1]}, "heap": {"1": ["FUNCTION", "is_integer(n)", null], "2": ["FUNCTION", "is_even(n)", null]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["is_integer", "is_even", "num"], "stdout": "", "func_name": "is_even", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "is_even", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "is_even_f2", "ordered_varnames": ["n"]}], "globals": {"num": 10, "is_even": ["REF", 2], "is_integer": ["REF", 1]}, "heap": {"1": ["FUNCTION", "is_integer(n)", null], "2": ["FUNCTION", "is_even(n)", null]}, "line": 9, "event": "step_line"}, {"ordered_globals": ["is_integer", "is_even", "num"], "stdout": "", "func_name": "is_even", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"__return__": true, "n": 10}, "is_highlighted": true, "is_parent": false, "func_name": "is_even", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "is_even_f2", "ordered_varnames": ["n", "__return__"]}], "globals": {"num": 10, "is_even": ["REF", 2], "is_integer": ["REF", 1]}, "heap": {"1": ["FUNCTION", "is_integer(n)", null], "2": ["FUNCTION", "is_even(n)", null]}, "line": 9, "event": "return"}, {"ordered_globals": ["is_integer", "is_even", "num"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"num": 10, "is_even": ["REF", 2], "is_integer": ["REF", 1]}, "heap": {"1": ["FUNCTION", "is_integer(n)", null], "2": ["FUNCTION", "is_even(n)", null]}, "line": 15, "event": "step_line"}, {"ordered_globals": ["is_integer", "is_even", "num"], "stdout": "The number 10 is an even whole number!\n", "func_name": "<module>", "stack_to_render": [], "globals": {"num": 10, "is_even": ["REF", 2], "is_integer": ["REF", 1]}, "heap": {"1": ["FUNCTION", "is_integer(n)", null], "2": ["FUNCTION", "is_even(n)", null]}, "line": 15, "event": "return"}]};
+var cl_0406_2_vis;
+
+$(document).ready(function() {
+    try {
+        cl_0406_2_vis = new ExecutionVisualizer('cl_0406_2',cl_0406_2_trace,
+                                    {embeddedMode: true,
+                                    verticalStack: false,
+                                    heightChangeCallback: redrawAllVisualizerArrows,
+                                    codeDivWidth: 500,
+                                    lang : 'py2'
+                                    });
+        attachLoggers(cl_0406_2_vis,'cl_0406_2');
+        styleButtons('cl_0406_2');
+        allVisualizers.push(cl_0406_2_vis);
+    } catch (e) {
+        console.log("Failed to Initialize CodeLens component cl_0406_2_vis" );
+        console.log(e.toString());
+    }
+
+});
+
+$(document).ready(function() {
+    $("#cl_0406_2_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'cl_0406_2'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    if (cl_0406_2_vis) {
+        cl_0406_2_vis.redrawConnectors();
+    }
+});
+</script>
+<p>In this one, as you step through the code, you&#8217;ll notice that the function <code class="docutils literal"><span class="pre">is_integer()</span></code> is called first, and <code class="docutils literal"><span class="pre">is_even()</span></code> is called right after it.  That&#8217;s because the conditional <code class="docutils literal"><span class="pre">is_integer(num)</span> <span class="pre">and</span> <span class="pre">is_even(num)</span></code> requires both functions to be evaluated in order to be evaluated as a whole, so it goes through each function in the order of operations (in this case, <code class="docutils literal"><span class="pre">and</span></code>, which is just left-to-right).  Each time, when the function completes, it returns to where it was called to look for its next instruction.</p>
+</div>
+<div class="section" id="checks-for-understanding">
+<h2>Checks For Understanding<a class="headerlink" href="#checks-for-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="q-1">
+<h3>Q#1<a class="headerlink" href="#q-1" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+<span class="k">def</span> <span class="nf">func2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+<span class="n">num</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+<span class="k">if</span> <span class="n">func1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;alpha&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">func2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;beta&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;gamma&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+
+        <p data-component="fillintheblank" data-casei="false" id="cfu_0406_1">
+            
+        <span data-blank>
+            What will be printed from running the code above?
+        <span data-feedback="regex" style="display: none" id="cfu_0406_1_1_feedback1">^(b|B)(e|E)(t|T)(a|A)$</span>
+        <span data-feedback="text" style="display: none" for="cfu_0406_1_1_feedback1">Answer should be case sensitive.</span>
+            
+        <span data-feedback="regex" style="display: none" id="cfu_0406_1_1_feedback2">.*</span>
+        <span data-feedback="text" style="display: none" for="cfu_0406_1_1_feedback2">Try again!  Try to trace through the code, line by line.</span>
+            
+        <span data-answer style="display: none" id="cfu_0406_1_1_answer">^beta$</span>
+        </span>
+        
+        </p>
+            
+        <p data-component="fillintheblank" data-casei="false" id="cfu_0406_2">
+            
+        <span data-blank>
+            What will be printed from running the code above if line 13 was <code class="docutils literal"><span class="pre">num</span> <span class="pre">=</span> <span class="pre">0</span></code> instead?
+        <span data-feedback="regex" style="display: none" id="cfu_0406_1_1_feedback1">^(g|G)(a|A)(m|M){2}(a|A)$</span>
+        <span data-feedback="text" style="display: none" for="cfu_0406_1_1_feedback1">Answer should be case sensitive.</span>
+            
+        <span data-feedback="regex" style="display: none" id="cfu_0406_1_1_feedback2">.*</span>
+        <span data-feedback="text" style="display: none" for="cfu_0406_1_1_feedback2">Try again!  Try to trace through the code, line by line.</span>
+            
+        <span data-answer style="display: none" id="cfu_0406_1_1_answer">^gamma$</span>
+        </span>
+        
+        </p>
+            </div>
 </div>
 </div>
 
 
   
       
+  <li id="relations-prev" class="navLink" title='Previous Section - Lesson 04-05: Functions are Values' data-toggle="tooltip">
+    <a href="u0405-funcval.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="u0405-funcval.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - Lesson 04-07: Testing Functions' data-toggle="tooltip" >
+    <a href="u0407-functests.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="u0407-functests.html" >Next Section - Lesson 04-07: Testing Functions</a>
 
 <script type="text/javascript">
 
@@ -321,7 +534,7 @@
       
     </p>
     <p>
-        &copy; Copyright 2015 ubuntu.
+        &copy; Copyright 2016 Timothy Chen.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
     </p>
   </div>

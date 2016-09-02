@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lesson 04-05: Functions are Values &mdash; Runestone Interactive Overview</title>
+    <title>Lesson 04-05: Functions are Values &mdash; CSP Python</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -99,7 +99,9 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
-    <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
+    <link rel="top" title="CSP Python" href="../index.html" />
+    <link rel="next" title="Lesson 04-06: Functions &amp; Synchronous Execution" href="u0406-synchexec.html" />
+    <link rel="prev" title="Lesson 04-04: Variable Scope" href="u0404-scope.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -150,7 +152,7 @@
 
       <div>
         <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
-        <a class="navbar-brand" href="../index.html">Runestone Default</a>
+        <a class="navbar-brand" href="../index.html">CSP Python</a>
       </div>
     </div>
 
@@ -268,6 +270,18 @@
         
         
           
+  <li id="relations-prev" title="Previous Chapter - Lesson 04-04: Variable Scope" data-toggle="tooltip">
+    <a href="u0404-scope.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Lesson 04-06: Functions &amp; Synchronous Execution' data-toggle="tooltip" >
+    <a href="u0406-synchexec.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -293,17 +307,120 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="lesson-04-05-functions-are-values">
+  <script type=text/javascript>
+localStorage.clear()
+</script><div class="section" id="lesson-04-05-functions-are-values">
 <h1>Lesson 04-05: Functions are Values<a class="headerlink" href="#lesson-04-05-functions-are-values" title="Permalink to this headline">¶</a></h1>
 <p><strong>Learning Target: I can understand the value representation of a function.</strong></p>
+<p><em>NOTE: This lesson involves computer memory addresses.  Since the activecode windows uses a javascript implementation of python, we won&#8217;t be able to provide interactive examples here.  However, all the code shown is valid python, and you should feel free to experiment with this code in your own python IDE.</em></p>
 <div class="section" id="printing-functions-without-parentheses">
 <h2>Printing Functions Without Parentheses<a class="headerlink" href="#printing-functions-without-parentheses" title="Permalink to this headline">¶</a></h2>
+<p>A common error that people make when first learning about functions is to call the function without parentheses.  So what happens if we do that?  Here&#8217;s an example:</p>
+<div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+    <span class="k">return</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">func</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Running this block of code will give us:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>1
+&lt;function func at 0x7fe2d338abf8&gt;
+</pre></div>
+</div>
+<p>When you try to access the function name without parentheses, it will give you the <strong>location of the function in the computer&#8217;s memory</strong>.  This is where the computer stores the instructions of the function name, just as any other variable.  We can use the built-in <code class="docutils literal"><span class="pre">id()</span></code> function to give us the memory address of any variable or function.  For example:</p>
+<div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+    <span class="k">return</span> <span class="mi">1</span>
+
+<span class="n">var1</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">var2</span> <span class="o">=</span> <span class="s2">&quot;string!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">var1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">var2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">func</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+<p>This will print out:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>10108992
+140074418775912
+140074418949112
+</pre></div>
+</div>
+<p>These numbers, while correct, look way different from what we were getting earlier.  That&#8217;s because these numbers are in decimal (base 10), and the number <code class="docutils literal"><span class="pre">0x7fe2d338abf8</span></code> above is in hexadecimal (base 16) - don&#8217;t worry, we&#8217;ll learn about binary, decimal, and hexadecimal later.  We can use the built-in <code class="docutils literal"><span class="pre">hex()</span></code> function to convert these numbers to hexadecimal:</p>
+<div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+    <span class="k">return</span> <span class="mi">1</span>
+
+<span class="n">var1</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">var2</span> <span class="o">=</span> <span class="s2">&quot;string!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">var1</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">var2</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">func</span><span class="p">)))</span>
+</pre></div>
+</td></tr></table></div>
+<p>This will print:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>0x9a4040
+0x7f8728ebf768
+0x7f8728ee9bf8
+</pre></div>
+</div>
+<p>Notice that it&#8217;s not the same as above.  That&#8217;s because since we&#8217;re talking about locations in computer memory, a computer is processing lots of stuff at a time and every time we run the program, it may give our variables a different location.  We can use the python shell to demonstrate that this is true:</p>
+<div class="highlight-none"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span>&gt;&gt;&gt; def a():
+...   return 10
+...
+&gt;&gt;&gt; a
+<span class="hll">&lt;function a at 0x7f1298518400&gt;
+</span>&gt;&gt;&gt; id(a)
+139717841617920
+&gt;&gt;&gt; hex(id(a))
+<span class="hll">&#39;0x7f1298518400&#39;
+</span></pre></div>
+</td></tr></table></div>
+<p>(reminder: the <code class="docutils literal"><span class="pre">&gt;&gt;&gt;</span></code> are my inputs, and the line underneath are outputs.  The first three lines are just a function definition)</p>
+<p><span class="misc-hl">You won&#8217;t be working with memory addresses in the scope of this course, but it&#8217;s important to know what you&#8217;re looking at.</span></p>
 </div>
 </div>
 
 
   
       
+  <li id="relations-prev" class="navLink" title='Previous Section - Lesson 04-04: Variable Scope' data-toggle="tooltip">
+    <a href="u0404-scope.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="u0404-scope.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - Lesson 04-06: Functions &amp; Synchronous Execution' data-toggle="tooltip" >
+    <a href="u0406-synchexec.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="u0406-synchexec.html" >Next Section - Lesson 04-06: Functions &amp; Synchronous Execution</a>
 
 <script type="text/javascript">
 
@@ -321,7 +438,7 @@
       
     </p>
     <p>
-        &copy; Copyright 2015 ubuntu.
+        &copy; Copyright 2016 Timothy Chen.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
     </p>
   </div>

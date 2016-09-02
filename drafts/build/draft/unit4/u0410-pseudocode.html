@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lesson 04-10: Pseudocode &mdash; Runestone Interactive Overview</title>
+    <title>Lesson 04-10: Pseudocode &mdash; CSP Python</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -99,7 +99,9 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
-    <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
+    <link rel="top" title="CSP Python" href="../index.html" />
+    <link rel="next" title="Lesson 04-11: CT Pillar: Decomposition" href="u0411-decomp.html" />
+    <link rel="prev" title="Lesson 04-09: Program Design Tips: Part II" href="u0409-progdesign2.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -150,7 +152,7 @@
 
       <div>
         <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
-        <a class="navbar-brand" href="../index.html">Runestone Default</a>
+        <a class="navbar-brand" href="../index.html">CSP Python</a>
       </div>
     </div>
 
@@ -259,7 +261,7 @@
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">Lesson 04-10: Pseudocode</a><ul>
 <li><a class="reference internal" href="#planning-your-algorithm">Planning Your Algorithm</a></li>
-<li><a class="reference internal" href="#what-is-pseudocode">What is Pseudocode?</a></li>
+<li><a class="reference internal" href="#what-does-pseudocode-look-like">What Does Pseudocode Look Like?</a></li>
 </ul>
 </li>
 </ul>
@@ -269,6 +271,18 @@
         
         
           
+  <li id="relations-prev" title="Previous Chapter - Lesson 04-09: Program Design Tips: Part II" data-toggle="tooltip">
+    <a href="u0409-progdesign2.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Lesson 04-11: CT Pillar: Decomposition' data-toggle="tooltip" >
+    <a href="u0411-decomp.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -294,20 +308,71 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="lesson-04-10-pseudocode">
+  <script type=text/javascript>
+localStorage.clear()
+</script><div class="section" id="lesson-04-10-pseudocode">
 <h1>Lesson 04-10: Pseudocode<a class="headerlink" href="#lesson-04-10-pseudocode" title="Permalink to this headline">¶</a></h1>
 <p><strong>Learning Target: I can use pseudocode to plan out an algorithm/solution to a problem.</strong></p>
 <div class="section" id="planning-your-algorithm">
 <h2>Planning Your Algorithm<a class="headerlink" href="#planning-your-algorithm" title="Permalink to this headline">¶</a></h2>
+<p>When solving a problem, regardless of whether it&#8217;s a big one or a small one, it always helps to plan.</p>
+<p>Dwight D. Eisenhower once said, <em>&#8220;Plans are worthless, but planning is everything.&#8221;</em>  A plan can (and probably will) change as you work through a problem, but that does not mean that it&#8217;s a waste.  It&#8217;s the planning process itself that is valuable - having you work through a potential solution, getting ideas down, having something to fall back on.</p>
+<p>When it comes to planning algorithms, it doesn&#8217;t have to be written in Python (or whatever coding language you are using).  In fact, it&#8217;s better that you don&#8217;t have to worry about syntax while you&#8217;re planning - remember, it&#8217;s the <em>ideas</em> that are important.</p>
+<p>It helps to try to think of what you want to do as a set of processes.  Let&#8217;s take the number guessing game as an example.  When planning for a project like that, take the role of the computer and ask yourself - &#8220;What would I have to do if I wanted to play a number guessing game with someone?&#8221;  Your steps might look something like this:</p>
+<ol class="arabic simple">
+<li>Think of a random number in my head</li>
+<li>Ask the user to guess a number</li>
+<li>If it&#8217;s right, then we end the game</li>
+<li>If it&#8217;s wrong, then we give them a hint</li>
+</ol>
+<p>What we wrote above is our first step to writing <span class="vocab-word">pseudocode</span>, which is basically <span class="vocab-def">&#8220;fake-code&#8221;, used to get ideas and processes down on paper</span>.</p>
 </div>
-<div class="section" id="what-is-pseudocode">
-<h2>What is Pseudocode?<a class="headerlink" href="#what-is-pseudocode" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-does-pseudocode-look-like">
+<h2>What Does Pseudocode Look Like?<a class="headerlink" href="#what-does-pseudocode-look-like" title="Permalink to this headline">¶</a></h2>
+<p>Pseudocode can look different, depending on who is writing it.  It&#8217;s also largely personal preference, since something that <em>you</em> are writing for <em>yourself</em>.</p>
+<p>If I were to create pseudocode for the number guessing game, it might look something like above, except it would be more structured:</p>
+<div class="highlight-none"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span>generate random number
+get player&#39;s guess
+repeat while game is going:
+   check if player is right or wrong
+   if right, stop loop
+   if wrong, check if higher or lower
+   if higher, tell player
+   if lower, tell the player
+   get another guess
+if right, congratulate the player
+</pre></div>
+</td></tr></table></div>
+<p>Now, obviously, my solution might look very different from this, but it&#8217;s fine - these are just first ideas; they don&#8217;t have to be the final product.</p>
+<p>Just remember that pseudocode can look however you like, so long as it is helpful to you!</p>
 </div>
 </div>
 
 
   
       
+  <li id="relations-prev" class="navLink" title='Previous Section - Lesson 04-09: Program Design Tips: Part II' data-toggle="tooltip">
+    <a href="u0409-progdesign2.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="u0409-progdesign2.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - Lesson 04-11: CT Pillar: Decomposition' data-toggle="tooltip" >
+    <a href="u0411-decomp.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="u0411-decomp.html" >Next Section - Lesson 04-11: CT Pillar: Decomposition</a>
 
 <script type="text/javascript">
 
@@ -325,7 +390,7 @@
       
     </p>
     <p>
-        &copy; Copyright 2015 ubuntu.
+        &copy; Copyright 2016 Timothy Chen.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
     </p>
   </div>

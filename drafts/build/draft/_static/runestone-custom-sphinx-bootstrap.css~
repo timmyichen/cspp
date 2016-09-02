@@ -690,7 +690,7 @@ span.caption-text {
 .vocab-word{
    font-weight: bold;
    text-decoration: underline;
-   backround: #ffff99;
+   background: #ffff99;
 }
 
 .vocab-def{

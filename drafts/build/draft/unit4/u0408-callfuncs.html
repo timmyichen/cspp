@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lesson 04-08: Functions within Functions &mdash; Runestone Interactive Overview</title>
+    <title>Lesson 04-08: Functions within Functions &mdash; CSP Python</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -99,7 +99,9 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
-    <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
+    <link rel="top" title="CSP Python" href="../index.html" />
+    <link rel="next" title="Lesson 04-09: Program Design Tips: Part II" href="u0409-progdesign2.html" />
+    <link rel="prev" title="Lesson 04-07: Testing Functions" href="u0407-functests.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -150,7 +152,7 @@
 
       <div>
         <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
-        <a class="navbar-brand" href="../index.html">Runestone Default</a>
+        <a class="navbar-brand" href="../index.html">CSP Python</a>
       </div>
     </div>
 
@@ -259,7 +261,6 @@
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">Lesson 04-08: Functions within Functions</a><ul>
 <li><a class="reference internal" href="#the-call-stack">The Call Stack</a></li>
-<li><a class="reference internal" href="#checks-for-understanding">Checks For Understanding</a></li>
 </ul>
 </li>
 </ul>
@@ -269,6 +270,18 @@
         
         
           
+  <li id="relations-prev" title="Previous Chapter - Lesson 04-07: Testing Functions" data-toggle="tooltip">
+    <a href="u0407-functests.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Lesson 04-09: Program Design Tips: Part II' data-toggle="tooltip" >
+    <a href="u0409-progdesign2.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -294,21 +307,115 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="lesson-04-08-functions-within-functions">
+  <script type=text/javascript>
+localStorage.clear()
+</script><div class="section" id="lesson-04-08-functions-within-functions">
 <h1>Lesson 04-08: Functions within Functions<a class="headerlink" href="#lesson-04-08-functions-within-functions" title="Permalink to this headline">¶</a></h1>
 <p><strong>Learning Target: I can write functions that call other functions.</strong>
 <strong>Learning Target: I can explain how the call stack works.</strong></p>
+<p>You can call functions from within functions!  Check it out:</p>
+
+<textarea data-component="activecode" id=ex_0408_1 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+def f1():
+    print("we need")
+    f2()
+
+def f2():
+    print("to go")
+    f3()
+
+def f3():
+    print("deeper!")
+
+f1()
+</textarea>
+<p>Now if we look at the codelens for the same code:</p>
+
+<div class="alert alert-warning cd_section">
+<div id="cl_0408_2"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (cl_0408_2)</span> </p>
+</div>
+<script type="text/javascript">
+var cl_0408_2_trace = {"code": "def f1():\n    print(\"we need\")\n    f2()\n\ndef f2():\n    print(\"to go\")\n    f3()\n\ndef f3():\n    print(\"deeper!\")\n\nf1()", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["f1"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"f1": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f1()", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["f1", "f2"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"f1": ["REF", 1], "f2": ["REF", 2]}, "heap": {"1": ["FUNCTION", "f1()", null], "2": ["FUNCTION", "f2()", null]}, "line": 9, "event": "step_line"}, {"ordered_globals": ["f1", "f2", "f3"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"f1": ["REF", 1], "f2": ["REF", 2], "f3": ["REF", 3]}, "heap": {"1": ["FUNCTION", "f1()", null], "2": ["FUNCTION", "f2()", null], "3": ["FUNCTION", "f3()", null]}, "line": 12, "event": "step_line"}, {"ordered_globals": ["f1", "f2", "f3"], "stdout": "", "func_name": "f1", "stack_to_render": [{"frame_id": 1, "encoded_locals": {}, "is_highlighted": true, "is_parent": false, "func_name": "f1", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f1_f1", "ordered_varnames": []}], "globals": {"f1": ["REF", 1], "f2": ["REF", 2], "f3": ["REF", 3]}, "heap": {"1": ["FUNCTION", "f1()", null], "2": ["FUNCTION", "f2()", null], "3": ["FUNCTION", "f3()", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["f1", "f2", "f3"], "stdout": "", "func_name": "f1", "stack_to_render": [{"frame_id": 1, "encoded_locals": {}, "is_highlighted": true, "is_parent": false, "func_name": "f1", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f1_f1", "ordered_varnames": []}], "globals": {"f1": ["REF", 1], "f2": ["REF", 2], "f3": ["REF", 3]}, "heap": {"1": ["FUNCTION", "f1()", null], "2": ["FUNCTION", "f2()", null], "3": ["FUNCTION", "f3()", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["f1", "f2", "f3"], "stdout": "we need\n", "func_name": "f1", "stack_to_render": [{"frame_id": 1, "encoded_locals": {}, "is_highlighted": true, "is_parent": false, "func_name": "f1", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f1_f1", "ordered_varnames": []}], "globals": {"f1": ["REF", 1], "f2": ["REF", 2], "f3": ["REF", 3]}, "heap": {"1": ["FUNCTION", "f1()", null], "2": ["FUNCTION", "f2()", null], "3": ["FUNCTION", "f3()", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["f1", "f2", "f3"], "stdout": "we need\n", "func_name": "f2", "stack_to_render": [{"frame_id": 1, "encoded_locals": {}, "is_highlighted": false, "is_parent": false, "func_name": "f1", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f1_f1", "ordered_varnames": []}, {"frame_id": 2, "encoded_locals": {}, "is_highlighted": true, "is_parent": false, "func_name": "f2", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f2_f2", "ordered_varnames": []}], "globals": {"f1": ["REF", 1], "f2": ["REF", 2], "f3": ["REF", 3]}, "heap": {"1": ["FUNCTION", "f1()", null], "2": ["FUNCTION", "f2()", null], "3": ["FUNCTION", "f3()", null]}, "line": 5, "event": "call"}, {"ordered_globals": ["f1", "f2", "f3"], "stdout": "we need\n", "func_name": "f2", "stack_to_render": [{"frame_id": 1, "encoded_locals": {}, "is_highlighted": false, "is_parent": false, "func_name": "f1", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f1_f1", "ordered_varnames": []}, {"frame_id": 2, "encoded_locals": {}, "is_highlighted": true, "is_parent": false, "func_name": "f2", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f2_f2", "ordered_varnames": []}], "globals": {"f1": ["REF", 1], "f2": ["REF", 2], "f3": ["REF", 3]}, "heap": {"1": ["FUNCTION", "f1()", null], "2": ["FUNCTION", "f2()", null], "3": ["FUNCTION", "f3()", null]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["f1", "f2", "f3"], "stdout": "we need\nto go\n", "func_name": "f2", "stack_to_render": [{"frame_id": 1, "encoded_locals": {}, "is_highlighted": false, "is_parent": false, "func_name": "f1", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f1_f1", "ordered_varnames": []}, {"frame_id": 2, "encoded_locals": {}, "is_highlighted": true, "is_parent": false, "func_name": "f2", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f2_f2", "ordered_varnames": []}], "globals": {"f1": ["REF", 1], "f2": ["REF", 2], "f3": ["REF", 3]}, "heap": {"1": ["FUNCTION", "f1()", null], "2": ["FUNCTION", "f2()", null], "3": ["FUNCTION", "f3()", null]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["f1", "f2", "f3"], "stdout": "we need\nto go\n", "func_name": "f3", "stack_to_render": [{"frame_id": 1, "encoded_locals": {}, "is_highlighted": false, "is_parent": false, "func_name": "f1", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f1_f1", "ordered_varnames": []}, {"frame_id": 2, "encoded_locals": {}, "is_highlighted": false, "is_parent": false, "func_name": "f2", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f2_f2", "ordered_varnames": []}, {"frame_id": 3, "encoded_locals": {}, "is_highlighted": true, "is_parent": false, "func_name": "f3", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f3_f3", "ordered_varnames": []}], "globals": {"f1": ["REF", 1], "f2": ["REF", 2], "f3": ["REF", 3]}, "heap": {"1": ["FUNCTION", "f1()", null], "2": ["FUNCTION", "f2()", null], "3": ["FUNCTION", "f3()", null]}, "line": 9, "event": "call"}, {"ordered_globals": ["f1", "f2", "f3"], "stdout": "we need\nto go\n", "func_name": "f3", "stack_to_render": [{"frame_id": 1, "encoded_locals": {}, "is_highlighted": false, "is_parent": false, "func_name": "f1", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f1_f1", "ordered_varnames": []}, {"frame_id": 2, "encoded_locals": {}, "is_highlighted": false, "is_parent": false, "func_name": "f2", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f2_f2", "ordered_varnames": []}, {"frame_id": 3, "encoded_locals": {}, "is_highlighted": true, "is_parent": false, "func_name": "f3", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f3_f3", "ordered_varnames": []}], "globals": {"f1": ["REF", 1], "f2": ["REF", 2], "f3": ["REF", 3]}, "heap": {"1": ["FUNCTION", "f1()", null], "2": ["FUNCTION", "f2()", null], "3": ["FUNCTION", "f3()", null]}, "line": 10, "event": "step_line"}, {"ordered_globals": ["f1", "f2", "f3"], "stdout": "we need\nto go\ndeeper!\n", "func_name": "f3", "stack_to_render": [{"frame_id": 1, "encoded_locals": {}, "is_highlighted": false, "is_parent": false, "func_name": "f1", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f1_f1", "ordered_varnames": []}, {"frame_id": 2, "encoded_locals": {}, "is_highlighted": false, "is_parent": false, "func_name": "f2", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f2_f2", "ordered_varnames": []}, {"frame_id": 3, "encoded_locals": {"__return__": null}, "is_highlighted": true, "is_parent": false, "func_name": "f3", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f3_f3", "ordered_varnames": ["__return__"]}], "globals": {"f1": ["REF", 1], "f2": ["REF", 2], "f3": ["REF", 3]}, "heap": {"1": ["FUNCTION", "f1()", null], "2": ["FUNCTION", "f2()", null], "3": ["FUNCTION", "f3()", null]}, "line": 10, "event": "return"}, {"ordered_globals": ["f1", "f2", "f3"], "stdout": "we need\nto go\ndeeper!\n", "func_name": "f2", "stack_to_render": [{"frame_id": 1, "encoded_locals": {}, "is_highlighted": false, "is_parent": false, "func_name": "f1", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f1_f1", "ordered_varnames": []}, {"frame_id": 2, "encoded_locals": {"__return__": null}, "is_highlighted": true, "is_parent": false, "func_name": "f2", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f2_f2", "ordered_varnames": ["__return__"]}], "globals": {"f1": ["REF", 1], "f2": ["REF", 2], "f3": ["REF", 3]}, "heap": {"1": ["FUNCTION", "f1()", null], "2": ["FUNCTION", "f2()", null], "3": ["FUNCTION", "f3()", null]}, "line": 7, "event": "return"}, {"ordered_globals": ["f1", "f2", "f3"], "stdout": "we need\nto go\ndeeper!\n", "func_name": "f1", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"__return__": null}, "is_highlighted": true, "is_parent": false, "func_name": "f1", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f1_f1", "ordered_varnames": ["__return__"]}], "globals": {"f1": ["REF", 1], "f2": ["REF", 2], "f3": ["REF", 3]}, "heap": {"1": ["FUNCTION", "f1()", null], "2": ["FUNCTION", "f2()", null], "3": ["FUNCTION", "f3()", null]}, "line": 3, "event": "return"}, {"ordered_globals": ["f1", "f2", "f3"], "stdout": "we need\nto go\ndeeper!\n", "func_name": "<module>", "stack_to_render": [], "globals": {"f1": ["REF", 1], "f2": ["REF", 2], "f3": ["REF", 3]}, "heap": {"1": ["FUNCTION", "f1()", null], "2": ["FUNCTION", "f2()", null], "3": ["FUNCTION", "f3()", null]}, "line": 12, "event": "return"}]};
+var cl_0408_2_vis;
+
+$(document).ready(function() {
+    try {
+        cl_0408_2_vis = new ExecutionVisualizer('cl_0408_2',cl_0408_2_trace,
+                                    {embeddedMode: false,
+                                    verticalStack: false,
+                                    heightChangeCallback: redrawAllVisualizerArrows,
+                                    codeDivWidth: 500,
+                                    lang : 'py2'
+                                    });
+        attachLoggers(cl_0408_2_vis,'cl_0408_2');
+        styleButtons('cl_0408_2');
+        allVisualizers.push(cl_0408_2_vis);
+    } catch (e) {
+        console.log("Failed to Initialize CodeLens component cl_0408_2_vis" );
+        console.log(e.toString());
+    }
+
+});
+
+$(document).ready(function() {
+    $("#cl_0408_2_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'cl_0408_2'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    if (cl_0408_2_vis) {
+        cl_0408_2_vis.redrawConnectors();
+    }
+});
+</script>
+<p>You&#8217;ll notice a few things:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Steps 5 through 12 start from <code class="docutils literal"><span class="pre">f1()</span></code> all the way into <code class="docutils literal"><span class="pre">f3()</span></code>, printing out the strings.</li>
+<li>During this time, we see <code class="docutils literal"><span class="pre">f1</span></code>, <code class="docutils literal"><span class="pre">f2</span></code>, <code class="docutils literal"><span class="pre">f3</span></code>, all stacked on top of each other.</li>
+<li>Steps 13 through 15 show each function returning <code class="docutils literal"><span class="pre">None</span></code> as each of <code class="docutils literal"><span class="pre">f1</span></code>/<code class="docutils literal"><span class="pre">f2</span></code>/<code class="docutils literal"><span class="pre">f3</span></code> disappears.</li>
+</ul>
+</div></blockquote>
+<p>The stack of function names you see is called the <span class="vocab-word">call stack</span>.</p>
 <div class="section" id="the-call-stack">
 <h2>The Call Stack<a class="headerlink" href="#the-call-stack" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="checks-for-understanding">
-<h2>Checks For Understanding<a class="headerlink" href="#checks-for-understanding" title="Permalink to this headline">¶</a></h2>
+<p>Every time you call a function, that function is added to the <strong>call stack</strong>.  The call stack keeps track of where the program will return to when a function ends.</p>
+<p>In the above example, since <code class="docutils literal"><span class="pre">f2()</span></code> is called inside of <code class="docutils literal"><span class="pre">f1()</span></code>, <code class="docutils literal"><span class="pre">f1()</span></code> can&#8217;t be complete until <code class="docutils literal"><span class="pre">f2()</span></code> completes.  Same with <code class="docutils literal"><span class="pre">f2()</span></code> and <code class="docutils literal"><span class="pre">f3()</span></code>.</p>
+<dl class="docutils">
+<dt>A call stack can only behave in two ways, either by:</dt>
+<dd><ul class="first last simple">
+<li>adding a new function onto the top of the stack (when a function is called)</li>
+<li>removing the current function from the top of the stack (when a function completes and returns a value)</li>
+</ul>
+</dd>
+</dl>
+<p>True to its name, a call stack just &#8220;stacks&#8221; functions on top of each other, in the order that it was called.  We always know which function we will be returning to, since it is the next function in the stack.</p>
 </div>
 </div>
 
 
   
       
+  <li id="relations-prev" class="navLink" title='Previous Section - Lesson 04-07: Testing Functions' data-toggle="tooltip">
+    <a href="u0407-functests.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="u0407-functests.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - Lesson 04-09: Program Design Tips: Part II' data-toggle="tooltip" >
+    <a href="u0409-progdesign2.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="u0409-progdesign2.html" >Next Section - Lesson 04-09: Program Design Tips: Part II</a>
 
 <script type="text/javascript">
 
@@ -326,7 +433,7 @@
       
     </p>
     <p>
-        &copy; Copyright 2015 ubuntu.
+        &copy; Copyright 2016 Timothy Chen.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
     </p>
   </div>

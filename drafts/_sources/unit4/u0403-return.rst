@@ -102,9 +102,73 @@ While this might look similar to other examples we've used in the past, now we c
 
 You might notice in the example above, there are multiple places where we use the ``return`` keyword.  It's important to know that **when you invoke the** ``return`` **keyword, the function ends immediately afterwards**.
 
+Quick Note on Returning True/False
+----------------------------------
+
+Let's say you had a function that checks whether a number is even or not:
+
+.. code-block:: python3
+   
+   #method #1
+   def is_even(n):
+       if n % 2 == 0:
+           return True
+       else:
+           return False
+
+The entire body of the function can just be replaced with:
+
+.. code-block:: python3
+
+   #method #2
+   def is_even(n):
+       return n % 2 == 0
+   
+In all cases, method #2 is better to write.  However, it may look confusing at first - so for the rest of this chapter, I will be writing these types of functions as #1.  You may find method #1 easier to read, or easier to understand - and that's OK!  You can do either one, although later on, after this chapter, you will be expected to write them like method #2.
+
 Checks For Understanding
 ------------------------
+
+.. code-block:: python3
+   :linenos:
+   
+   def random_function(word):
+       if word == "hello":
+           return "world"
+       else:
+           return "hello"
+       return "goodbye"
 
 Q#1
 ~~~
 
+.. mchoice:: 0403_cfu_1
+   :correct: a
+   :answer_a: "hello"
+   :answer_b: "world"
+   :answer_c: "goodbye"
+   
+   In the function above, what would be returned from calling random_function("world")?
+
+Q#2
+~~~
+
+.. mchoice:: 0403_cfu_2
+   :correct: a
+   :answer_a: "hello"
+   :answer_b: "world"
+   :answer_c: "goodbye"
+   :feedback_b: Remember, == is case sensitive!
+   
+   In the function above, what would be returned from calling random_function("HELLO")?
+
+Q#3
+~~~
+
+.. fillintheblank:: 0403_cfu_3
+   
+   .. blank:: 0403_cfu_3_1
+      :correct: ^ *6 *$
+      :feedback1: (".*", "Remember: What does the return keyword do?")
+      
+      In the function above, which line of code is unreachable (will never get run)?

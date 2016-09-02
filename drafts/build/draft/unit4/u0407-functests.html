@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lesson 04-07: Testing Functions &mdash; Runestone Interactive Overview</title>
+    <title>Lesson 04-07: Testing Functions &mdash; CSP Python</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -99,7 +99,9 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
-    <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
+    <link rel="top" title="CSP Python" href="../index.html" />
+    <link rel="next" title="Lesson 04-08: Functions within Functions" href="u0408-callfuncs.html" />
+    <link rel="prev" title="Lesson 04-06: Functions &amp; Synchronous Execution" href="u0406-synchexec.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -150,7 +152,7 @@
 
       <div>
         <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
-        <a class="navbar-brand" href="../index.html">Runestone Default</a>
+        <a class="navbar-brand" href="../index.html">CSP Python</a>
       </div>
     </div>
 
@@ -260,7 +262,12 @@
 <li><a class="reference internal" href="#">Lesson 04-07: Testing Functions</a><ul>
 <li><a class="reference internal" href="#why-test-functions">Why Test Functions?</a></li>
 <li><a class="reference internal" href="#creating-tests">Creating Tests</a></li>
-<li><a class="reference internal" href="#checks-for-understanding">Checks For Understanding</a></li>
+<li><a class="reference internal" href="#checks-for-understanding">Checks For Understanding</a><ul>
+<li><a class="reference internal" href="#q-1">Q#1</a></li>
+<li><a class="reference internal" href="#q-2">Q#2</a></li>
+<li><a class="reference internal" href="#q-3">Q#3</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -270,6 +277,18 @@
         
         
           
+  <li id="relations-prev" title="Previous Chapter - Lesson 04-06: Functions &amp; Synchronous Execution" data-toggle="tooltip">
+    <a href="u0406-synchexec.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Lesson 04-08: Functions within Functions' data-toggle="tooltip" >
+    <a href="u0408-callfuncs.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -295,23 +314,170 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="lesson-04-07-testing-functions">
+  <script type=text/javascript>
+localStorage.clear()
+</script><div class="section" id="lesson-04-07-testing-functions">
 <h1>Lesson 04-07: Testing Functions<a class="headerlink" href="#lesson-04-07-testing-functions" title="Permalink to this headline">¶</a></h1>
 <p><strong>Learning Target: I can write thorough tests for functions.</strong></p>
 <div class="section" id="why-test-functions">
 <h2>Why Test Functions?<a class="headerlink" href="#why-test-functions" title="Permalink to this headline">¶</a></h2>
+<p>Functions allow you to write your program in parts.  For example, if I were to write a simple quiz program, I might have functions that handle the following, one per function:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Display the question to the user</li>
+<li>Get the user to type in their answer</li>
+<li>Check if their answer is correct</li>
+<li>Calculate their final score</li>
+</ul>
+</div></blockquote>
+<p>The benefit of writing them in functions is that it allows you to test each part individually.</p>
 </div>
 <div class="section" id="creating-tests">
 <h2>Creating Tests<a class="headerlink" href="#creating-tests" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s say that we have a program that requires us to check if a number is a natural number (a natural number is a positive whole number - 1,2,3,...), and we were to call it <code class="docutils literal"><span class="pre">is_natural()</span></code>:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_natural</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>We can test this function by feeding it a bunch of numbers and testing it against our results:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">is_natural(5)</span></code> should return True</li>
+<li><code class="docutils literal"><span class="pre">is_natural(3.6)</span></code> should return False</li>
+<li><code class="docutils literal"><span class="pre">is_natural(0)</span></code> should return False</li>
+<li><code class="docutils literal"><span class="pre">is_natural(1)</span></code> should return True</li>
+<li><code class="docutils literal"><span class="pre">is_natural(0.999)</span></code> should return False</li>
+<li><code class="docutils literal"><span class="pre">is_natural(-4)</span></code> should return False</li>
+<li><code class="docutils literal"><span class="pre">is_natural(-2.6)</span></code> should return False</li>
+<li><code class="docutils literal"><span class="pre">is_natural(9999999)</span></code> should return True</li>
+</ul>
+</div></blockquote>
+<p><span class="misc-hl">When creating tests, you generally want to test for every possible case</span> - notice how I chose a positive integer, a negative integer, a positive decimal, a negative decimal, 0, 1, a number between 0 and 1, and a very large number.</p>
+<p>So if we run these:</p>
+
+<textarea data-component="activecode" id=ex_0407_1 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+def is_natural(n):
+ if n > 0 or int(n) == n:
+     return True
+ else:
+     return False
+
+#tests
+print(is_natural(5))       #True
+print(is_natural(3.6))     #False
+print(is_natural(0))       #False
+print(is_natural(1))       #True
+print(is_natural(0.999))   #False
+print(is_natural(-4))      #False
+print(is_natural(-2.6))    #False
+print(is_natural(9999999)) #True
+</textarea>
+<p>We can see that not all our numbers match!  That&#8217;s a problem - examine the code and see what&#8217;s wrong with it.</p>
+
+        <p data-component="fillintheblank" data-casei="false" id="cfu_0407_1">
+            
+        <span data-blank>
+            
+        <span data-feedback="regex" style="display: none" id="cfu_0407_1_1_feedback1">.*</span>
+        <span data-feedback="text" style="display: none" for="cfu_0407_1_1_feedback1">Remember what it means to be a natural number!</span>
+            
+        <span data-answer style="display: none" id="cfu_0407_1_1_answer">^2$</span>
+        </span>
+        <p>Which line in the function definition of <code class="docutils literal"><span class="pre">is_natural</span></code> contains the error?</p>
+
+        </p>
+            <p>Spoiler alert!  Don&#8217;t read below until you&#8217;ve finished!</p>
+<p>The line is on line 2 - I put <code class="docutils literal"><span class="pre">or</span></code> when it really should be <code class="docutils literal"><span class="pre">and</span></code>.  So now let&#8217;s fix that:</p>
+
+<textarea data-component="activecode" id=ex_0407_2 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+def is_natural(n):
+ if n > 0 and int(n) == n:
+     return True
+ else:
+     return False
+
+#tests
+print(is_natural(5))       #True
+print(is_natural(3.6))     #False
+print(is_natural(0))       #False
+print(is_natural(1))       #True
+print(is_natural(0.999))   #False
+print(is_natural(-4))      #False
+print(is_natural(-2.6))    #False
+print(is_natural(9999999)) #True
+</textarea>
+<p>Now we see that all our tests pass!  Score!  Now we can use this function safely, knowing that it works for all the examples we need it to handle!</p>
+<dl class="docutils">
+<dt>To recap - the big points:</dt>
+<dd><ul class="first last simple">
+<li>Functions are good because it allows you to break your code down into parts.</li>
+<li>Testing functions is good because it&#8217;s eaiser to debug a small part than an entire program.</li>
+<li>Testing functions is also good because after it passes all tests, you know it works.</li>
+<li>When coming up with tests, make sure you try all the possibilities that you need it to handle.</li>
+</ul>
+</dd>
+</dl>
 </div>
 <div class="section" id="checks-for-understanding">
 <h2>Checks For Understanding<a class="headerlink" href="#checks-for-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="q-1">
+<h3>Q#1<a class="headerlink" href="#q-1" title="Permalink to this headline">¶</a></h3>
+<p>The given function checks to see if a number is between 10 and 20 inclusive.  Write at least three test cases along with their predictions, and run your code to make sure that your tests are accurate (or that the function itself works).  If the function is broken, fix the function so it works as expected.</p>
+
+<textarea data-component="activecode" id=cfu_0407_2 data-lang="python"    data-timelimit=25000   data-audio=''     >
+def mystery(n):
+    if n >= 10 or n <= 20:
+        return True
+    else:
+        return False
+
+#write tests below
+</textarea>
+</div>
+<div class="section" id="q-2">
+<h3>Q#2<a class="headerlink" href="#q-2" title="Permalink to this headline">¶</a></h3>
+<p>The given function takes in a string as an argument and prints out the length of the string times 2.  Write at least three test cases along with their predictions, and run your code to make sure that your tests are accurate (or that the function itself works).    If the function is broken, fix the function so it works as expected.</p>
+
+<textarea data-component="activecode" id=cfu_0407_2 data-lang="python"    data-timelimit=25000   data-audio=''     >
+def mystery(s):
+    return len(s) * 2 + 1
+
+#write tests below
+</textarea>
+</div>
+<div class="section" id="q-3">
+<h3>Q#3<a class="headerlink" href="#q-3" title="Permalink to this headline">¶</a></h3>
+<p>Write a function called <code class="docutils literal"><span class="pre">repeat5</span></code> that that takes in a string as input, and repeats the first two letters of the string three times (example: <code class="docutils literal"><span class="pre">repeat5('hello')</span></code> will return <code class="docutils literal"><span class="pre">'hehehe'</span></code>.  Write at least three test cases along with their predictions, and run your code to make sure that your tests are accurate (or that the function itself works).</p>
+
+<textarea data-component="activecode" id=cfu_0407_4 data-lang="python"    data-timelimit=25000   data-audio=''     >
+#write function below
+
+
+#write tests below
+</textarea>
+</div>
 </div>
 </div>
 
 
   
       
+  <li id="relations-prev" class="navLink" title='Previous Section - Lesson 04-06: Functions &amp; Synchronous Execution' data-toggle="tooltip">
+    <a href="u0406-synchexec.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="u0406-synchexec.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - Lesson 04-08: Functions within Functions' data-toggle="tooltip" >
+    <a href="u0408-callfuncs.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="u0408-callfuncs.html" >Next Section - Lesson 04-08: Functions within Functions</a>
 
 <script type="text/javascript">
 
@@ -329,7 +495,7 @@
       
     </p>
     <p>
-        &copy; Copyright 2015 ubuntu.
+        &copy; Copyright 2016 Timothy Chen.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
     </p>
   </div>

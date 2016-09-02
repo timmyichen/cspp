@@ -20,7 +20,7 @@ For example, let's say we want to ask the user for a number.  When you run the f
 .. activecode:: 0414_ex_1
    :nocodelens:
    
-   num = input("Enter a number")
+   num = int(input("Enter a number"))
    print("You entered {}".format(num))
 
 You'll notice that it came up with an error.  No good!  In this lesson, we'll show you a way to make your code input-proof when asking for numbers.
@@ -67,4 +67,27 @@ As you can see, it doesn't handle decimals or negative numbers very well, probab
 Negative Numbers
 ~~~~~~~~~~~~~~~~
 
-With negative numbers, we know that the negative sign will always be in the front of the number.  This is good because it allows us to write a quick test to see if that is true:
+With negative numbers, we know that the negative sign will always be in the front of the number.  This is good because we know how to check the first character in a string.
+
+.. fillintheblank:: cfu_0414_1
+
+   .. blank:: cfu_0414_1_1
+      :correct: ^string\[0\]$|^string\[0:1\]$
+      :feedback1: ("\[1\]", "Remember, indeces start counting at 0!")
+      :feedback2: (".*", "Try again! Think of string indexing.")
+   
+      Given a string called ``string``, what expression would give us the first character of ``string``?
+
+Highlight for answer: :ans-hl:`string[0]`
+
+Great!  Now come up with an expression that checks whether the first character of string is equal to ``"-"``.  As a reminder, you use ``==`` to check for equality.
+
+.. fillintheblank:: cfu_0414_2
+
+   .. blank:: cfu_0414_2_1
+      :correct: ^string\[0\] *== *(('-')|("-"))$|^string\[0:1\] *== *(('-')|("-"))$
+      :feedback1: ("[^=]=[^=]", "Remember - two equal signs for equality!")
+      :feedback2: (".*", "Try again!")
+   
+      What boolean expression can you use to check  whether the first character of ``string`` is equal to ``"-"``?
+

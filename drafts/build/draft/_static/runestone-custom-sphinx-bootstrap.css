@@ -706,3 +706,8 @@ span.caption-text {
 .uline{
    text-decoration: underline;
 }
+
+.ans-hl{
+   color: black;
+   background: black;
+}

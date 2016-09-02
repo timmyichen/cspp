@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lesson 04-09: Program Design Tips: Part II &mdash; Runestone Interactive Overview</title>
+    <title>Lesson 04-09: Program Design Tips: Part II &mdash; CSP Python</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -99,7 +99,9 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
-    <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
+    <link rel="top" title="CSP Python" href="../index.html" />
+    <link rel="next" title="Lesson 04-10: Pseudocode" href="u0410-pseudocode.html" />
+    <link rel="prev" title="Lesson 04-08: Functions within Functions" href="u0408-callfuncs.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -150,7 +152,7 @@
 
       <div>
         <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
-        <a class="navbar-brand" href="../index.html">Runestone Default</a>
+        <a class="navbar-brand" href="../index.html">CSP Python</a>
       </div>
     </div>
 
@@ -260,7 +262,7 @@
 <li><a class="reference internal" href="#">Lesson 04-09: Program Design Tips: Part II</a><ul>
 <li><a class="reference internal" href="#naming-functions">Naming Functions</a></li>
 <li><a class="reference internal" href="#function-length">Function Length</a></li>
-<li><a class="reference internal" href="#simplifying-code-with-functions">Simplifying Code with Functions</a></li>
+<li><a class="reference internal" href="#changing-code-already-written">Changing Code Already Written</a></li>
 </ul>
 </li>
 </ul>
@@ -270,6 +272,18 @@
         
         
           
+  <li id="relations-prev" title="Previous Chapter - Lesson 04-08: Functions within Functions" data-toggle="tooltip">
+    <a href="u0408-callfuncs.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Lesson 04-10: Pseudocode' data-toggle="tooltip" >
+    <a href="u0410-pseudocode.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -295,24 +309,61 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="lesson-04-09-program-design-tips-part-ii">
+  <script type=text/javascript>
+localStorage.clear()
+</script><div class="section" id="lesson-04-09-program-design-tips-part-ii">
 <h1>Lesson 04-09: Program Design Tips: Part II<a class="headerlink" href="#lesson-04-09-program-design-tips-part-ii" title="Permalink to this headline">¶</a></h1>
 <p><strong>Learning Target: I can design programs with maximum readability and maintainability</strong>
 <strong>Learning Target: I can use functions to reduce complexity in a program</strong></p>
 <div class="section" id="naming-functions">
 <h2>Naming Functions<a class="headerlink" href="#naming-functions" title="Permalink to this headline">¶</a></h2>
+<p>Just like variables, it&#8217;s very important that you give your functions names that make sense and are easy to understand.</p>
+<p>When it comes to functions, it&#8217;s important to remember that functions <strong>do</strong> things.  Therefore, <span class="misc-hl">the name of a function should be a verb that reflects what it does</span>.  Drawing on previous examples you&#8217;ve seen in this book, a function that tests to see if a number is prime or not is simply called <code class="docutils literal"><span class="pre">is_prime</span></code>, returning True or False.  A function used to get a user&#8217;s name might be called <code class="docutils literal"><span class="pre">get_name</span></code>.</p>
+<p>One of the most important things about how you write your code is how <strong>readable</strong> it is - the more readable, the better, and proper function names help with that.</p>
+<p>Try to avoid using acronyms for long functions names; instead, just figure out a way to make it shorter.  For example, if you have a function that might be <code class="docutils literal"><span class="pre">check_if_sprite_is_within_bounds</span></code>, you don&#8217;t want to call it <code class="docutils literal"><span class="pre">cisiwb</span></code> for short, because that tells the reader <em>nothing</em>.  Instead, you might want to call it <code class="docutils literal"><span class="pre">check_sprite_bounds</span></code>.  You can always use supplements to help explain your code, but the goal is to have your code explain itself.</p>
 </div>
 <div class="section" id="function-length">
 <h2>Function Length<a class="headerlink" href="#function-length" title="Permalink to this headline">¶</a></h2>
+<p>The length (in terms of how many lines of code) of a function is also important.  Shorter functions are better.  A function that is long usually means that it&#8217;s complicated, and that algorithm can probably be broken down into more functions.</p>
+<p><span class="misc-hl">Having many short functions is better than having fewer long functions</span>.  Shorter functions are easier to debug and easier to read.  For example, when you built your number guessing game, functions would have made it much easier to read!</p>
+<p>Here&#8217;s what a very simple number guessing game might have for a main body of code:</p>
+<div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="n">generate_answer</span><span class="p">()</span>
+<span class="n">guess</span> <span class="o">=</span> <span class="n">get_guess</span><span class="p">()</span>
+<span class="k">while</span> <span class="n">guess</span> <span class="o">!=</span> <span class="n">answer</span><span class="p">:</span>
+    <span class="n">print_hint</span><span class="p">()</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="n">get_guess</span><span class="p">()</span>
+<span class="n">print_ending</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>One of the goals of functions is to delegate tasks to other processes.  <span class="misc-hl">Each function should generally have one clear goal, and if something can be it&#8217;s own function, it probably should be.</span></p>
 </div>
-<div class="section" id="simplifying-code-with-functions">
-<h2>Simplifying Code with Functions<a class="headerlink" href="#simplifying-code-with-functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="changing-code-already-written">
+<h2>Changing Code Already Written<a class="headerlink" href="#changing-code-already-written" title="Permalink to this headline">¶</a></h2>
+<p>Lastly, a quick point about when you can change your code - the answer is, <em>always</em>!  <span class="misc-hl">Once written, you should always be looking for ways to improve upon your code, even if it means rewriting it.</span>  Too many students I know have been resistant to changing their code because they feel like they&#8217;re doing extra work - but it&#8217;s important to realize that leaving bad code can create more problems in the future.</p>
 </div>
 </div>
 
 
   
       
+  <li id="relations-prev" class="navLink" title='Previous Section - Lesson 04-08: Functions within Functions' data-toggle="tooltip">
+    <a href="u0408-callfuncs.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="u0408-callfuncs.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - Lesson 04-10: Pseudocode' data-toggle="tooltip" >
+    <a href="u0410-pseudocode.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="u0410-pseudocode.html" >Next Section - Lesson 04-10: Pseudocode</a>
 
 <script type="text/javascript">
 
@@ -330,7 +381,7 @@
       
     </p>
     <p>
-        &copy; Copyright 2015 ubuntu.
+        &copy; Copyright 2016 Timothy Chen.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
     </p>
   </div>
