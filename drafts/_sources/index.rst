@@ -1,7 +1,15 @@
-.. _t_o_c_main:
+.. _t_o_c_index:
 
-Table of Contents for Testers
-:::::::::::::::::::::::::::::
+..  Copyright (C) 2016 Timothy Chen.  Permission is granted to copy, distribute
+    and/or modify this document under the terms of the GNU Free Documentation
+    License, Version 1.3 or any later version published by the Free Software
+    Foundation; with the Invariant Sections being Contributor List, Lesson 00-01: 
+    Introduction To The Course, no Front-Cover Texts, and no Back-Cover Texts.  
+    A copy of the license is included in the section entitled "GNU Free 
+    Documentation License".
+
+Table of Contents
+:::::::::::::::::
 
 Please use `this form <https://goo.gl/forms/zIIv2RZFzgDQUBJf1>`_ to report bugs or provide feedback.
 
@@ -106,8 +114,8 @@ Unit 3 Labs
     
 Please submit `this survey <https://goo.gl/forms/ix6skYC3XlsEV8l92>`_ at the end of each unit.
     
-Unit 4 Lessons (IN PROGRESS)
-============================
+Unit 4 Lessons
+==============
 
 .. toctree::
     :maxdepth: 2
@@ -125,7 +133,6 @@ Unit 4 Lessons (IN PROGRESS)
     unit4/u0411-decomp.rst
     unit4/u0412-abstraction.rst
     unit4/u0413-mainfunc.rst
-    unit4/u0414-inpvalid.rst
     unit4/u04-labcheck.rst
 
 Unit 4 Labs
@@ -140,20 +147,70 @@ Unit 4 Labs
     lab04-04.rst
     
 Please submit `this survey <https://goo.gl/forms/ix6skYC3XlsEV8l92>`_ at the end of each unit.
-       
+    
+Unit 5 Lessons (IN PROGRESS)
+============================
+
+.. toctree::
+    :maxdepth: 2
+    
+    unit5/u0501-lists.rst
+    unit5/u0502-looplist.rst
+    unit5/u0503-listmethods.rst
+    unit5/u0504-listvalue.rst
+    unit5/u0505-dupelist.rst
+    unit5/u0506-listbuildext.rst
+    unit5/u0507-listbuildrev.rst
+    unit5/u0508-listbuildrepl.rst
+    unit5/u0509-listbuildrmall.rst
+    unit5/u0510-strtolist.rst
+    unit5/u0511-swapalgo.rst
+    unit5/u05-labcheck.rst
+
+Unit 5 Labs
+===========
+
+.. toctree::
+    :maxdepth: 2
+    
+    lab05-01.rst
+    lab05-02.rst
+    
+Please submit `this survey <https://goo.gl/forms/ix6skYC3XlsEV8l92>`_ at the end of each unit.
+
+Unit 6 Lessons (INCOMPLETE)
+===========================
+
+.. toctree::
+    :maxdepth: 2
+    
+    
+
+Unit 6 Labs
+===========
+
+.. toctree::
+    :maxdepth: 2
+    
+    lab06-01.rst
+    lab06-02-1.rst
+    lab06-02.rst
+    lab06-03.rst
+
 Unused Labs
 ===========
 
 .. toctree::
     :maxdepth: 2
 
-    lab05-01.rst
-    lab05-02.rst
-    lab06-01.rst
-    lab06-02-1.rst
-    lab06-02.rst
-    lab06-03.rst
     lab07-01.rst
     lab07-02.rst
     lab07-03.rst
     lab07-04.rst
+
+GNU Free Documentation License
+==============================
+
+.. toctree::
+    
+    gnu_fdl_1.3.txt

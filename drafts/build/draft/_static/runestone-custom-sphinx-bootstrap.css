@@ -707,7 +707,10 @@ span.caption-text {
    text-decoration: underline;
 }
 
-.ans-hl{
+.hide-hl{
    color: black;
    background: black;
+}
+.hide-hl:hover{
+   color: white;
 }

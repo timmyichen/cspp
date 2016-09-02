@@ -676,9 +676,3 @@ queues, trees, graphs, and recursion.
 
 We hope you will find these tools and materials useful.  If you want to get more involved, feel free to download the tools and write your own courseware.  Everything you need can be found in the current `GitHub repository <http://github.com/bnmnetp/runestone>`_.
 
-
-
-.. toctree::
-    :hidden:
-
-    navhelp

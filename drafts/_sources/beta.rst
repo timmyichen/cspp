@@ -1,5 +1,13 @@
 .. _t_o_c_beta:
 
+..  Copyright (C) 2016 Timothy Chen.  Permission is granted to copy, distribute
+    and/or modify this document under the terms of the GNU Free Documentation
+    License, Version 1.3 or any later version published by the Free Software
+    Foundation; with the Invariant Sections being Contributor List, Lesson 00-01: 
+    Introduction To The Course, no Front-Cover Texts, and no Back-Cover Texts.  
+    A copy of the license is included in the section entitled "GNU Free 
+    Documentation License".
+
 Table of Contents for Testers
 :::::::::::::::::::::::::::::
 
@@ -125,7 +133,6 @@ Unit 4 Lessons
     unit4/u0411-decomp.rst
     unit4/u0412-abstraction.rst
     unit4/u0413-mainfunc.rst
-    unit4/u0414-inpvalid.rst
     unit4/u04-labcheck.rst
 
 Unit 4 Labs

@@ -26,10 +26,7 @@ The overview section, which follows is an ideal section to look at both online a
 SECTION 2: An Overview of the extensions
 ::::::::::::::::::::::::::::::::::::::::
 
-.. toctree::
-   :maxdepth: 2
 
-   overview.rst
 
 
 SECTION 2: Add more stuff here

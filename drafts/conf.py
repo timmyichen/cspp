@@ -220,7 +220,7 @@ rst_prolog = """
 .. role:: vocab-word
 .. role:: misc-hl
 .. role:: uline
-.. role:: ans-hl
+.. role:: hide-hl
 
 .. raw:: html
 

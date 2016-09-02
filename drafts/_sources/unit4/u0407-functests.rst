@@ -2,6 +2,14 @@
    :start: 1
    :prefix: u0407-
 
+..  Copyright (C) 2016 Timothy Chen.  Permission is granted to copy, distribute
+    and/or modify this document under the terms of the GNU Free Documentation
+    License, Version 1.3 or any later version published by the Free Software
+    Foundation; with the Invariant Sections being Contributor List, Lesson 00-01: 
+    Introduction To The Course, no Front-Cover Texts, and no Back-Cover Texts.  
+    A copy of the license is included in the section entitled "GNU Free 
+    Documentation License".
+
 
 Lesson 04-07: Testing Functions
 ===============================
@@ -133,7 +141,7 @@ Q#2
 
 The given function takes in a string as an argument and prints out the length of the string times 2.  Write at least three test cases along with their predictions, and run your code to make sure that your tests are accurate (or that the function itself works).    If the function is broken, fix the function so it works as expected.
 
-.. activecode:: cfu_0407_2
+.. activecode:: cfu_0407_3
    :nocodelens:
    
    def mystery(s):

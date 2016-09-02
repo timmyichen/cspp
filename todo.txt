@@ -5,9 +5,3 @@ find datatypes from the wild (example: netflix and point out examples of types)
 
 CFUs/practice for:
 
-find someplace to fit in:
-    syntax stuff
-    printing statements
-
-input validation:
-    change unit 04-04 to include
