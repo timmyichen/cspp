@@ -211,6 +211,6 @@ Unused Labs
 GNU Free Documentation License
 ==============================
 
-.. toctree::
-    
-    gnu_fdl_1.3.txt
+Click to View: `GNU FDL 1.3 <_downloads/gnu_fdl_1.3.txt>`_
+
+Click to Download: :download:`GNU FDL 1.3 <gnu_fdl_1.3.txt>`

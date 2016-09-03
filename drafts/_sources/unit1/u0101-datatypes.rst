@@ -19,7 +19,13 @@ Lesson 01-01: Datatypes in Python
 What is data?
 -------------
 
-Everything you see right now is data.  Cellular signals flying through the air is data.  A text message, a song, a video, is all data.  Even though data comes in many forms, there are some very :vocab-def:`simple representations of data`, called :vocab-word:`basic datatypes`, that we will be learning about.  
+Everything you see right now is data.  Cellular signals flying through the air is data.  A text message, a song, a video, is all data.  Even though data comes in many forms, there are some very :vocab-def:`simple representations of data`, called :vocab-word:`basic datatypes`, that we will be learning about. 
+Here's an example of datatypes in the real world, on the Internet Movie Database's page for Inside Out, an excellent movie from 2015.
+
+.. image:: img/imdbtypes.svg
+   :align: center
+   :alt: Datatypes on the IMDB page
+   :width: 400
 
 In Python, the five basic datatypes that we will be learning are:
 	- :vocab-word:`int`

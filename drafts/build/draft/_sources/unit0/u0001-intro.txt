@@ -20,7 +20,9 @@ This is a project created by Timothy Chen, a high school computer science teache
 What is Computer Science?
 -------------------------
 
-Computer science is, at it's base, the study of computation, constantly asking the question: *What is computable?*  Computer science is a very broad field that revolves around algorithms, which are just step-by-step instructions.  For what, you might ask?  For anything, from simple calculations to complex data processing.
+Computer science is, at its base, the study of computation, constantly asking the question: *What is computable?*  For example, I'm sure you could calculate the highest prime number under 10, or even 100.  What about 1,000?  1,000,000?  The number 1,000,000 has six digits - as of January 2016, the largest prime number found has 22,338,618 *digits*.  That's quite a number.
+
+Computer science is a very broad field that revolves around algorithms, which are just step-by-step instructions.  What are these algorithms for, you might ask?  For anything, from simple calculations to complex data processing, to determining which stories to show on your Facebook news feed.
 
 Through this course, we will touch upon the basics of various introductory computer science topics, such as programming, binary and hexadecimal number systems, searching and sorting algorithms, and more.
 
@@ -42,9 +44,7 @@ We will be using python to create text-based games and create ciphertext tools -
 How To Use This Course?
 -----------------------
 
-If you are a student in Mr. Chen's class, feel free to skip this part.
-
-If you are not, and you are using this as a self-study guide or learning material, this course is broken up into Sections:
+If you are using this as a self-study guide or learning material, this course is broken up into Sections:
 
    - Core Programming Chapters
    - Core Other Chapters
@@ -63,7 +63,7 @@ Each of the Programming Chapters are broken up into lessons and labs.  You can v
    - 1.7 - Dictionaries and File I/O#
    - 1.8 - Basic Searching/Sorting Algorithms#
 
-2. Core Other Chapters#
+2. Core Miscellaneous Chapters#
 
    - 2.1 - Number Systems in Computer Science#
    - 2.2 - The Internet#
@@ -74,8 +74,14 @@ Each of the Programming Chapters are broken up into lessons and labs.  You can v
    - 3.1 - Recursion and Recursive Algorithms#
    - 3.2 - Object Oriented Programming#
    - 3.3 - Image Processing#
-   - 3.4 - Web Scraping
-   - 3.5 - Games With The pygame Library
+   - 3.4 - Web Scraping#
+   - 3.5 - Simple Games With The pygame Library#
+
+4. Elective Miscellaneous Chapters
+
+    - 4.1 - History of Computing#
+    - 4.2 - Version Control and Git
+    
 
 # - *incomplete*
 
@@ -90,4 +96,11 @@ Throughout this course, you might see some highlighted text.
 
 :misc-hl:`Some stuff might not be vocab, but is really important regardless.  That will be this color.`
 
-Hover over me: :hide-hl:`Some answers will go here so you can check yourself (before you wreck yourself, obviously)`
+Hover over me: :hide-hl:`Some answers will go here so you can check your answer`
+
+Development Notes
+-----------------
+
+- Going from one page directly to the next is currently not in place.  It will be in the future.
+- Please contact me if your fill-in-the-blank answer is marked incorrect but you're sure is right.
+- Some lessons will be given additional practice/checks for understanding.
