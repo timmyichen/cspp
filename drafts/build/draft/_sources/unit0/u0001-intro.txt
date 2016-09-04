@@ -79,8 +79,8 @@ Each of the Programming Chapters are broken up into lessons and labs.  You can v
 
 4. Elective Miscellaneous Chapters
 
-    - 4.1 - History of Computing#
-    - 4.2 - Version Control and Git
+   - 4.1 - History of Computing#
+   - 4.2 - Version Control and Git
     
 
 # - *incomplete*

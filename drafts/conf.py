@@ -221,6 +221,7 @@ rst_prolog = """
 .. role:: misc-hl
 .. role:: uline
 .. role:: hide-hl
+.. role:: imgcap
 
 .. raw:: html
 

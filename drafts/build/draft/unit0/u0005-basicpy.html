@@ -5,26 +5,26 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lesson 01-04: Mixing Datatypes &mdash; Runestone Interactive Overview</title>
+    <title>Lesson 00-05: Basic Python &mdash; CSP Python</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
@@ -43,16 +43,8 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/clickable.js"></script>
-    <script type="text/javascript" src="../_static/timedclickable.js"></script>
-    <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/shortanswer.js"></script>
-    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
-    <script type="text/javascript" src="../_static/mchoice.js"></script>
-    <script type="text/javascript" src="../_static/timedmc.js"></script>
-    <script type="text/javascript" src="../_static/fitb.js"></script>
-    <script type="text/javascript" src="../_static/timedfitb.js"></script>
-    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
     <script type="text/javascript" src="../_static/bookfuncs.js"></script>
@@ -67,12 +59,9 @@
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/timed_activecode.js"></script>
-    <script type="text/javascript" src="../_static/poll.js"></script>
-    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
-    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
-    <script type="text/javascript" src="../_static/parsons.js"></script>
-    <script type="text/javascript" src="../_static/timedparsons.js"></script>
     <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
@@ -80,11 +69,22 @@
     <script type="text/javascript" src="../_static/codelens.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
-    <script type="text/javascript" src="../_static/dragndrop.js"></script>
-    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
     <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -99,7 +99,9 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
-    <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
+    <link rel="top" title="CSP Python" href="../index.html" />
+    <link rel="next" title="Lesson 01-01: Datatypes in Python" href="../unit1/u0101-datatypes.html" />
+    <link rel="prev" title="Lesson 00-04: Running Python Programs" href="u0004-runpy.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -150,7 +152,7 @@
 
       <div>
         <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
-        <a class="navbar-brand" href="../index.html">Runestone Default</a>
+        <a class="navbar-brand" href="../index.html">CSP Python</a>
       </div>
     </div>
 
@@ -257,10 +259,10 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lesson 01-04: Mixing Datatypes</a><ul>
-<li><a class="reference internal" href="#mixing-ints-with-floats">Mixing Ints with Floats</a></li>
-<li><a class="reference internal" href="#check-for-understanding">Check For Understanding</a></li>
-<li><a class="reference internal" href="#mixing-strings-with-anything">Mixing Strings with Anything</a></li>
+<li><a class="reference internal" href="#">Lesson 00-05: Basic Python</a><ul>
+<li><a class="reference internal" href="#print-statements"><code class="docutils literal"><span class="pre">print()</span></code> statements</a></li>
+<li><a class="reference internal" href="#whitespace">Whitespace</a></li>
+<li><a class="reference internal" href="#comments">Comments</a></li>
 </ul>
 </li>
 </ul>
@@ -270,6 +272,18 @@
         
         
           
+  <li id="relations-prev" title="Previous Chapter - Lesson 00-04: Running Python Programs" data-toggle="tooltip">
+    <a href="u0004-runpy.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Lesson 01-01: Datatypes in Python' data-toggle="tooltip" >
+    <a href="../unit1/u0101-datatypes.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -295,125 +309,72 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="lesson-01-04-mixing-datatypes">
-<h1>Lesson 01-04: Mixing Datatypes<a class="headerlink" href="#lesson-01-04-mixing-datatypes" title="Permalink to this headline">¶</a></h1>
-<p><strong>Learning Target: I can predict the behavior of two different datatypes that are operated upon.</strong></p>
-<p><strong>Highlighting Key</strong>: <span class="vocab-word">vocab term</span>, <span class="vocab-def">vocab definition</span>, <span class="misc-hl">important concept</span></p>
-<p>Now that we know that we can use operators to combine values, what happens if we combine values of different types?</p>
-<div class="section" id="mixing-ints-with-floats">
-<h2>Mixing Ints with Floats<a class="headerlink" href="#mixing-ints-with-floats" title="Permalink to this headline">¶</a></h2>
-<p>When you mix integers and floats together, you will always get a float back.  Integer and integer gives integer, float and float gives float, but <span class="misc-hl">combining an integer and float will result in a float.</span></p>
-<p>To observe, run the following code:</p>
+  <script type=text/javascript>
+localStorage.clear()
+</script><div class="section" id="lesson-00-05-basic-python">
+<h1>Lesson 00-05: Basic Python<a class="headerlink" href="#lesson-00-05-basic-python" title="Permalink to this headline">¶</a></h1>
+<p>This lesson is just a quick lesson on a few python basics.</p>
+<div class="section" id="print-statements">
+<h2><code class="docutils literal"><span class="pre">print()</span></code> statements<a class="headerlink" href="#print-statements" title="Permalink to this headline">¶</a></h2>
+<p>The most basic way of seeing output is by using the <code class="docutils literal"><span class="pre">print()</span></code> statement.  Basic syntax is as follows:</p>
 
-<textarea data-component="activecode" id=ac_mixtype_1 data-lang="python"    data-timelimit=25000   data-audio=''     data-caption='Note that everything after the # is a comment and is not run as code'>
-print 1 + 1     #int + int => int
-print 1.0 + 1.0 #float + float => float
-print 1 + 1.0   #int + float => float
+<textarea data-component="activecode" id=ex_0005_1 data-lang="python" data-autorun="true"   data-timelimit=25000   data-audio=''     >
+print("Print stuff!")
+print("Parentheses and Quotes are required, for now")
+print("Stuff you print goes in between the quotes")
+print('Single quotes work too.')
 </textarea>
-<p>As an example, consider the expression <code class="docutils literal"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">/</span> <span class="pre">4</span> <span class="pre">+</span> <span class="pre">0.5</span></code>.</p>
-<dl class="docutils">
-<dt>You might look at this expression and think of the following steps:</dt>
-<dd><ul class="first last simple">
-<li>There is a float in there, so the result should be a float.</li>
-<li><code class="docutils literal"><span class="pre">2</span> <span class="pre">/</span> <span class="pre">4</span></code> is <code class="docutils literal"><span class="pre">0.5</span></code>, so the entire thing is <code class="docutils literal"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">0.5</span> <span class="pre">+</span> <span class="pre">0.5</span></code>, or <code class="docutils literal"><span class="pre">2</span></code>.</li>
-<li>The result is <code class="docutils literal"><span class="pre">2</span></code>!</li>
-</ul>
-</dd>
-<dt>However, <span class="misc-hl">types change as they are evaluated</span>.  This means that the steps for the above are more like this:</dt>
-<dd><ul class="first last simple">
-<li>PEMDAS says that division happens first.</li>
-<li><code class="docutils literal"><span class="pre">2</span> <span class="pre">/</span> <span class="pre">4</span></code> involves two integers, so the result is <code class="docutils literal"><span class="pre">0.5</span></code>, removing everything after the decimal, or just <code class="docutils literal"><span class="pre">0</span></code></li>
-<li>All that&#8217;s left is addition, so we can evaluate it left to right.</li>
-<li><code class="docutils literal"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">0</span> <span class="pre">+</span> <span class="pre">0.5</span></code> will be evaluated from left to right, making the <code class="docutils literal"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">0</span></code> happen first (which equals <code class="docutils literal"><span class="pre">1</span></code>)</li>
-<li><code class="docutils literal"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">0.5</span></code> is what remains, which is an int plus a float, so the result will be a float (decimal): <code class="docutils literal"><span class="pre">1.5</span></code></li>
-<li>The result is <code class="docutils literal"><span class="pre">1.5</span></code></li>
-</ul>
-</dd>
-</dl>
-<p>This may get tricky in specific formulas that require certain numbers to already have a decimal place.</p>
 </div>
-<div class="section" id="check-for-understanding">
-<h2>Check For Understanding<a class="headerlink" href="#check-for-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="whitespace">
+<h2>Whitespace<a class="headerlink" href="#whitespace" title="Permalink to this headline">¶</a></h2>
+<p>Whitespace refers to spaces or tabs.  At this stage of knowledge, having whitespace before python commands will cause errors.  Try running the example below:</p>
 
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="cfu_mixtype_1">
-            ch0104-1: What datatype will result from the following expression? <code class="docutils literal"><span class="pre">4</span> <span class="pre">*</span> <span class="pre">2.0</span></code>
-            <li data-component="answer"  id="cfu_mixtype_1_opt_a">(A) Boolean</li><li data-component="feedback" id="cfu_mixtype_1_opt_a">Remember that a boolean is True/False, which isn't in this expression.</li>
-            
-            <li data-component="answer"  id="cfu_mixtype_1_opt_b">(B) Integer</li><li data-component="feedback" id="cfu_mixtype_1_opt_b">Which is greater, Floats or Integers?</li>
-            
-            <li data-component="answer" data-correct id="cfu_mixtype_1_opt_c">(C) Float</li><li data-component="feedback" id="cfu_mixtype_1_opt_c">The float turns everything into an integer!</li>
-            
-
-            </ul>
-            
-        <p data-component="fillintheblank" data-casei="false" id="cfu_mixtype_2">
-            
-        <span data-blank>
-            Evaluate the following expression: <code class="docutils literal"><span class="pre">8</span> <span class="pre">/</span> <span class="pre">2</span> <span class="pre">**</span> <span class="pre">2.0</span></code>.  Don&#8217;t forget to consider PEMDAS as well as the datatypes.
-        <span data-feedback="regex" style="display: none" id="blank1_feedback1">2</span>
-        <span data-feedback="text" style="display: none" for="blank1_feedback1">Have you considered the ending datatype?</span>
-            
-        <span data-feedback="regex" style="display: none" id="blank1_feedback2">16.0</span>
-        <span data-feedback="text" style="display: none" for="blank1_feedback2">Don't forget about PEMDAS!</span>
-            
-        <span data-feedback="regex" style="display: none" id="blank1_feedback3">16</span>
-        <span data-feedback="text" style="display: none" for="blank1_feedback3">Don't forget about PEMDAS!</span>
-            
-        <span data-feedback="regex" style="display: none" id="blank1_feedback4">.*</span>
-        <span data-feedback="text" style="display: none" for="blank1_feedback4">Try again!</span>
-            
-        <span data-answer style="display: none" id="blank1_answer">2.0</span>
-        </span>
-        
-        </p>
-            
-        <p data-component="fillintheblank" data-casei="false" id="cfu_mixtype_3">
-            
-        <span data-blank>
-            Evaluate the following expression: <code class="docutils literal"><span class="pre">10</span> <span class="pre">/</span> <span class="pre">4</span> <span class="pre">+</span> <span class="pre">4.0</span></code>.  Don&#8217;t forget to consider PEMDAS as well as the datatypes.
-        <span data-feedback="regex" style="display: none" id="blank2_feedback1">6.5</span>
-        <span data-feedback="text" style="display: none" for="blank2_feedback1">Remember, integer division!</span>
-            
-        <span data-feedback="regex" style="display: none" id="blank2_feedback2">6</span>
-        <span data-feedback="text" style="display: none" for="blank2_feedback2">Have you considered the ending datatype?</span>
-            
-        <span data-feedback="regex" style="display: none" id="blank2_feedback3">1.25</span>
-        <span data-feedback="text" style="display: none" for="blank2_feedback3">Don't forget about PEMDAS!</span>
-            
-        <span data-feedback="regex" style="display: none" id="blank2_feedback4">.*</span>
-        <span data-feedback="text" style="display: none" for="blank2_feedback4">Try again!</span>
-            
-        <span data-answer style="display: none" id="blank2_answer">6.0</span>
-        </span>
-        
-        </p>
-            </div>
-<div class="section" id="mixing-strings-with-anything">
-<h2>Mixing Strings with Anything<a class="headerlink" href="#mixing-strings-with-anything" title="Permalink to this headline">¶</a></h2>
-<p>We already know that we can multiply Strings with integers.  This seems to be the exception, because in every other case, we&#8217;ll get an error!  Let&#8217;s look at string addition (recall: concatenation).</p>
-<p>In the following code, replace the <code class="docutils literal"><span class="pre">1</span></code> with any other value that is not a String, then run the code.  You should find a common theme.</p>
-
-<textarea data-component="activecode" id=ac_mixtype_2 data-lang="python"    data-timelimit=25000   data-audio=''     >
-print "hello" + 1
-#replace the second part with anything that is not a String
+<textarea data-component="activecode" id=ex_0005_2 data-lang="python"    data-timelimit=25000   data-audio=''     >
+print("hello")
+  print("world")
+         print("howdy")
 </textarea>
-<p>You should find that you get a <code class="docutils literal"><span class="pre">TypeError</span></code> every time!</p>
-<dl class="docutils">
-<dt>The rule can basically be broken down into three parts:</dt>
-<dd><ul class="first last simple">
-<li>Adding a string to another string is allowed</li>
-<li>Multiplying a string by an integer is allowed</li>
-<li><strong>Everything else is not allowed</strong></li>
-</ul>
-</dd>
-</dl>
-<p>Any time we encounter code that generates an error, it&#8217;s usually a good idea to find a way to make the code work without any errors.  So the big overarching question in our next lesson is: <strong>How do we combine different types?</strong></p>
+<p>Whitespace has a very specific meaning in python, and we will cover this later - just know that for now, your code statements should not have any whitespace in front of it.</p>
+</div>
+<div class="section" id="comments">
+<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>See the code below:</p>
+
+<textarea data-component="activecode" id=ex_0005_3 data-lang="python" data-autorun="true"   data-timelimit=25000   data-audio=''     >
+print("Only this line gets run")
+# because this is a comment and comments are not run
+# You will know it's a comment because of the # sign
+print("hi") # these comments can be on the same line as statements
+
+""" You can have
+multi-line comments
+using triple quotes"""
+
+'''Single quotes
+also
+work
+'''
+print("this line also gets run, but no comments will show")
+</textarea>
 </div>
 </div>
 
 
   
       
+  <li id="relations-prev" class="navLink" title='Previous Section - Lesson 00-04: Running Python Programs' data-toggle="tooltip">
+    <a href="u0004-runpy.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="u0004-runpy.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - Lesson 01-01: Datatypes in Python' data-toggle="tooltip" >
+    <a href="../unit1/u0101-datatypes.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="../unit1/u0101-datatypes.html" >Next Section - Lesson 01-01: Datatypes in Python</a>
 
 <script type="text/javascript">
 
@@ -431,8 +392,8 @@ print "hello" + 1
       
     </p>
     <p>
-        &copy; Copyright 2015 ubuntu.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.4.
+        &copy; Copyright 2016 Timothy Chen.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
     </p>
   </div>
 </footer>

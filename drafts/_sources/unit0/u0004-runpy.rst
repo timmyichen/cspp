@@ -1,6 +1,6 @@
 .. qnum::
    :start: 1
-   :prefix: u0003-
+   :prefix: u0004-
 
 ..  Copyright (C) 2016 Timothy Chen.  Permission is granted to copy, distribute
     and/or modify this document under the terms of the GNU Free Documentation
@@ -11,7 +11,7 @@
     Documentation License".
 
 
-Lesson 00-03: Running Python Programs
+Lesson 00-04: Running Python Programs
 =====================================
 
 Feel free to skip to the section below that is most relevant to you.

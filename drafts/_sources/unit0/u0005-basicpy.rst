@@ -1,6 +1,6 @@
 .. qnum::
    :start: 1
-   :prefix: u0004-
+   :prefix: u0005-
 
 ..  Copyright (C) 2016 Timothy Chen.  Permission is granted to copy, distribute
     and/or modify this document under the terms of the GNU Free Documentation
@@ -11,7 +11,7 @@
     Documentation License".
 
 
-Lesson 00-04: Basic Python
+Lesson 00-05: Basic Python
 ==========================
 
 This lesson is just a quick lesson on a few python basics.
@@ -21,7 +21,7 @@ This lesson is just a quick lesson on a few python basics.
 
 The most basic way of seeing output is by using the ``print()`` statement.  Basic syntax is as follows:
 
-.. activecode:: 0004_ex_1
+.. activecode:: ex_0005_1
    :nocodelens:
    :autorun:
    
@@ -35,7 +35,7 @@ Whitespace
 
 Whitespace refers to spaces or tabs.  At this stage of knowledge, having whitespace before python commands will cause errors.  Try running the example below:
 
-.. activecode:: 0004_ex_2
+.. activecode:: ex_0005_2
    :nocodelens:
    
    print("hello")
@@ -49,7 +49,7 @@ Comments
 
 See the code below:
 
-.. activecode:: 0004_ex_3
+.. activecode:: ex_0005_3
    :nocodelens:
    :autorun:
    

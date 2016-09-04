@@ -5,26 +5,26 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lesson 01-07: Variable Reassignment &mdash; Runestone Interactive Overview</title>
+    <title>Lesson 00-04: Running Python Programs &mdash; CSP Python</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
@@ -43,16 +43,8 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/clickable.js"></script>
-    <script type="text/javascript" src="../_static/timedclickable.js"></script>
-    <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/shortanswer.js"></script>
-    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
-    <script type="text/javascript" src="../_static/mchoice.js"></script>
-    <script type="text/javascript" src="../_static/timedmc.js"></script>
-    <script type="text/javascript" src="../_static/fitb.js"></script>
-    <script type="text/javascript" src="../_static/timedfitb.js"></script>
-    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
     <script type="text/javascript" src="../_static/bookfuncs.js"></script>
@@ -67,12 +59,9 @@
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/timed_activecode.js"></script>
-    <script type="text/javascript" src="../_static/poll.js"></script>
-    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
-    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
-    <script type="text/javascript" src="../_static/parsons.js"></script>
-    <script type="text/javascript" src="../_static/timedparsons.js"></script>
     <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
@@ -80,11 +69,22 @@
     <script type="text/javascript" src="../_static/codelens.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
-    <script type="text/javascript" src="../_static/dragndrop.js"></script>
-    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
     <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -99,7 +99,9 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
-    <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
+    <link rel="top" title="CSP Python" href="../index.html" />
+    <link rel="next" title="Lesson 00-05: Basic Python" href="u0005-basicpy.html" />
+    <link rel="prev" title="Lesson 00-03: Installing Python" href="u0003-installpy.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -150,7 +152,7 @@
 
       <div>
         <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
-        <a class="navbar-brand" href="../index.html">Runestone Default</a>
+        <a class="navbar-brand" href="../index.html">CSP Python</a>
       </div>
     </div>
 
@@ -257,9 +259,10 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lesson 01-07: Variable Reassignment</a><ul>
-<li><a class="reference internal" href="#increasing-or-decreasing-a-variable">Increasing or Decreasing a Variable</a></li>
-<li><a class="reference internal" href="#warning-error-ahead">Warning: Error Ahead!</a></li>
+<li><a class="reference internal" href="#">Lesson 00-04: Running Python Programs</a><ul>
+<li><a class="reference internal" href="#on-your-local-computer-idle">On Your Local Computer (IDLE)</a></li>
+<li><a class="reference internal" href="#on-your-local-computer-text-editor">On Your Local Computer (text editor)</a></li>
+<li><a class="reference internal" href="#through-cloud9">Through Cloud9</a></li>
 </ul>
 </li>
 </ul>
@@ -269,6 +272,18 @@
         
         
           
+  <li id="relations-prev" title="Previous Chapter - Lesson 00-03: Installing Python" data-toggle="tooltip">
+    <a href="u0003-installpy.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Lesson 00-05: Basic Python' data-toggle="tooltip" >
+    <a href="u0005-basicpy.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -294,143 +309,68 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="lesson-01-07-variable-reassignment">
-<h1>Lesson 01-07: Variable Reassignment<a class="headerlink" href="#lesson-01-07-variable-reassignment" title="Permalink to this headline">¶</a></h1>
-<p><strong>Learning Target: I can reference a variable in its own reassignment statement.</strong></p>
-<p>With lots of experience in math and little experience in programming, when you see something like this:</p>
-<p><code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code></p>
-<p>Red flags should instantly go off in your head.  How can <code class="docutils literal"><span class="pre">x</span></code> be equal to itself plus 1??  Can <code class="docutils literal"><span class="pre">5</span></code> be equal to <code class="docutils literal"><span class="pre">6</span></code>?  No, of course not!</p>
-<div class="section" id="increasing-or-decreasing-a-variable">
-<h2>Increasing or Decreasing a Variable<a class="headerlink" href="#increasing-or-decreasing-a-variable" title="Permalink to this headline">¶</a></h2>
-<p>What you should not forget, however, is that the <code class="docutils literal"><span class="pre">=</span></code> symbol in programming is different from the <code class="docutils literal"><span class="pre">=</span></code> symbol in mathematics.</p>
-<p>To review, the equal sign means <strong>variable assignment</strong> - it has a very specific purpose.</p>
-<dl class="docutils">
-<dt>Recall the meaning of the left and right side of a variable assignment statement:</dt>
-<dd><ul class="first last simple">
-<li>Left side: the variable to store into</li>
-<li>Right side: the value <strong>or expression</strong> to store</li>
-</ul>
-</dd>
-</dl>
-<p>An important thing to note is that the right side is always evaluated <strong>before</strong> being saved into the variable on the left.  This gives the line of code <code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code> a whole new meaning.  Let&#8217;s break it down:</p>
-<p>Given a statement <code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code>, let&#8217;s assume the value of <code class="docutils literal"><span class="pre">x</span></code> is currently <code class="docutils literal"><span class="pre">0</span></code>.  Since it is an assignment statement, the right side of the equal sign, or <code class="docutils literal"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code>, gets evaluated first.  Since <code class="docutils literal"><span class="pre">x</span></code> is a variable being used in an expression, we use its actual value instead, which is <code class="docutils literal"><span class="pre">0</span></code>.  So the expression being evaluated is <code class="docutils literal"><span class="pre">0</span> <span class="pre">+</span> <span class="pre">1</span></code>, which is just <code class="docutils literal"><span class="pre">1</span></code>.</p>
-<p>This leaves us with the statement <code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">1</span></code>, which then allows us to store <code class="docutils literal"><span class="pre">1</span></code> in <code class="docutils literal"><span class="pre">x</span></code>, basically increasing the value of <code class="docutils literal"><span class="pre">x</span></code> by <code class="docutils literal"><span class="pre">1</span></code>.  Up until the beginning of this paragraph, <code class="docutils literal"><span class="pre">x</span></code> was still <code class="docutils literal"><span class="pre">0</span></code>!  It doesn&#8217;t actually change until you complete the assignment statement.</p>
-<p>However, this would have worked with any value of <code class="docutils literal"><span class="pre">x</span></code>!  Let&#8217;s say <code class="docutils literal"><span class="pre">x</span></code> was <code class="docutils literal"><span class="pre">28</span></code>.  The expression <code class="docutils literal"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code> would then be <code class="docutils literal"><span class="pre">28</span> <span class="pre">+</span> <span class="pre">1</span></code>, or <code class="docutils literal"><span class="pre">29</span></code>, which then gets saved back into <code class="docutils literal"><span class="pre">x</span></code>.  <code class="docutils literal"><span class="pre">x</span></code> is  changed from <code class="docutils literal"><span class="pre">28</span></code> to <code class="docutils literal"><span class="pre">29</span></code>, which is the same thing as increasing it by <code class="docutils literal"><span class="pre">1</span></code>.</p>
-<p>Let&#8217;s run through some example code below, step by step.</p>
-
-<div class="alert alert-warning cd_section">
-<div id="cl_reassign_1"></div>
-<p class="cl_caption"><span class="cl_caption_text"> (cl_reassign_1)</span> </p>
-</div>
-<div id="cl_reassign_1_modal" class="modal fade codelens-modal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Check your understanding</h4>
-      </div>
-      <div class="modal-body">
-        <p>What is the value of num that will get printed?</p>
-        <input id="cl_reassign_1_textbox" type="textbox" class="form-control" style="width:200px;" />
-        <br />
-        <button id="cl_reassign_1_tracecheck" class='btn btn-default tracecheck' onclick="traceQCheckMe('cl_reassign_1_textbox','cl_reassign_1','globals.num')">
-          Check Me
-        </button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Continue</button>
-        <br />
-        <p id="cl_reassign_1_feedbacktext" class="feedbacktext alert alert-warning"></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<script type="text/javascript">
-var cl_reassign_1_trace = {"code": "num = 10\nnum = num + 5\nnum = num * 2\nprint num", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["num"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"num": 10}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["num"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"num": 15}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["num"], "question": {"text": "What is the value of num that will get printed?", "div": "cl_reassign_1_modal", "feedback": "Go through line by line, with num starting at 10.", "correct": "globals.num"}, "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"num": 30}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["num"], "question": {"text": "What is the value of num that will get printed?", "div": "cl_reassign_1_modal", "feedback": "Go through line by line, with num starting at 10.", "correct": "globals.num"}, "stdout": "30\n", "func_name": "<module>", "stack_to_render": [], "globals": {"num": 30}, "heap": {}, "line": 4, "event": "return"}]};
-var cl_reassign_1_vis;
-
-$(document).ready(function() {
-    try {
-        cl_reassign_1_vis = new ExecutionVisualizer('cl_reassign_1',cl_reassign_1_trace,
-                                    {embeddedMode: true,
-                                    verticalStack: false,
-                                    heightChangeCallback: redrawAllVisualizerArrows,
-                                    codeDivWidth: 500,
-                                    lang : 'py2'
-                                    });
-        attachLoggers(cl_reassign_1_vis,'cl_reassign_1');
-        styleButtons('cl_reassign_1');
-        allVisualizers.push(cl_reassign_1_vis);
-    } catch (e) {
-        console.log("Failed to Initialize CodeLens component cl_reassign_1_vis" );
-        console.log(e.toString());
-    }
-
-});
-
-$(document).ready(function() {
-    $("#cl_reassign_1_tracecheck").click(function() {
-        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'cl_reassign_1'});
-    });
-});
-
-if (allVisualizers === undefined) {
-   var allVisualizers = [];
-}
-
-
-$(window).resize(function() {
-    if (cl_reassign_1_vis) {
-        cl_reassign_1_vis.redrawConnectors();
-    }
-});
-</script>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">5</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">5</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">9</span>
+  <script type=text/javascript>
+localStorage.clear()
+</script><div class="section" id="lesson-00-04-running-python-programs">
+<h1>Lesson 00-04: Running Python Programs<a class="headerlink" href="#lesson-00-04-running-python-programs" title="Permalink to this headline">¶</a></h1>
+<p>Feel free to skip to the section below that is most relevant to you.</p>
+<div class="section" id="on-your-local-computer-idle">
+<h2>On Your Local Computer (IDLE)<a class="headerlink" href="#on-your-local-computer-idle" title="Permalink to this headline">¶</a></h2>
+<p>With IDLE open, you can go to <code class="docutils literal"><span class="pre">File</span></code> &gt; <code class="docutils literal"><span class="pre">New</span> <span class="pre">File</span></code> to create a new file.  Type in the following:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-
-        <p data-component="fillintheblank" data-casei="false" id="fill1512">
-            
-        <span data-blank>
-            What will the result of <code class="docutils literal"><span class="pre">x</span></code> be after the code above is run?
-        <span data-feedback="regex" style="display: none" id="cfu_reassign_2_feedback1">\b10\b</span>
-        <span data-feedback="text" style="display: none" for="cfu_reassign_2_feedback1">That's just the first line..</span>
-            
-        <span data-feedback="regex" style="display: none" id="cfu_reassign_2_feedback2">.*</span>
-        <span data-feedback="text" style="display: none" for="cfu_reassign_2_feedback2">Try again - be sure to go step by step!</span>
-            
-        <span data-answer style="display: none" id="cfu_reassign_2_answer">\\b5\\b</span>
-        </span>
-        
-        </p>
-            </div>
-<div class="section" id="warning-error-ahead">
-<h2>Warning: Error Ahead!<a class="headerlink" href="#warning-error-ahead" title="Permalink to this headline">¶</a></h2>
-<p>You&#8217;ll want to be careful about how you use variable reassignment.  For example, take the following program:</p>
-
-<textarea data-component="activecode" id=ac_reassign_1 data-lang="python"    data-timelimit=25000   data-audio=''     data-caption='Errors with reassignment'>
-x = x + 1
-print("x is now " + str(x))
-</textarea>
-<p>Notice how you get an error.  That&#8217;s because of how <em>regular variable assignment</em> works.</p>
-<p>Remember that the right side of the equal sign is evaluated <strong>first</strong>.  So it&#8217;s trying to evaluate <code class="docutils literal"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code>, but <code class="docutils literal"><span class="pre">x</span></code> doesn&#8217;t have a value yet!  So it will give you a <code class="docutils literal"><span class="pre">NameError</span></code>.</p>
-<p>You would have to <span class="vocab-def">give variables an initial value</span>.  This is called <span class="vocab-word">initializing</span> a variable.  So before you can use <code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code>, you will have to give <code class="docutils literal"><span class="pre">x</span></code> a value, using a regular assignment statement.  Maybe with <code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">0</span></code>.  The new code will look like this:</p>
-
-<textarea data-component="activecode" id=ac_reassign_2 data-lang="python"    data-timelimit=25000   data-audio=''     data-caption='No error here!'>
-x = 0
-x = x + 1
-print("x is now " + str(x))
-</textarea>
-<p><span class="misc-hl">Always make sure that your variables are initialized!</span></p>
+<p>Then save the file through <code class="docutils literal"><span class="pre">File</span></code> &gt; <code class="docutils literal"><span class="pre">Save</span> <span class="pre">As</span></code> and save it with the filename <code class="docutils literal"><span class="pre">helloworld.py</span></code>.  The <code class="docutils literal"><span class="pre">.py</span></code> at the end is very important, as it makes it clear that it is a python script file.</p>
+<p>You can then run the program by going to <code class="docutils literal"><span class="pre">Run</span></code> &gt; <code class="docutils literal"><span class="pre">Run</span> <span class="pre">Module</span></code>.  Your output might look something like this:</p>
+<a class="reference internal image-reference" href="../_images/helloworld.png"><img alt="screenshot of helloworld.py output" class="align-center" src="../_images/helloworld.png" style="width: 400px;" /></a>
+<p>If so, then congratulations!  It worked!</p>
+</div>
+<div class="section" id="on-your-local-computer-text-editor">
+<h2>On Your Local Computer (text editor)<a class="headerlink" href="#on-your-local-computer-text-editor" title="Permalink to this headline">¶</a></h2>
+<p>If you are reading this, you probably plan on writing code in a text editor.  In your text editor of choice, create a new file and type the following:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Save the file as <code class="docutils literal"><span class="pre">helloworld.py</span></code>.  Then open up your terminal (mac/linux) or command prompt (windows).</p>
+<p>Navigate to your the folder that contains your <code class="docutils literal"><span class="pre">helloworld.py</span></code> file.  The commands to do this will vary depending on operating system.</p>
+<p>To run your file using python3, type in the following command into your terminal:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>python3 helloworld.py
+</pre></div>
+</div>
+<p>And you should see an output like so:</p>
+<a class="reference internal image-reference" href="../_images/helloworldterm.png"><img alt="screenshot of helloworld.py output" class="align-center" src="../_images/helloworldterm.png" style="width: 400px;" /></a>
+<p>If you do, congratulations!  It worked!</p>
+</div>
+<div class="section" id="through-cloud9">
+<h2>Through Cloud9<a class="headerlink" href="#through-cloud9" title="Permalink to this headline">¶</a></h2>
+<p>On c9, you create a new file by clicking on the <code class="docutils literal"><span class="pre">+</span></code> icon, or by going to <code class="docutils literal"><span class="pre">File</span></code> &gt; <code class="docutils literal"><span class="pre">New</span> <span class="pre">File</span></code>.  Type in the following:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Save your file as <code class="docutils literal"><span class="pre">helloworld.py</span></code>.  To run the file, click on <code class="docutils literal"><span class="pre">Run</span></code> &gt; <code class="docutils literal"><span class="pre">Run</span> <span class="pre">With</span></code> &gt; <code class="docutils literal"><span class="pre">Python</span> <span class="pre">3</span></code>.  If you just hit <code class="docutils literal"><span class="pre">&gt;</span> <span class="pre">Run</span></code> at the top, it will default to python2.  You want python3.</p>
+<a class="reference internal image-reference" href="../_images/c9run.png"><img alt="screenshot of helloworld.py output" class="align-center" src="../_images/c9run.png" style="width: 500px;" /></a>
+<p>Your output should look like this:</p>
+<a class="reference internal image-reference" href="../_images/c9output.png"><img alt="screenshot of helloworld.py output" class="align-center" src="../_images/c9output.png" style="width: 600px;" /></a>
+<p>If that is what you see, then congrats! It worked!</p>
 </div>
 </div>
 
 
   
       
+  <li id="relations-prev" class="navLink" title='Previous Section - Lesson 00-03: Installing Python' data-toggle="tooltip">
+    <a href="u0003-installpy.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="u0003-installpy.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - Lesson 00-05: Basic Python' data-toggle="tooltip" >
+    <a href="u0005-basicpy.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="u0005-basicpy.html" >Next Section - Lesson 00-05: Basic Python</a>
 
 <script type="text/javascript">
 
@@ -448,8 +388,8 @@ print("x is now " + str(x))
       
     </p>
     <p>
-        &copy; Copyright 2015 ubuntu.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.4.
+        &copy; Copyright 2016 Timothy Chen.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
     </p>
   </div>
 </footer>

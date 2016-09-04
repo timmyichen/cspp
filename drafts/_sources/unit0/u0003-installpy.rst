@@ -1,6 +1,6 @@
 .. qnum::
    :start: 1
-   :prefix: u0002-
+   :prefix: u0003-
 
 ..  Copyright (C) 2016 Timothy Chen.  Permission is granted to copy, distribute
     and/or modify this document under the terms of the GNU Free Documentation
@@ -11,7 +11,7 @@
     Documentation License".
 
 
-Lesson 00-02: Installing Python
+Lesson 00-03: Installing Python
 ===============================
 
 On Your Local Computer

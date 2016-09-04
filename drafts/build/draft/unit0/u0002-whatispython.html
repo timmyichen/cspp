@@ -5,26 +5,26 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lesson 01-05: Conversion Functions &mdash; Runestone Interactive Overview</title>
+    <title>Lesson 00-02: What is Python? &mdash; CSP Python</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
@@ -43,16 +43,8 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/clickable.js"></script>
-    <script type="text/javascript" src="../_static/timedclickable.js"></script>
-    <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/shortanswer.js"></script>
-    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
-    <script type="text/javascript" src="../_static/mchoice.js"></script>
-    <script type="text/javascript" src="../_static/timedmc.js"></script>
-    <script type="text/javascript" src="../_static/fitb.js"></script>
-    <script type="text/javascript" src="../_static/timedfitb.js"></script>
-    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
     <script type="text/javascript" src="../_static/bookfuncs.js"></script>
@@ -67,12 +59,9 @@
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/timed_activecode.js"></script>
-    <script type="text/javascript" src="../_static/poll.js"></script>
-    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
-    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
-    <script type="text/javascript" src="../_static/parsons.js"></script>
-    <script type="text/javascript" src="../_static/timedparsons.js"></script>
     <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
@@ -80,11 +69,22 @@
     <script type="text/javascript" src="../_static/codelens.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
-    <script type="text/javascript" src="../_static/dragndrop.js"></script>
-    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
     <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -99,7 +99,9 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
-    <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
+    <link rel="top" title="CSP Python" href="../index.html" />
+    <link rel="next" title="Lesson 00-03: Installing Python" href="u0003-installpy.html" />
+    <link rel="prev" title="Lesson 00-01: Introduction to the Course" href="u0001-intro.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -150,7 +152,7 @@
 
       <div>
         <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
-        <a class="navbar-brand" href="../index.html">Runestone Default</a>
+        <a class="navbar-brand" href="../index.html">CSP Python</a>
       </div>
     </div>
 
@@ -257,11 +259,9 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lesson 01-05: Conversion Functions</a><ul>
-<li><a class="reference internal" href="#the-conversion-functions">The Conversion Functions</a></li>
-<li><a class="reference internal" href="#checks-for-understanding">Checks for Understanding</a></li>
-<li><a class="reference internal" href="#the-type-function">The <code class="docutils literal"><span class="pre">type()</span></code> Function</a></li>
-<li><a class="reference internal" href="#a-note-on-errors">A Note on Errors</a></li>
+<li><a class="reference internal" href="#">Lesson 00-02: What is Python?</a><ul>
+<li><a class="reference internal" href="#high-level">&#8220;High Level&#8221;</a></li>
+<li><a class="reference internal" href="#multi-purpose">&#8220;Multi-purpose&#8221;</a></li>
 </ul>
 </li>
 </ul>
@@ -271,6 +271,18 @@
         
         
           
+  <li id="relations-prev" title="Previous Chapter - Lesson 00-01: Introduction to the Course" data-toggle="tooltip">
+    <a href="u0001-intro.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Lesson 00-03: Installing Python' data-toggle="tooltip" >
+    <a href="u0003-installpy.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -296,152 +308,84 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="lesson-01-05-conversion-functions">
-<h1>Lesson 01-05: Conversion Functions<a class="headerlink" href="#lesson-01-05-conversion-functions" title="Permalink to this headline">¶</a></h1>
-<p><strong>Learning Target: I can convert datatypes from one value to another.</strong></p>
-<p>At times, you will be given datatype in one form, but you&#8217;ll want to use it in another.  For example, later on you&#8217;ll be learning how to use the <code class="docutils literal"><span class="pre">input()</span></code> function to get the user to type something in, and that always gives you data as a string.  But what if you wanted the user to type in a number?  How would you change that string to a number?</p>
-<div class="section" id="the-conversion-functions">
-<h2>The Conversion Functions<a class="headerlink" href="#the-conversion-functions" title="Permalink to this headline">¶</a></h2>
-<p>You would use <span class="vocab-word">conversion functions</span>, which are <span class="vocab-def">functions that turn one datatype into another datatype.</span></p>
-<p>Table of the conversion functions:</p>
-<blockquote>
-<div><table border="1" class="docutils">
-<colgroup>
-<col width="73%" />
-<col width="27%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>To convert to a String, use...</td>
-<td><code class="docutils literal"><span class="pre">str()</span></code></td>
-</tr>
-<tr class="row-even"><td>To convert to a Boolean, use...</td>
-<td><code class="docutils literal"><span class="pre">bool()</span></code></td>
-</tr>
-<tr class="row-odd"><td>To convert to a Float, use...</td>
-<td><code class="docutils literal"><span class="pre">float()</span></code></td>
-</tr>
-<tr class="row-even"><td>To convert to an Integer, use...</td>
-<td><code class="docutils literal"><span class="pre">int()</span></code></td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<p>You would use these functions by putting the value you want to convert between the parentheses.  Try running the example below:</p>
+  <script type=text/javascript>
+localStorage.clear()
+</script><div class="section" id="lesson-00-02-what-is-python">
+<h1>Lesson 00-02: What is Python?<a class="headerlink" href="#lesson-00-02-what-is-python" title="Permalink to this headline">¶</a></h1>
+<p>Python is a high level, general purpose programming language named after Monty Python, the British comedy group.  What does it mean for a language to be &#8220;high-level&#8221;?</p>
+<div class="section" id="high-level">
+<h2>&#8220;High Level&#8221;<a class="headerlink" href="#high-level" title="Permalink to this headline">¶</a></h2>
+<p>When you write some code, the computer doesn&#8217;t interpret it as the words you write.  When computers receive instructions to do anything, like run an application, or even to respond to a keystroke, it receives instructions in machine code.  Machine code is nearly unreadable by humans.  It might look something like this:</p>
+<a class="reference internal image-reference" href="../_images/machinecode.png"><img alt="Image of machine code" class="align-center" src="../_images/machinecode.png" style="width: 224.0px; height: 153.6px;" /></a>
+<p>Pretty unintelligible, right?  This is the lowest level of code there is.  Code written in other languages have to be translated into machine code before being fed to the CPU - the brain of the computer.  Plus, machine code is different for each type of CPU (CPU architecture)!  That&#8217;s a lot of work you don&#8217;t want to deal with.</p>
+<p>Assembly language is the staple example of a &#8220;low level language&#8221; - those who are familiar with it can read it and write in it, but it is still CPU-architecture dependent!  A simple &#8220;Hello World!&#8221; program in NASM Assembly language might look something like this (<a class="reference external" href="http://cs.lmu.edu/~ray/notes/x86assembly/">source</a>):</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span> ;
 
-<textarea data-component="activecode" id=ac_convfunc_1 data-lang="python"    data-timelimit=25000   data-audio=''     >
-print(str(5.0)) # float to string
-print(str(1)) # int to string
-print(str(True)) # boolean to string
-print(int("5")) # string to int
-print(int(2.7)) # float to int (lose decimals)
-print(float("6.3")) # string to float
-print(float(3)) # int to float
-print(bool(1)) # int to boolean
-print(bool("True")) # string to boolean
-</textarea>
-<p>Here are a few notes for specific type to type conversions:</p>
-<blockquote>
-<div><table border="1" class="docutils">
-<colgroup>
-<col width="13%" />
-<col width="13%" />
-<col width="73%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">From</th>
-<th class="head">To</th>
-<th class="head">Resulting Effect</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>any</td>
-<td>string</td>
-<td>put quotes around int</td>
-</tr>
-<tr class="row-odd"><td>int</td>
-<td>float</td>
-<td>put a .0 at the end</td>
-</tr>
-<tr class="row-even"><td>float</td>
-<td>int</td>
-<td>drop everything after decimal point</td>
-</tr>
-<tr class="row-odd"><td>string</td>
-<td>int</td>
-<td>becomes an int if it looks like a number</td>
-</tr>
-<tr class="row-even"><td>string</td>
-<td>float</td>
-<td>becomes a float if it looks like a number</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
+        global  _start
+
+        section .text
+_start:
+        mov     rax, 1
+        mov     rdi, 1
+        mov     rsi, message
+        mov     rdx, 13
+        syscall
+
+        mov     eax, 60
+        xor     rdi, rdi
+        syscall
+message:
+        db      &quot;Hello, World&quot;, 10
+</pre></div>
 </div>
-<div class="section" id="checks-for-understanding">
-<h2>Checks for Understanding<a class="headerlink" href="#checks-for-understanding" title="Permalink to this headline">¶</a></h2>
-
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="mc_convfunc_1">
-            ch0105-1: What is the resulting datatype of the following expression? <code class="docutils literal"><span class="pre">float(&quot;10&quot;)</span></code>
-            <li data-component="answer"  id="mc_convfunc_1_opt_a">(A) int</li><li data-component="feedback" id="mc_convfunc_1_opt_a">Which conversion function is being used?</li>
-            
-            <li data-component="answer" data-correct id="mc_convfunc_1_opt_b">(B) float</li><li data-component="feedback" id="mc_convfunc_1_opt_b">Nice job!</li>
-            
-            <li data-component="answer"  id="mc_convfunc_1_opt_c">(C) string</li><li data-component="feedback" id="mc_convfunc_1_opt_c">Which conversion function is being used?</li>
-            
-
-            </ul>
-            
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="mc_convfunc_2">
-            ch0105-2: What is the resulting datatype of the following expression? <code class="docutils literal"><span class="pre">str(False)</span></code>
-            <li data-component="answer"  id="mc_convfunc_2_opt_a">(A) int</li><li data-component="feedback" id="mc_convfunc_2_opt_a">Which conversion function is being used?</li>
-            
-            <li data-component="answer"  id="mc_convfunc_2_opt_b">(B) float</li><li data-component="feedback" id="mc_convfunc_2_opt_b">Which conversion function is being used?</li>
-            
-            <li data-component="answer" data-correct id="mc_convfunc_2_opt_c">(C) string</li><li data-component="feedback" id="mc_convfunc_2_opt_c">Nice job!</li>
-            
-
-            </ul>
-            
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="mc_convfunc_3">
-            ch0105-3: What is the result of the following expression? <code class="docutils literal"><span class="pre">str(2.3)</span></code>
-            <li data-component="answer"  id="mc_convfunc_3_opt_a">(A) 2</li><li data-component="feedback" id="mc_convfunc_3_opt_a">What's the rule when the str() function is used?</li>
-            
-            <li data-component="answer"  id="mc_convfunc_3_opt_b">(B) "2.3"</li><li data-component="feedback" id="mc_convfunc_3_opt_b">Nice job!</li>
-            
-            <li data-component="answer" data-correct id="mc_convfunc_3_opt_c">(C) 2.3</li><li data-component="feedback" id="mc_convfunc_3_opt_c">What's the rule when the str() function is used?</li>
-            
-            <li data-component="answer"  id="mc_convfunc_3_opt_d">(D) "2"</li><li data-component="feedback" id="mc_convfunc_3_opt_d">What's the rule when the str() function is used?</li>
-            
-
-            </ul>
-            </div>
-<div class="section" id="the-type-function">
-<h2>The <code class="docutils literal"><span class="pre">type()</span></code> Function<a class="headerlink" href="#the-type-function" title="Permalink to this headline">¶</a></h2>
-<p>There is a function, <code class="docutils literal"><span class="pre">type()</span></code>, that will tell you the datatype of a value.  Run the following code as an example:</p>
-
-<textarea data-component="activecode" id=ex_typefunc data-lang="python"    data-timelimit=25000   data-audio=''     >
-print(type("This is a string!"))
-print(type(100))
-print(type(100.0))
-print(type(True))
-</textarea>
-<p>This is useful for debugging purposes if you ever need to see the type of a value.</p>
+<p>While it looks a little more understandable, it&#8217;s still pretty unreadable.  When you write in high level languages, on the other hand, you don&#8217;t have to worry about what CPU architecture you&#8217;re writing for.  It&#8217;s also more human-readable to make writing it easier.  Here&#8217;s an example in C (a high level programming language):</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello world!&quot;</span><span class="p">);</span>
+    <span class="k">return</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 </div>
-<div class="section" id="a-note-on-errors">
-<h2>A Note on Errors<a class="headerlink" href="#a-note-on-errors" title="Permalink to this headline">¶</a></h2>
-<p>So what happens if you try to convert something like a word to an integer?  See for yourself:</p>
-
-<textarea data-component="activecode" id=ac_convfunc_2 data-lang="python"    data-timelimit=25000   data-audio=''     >
-print(int("ten"))
-</textarea>
-<p>Note the error.  Keep that in mind!  <span class="misc-hl">Only strings that use digits can be converted to numbers.</span></p>
+<p>This looks much better - I recognize some words there.  Then here&#8217;s &#8220;Hello World!&#8221; in python:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Doesn&#8217;t get much simpler than that!</p>
+<p>While high-level languages are easier to read, easier to write, and work across many platforms, they tend to be slower than low-level languages since there&#8217;s more happening behind the hood.  However, modern technology is fast enough so that unless you really need to optimize your code for speed <em>(like if you&#8217;re writing a game engine that does a lot of fancy graphics processing)</em>, you don&#8217;t have to worry about the speed differences.</p>
+<p>Now we move onto how python is...</p>
+</div>
+<div class="section" id="multi-purpose">
+<h2>&#8220;Multi-purpose&#8221;<a class="headerlink" href="#multi-purpose" title="Permalink to this headline">¶</a></h2>
+<p>Python a pretty popular language used for many different things.  Here&#8217;s just a few examples - You can use python to...</p>
+<ul class="simple">
+<li>Scrape (automatically collect) data off the web!</li>
+<li>Build fully developed websites! (examples: Google, YouTube, DropBox, Reddit, Instagram)</li>
+<li>Build games! (full list <a class="reference external" href="https://wiki.python.org/moin/PythonGames">here</a>)</li>
+<li>Run scientific and mathematical computations!</li>
+<li>Automation - you can write scripts to automate your life!</li>
+<li>And more!</li>
+</ul>
+<p>Python is used for a fairly large variety of things!  But most importantly, it&#8217;s a relatively easy language to pick up, which is why we use it in this course.  We&#8217;ll be covering the basics of computer science and programming, and these concepts can be transferred to almost any other language.  So you&#8217;re not <em>just</em> learning python - you&#8217;re learning computer science and programming.</p>
 </div>
 </div>
 
 
   
       
+  <li id="relations-prev" class="navLink" title='Previous Section - Lesson 00-01: Introduction to the Course' data-toggle="tooltip">
+    <a href="u0001-intro.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="u0001-intro.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - Lesson 00-03: Installing Python' data-toggle="tooltip" >
+    <a href="u0003-installpy.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="u0003-installpy.html" >Next Section - Lesson 00-03: Installing Python</a>
 
 <script type="text/javascript">
 
@@ -459,8 +403,8 @@ print(int("ten"))
       
     </p>
     <p>
-        &copy; Copyright 2015 ubuntu.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.4.
+        &copy; Copyright 2016 Timothy Chen.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
     </p>
   </div>
 </footer>

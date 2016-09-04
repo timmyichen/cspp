@@ -20,9 +20,10 @@ Unit 0 Prep
     :maxdepth: 2
     
     unit0/u0001-intro.rst
-    unit0/u0002-installpy.rst
-    unit0/u0003-runpy.rst
-    unit0/u0004-basicpy.rst
+    unit0/u0002-whatispython.rst
+    unit0/u0003-installpy.rst
+    unit0/u0004-runpy.rst
+    unit0/u0005-basicpy.rst
 
 Unit 1 Lessons
 ==============
