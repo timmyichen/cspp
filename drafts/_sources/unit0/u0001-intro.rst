@@ -20,7 +20,7 @@ This is a project created by Timothy Chen, a high school computer science teache
 What is Computer Science?
 -------------------------
 
-Computer science is, at its base, the study of computation, constantly asking the question: *What is computable?*  For example, I'm sure you could calculate the highest prime number under 10, or even 100.  What about 1,000?  1,000,000?  The number 1,000,000 has six digits - as of January 2016, the largest prime number found has 22,338,618 *digits*.  That's quite a number.
+Computer science is, at its base, the study of computation, constantly asking the question: *What is computable?*  For example, I'm sure you could calculate the highest prime number under 10, or even 100.  What about 1,000?  1,000,000?  The number 1,000,000 has seven digits - as of January 2016, the largest prime number found has 22,338,618 *digits*.  That's quite a number.
 
 Computer science is a very broad field that revolves around algorithms, which are just step-by-step instructions.  What are these algorithms for, you might ask?  For anything, from simple calculations to complex data processing, to determining which stories to show on your Facebook news feed.
 
@@ -44,15 +44,15 @@ We will be using python to create text-based games and create ciphertext tools -
 How To Use This Course?
 -----------------------
 
-If you are using this as a self-study guide or learning material, this course is broken up into Sections:
+If you are using this as a self-study guide or learning material, this course is broken up into the following sections:
 
-   - Core Programming Chapters
-   - Core Other Chapters
-   - Elective Programming Chapters
+   - Core Programming Units
+   - Core Other Units
+   - Elective Programming Units
 
-Each of the Programming Chapters are broken up into lessons and labs.  You can visit the material in any way or order you want, but the recommended order is listed below.
+Each of the Programming Units are broken up into lessons and labs.  You can visit the material in any way or order you want, but the recommended order is listed below.
 
-1. Core Programming Chapters
+1. Core Programming Units
 
    - 1.1 - Python Data
    - 1.2 - Conditionals
@@ -63,13 +63,13 @@ Each of the Programming Chapters are broken up into lessons and labs.  You can v
    - 1.7 - Dictionaries and File I/O#
    - 1.8 - Basic Searching/Sorting Algorithms#
 
-2. Core Miscellaneous Chapters#
+2. Core Miscellaneous Units#
 
    - 2.1 - Number Systems in Computer Science#
    - 2.2 - The Internet#
    - 2.3 - Data and Cybersecurity#
 
-3. Elective Programming Chapters#
+3. Elective Programming Units#
 
    - 3.1 - Recursion and Recursive Algorithms#
    - 3.2 - Object Oriented Programming#
@@ -77,10 +77,10 @@ Each of the Programming Chapters are broken up into lessons and labs.  You can v
    - 3.4 - Web Scraping#
    - 3.5 - Simple Games With The pygame Library#
 
-4. Elective Miscellaneous Chapters
+4. Elective Miscellaneous Units#
 
    - 4.1 - History of Computing#
-   - 4.2 - Version Control and Git
+   - 4.2 - Version Control and Git#
     
 
 # - *incomplete*
@@ -101,6 +101,5 @@ Hover over me: :hide-hl:`Some answers will go here so you can check your answer`
 Development Notes
 -----------------
 
-- Going from one page directly to the next is currently not in place.  It will be in the future.
 - Please contact me if your fill-in-the-blank answer is marked incorrect but you're sure is right.
 - Some lessons will be given additional practice/checks for understanding.

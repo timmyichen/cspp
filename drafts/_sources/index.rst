@@ -185,7 +185,13 @@ Unit 6 Lessons (INCOMPLETE)
 .. toctree::
     :maxdepth: 2
     
-    
+    unit6/u0601-2dlists.rst
+    unit6/u0602-majororder.rst
+    unit6/u0603-loop2d.rst
+    unit6/u0604-rectangles.rst
+    unit6/u0605-loopruntime.rst
+    unit6/u0606-mdlistpractice.rst
+    unit6/u06-labcheck.rst
 
 Unit 6 Labs
 ===========
@@ -198,7 +204,24 @@ Unit 6 Labs
     lab06-02.rst
     lab06-03.rst
 
-Unused Labs
+Unit 7 Lessons (INCOMPLETE)
+===========================
+
+
+.. toctree::
+    :maxdepth: 2
+    
+    unit7/u0701-dictionary.rst
+    unit7/u0702-iteratekey.rst
+    unit7/u0703-iterateval.rst
+    unit7/u0704-listvsdict.rst
+    unit7/u0705-readfile.rst
+    unit7/u0706-with.rst
+    unit7/u0707-writefile.rst
+    unit7/u0708-appendfile.rst
+    unit7/u07-labcheck.rst
+
+Unit 7 Labs
 ===========
 
 .. toctree::
