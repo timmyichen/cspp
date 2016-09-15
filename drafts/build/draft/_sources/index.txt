@@ -186,7 +186,7 @@ Unit 6 Lessons (INCOMPLETE)
     :maxdepth: 2
     
     unit6/u0601-2dlists.rst
-    unit6/u0602-3dlists.rst
+    unit6/u0602-majororder.rst
     unit6/u0603-loop2d.rst
     unit6/u0604-rectangles.rst
     unit6/u0605-loopruntime.rst

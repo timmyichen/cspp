@@ -20,7 +20,7 @@ This is a project created by Timothy Chen, a high school computer science teache
 What is Computer Science?
 -------------------------
 
-Computer science is, at its base, the study of computation, constantly asking the question: *What is computable?*  For example, I'm sure you could calculate the highest prime number under 10, or even 100.  What about 1,000?  1,000,000?  The number 1,000,000 has six digits - as of January 2016, the largest prime number found has 22,338,618 *digits*.  That's quite a number.
+Computer science is, at its base, the study of computation, constantly asking the question: *What is computable?*  For example, I'm sure you could calculate the highest prime number under 10, or even 100.  What about 1,000?  1,000,000?  The number 1,000,000 has seven digits - as of January 2016, the largest prime number found has 22,338,618 *digits*.  That's quite a number.
 
 Computer science is a very broad field that revolves around algorithms, which are just step-by-step instructions.  What are these algorithms for, you might ask?  For anything, from simple calculations to complex data processing, to determining which stories to show on your Facebook news feed.
 
@@ -77,10 +77,10 @@ Each of the Programming Units are broken up into lessons and labs.  You can visi
    - 3.4 - Web Scraping#
    - 3.5 - Simple Games With The pygame Library#
 
-4. Elective Miscellaneous Units
+4. Elective Miscellaneous Units#
 
    - 4.1 - History of Computing#
-   - 4.2 - Version Control and Git
+   - 4.2 - Version Control and Git#
     
 
 # - *incomplete*
