@@ -322,11 +322,11 @@ Finally, we get to test our program.  Let's write a script to test our code.  Th
         
         #encrypt "BILLY" with a key of 3
         encrypted = encrypt(3,word)
-        print encrypted #should print "ELOOB"
+        print(encrypted) #should print "ELOOB"
         
         #decrypt "ELOOB" with a key of 3
         decrypted = decrypt(3,encrypted)
-        print decrypted #should print "BILLY"
+        print(decrypted) #should print "BILLY"
     
     if __name__ == "__main__":
         main()
@@ -341,11 +341,11 @@ Run the program and compare its output to what it should be (it should print ``E
         
         #encrypt "HELLO WORLD?!" with a key of 20
         encrypted = encrypt(20,word)
-        print encrypted #should print "BYFFI QILFX?!"
+        print(encrypted) #should print "BYFFI QILFX?!"
         
         #decrypt "BYFFI QILFX?!" with a key of 20
         decrypted = decrypt(20,encrypted)
-        print decrypted #should print "HELLO WORLD?!"
+        print(decrypted) #should print "HELLO WORLD?!"
     
     if __name__ == "__main__":
         main

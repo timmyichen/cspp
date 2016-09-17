@@ -327,9 +327,9 @@ localStorage.clear()
 <p>To observe, run the following code:</p>
 
 <textarea data-component="activecode" id=ac_mixtype_1 data-lang="python"    data-timelimit=25000   data-audio=''     data-caption='Note that everything after the # is a comment and is not run as code'>
-print 1 + 1     #int + int => int
-print 1.0 + 1.0 #float + float => float
-print 1 + 1.0   #int + float => float
+print(1 + 1)  #int + int => int
+print(1.0 + 1.0)  #float + float => float
+print(1 + 1.0)  #int + float => float
 </textarea>
 </div>
 <div class="section" id="checks-for-understanding">
@@ -400,7 +400,7 @@ print 1 + 1.0   #int + float => float
 <p>In the following code, replace the <code class="docutils literal"><span class="pre">1</span></code> with any other value that is not a String, then run the code.  You should find a common theme.</p>
 
 <textarea data-component="activecode" id=ac_mixtype_2 data-lang="python"    data-timelimit=25000   data-audio=''     >
-print "hello" + 1
+print("hello" + 1)
 #replace the second part with anything that is not a String
 </textarea>
 <p>You should find that you get a <code class="docutils literal"><span class="pre">TypeError</span></code> every time!</p>
