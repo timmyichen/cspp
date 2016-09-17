@@ -30,9 +30,9 @@ To observe, run the following code:
 	:nocodelens:
 	:caption: Note that everything after the # is a comment and is not run as code
 
-	print 1 + 1	#int + int => int
-	print 1.0 + 1.0	#float + float => float
-	print 1 + 1.0 	#int + float => float
+	print(1 + 1)  #int + int => int
+	print(1.0 + 1.0)  #float + float => float
+	print(1 + 1.0) 	#int + float => float
 
 
 Checks For Understanding
@@ -89,7 +89,7 @@ In the following code, replace the ``1`` with any other value that is not a Stri
 .. activecode:: ac_mixtype_2
 	:nocodelens:
 
-	print "hello" + 1
+	print("hello" + 1)
 	#replace the second part with anything that is not a String
 
 You should find that you get a ``TypeError`` every time!

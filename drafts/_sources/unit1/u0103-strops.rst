@@ -54,7 +54,7 @@ Great!  So notice that there is a clear difference between the two values: ``100
 	:feedback_c: That is actually two different values. When we combine values we should only have one remaining!
 	:feedback_d: No error occurs! :) If you don't believe that, you can always run the code in the activecode box above!
 
-	What will be the result of the following code? print "John" + "Smith"
+	What will be the result of the following code? print("John" + "Smith")
 
 Using :vocab-def:`Adding strings will join them together to become one string` - this is called :vocab-word:`string concatenation`.
 
@@ -87,7 +87,7 @@ What can be concluded from your observations from above?  Use your observations 
 		:correct: ^heyheyheythere$
 		:feedback1: (".*", "Keep in mind the order of operations!")
 
-		What will be the result of the following code? ``print "hey" * 3 + "there"``
+		What will be the result of the following code? ``print("hey" * 3 + "there")``
 
 Multiplication with strings will just repeat that string. Order of operation still applies - multiplication before addition!
 
