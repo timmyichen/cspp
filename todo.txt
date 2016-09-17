@@ -1,7 +1,4 @@
 redo ttt example???
 
-find datatypes from the wild (example: netflix and point out examples of types)
-^needs to be done @ home
-
 CFUs/practice for:
 

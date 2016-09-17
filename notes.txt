@@ -5,22 +5,39 @@ changes made to package:
         .vocab-word{
             font-weight: bold;
             text-decoration: underline;
-            backround: #ffff99;
+            backround: #indianred;
         }
         
         .vocab-def{
             font-weight: bold;
-            background: #ffff99;
+            background: #indianred;
         }
         
         .misc-hl{
-            background: #c3e6fc;
+            background: rgba(195,230,252,0.5);
             font-weight: bold;
+            border-radius: 3px;
+            padding: 1px;
         }
         
         .uline{
             text-decoration: underline;
         }
+        
+        .hide-hl{
+            color: black;
+            background: black;
+        }
+        
+        .hide-hl:hover{
+            color: white;
+        }
+        
+        .imgcap{
+            text-align: center;
+            font-style: italic;
+            font-size: 10px;
+            
 
 changes made to conf.py:
     add to end:
@@ -29,4 +46,12 @@ changes made to conf.py:
         .. role:: vocab-word
         .. role:: misc-hl
         .. role:: uline
+        .. role:: hide-hl
+        .. role:: imgcap
+        
+        .. raw:: html
+        
+           <script type=text/javascript>
+           localStorage.clear()
+           </script>
         """

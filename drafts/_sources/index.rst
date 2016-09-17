@@ -8,8 +8,8 @@
     A copy of the license is included in the section entitled "GNU Free 
     Documentation License".
 
-Table of Contents
-:::::::::::::::::
+Table of Contents for Core Curriculum
+:::::::::::::::::::::::::::::::::::::
 
 Please use `this form <https://goo.gl/forms/zIIv2RZFzgDQUBJf1>`_ to report bugs or provide feedback.
 
@@ -25,8 +25,8 @@ Unit 0 Prep
     unit0/u0004-runpy.rst
     unit0/u0005-basicpy.rst
 
-Unit 1 Lessons
-==============
+Unit 1 Lessons - Datatypes and Operators
+========================================
 
 .. toctree::
     :maxdepth: 2
@@ -52,8 +52,8 @@ Unit 1 Labs
     
 Please submit `this survey <https://goo.gl/forms/ix6skYC3XlsEV8l92>`_ at the end of each unit.
 
-Unit 2 Lessons
-==============
+Unit 2 Lessons - Strings and Conditionals
+=========================================
 
 .. toctree::
     :maxdepth: 2
@@ -83,8 +83,8 @@ Unit 2 Labs
 Please submit `this survey <https://goo.gl/forms/ix6skYC3XlsEV8l92>`_ at the end of each unit.
        
     
-Unit 3 Lessons
-==============
+Unit 3 Lessons - Loops and Iteration
+====================================
 
 .. toctree::
     :maxdepth: 2
@@ -115,8 +115,8 @@ Unit 3 Labs
     
 Please submit `this survey <https://goo.gl/forms/ix6skYC3XlsEV8l92>`_ at the end of each unit.
     
-Unit 4 Lessons
-==============
+Unit 4 Lessons - Functions
+==========================
 
 .. toctree::
     :maxdepth: 2
@@ -149,8 +149,8 @@ Unit 4 Labs
     
 Please submit `this survey <https://goo.gl/forms/ix6skYC3XlsEV8l92>`_ at the end of each unit.
     
-Unit 5 Lessons (IN PROGRESS)
-============================
+Unit 5 Lessons - Lists (IN PROGRESS)
+====================================
 
 .. toctree::
     :maxdepth: 2
@@ -179,8 +179,8 @@ Unit 5 Labs
     
 Please submit `this survey <https://goo.gl/forms/ix6skYC3XlsEV8l92>`_ at the end of each unit.
 
-Unit 6 Lessons (INCOMPLETE)
-===========================
+Unit 6 Lessons - Multidimensional Lists (INCOMPLETE)
+====================================================
 
 .. toctree::
     :maxdepth: 2
@@ -204,8 +204,8 @@ Unit 6 Labs
     lab06-02.rst
     lab06-03.rst
 
-Unit 7 Lessons (INCOMPLETE)
-===========================
+Unit 7 Lessons Dictionaries and File I/O (INCOMPLETE)
+=====================================================
 
 
 .. toctree::

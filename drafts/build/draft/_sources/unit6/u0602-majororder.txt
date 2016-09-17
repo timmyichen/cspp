@@ -11,7 +11,17 @@
     Documentation License".
 
 
-Lesson 06-02: 2-Dimensional Lists
-=================================
+Lesson 06-02: 2D Lists as a Grid
+================================
 
-**Learning Target: I can interpret a list of lists, or 2-dimensional lists.**
+**Learning Target: I can create a 2D list to represent a grid of rows and columns.**
+**Learning Target: I can distinguish between row-major and column-major order.**
+
+Why Use a List of Lists?
+------------------------
+
+Structuring a 2D Grid
+---------------------
+
+Checks For Understanding
+------------------------

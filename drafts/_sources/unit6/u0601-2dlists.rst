@@ -15,3 +15,12 @@ Lesson 06-01: 2-Dimensional Lists
 =================================
 
 **Learning Target: I can interpret a list of lists, or 2-dimensional lists.**
+
+List of Lists
+-------------
+
+Accessing a List of Lists
+-------------------------
+
+Checks for Understanding
+------------------------
