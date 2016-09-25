@@ -11,8 +11,8 @@
 
 LETTERS_AND_SPACE = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ '
 F_PATH = '../drafts/_sources/resource/'
-READ_NAME = 'thegambler.txt'
-# READ_NAME = 'tswiftlyrics.txt'
+# READ_NAME = 'thegambler.txt'
+READ_NAME = 'tswiftlyrics.txt'
 EXCLUDE_NAME = 'exclude.txt'
 
 def read_text():

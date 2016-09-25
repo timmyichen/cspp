@@ -29,9 +29,9 @@ When you write some code, the computer doesn't interpret it as the words you wri
    
 .. Image courtesy of Wikimedia Commons
 
-Pretty unintelligible, right?  This is the lowest level of code there is.  Code written in other languages have to be translated into machine code before being fed to the CPU - the brain of the computer.  Plus, machine code is different for each type of CPU (CPU architecture)!  That's a lot of work you don't want to deal with.
+Pretty unintelligible, right?  This is the lowest level of code there is.  Code written in other languages have to be translated into machine code before being fed to the CPU - Central Processing Unit, or simply the Processor - the brain of the computer.  Your CPU is the machine that handles all the calculations.  Plus, machine code is different for each type of CPU!  Having to write a different program for every type of computer you want it to work on is a lot of work you don't want to deal with.
 
-Assembly language is the staple example of a "low level language" - those who are familiar with it can read it and write in it, but it is still CPU-architecture dependent!  A simple "Hello World!" program in NASM Assembly language might look something like this (`source <http://cs.lmu.edu/~ray/notes/x86assembly/>`_):
+Assembly language is the staple example of a "low level language" - those who are familiar with it can read it and write in it, but it is still CPU-architecture dependent!  A simple "Hello World!" program in Assembly language might look something like this (`source <http://cs.lmu.edu/~ray/notes/x86assembly/>`_):
 
 .. code-block:: none
     
