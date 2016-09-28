@@ -63,10 +63,10 @@ Q#1
 .. fillintheblank:: 0204_cfu_1
 
    .. blank:: blank01
-      :correct: ^"\\"$
+      :correct: ^"\\\\"$
       :feedback1: (".*", "Take it character by character.. remember what the backslash means!")
       
-      What will the output of the following: ``print("\"\\\"")``?  You may treat tabs as four individual spaces.
+      What will the output of the following: ``print("\"\\\"")``?
 
 Q#2
 ~~~
