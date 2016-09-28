@@ -63,12 +63,10 @@ Q#1
 .. fillintheblank:: 0204_cfu_1
 
    .. blank:: blank01
-      :correct: ^" {4}"$
-      :feedback1: ("[8:10]", "Remember, the last index is not included!")
-      :feedback2: ("[7:10]", "Remember, we start counting from zero!")
-      :feedback3: (".*", "It helps to count through the indexes!")
+      :correct: ^"\\"$
+      :feedback1: (".*", "Take it character by character.. remember what the backslash means!")
       
-      What will the output of the following string: ``"\"\t\""``?  You may treat tabs as four individual spaces.
+      What will the output of the following: ``print("\"\\\"")``?  You may treat tabs as four individual spaces.
 
 Q#2
 ~~~

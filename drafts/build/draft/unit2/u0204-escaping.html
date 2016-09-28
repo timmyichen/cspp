@@ -374,17 +374,11 @@ localStorage.clear()
         <p data-component="fillintheblank" data-casei="false" id="0204_cfu_1">
             
         <span data-blank>
-            What will the output of the following string: <code class="docutils literal"><span class="pre">&quot;\&quot;\t\&quot;&quot;</span></code>?  You may treat tabs as four individual spaces.
-        <span data-feedback="regex" style="display: none" id="blank01_feedback1">[8:10]</span>
-        <span data-feedback="text" style="display: none" for="blank01_feedback1">Remember, the last index is not included!</span>
+            What will the output of the following: <code class="docutils literal"><span class="pre">print(&quot;\&quot;\\\&quot;&quot;)</span></code>?  You may treat tabs as four individual spaces.
+        <span data-feedback="regex" style="display: none" id="blank01_feedback1">.*</span>
+        <span data-feedback="text" style="display: none" for="blank01_feedback1">Take it character by character.. remember what the backslash means!</span>
             
-        <span data-feedback="regex" style="display: none" id="blank01_feedback2">[7:10]</span>
-        <span data-feedback="text" style="display: none" for="blank01_feedback2">Remember, we start counting from zero!</span>
-            
-        <span data-feedback="regex" style="display: none" id="blank01_feedback3">.*</span>
-        <span data-feedback="text" style="display: none" for="blank01_feedback3">It helps to count through the indexes!</span>
-            
-        <span data-answer style="display: none" id="blank01_answer">^" {4}"$</span>
+        <span data-answer style="display: none" id="blank01_answer">^"\\"$</span>
         </span>
         
         </p>
