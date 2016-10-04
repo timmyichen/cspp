@@ -100,8 +100,6 @@
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
     <link rel="top" title="CSP Python" href="../index.html" />
-    <link rel="next" title="Lesson 05-03: Basic List Methods" href="u0503-listmethods.html" />
-    <link rel="prev" title="Lesson 05-01: Python Lists" href="u0501-lists.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -277,18 +275,6 @@
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Lesson 05-01: Python Lists" data-toggle="tooltip">
-    <a href="u0501-lists.html" >
-      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
-    </a>
-  </li>
-  
-  <li id="relations-next" title='Next Chapter - Lesson 05-03: Basic List Methods' data-toggle="tooltip" >
-    <a href="u0503-listmethods.html" >
-      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-    </a>
-  </li>
-  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -347,42 +333,57 @@ for item in a:
 <h2>Checks for Understanding<a class="headerlink" href="#checks-for-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="q-1">
 <h3>Q#1<a class="headerlink" href="#q-1" title="Permalink to this headline">¶</a></h3>
-<p><strong>INSTRUCTIONS</strong>: Write a <code class="docutils literal"><span class="pre">for</span></code> loop below so it will print out every element in the list <code class="docutils literal"><span class="pre">names</span></code>.</p>
-
-<textarea data-component="activecode" id=cfu_0502_1 data-lang="python"    data-timelimit=25000   data-audio=''     >
-names = ['Bobert','Danny','Pat','Chris','Snacks']
-
-#write code below
-</textarea>
+<p><strong>INSTRUCTIONS</strong>: Write a <code class="docutils literal"><span class="pre">for</span></code> loop below so it will print out every element in the list <code class="docutils literal"><span class="pre">names</span></code>.
+.. activecode:: cfu_0502_1</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">nocodelens:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>names = [&#8216;Bobert&#8217;,&#8217;Danny&#8217;,&#8217;Pat&#8217;,&#8217;Chris&#8217;,&#8217;Snacks&#8217;]</p>
+<p>#write code below</p>
+</div></blockquote>
 </div>
 <div class="section" id="q-2">
 <h3>Q#2<a class="headerlink" href="#q-2" title="Permalink to this headline">¶</a></h3>
-<p><strong>INSTRUCTIONS</strong>: Given a list of integers <code class="docutils literal"><span class="pre">numbers</span></code>, return the sum of the elements in <code class="docutils literal"><span class="pre">numbers</span></code>.</p>
-
-<textarea data-component="activecode" id=cfu_0502_2 data-lang="python"    data-timelimit=25000   data-audio=''     >
-def sumList(numbers):
-    #write here
-
-====
-
-from unittest.gui import TestCaseGui
-
-class myTests(TestCaseGui):
-
-    def testOne(self):
-        self.assertEqual(sumList([1,2,3,4]),10,"input: [1,2,3,4]")
-        self.assertEqual(sumList([-3,3,-7,7,6,-6,100,-100]),0, "input: [-3,3,-7,7,6,-6,100,-100]")
-        self.assertEqual(sumList([25,11,46,23,73]),178, "input: [25,11,46,23,73]")
-
-myTests().main()
-</textarea>
+<p><strong>INSTRUCTIONS</strong>: Given a list of integers <code class="docutils literal"><span class="pre">numbers</span></code>, return the sum of the elements in <code class="docutils literal"><span class="pre">numbers</span></code>.
+.. activecode:: cfu_0502_2</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">nocodelens:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>def sumList(numbers):</dt>
+<dd>#write here</dd>
+</dl>
+<p>from unittest.gui import TestCaseGui</p>
+<p>class myTests(TestCaseGui):</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>def testOne(self):</dt>
+<dd>self.assertEqual(sumList([1,2,3,4]),10,&#8221;input: [1,2,3,4]&#8221;)
+self.assertEqual(sumList([-3,3,-7,7,6,-6,100,-100]),0, &#8220;input: [-3,3,-7,7,6,-6,100,-100]&#8221;)
+self.assertEqual(sumList([25,11,46,23,73]),178, &#8220;input: [25,11,46,23,73]&#8221;)</dd>
+</dl>
+</div></blockquote>
+<p>myTests().main()</p>
+</div></blockquote>
 </div>
 <div class="section" id="q-3">
 <h3>Q#3<a class="headerlink" href="#q-3" title="Permalink to this headline">¶</a></h3>
 <p><strong>INSTRUCTIONS</strong>: Given a list of letters <code class="docutils literal"><span class="pre">letters</span></code>, return the count of vowels in the list.</p>
 
 <textarea data-component="activecode" id=cfu_0502_3 data-lang="python"    data-timelimit=25000   data-audio=''     >
-def sumVowels(letters):
+def sumVowels(numbers):
     #write here
 
 ====
@@ -393,7 +394,7 @@ class myTests(TestCaseGui):
 
     def testOne(self):
         self.assertEqual(sumVowels(['h', 'e', 'l', 'l', 'o']),2,"input: ['h', 'e', 'l', 'l', 'o']")
-        self.assertEqual(sumVowels(['c', 'o', 'm', 'p', '', 't', 'e', 'r', ' ', 's', 'c', 'i', 'e', 'n', 'c', 'e']),6, "input: ['c', 'o', 'm', 'p', \'u\', 't', 'e', 'r', ' ', 's', 'c', 'i', 'e', 'n', 'c', 'e']")
+        self.assertEqual(sumVowels(['c', 'o', 'm', 'p', '', 't', 'e', 'r', ' ', 's', 'c', 'i', 'e', 'n', 'c', 'e']),6, "input: ['c', 'o', 'm', 'p', '', 't', 'e', 'r', ' ', 's', 'c', 'i', 'e', 'n', 'c', 'e']")
         self.assertEqual(sumVowels(['a', 'a', 'b', 'b', 'c', 'c', 'd', 'd', 'e', 'e']),4, "input: ['a', 'a', 'b', 'b', 'c', 'c', 'd', 'd', 'e', 'e']")
 
 myTests().main()
@@ -405,19 +406,6 @@ myTests().main()
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - Lesson 05-01: Python Lists' data-toggle="tooltip">
-    <a href="u0501-lists.html" >
-      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
-    </a>
-  </li>
-  <a class="navLinkBg" id="navLinkBgLeft"  href="u0501-lists.html" ></a>
-  
-  <li id="relations-next" class="navLink" title='Next Section - Lesson 05-03: Basic List Methods' data-toggle="tooltip" >
-    <a href="u0503-listmethods.html" >
-      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
-    </a>
-  </li>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="u0503-listmethods.html" >Next Section - Lesson 05-03: Basic List Methods</a>
 
 <script type="text/javascript">
 

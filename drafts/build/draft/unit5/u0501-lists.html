@@ -262,7 +262,12 @@
 <li><a class="reference internal" href="#">Lesson 05-01: Python Lists</a><ul>
 <li><a class="reference internal" href="#data-type-of-multiple-values">Data Type of Multiple Values</a></li>
 <li><a class="reference internal" href="#specific-elements-in-a-list">Specific Elements in a List</a></li>
-<li><a class="reference internal" href="#checks-for-understanding">Checks For Understanding</a></li>
+<li><a class="reference internal" href="#list-slicing">List Slicing</a></li>
+<li><a class="reference internal" href="#checks-for-understanding">Checks For Understanding</a><ul>
+<li><a class="reference internal" href="#q-1">Q#1</a></li>
+<li><a class="reference internal" href="#q-2">Q#2</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -317,12 +322,109 @@ localStorage.clear()
 <strong>Learning Target: I can reference specific elements within a list.</strong></p>
 <div class="section" id="data-type-of-multiple-values">
 <h2>Data Type of Multiple Values<a class="headerlink" href="#data-type-of-multiple-values" title="Permalink to this headline">¶</a></h2>
+<p>So far, each variable can only hold one value at a time - one integer or one float or one string.  What if we wanted to hold multiple values?  Like a list of prime numbers under 50?  Or a list of names of students?</p>
+<p>You can do this in python by creating a list!  A list is a python datatype that can hold multiple values and has special functions, like a String.  Here&#8217;s how you create a list:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Sally&quot;</span><span class="p">,</span><span class="s2">&quot;Harry&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Notice that it&#8217;s similar to a variable assignment statement, except the value uses square brackets (<code class="docutils literal"><span class="pre">[]</span></code>), and each value is separated by a comma (<code class="docutils literal"><span class="pre">,</span></code>).</p>
+<p>Note that lists can hold values of different datatypes!</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">mixed_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;three&quot;</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s2">&quot;5&quot;</span><span class="p">,</span><span class="n">true</span><span class="p">,</span><span class="kc">None</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>So once we have a list of values, how do we access them again?</p>
 </div>
 <div class="section" id="specific-elements-in-a-list">
 <h2>Specific Elements in a List<a class="headerlink" href="#specific-elements-in-a-list" title="Permalink to this headline">¶</a></h2>
+<p>Funnily enough, we do it exactly the same as we access strings!  Just like each character in a string, each element in a list has an index and we use that index to access that value.</p>
+<a class="reference internal image-reference" href="../_images/listindex.svg"><div align="center" class="align-center"><img alt="indexes of a list" src="../_images/listindex.svg" width="400px" /></div>
+</a>
+<p>Here&#8217;s an example:</p>
+
+<textarea data-component="activecode" id=ex_0501_1 data-lang="python" data-autorun="true"   data-timelimit=25000   data-audio=''     >
+fruits = ["apple","banana","strawberry","grape","pineapple","watermelon"]
+print(fruits) #entire list
+print(fruits[0]) #apple
+print(fruits[3]) #grape
+print(fruits[-1]) #watermelon
+</textarea>
+<p>Notice how when the list is printed, it prints the entire list, including the brackets and quotes (if it&#8217;s a string).</p>
+</div>
+<div class="section" id="list-slicing">
+<h2>List Slicing<a class="headerlink" href="#list-slicing" title="Permalink to this headline">¶</a></h2>
+<p>Similar to strings, you can also slice lists using the same notation.</p>
+
+<textarea data-component="activecode" id=ex_0501_2 data-lang="python" data-autorun="true"   data-timelimit=25000   data-audio=''     >
+numbers = [0,1,2,3,4,5,6,7,8,9]
+print(numbers)
+print(numbers[0:3]) #0,1,2
+print(numbers[5:8]) #5,6,7
+print(numbers[-5:]) #5,6,7,8,9
+print(numbers[4:5]) #4
+</textarea>
+<p>An important note - please see that in our last example, printing <code class="docutils literal"><span class="pre">numbers[4:5]</span></code> returned a <strong>list</strong> with the value in the 4th index.  This is not the same as printing <code class="docutils literal"><span class="pre">numbers[4]</span></code>!</p>
+
+<textarea data-component="activecode" id=ex_0501_3 data-lang="python" data-autorun="true"   data-timelimit=25000   data-audio=''     >
+numbers = [0,1,2,3,4,5,6,7,8,9]
+
+#list slice
+print(numbers[4:5])
+
+#list index
+print(numbers[4])
+
+#are they equivalent?
+print(numbers[4] == numbers[4:5])
+</textarea>
+<p><code class="docutils literal"><span class="pre">numbers[4:5]</span></code> returns a list with the value at the 4th index.
+<code class="docutils literal"><span class="pre">numbers[4]</span></code> just returns the value at the 4th index.</p>
+<p>We won&#8217;t be using list indexing as much in this course, but it was an interesting tidbit to share.</p>
 </div>
 <div class="section" id="checks-for-understanding">
 <h2>Checks For Understanding<a class="headerlink" href="#checks-for-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="q-1">
+<h3>Q#1<a class="headerlink" href="#q-1" title="Permalink to this headline">¶</a></h3>
+
+<textarea data-component="activecode" id=cfu_0501_1 data-lang="python"    data-timelimit=25000   data-audio=''     >
+#complete line 3 to return the 1st element in the given list a_list
+def getFirstElement(a_list):
+    return
+
+====
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+    def testOne(self):
+        self.assertEqual(getFirstElement([1,2,3,4]),1,"input: [1,2,3,4]")
+        self.assertEqual(getFirstElement(['h','e','l','l','o']),'h', "input: ['h','e','l','l','o']")
+
+myTests().main()
+</textarea>
+</div>
+<div class="section" id="q-2">
+<h3>Q#2<a class="headerlink" href="#q-2" title="Permalink to this headline">¶</a></h3>
+
+<textarea data-component="activecode" id=cfu_0501_2 data-lang="python"    data-timelimit=25000   data-audio=''     >
+#complete line 3 to return the last element in the given list a_list
+def getFirstElement(a_list):
+    return
+
+====
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+    def testOne(self):
+        self.assertEqual(getFirstElement([1,2,3,4]),4,"input: [1,2,3,4]")
+        self.assertEqual(getFirstElement(['h','e','l','l','o']),'o', "input: ['h','e','l','l','o']")
+
+myTests().main()
+</textarea>
+</div>
 </div>
 </div>
 

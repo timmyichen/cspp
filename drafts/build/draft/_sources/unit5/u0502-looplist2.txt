@@ -56,7 +56,6 @@ Q#1
 ~~~
 
 **INSTRUCTIONS**: Write a ``for`` loop below so it will print out every element in the list ``names``.
-
 .. activecode:: cfu_0502_1
     :nocodelens:
     
@@ -65,12 +64,10 @@ Q#1
     #write code below
     
 
-
 Q#2
 ~~~
 
 **INSTRUCTIONS**: Given a list of integers ``numbers``, return the sum of the elements in ``numbers``.
-
 .. activecode:: cfu_0502_2
     :nocodelens:
     
@@ -98,7 +95,7 @@ Q#3
 .. activecode:: cfu_0502_3
     :nocodelens:
     
-    def sumVowels(letters):
+    def sumVowels(numbers):
         #write here
     
     ====
@@ -109,7 +106,7 @@ Q#3
     
         def testOne(self):
             self.assertEqual(sumVowels(['h', 'e', 'l', 'l', 'o']),2,"input: ['h', 'e', 'l', 'l', 'o']")
-            self.assertEqual(sumVowels(['c', 'o', 'm', 'p', 'u', 't', 'e', 'r', ' ', 's', 'c', 'i', 'e', 'n', 'c', 'e']),6, "input: ['c', 'o', 'm', 'p', \'u\', 't', 'e', 'r', ' ', 's', 'c', 'i', 'e', 'n', 'c', 'e']")
+            self.assertEqual(sumVowels(['c', 'o', 'm', 'p', 'u', 't', 'e', 'r', ' ', 's', 'c', 'i', 'e', 'n', 'c', 'e']),6, "input: ['c', 'o', 'm', 'p', 'u', 't', 'e', 'r', ' ', 's', 'c', 'i', 'e', 'n', 'c', 'e']")
             self.assertEqual(sumVowels(['a', 'a', 'b', 'b', 'c', 'c', 'd', 'd', 'e', 'e']),4, "input: ['a', 'a', 'b', 'b', 'c', 'c', 'd', 'd', 'e', 'e']")
     
     myTests().main()
