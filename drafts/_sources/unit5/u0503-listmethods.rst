@@ -19,12 +19,22 @@ Lesson 05-03: Basic List Methods
 Python Documentation
 --------------------
 
+The `Python 3 documentation <https://docs.python.org/3/tutorial/datastructures.html>`_ contains all the information you need to know about python - this includes what list methods are available to you!  In the area below, using the documentation link above, try to figure out how to use these methods.  Remember to use CTRL+F (Windows) or CMD+F (Mac) to find specific words on a page.
+
 Using The Methods
 -----------------
 
 ``list.append()``
 ~~~~~~~~~~~~~~~~~
 
+.. activecode:: cfu_0503_1
+    :nocodelens:
+    
+    def append3(x,y,z):
+        #write here
+    
+    ====
+    
 
 ``list.remove()``
 ~~~~~~~~~~~~~~~~~
