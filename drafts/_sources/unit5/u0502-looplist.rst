@@ -100,7 +100,7 @@ Q#3
     
     def sumVowels(letters):
         #write here
-    
+    ZXCzxC
     ====
     
     from unittest.gui import TestCaseGui
