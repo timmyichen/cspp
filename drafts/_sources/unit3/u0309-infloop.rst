@@ -141,7 +141,7 @@ I would recommend using pencil and paper to work through the output.
 .. fillintheblank:: 0309_cfu_2
    
    .. blank:: 0309_cfu_2_1
-      :correct: ^12631\.5$
+      :correct: ^1263$
       :feedback1: (" +","Remember - no spaces!")
       :feedback2: ("^1263$","Double check the condition in the while loop!")
       :feedback3: (".*","Try again!")
