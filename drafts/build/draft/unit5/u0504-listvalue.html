@@ -261,8 +261,11 @@
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">Lesson 05-04: Value Representation of Lists</a><ul>
 <li><a class="reference internal" href="#stored-by-reference">Stored by Reference</a></li>
-<li><a class="reference internal" href="#when-this-is-a-problem">When This is a Problem</a></li>
-<li><a class="reference internal" href="#checks-for-understanding">Checks for Understanding</a></li>
+<li><a class="reference internal" href="#why-does-it-matter">Why does it matter?</a></li>
+<li><a class="reference internal" href="#checks-for-understanding">Checks for Understanding</a><ul>
+<li><a class="reference internal" href="#q-1">Q#1</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -316,12 +319,103 @@ localStorage.clear()
 <p><strong>Learning Target: I can understand the value representation of a list.</strong></p>
 <div class="section" id="stored-by-reference">
 <h2>Stored by Reference<a class="headerlink" href="#stored-by-reference" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s take the following program as an example:</p>
+
+<textarea data-component="activecode" id=ex_0504_1 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+string1 = "hello"
+string2 = string1
+list1 = [1,2,3]
+list2 = list1
+print("Strings: {} {}".format(string1,string2))
+print("Lists: {} {}".format(str(list1),str(list2)))
+</textarea>
+<p>And now let&#8217;s step through the codelens for that code:</p>
+
+<div class="alert alert-warning cd_section">
+<div id="cl_0504_1"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (cl_0504_1)</span> </p>
 </div>
-<div class="section" id="when-this-is-a-problem">
-<h2>When This is a Problem<a class="headerlink" href="#when-this-is-a-problem" title="Permalink to this headline">¶</a></h2>
+<script type="text/javascript">
+var cl_0504_1_trace = {"code": "string1 = \"hello\"\nstring2 = string1\nlist1 = [1,2,3]\nlist2 = list1\nprint(\"Strings: {} {}\".format(string1,string2))\nprint(\"Lists: {} {}\".format(str(list1),str(list2)))", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["string1"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"string1": "hello"}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["string1", "string2"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"string2": "hello", "string1": "hello"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["string1", "string2", "list1"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"list1": ["REF", 1], "string2": "hello", "string1": "hello"}, "heap": {"1": ["LIST", 1, 2, 3]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["string1", "string2", "list1", "list2"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"list1": ["REF", 1], "list2": ["REF", 1], "string2": "hello", "string1": "hello"}, "heap": {"1": ["LIST", 1, 2, 3]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["string1", "string2", "list1", "list2"], "stdout": "Strings: hello hello\n", "func_name": "<module>", "stack_to_render": [], "globals": {"list1": ["REF", 1], "list2": ["REF", 1], "string2": "hello", "string1": "hello"}, "heap": {"1": ["LIST", 1, 2, 3]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["string1", "string2", "list1", "list2"], "stdout": "Strings: hello hello\nLists: [1, 2, 3] [1, 2, 3]\n", "func_name": "<module>", "stack_to_render": [], "globals": {"list1": ["REF", 1], "list2": ["REF", 1], "string2": "hello", "string1": "hello"}, "heap": {"1": ["LIST", 1, 2, 3]}, "line": 6, "event": "return"}]};
+var cl_0504_1_vis;
+
+$(document).ready(function() {
+    try {
+        cl_0504_1_vis = new ExecutionVisualizer('cl_0504_1',cl_0504_1_trace,
+                                    {embeddedMode: false,
+                                    verticalStack: false,
+                                    heightChangeCallback: redrawAllVisualizerArrows,
+                                    codeDivWidth: 500,
+                                    lang : 'py2'
+                                    });
+        attachLoggers(cl_0504_1_vis,'cl_0504_1');
+        styleButtons('cl_0504_1');
+        allVisualizers.push(cl_0504_1_vis);
+    } catch (e) {
+        console.log("Failed to Initialize CodeLens component cl_0504_1_vis" );
+        console.log(e.toString());
+    }
+
+});
+
+$(document).ready(function() {
+    $("#cl_0504_1_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'cl_0504_1'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    if (cl_0504_1_vis) {
+        cl_0504_1_vis.redrawConnectors();
+    }
+});
+</script>
+<p>You&#8217;ll notice that the variables <code class="docutils literal"><span class="pre">list1</span></code> and <code class="docutils literal"><span class="pre">list2</span></code> are pointing to the same thing, while <code class="docutils literal"><span class="pre">string1</span></code> and <code class="docutils literal"><span class="pre">string2</span></code> have individual (but identical) values!</p>
+<p>That&#8217;s because list variables don&#8217;t store the data from the list itself - instead, they store the <span class="vocab-def">location of the data within the memory</span>, often called the <span class="vocab-word">reference</span>.  We can see the actual location by using the <code class="docutils literal"><span class="pre">id()</span></code> function:</p>
+<script src="//repl.it/embed/DxQw/0.js"></script><p>Notice how the IDs of <code class="docutils literal"><span class="pre">a_list</span></code> and <code class="docutils literal"><span class="pre">same_ref</span></code> are identical, because they&#8217;re both pointing to the same object, but <code class="docutils literal"><span class="pre">new_list</span></code> was created with its own set of (identical) values, but has a different ID.</p>
+</div>
+<div class="section" id="why-does-it-matter">
+<h2>Why does it matter?<a class="headerlink" href="#why-does-it-matter" title="Permalink to this headline">¶</a></h2>
+<p>This comes into play whenever you want to modify a list with functions.</p>
+
+<textarea data-component="activecode" id=ex_0504_2 data-lang="python" data-autorun="true"   data-timelimit=25000  data-codelens="true" data-audio=''     >
+#this function doubles the value of every element in a given list
+def double_list(inp):
+    for i in range(len(inp)):
+        inp[i] = inp[i] * 2
+    return inp
+
+some_list = [1,2,3]
+print("original list before: {}".format(str(some_list)))
+new_list = double_list(some_list)
+print("original list after: {}".format(str(some_list)))
+print("new list after: {}".format(str(new_list)))
+</textarea>
+<p>We wrote a function <code class="docutils literal"><span class="pre">double_list</span></code> that takes in a list as an argument, doubles all the values, then returns the new list - except <em>there is no new list</em> - this function is modifying the original list - the one that exists outside the function!  This is an issue when we want to make modifications to the list <em>without changing the original list</em>.  In the next lesson, we will explore different methods of copying lists.</p>
 </div>
 <div class="section" id="checks-for-understanding">
 <h2>Checks for Understanding<a class="headerlink" href="#checks-for-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="q-1">
+<h3>Q#1<a class="headerlink" href="#q-1" title="Permalink to this headline">¶</a></h3>
+
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="cfu_0504_1">
+            u0504-1: What built-in python function do you use to find the memory location of a variable?
+            <li data-component="answer"  id="cfu_0504_1_opt_a">(A) len()</li><li data-component="feedback" id="cfu_0504_1_opt_a"></li>
+            
+            <li data-component="answer" data-correct id="cfu_0504_1_opt_b">(B) id()</li><li data-component="feedback" id="cfu_0504_1_opt_b"></li>
+            
+            <li data-component="answer"  id="cfu_0504_1_opt_c">(C) mem()</li><li data-component="feedback" id="cfu_0504_1_opt_c"></li>
+            
+            <li data-component="answer"  id="cfu_0504_1_opt_d">(D) ref()</li><li data-component="feedback" id="cfu_0504_1_opt_d"></li>
+            
+
+            </ul>
+            </div>
 </div>
 </div>
 

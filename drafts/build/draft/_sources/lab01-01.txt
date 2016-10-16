@@ -23,7 +23,7 @@ Each program should use ``input()`` to allow the user to type in a number to con
 
 .. code-block:: none
 	
-	15 C is equal to 32 F
+	0 C is equal to 32 F
 
 To convert from Celcius to Fahrenheit, you would use the following equation:
 

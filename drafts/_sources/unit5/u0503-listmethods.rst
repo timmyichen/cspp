@@ -30,15 +30,29 @@ Using The Methods
 .. activecode:: cfu_0503_1
     :nocodelens:
     
-    def append3(x,y,z):
+    #this should append x, y, and z (in that order) to the end of the list arr
+    def append3(arr,x,y,z):
         #write here
     
     ====
+
+    from unittest.gui import TestCaseGui
     
+    class myTests(TestCaseGui):
+        
+        def testOne(self):
+            self.assertEqual(append3([1,2,3],4,5,6),[1,2,3,4,5,6],"inputs: [1,2,3],4,5,6")
+            self.assertEqual(append3([2,87,-3],'d',3,True),[2,87,-3,'d',3,True],"inputs: [2,87,-3],'d',3,True")
+    myTests().main()
 
 ``list.remove()``
 ~~~~~~~~~~~~~~~~~
 
+.. activecode:: cfu_0503_2
+    :nocodelens:
+    
+    #
+    def remove
 
 ``list.insert()``
 ~~~~~~~~~~~~~~~~~

@@ -315,9 +315,18 @@ localStorage.clear()
 <p><strong>Learning Target: I can duplicate a list.</strong></p>
 <div class="section" id="algorithm-for-duplicating">
 <h2>Algorithm for Duplicating<a class="headerlink" href="#algorithm-for-duplicating" title="Permalink to this headline">¶</a></h2>
+<p>In order to write a function to modify a list without affecting the original one, we would need to make a copy of it.  Although there are shortcuts to make copies of lists, let&#8217;s first see how we might do it manually.</p>
+<p>We want to start by creating a new, blank list.  This ensures that it will have a different reference than the one we&#8217;re trying to copy.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">old_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">new_list</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#this is an empty list</span>
+</pre></div>
 </div>
+<p>Then we need to manually loop through the old array and &#8216;copy&#8217; every element into the new array.  We can do this by using <code class="docutils literal"><span class="pre">append()</span></code>.  We can then look at the IDs and check if they are equal to each other using the following code:</p>
+<script src="//repl.it/embed/DxVV/1.js"></script></div>
 <div class="section" id="using-the-copy-copy-function">
 <h2>Using the <code class="docutils literal"><span class="pre">copy.copy()</span></code> Function<a class="headerlink" href="#using-the-copy-copy-function" title="Permalink to this headline">¶</a></h2>
+<p>Python also has a built-in <code class="docutils literal"><span class="pre">copy</span></code> library that has a bunch of functions related to copying things.  We can use the <code class="docutils literal"><span class="pre">copy.copy()</span></code> function to make a quick copy of a list.</p>
+<script src="//repl.it/embed/DxVY/1.js"></script><p>As you can see, this much easier - but it&#8217;s important to know how to copy lists anyway!</p>
 </div>
 </div>
 
