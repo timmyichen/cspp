@@ -159,9 +159,11 @@ Q#1
         :feedback1: (".*", "Try again!")
         
         Copy and paste the FIRST line that has an error and correct it so there is no error by adding a single character.  Adding more than a single character may throw off the answer detection.
-    
+
+.. fillintheblank:: 0301_cfu_3_2
+
     .. blank:: 0301_blank_3_2
         :correct: ^print("Your name is {}".format(name))$
         :feedback1: (".*", "Try again!")
         
-        Copy and paste the FIRST line that has an error and correct it so there is no error by adding a single character.  Adding more than a single character may throw off the answer detection.
+        Copy and paste the SECOND line that has an error and correct it so there is no error by adding a single character.  Adding more than a single character may throw off the answer detection.

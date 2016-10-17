@@ -315,10 +315,63 @@ localStorage.clear()
 <p><strong>Learning Target: I can create a python function that will remove all elements of a given value.</strong></p>
 <div class="section" id="assignment">
 <h2>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h2>
+<p>In the area below, create a method called <code class="docutils literal"><span class="pre">removeAll()</span></code> that will take in two arguments:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">orig</span></code> - the original list</li>
+<li><code class="docutils literal"><span class="pre">del_value</span></code> - the value you want to replace in the list</li>
+</ul>
+<p>and will remove ALL elements that in <code class="docutils literal"><span class="pre">orig</span></code> that match <code class="docutils literal"><span class="pre">del_value</span></code>.  The function should then return the new list without the removed values.  This should be done <strong>without modifying the original list</strong>.</p>
+<p>Example:</p>
+<p><code class="docutils literal"><span class="pre">removeAll([1,2,1,2,3,1,2],1)</span></code> should return <code class="docutils literal"><span class="pre">[2,2,3,2]</span></code></p>
+
+<textarea data-component="activecode" id=cfu_0509_1 data-lang="python"    data-timelimit=25000   data-audio=''     >
+def removeAll(orig,del_value):
+    #write here
+
+====
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+    def testOne(self):
+        a = [1,2,3,2,1]
+        b = removeAll(a,1)
+        a.extend(b)
+        self.assertEqual(a,[1,2,3,2,1,2,3,2],"inputs: [1,2,3,2,1],1")
+
+        a = [0,0,1,1,0,1,0,0]
+        b = removeAll(a,0)
+        a.extend(b)
+        self.assertEqual(a,[0,0,1,1,0,1,0,0,1,1,1],"inputs: [0,0,1,1,0,1,0,0],0")
+
+myTests().main()
+</textarea>
 </div>
 <div class="section" id="hints">
 <h2>Hints<a class="headerlink" href="#hints" title="Permalink to this headline">¶</a></h2>
+
+    <div data-component="reveal" id="reveal_0509_1"   data-showtitle="Show Hint #1" data-hidetitle="Hide Hint #1">
+    Just like the previous few, you&#8217;re going to be looping through the list and selectively adding elements to your final list.  However, this time, whenever you find your <code class="docutils literal"><span class="pre">del_value</span></code>,  you won&#8217;t want to add anything at all!
+    </div>
+    
+    <div data-component="reveal" id="reveal_0509_2"   data-showtitle="Show Hint #2" data-hidetitle="Hide Hint #2">
+    To avoid empty if/else statements, this time you&#8217;ll want to check if an element <code class="docutils literal"><span class="pre">e</span></code> is NOT equal to <code class="docutils literal"><span class="pre">del_value</span></code> - what do you want to do with an element if it&#8217;s not the one you want to delete?
+    </div>
+    
+    <div data-component="reveal" id="reveal_0509_3"   data-showtitle="Show Answer" data-hidetitle="Hide Answer">
+    <p>Here&#8217;s one way to do it (I use <code class="docutils literal"><span class="pre">e</span></code> as short for &#8220;element&#8221;):</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">removeAll</span><span class="p">(</span><span class="n">orig</span><span class="p">,</span><span class="n">del_value</span><span class="p">):</span>
+    <span class="n">final</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">orig</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">e</span> <span class="o">!=</span> <span class="n">del_value</span><span class="p">:</span>
+            <span class="n">final</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">final</span>
+</pre></div>
 </div>
+
+    </div>
+    </div>
 </div>
 
 

@@ -315,10 +315,75 @@ localStorage.clear()
 <p><strong>Learning Target: I can create a python function that will reverse a list.</strong></p>
 <div class="section" id="assignment">
 <h2>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h2>
+<p>In the area below, create a method called <code class="docutils literal"><span class="pre">reverse()</span></code> that will take in one list argument, and will reverse the order of the elements.  This should be done <strong>without modifying the original list</strong>.</p>
+<p>Example:</p>
+<p><code class="docutils literal"><span class="pre">reverse([1,2,3,4])</span></code> should return <code class="docutils literal"><span class="pre">[4,3,2,1]</span></code></p>
+
+<textarea data-component="activecode" id=cfu_0507_1 data-lang="python"    data-timelimit=25000   data-audio=''     >
+def reverse(orig):
+    #write here
+
+====
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+    def testOne(self):
+        a = [6,7,8]
+        b = reverse(a)
+        a.extend(b)
+        self.assertEqual(a,[6,7,8,8,7,6],"inputs: [6,7,8]")
+
+        a = [False,False,True]
+        b = reverse(a)
+        a.extend(b)
+        self.assertEqual(a,[False,False,True,True,False,False],"inputs: [False,False,True]")
+
+myTests().main()
+</textarea>
 </div>
 <div class="section" id="hints">
 <h2>Hints<a class="headerlink" href="#hints" title="Permalink to this headline">¶</a></h2>
+
+    <div data-component="reveal" id="reveal_0507_1"   data-showtitle="Show Hint #1" data-hidetitle="Hide Hint #1">
+    Similar to the last one, you&#8217;ll be adding things to your result.  Except this time, you&#8217;re doing it in reverse.  You&#8217;ll want to reference the <strong>indexes</strong> - how do you reference a bunch of numbers in reverse order?
+    </div>
+    
+    <div data-component="reveal" id="reveal_0507_2"   data-showtitle="Show Hint #2" data-hidetitle="Hide Hint #2">
+    <p>In whichever loop you&#8217;re using (<code class="docutils literal"><span class="pre">for</span></code> or <code class="docutils literal"><span class="pre">while</span></code>), keep in mind the following questions:</p>
+<ul class="simple">
+<li>What index (relative to the length of the list) do you want to start at?</li>
+<li>What index do you want to end at?</li>
+</ul>
+
+    </div>
+    
+    <div data-component="reveal" id="reveal_0507_3"   data-showtitle="Show Hint #3" data-hidetitle="Hide Hint #3">
+    Don&#8217;t forget that the last index will be <code class="docutils literal"><span class="pre">len(orig)-1</span></code>!  Anything greater than that (like just <code class="docutils literal"><span class="pre">len(orig)</span></code>) will result in an error!
+    </div>
+    
+    <div data-component="reveal" id="reveal_0507_4"   data-showtitle="Show Answer" data-hidetitle="Hide Answer">
+    <p>Here&#8217;s one way to do it:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="n">orig</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">orig</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+    <span class="k">while</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">orig</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">index</span> <span class="o">-</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
 </div>
+<p>And here&#8217;s the &#8216;super pythonic&#8217; way to do it:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="n">orig</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">orig</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>(but this wouldn&#8217;t work in any other language - make sure you&#8217;re confident with the solution provided above)</p>
+
+    </div>
+    </div>
 </div>
 
 
