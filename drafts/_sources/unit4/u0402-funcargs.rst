@@ -136,7 +136,7 @@ In the space below, write a function called ``compare`` that takes two number ar
    #dont change tests below
    compare(5,2)
    compare(100,100)
-   compare(10.10.001)
+   compare(10,10.001)
 
 Q#3
 ~~~

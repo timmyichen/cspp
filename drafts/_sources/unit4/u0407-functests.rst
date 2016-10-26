@@ -60,10 +60,10 @@ So if we run these:
    :autorun:
    
    def is_natural(n):
-    if n > 0 or int(n) == n:
-        return True
-    else:
-        return False
+       if n > 0 or int(n) == n:
+           return True
+       else:
+           return False
 
    #tests
    print(is_natural(5))       #True

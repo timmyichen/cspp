@@ -2,3 +2,7 @@ redo ttt example???
 
 CFUs/practice for:
 
+fix image in 0302
+fix 0301_cfu_1 and 2
+0305 add regex to catch print and list in frq
+multiple LTs need to be separated with |
