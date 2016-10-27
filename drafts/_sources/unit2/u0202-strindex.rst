@@ -13,8 +13,8 @@
 Lesson 02-02: Specific Letters with String Indexing
 ===================================================
 
-**Learning Target: I can use the len() function to find the length of a string.**
-**Learning Target: I can use string indexing to reference specific letters in a string.**
+| **Learning Target: I can use the len() function to find the length of a string.**
+| **Learning Target: I can use string indexing to reference specific letters in a string.**
 
 Length of a String
 ------------------

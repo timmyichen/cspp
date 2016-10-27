@@ -14,8 +14,8 @@
 Lesson 04-01: Functions in Python
 =================================
 
-**Learning Target: I can identify parts of a function header.**
-**Learning Target: I can create functions to perform a given task.**
+| **Learning Target: I can identify parts of a function header.**
+| **Learning Target: I can create functions to perform a given task.**
 
 Two of the core pillars of computational thinking are the concepts of :vocab-word:`decomposition` and :vocab-word:`abstraction`.  Through functions, you will learn to implement both in your work.
 

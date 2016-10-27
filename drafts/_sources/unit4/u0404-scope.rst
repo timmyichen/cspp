@@ -14,8 +14,8 @@
 Lesson 04-04: Variable Scope
 ============================
 
-**Learning Target: I can understand the scope of a variable.**
-**Learning Target: I can reference global variables within functions.**
+| **Learning Target: I can understand the scope of a variable.**
+| **Learning Target: I can reference global variables within functions.**
 
 Whenever we create a variable in python, it's important to :vocab-def:`know where it (the variable) can be accessed from` - this is called the :vocab-word:`variable scope`.  At a basic level, there are two different types of variable scope that we'll be working with: **local** and **global**.
 
