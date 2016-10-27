@@ -14,8 +14,8 @@
 Lesson 04-08: Functions within Functions
 ========================================
 
-**Learning Target: I can write functions that call other functions.**
-**Learning Target: I can explain how the call stack works.**
+| **Learning Target: I can write functions that call other functions.**
+| **Learning Target: I can explain how the call stack works.**
 
 You can call functions from within functions!  Check it out:
 

@@ -14,8 +14,8 @@
 Lesson 05-01: Python Lists
 ==========================
 
-**Learning Target: I can utilize python lists to hold various data.**
-**Learning Target: I can reference specific elements within a list.**
+| **Learning Target: I can utilize python lists to hold various data.**
+| **Learning Target: I can reference specific elements within a list.**
 
 Data Type of Multiple Values
 ----------------------------

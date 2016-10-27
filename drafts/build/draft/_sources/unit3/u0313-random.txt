@@ -1,9 +1,0 @@
-.. qnum::
-   :start: 1
-   :prefix: u0313-
-
-
-Lesson 03-13: The ``random`` module
-===================================
-
-**Learning Target: I can use the random module to generate random numbers.**

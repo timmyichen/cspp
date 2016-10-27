@@ -15,8 +15,6 @@ Lesson 01-04: Mixing Datatypes
 
 **Learning Target: I can predict the behavior of two different datatypes that are operated upon.**
 
-**Highlighting Key**: :vocab-word:`vocab term`, :vocab-def:`vocab definition`, :misc-hl:`important concept`
-
 Now that we know that we can use operators to combine values, what happens if we combine values of different types?
 
 Mixing Ints with Floats

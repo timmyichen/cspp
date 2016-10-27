@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Lab 4-2: Caesar Cipher - Encrypting and Decrypting &mdash; CSP Python</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/livecode.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="CSP Python" href="../index.html" />
+    <link rel="next" title="Lab 4-3: Cracking the Caesar Cipher" href="lab04-03.html" />
+    <link rel="prev" title="Lab 4-1: Rock Paper Scissors" href="lab04-01.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'draft';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'draft';
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">CSP Python</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHNwYJKoZIhvcNAQcEoIIHKDCCByQCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYAcrkqh1hn3lYqIpfXxNqe1T82EhXzCJGy1yMAmklpyZshyMkfDGe1Bhx+iwyGeoYRTTyphFmP+9M3NyO0+Q5XdHxgZPx/zYjjBxlZHgEV6jhE8bN2fHkkPf0VHfz0a0QQylQOPlKiOTZV7B37Jpk6yM47oVZ1tG/KNm0NkfmB76DELMAkGBSsOAwIaBQAwgbQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIi0GmFfOlcjuAgZBbYOo9UO+CpMQa+PYqwsUmUnJvXIImeMeNI3KVTUx5Cfk9gNMo3WzPeiB5IqZo9nRAQ0mf1qL2ecLeB5tidM+lgBUhOxfj3/FecpnVFa0263gp4g+PLw8jzhvVRdUon1K3SeO1Rzh23fIRKwnrD6btt73uwtj0sl3tGd8qz+6GIcwPDdRk9VcUffiBJT/ZagKgggOHMIIDgzCCAuygAwIBAgIBADANBgkqhkiG9w0BAQUFADCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wHhcNMDQwMjEzMTAxMzE1WhcNMzUwMjEzMTAxMzE1WjCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMFHTt38RMxLXJyO2SmS+Ndl72T7oKJ4u4uw+6awntALWh03PewmIJuzbALScsTS4sZoS1fKciBGoh11gIfHzylvkdNe/hJl66/RGqrj5rFb08sAABNTzDTiqqNpJeBsYs/c2aiGozptX2RlnBktH+SUNpAajW724Nv2Wvhif6sFAgMBAAGjge4wgeswHQYDVR0OBBYEFJaffLvGbxe9WT9S1wob7BDWZJRrMIG7BgNVHSMEgbMwgbCAFJaffLvGbxe9WT9S1wob7BDWZJRroYGUpIGRMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbYIBADAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAIFfOlaagFrl71+jq6OKidbWFSE+Q4FqROvdgIONth+8kSK//Y/4ihuE4Ymvzn5ceE3S/iBSQQMjyvb+s2TWbQYDwcp129OPIbD9epdr4tJOUNiSojw7BHwYRiPh58S1xGlFgHFXwrEBb3dgNbMUa+u4qectsMAXpVHnD9wIyfmHMYIBmjCCAZYCAQEwgZQwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tAgEAMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xMzExMDMxMzQxMzFaMCMGCSqGSIb3DQEJBDEWBBRDJF8w+zsMr7FSk+pwinB5f5D4rzANBgkqhkiG9w0BAQEFAASBgHw1LMHpkpaqHIvDGdFE0eG+2mZlmMnUeDCBhQlbc7QMzFQYKTV94NfaebBO4PmNdADe1rq4WidSRZZbE7CzkX9IGENYnBTWY0hb2l0lGdGrJdGeWyV3ekg9WVaFMMumrekds96h3Cx7dGz2kWDzIai2iEXE/qoE+xpkyXAYZNV3-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/draft/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/draft/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/static/help/bugreports.html'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Lab 4-2: Caesar Cipher - Encrypting and Decrypting</a><ul>
+<li><a class="reference internal" href="#the-caesar-cipher">The Caesar Cipher</a><ul>
+<li><a class="reference internal" href="#encrypting-with-the-caesar-cipher">Encrypting with the Caesar Cipher</a></li>
+<li><a class="reference internal" href="#decrypting-with-the-caesar-cipher">Decrypting with the Caesar Cipher</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#encryption-walkthrough">Encryption Walkthrough</a></li>
+<li><a class="reference internal" href="#decryption-walkthrough">Decryption Walkthrough</a></li>
+<li><a class="reference internal" href="#testing-our-program">Testing our Program</a></li>
+<li><a class="reference internal" href="#refactoring-our-code">Refactoring Our Code</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Lab 4-1: Rock Paper Scissors" data-toggle="tooltip">
+    <a href="lab04-01.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Lab 4-3: Cracking the Caesar Cipher' data-toggle="tooltip" >
+    <a href="lab04-03.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <script type=text/javascript>
+localStorage.clear()
+</script><div class="section" id="lab-4-2-caesar-cipher-encrypting-and-decrypting">
+<h1>Lab 4-2: Caesar Cipher - Encrypting and Decrypting<a class="headerlink" href="#lab-4-2-caesar-cipher-encrypting-and-decrypting" title="Permalink to this headline">¶</a></h1>
+<p>Note: Part of this lab came from Al Sweigart&#8217;s great book, <em>Hacking Secret Ciphers with Python: A beginner&#8217;s Guide to cryptography and computer programming with Python</em>, available online here at <a class="reference external" href="https://inventwithpython.com/">Invent With Python</a>, among his other works.  Feel free to check them out if they interest you!</p>
+<div class="section" id="the-caesar-cipher">
+<h2>The Caesar Cipher<a class="headerlink" href="#the-caesar-cipher" title="Permalink to this headline">¶</a></h2>
+<p>The Caesar Cipher, named after Julius Caesar of Ancient Rome, is a type of substitution cipher where each letter of the original (plaintext) message is substituted with another letter.</p>
+<div class="section" id="encrypting-with-the-caesar-cipher">
+<h3>Encrypting with the Caesar Cipher<a class="headerlink" href="#encrypting-with-the-caesar-cipher" title="Permalink to this headline">¶</a></h3>
+<p>But how do we decide what letter is replaced by what?  That&#8217;s where the <strong>key</strong> comes into play.  Found in almost every encryption algorithm, the key determines <strong>how the data is encrypted</strong>.</p>
+<p>In the Caesar cipher, the key is a number from 0 to 25, because there are 26 letters in the alphabet.  This means that for any given message, there are 26 different ways we can encrpyt the message.</p>
+<p>For each letter, the key determines <strong>which letter is replacing the current letter, by counting down the alphabet</strong>.  In the following example, let&#8217;s say we wanted to encrypt the letter <code class="docutils literal"><span class="pre">B</span></code> with a key of <code class="docutils literal"><span class="pre">3</span></code>, we would find the 3rd letter that appears after <code class="docutils literal"><span class="pre">B</span></code> - which is C, D, then finally <code class="docutils literal"><span class="pre">E</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/caesar1.png"><img alt="B becomes E in the Caesar cipher using a key of 3." class="align-center" src="../_images/caesar1.png" style="width: 400.0px; height: 168.6px;" /></a>
+<p><em>In the Caesar cipher with a key of 3, A becomes D, B becomes E, C becomes F, and so on...</em></p>
+<p>This can easily be shown by lining up two alphabets, one on top of each other, with the second alphabet starting at the letter shifted 3 letters down.  This means that the bottom row should be shifted to the <em>left</em>.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+<span class="n">DEFGHIJKLMNOPQRSTUVWXYZABC</span>
+</pre></div>
+</div>
+<p>You might notice that the second row starts has the letters <code class="docutils literal"><span class="pre">ABC</span></code> right after <code class="docutils literal"><span class="pre">Z</span></code>.  This is because when you are shifting down the alphabet, if you reach the end (Z), it will loop around to the beginning (A).</p>
+<p>This type of visual makes it much more clear what letter should become what.  If we wanted to encrypt the word <code class="docutils literal"><span class="pre">BILLY</span></code>, we would simply take each <strong>unique</strong> plaintext letter (top row) and find its matching ciphertext letter (bottom row), or:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">[</span><span class="n">B</span><span class="p">]</span> <span class="n">CDEFGH</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="n">JK</span> <span class="p">[</span><span class="n">L</span><span class="p">]</span> <span class="n">MNOPQRSTUVWX</span> <span class="p">[</span><span class="n">Y</span><span class="p">]</span> <span class="n">Z</span>
+<span class="n">D</span> <span class="p">[</span><span class="n">E</span><span class="p">]</span> <span class="n">FGHIJK</span> <span class="p">[</span><span class="n">L</span><span class="p">]</span> <span class="n">MN</span> <span class="p">[</span><span class="n">O</span><span class="p">]</span> <span class="n">PQRSTUVWXYZA</span> <span class="p">[</span><span class="n">B</span><span class="p">]</span> <span class="n">C</span>
+</pre></div>
+</div>
+<p>So we clearly see that:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">B</span></code> becomes <code class="docutils literal"><span class="pre">E</span></code></li>
+<li><code class="docutils literal"><span class="pre">I</span></code> becomes <code class="docutils literal"><span class="pre">L</span></code></li>
+<li><code class="docutils literal"><span class="pre">L</span></code> becomes <code class="docutils literal"><span class="pre">O</span></code></li>
+<li><code class="docutils literal"><span class="pre">Y</span></code> becomes <code class="docutils literal"><span class="pre">B</span></code></li>
+</ul>
+</div></blockquote>
+<p>(Note that we only have to find unique letters, like the <code class="docutils literal"><span class="pre">L</span></code> because each <code class="docutils literal"><span class="pre">L</span></code> will always turn into the same letter)</p>
+<p>So the final ciphertext is <code class="docutils literal"><span class="pre">ELOOB</span></code>.  Note that when we reach the end of the alphabet, we keep counting starting with A, B, etc...</p>
+</div>
+<div class="section" id="decrypting-with-the-caesar-cipher">
+<h3>Decrypting with the Caesar Cipher<a class="headerlink" href="#decrypting-with-the-caesar-cipher" title="Permalink to this headline">¶</a></h3>
+<p>Decrypting works in a very similar way - except this time, instead of counting &#8220;down&#8221; the alphabet, you count &#8220;up&#8221;!  As an example, let&#8217;s try to decrypt <code class="docutils literal"><span class="pre">ELOOB</span></code> using a key of <code class="docutils literal"><span class="pre">3</span></code> - because we know the result should be our original plaintext, <code class="docutils literal"><span class="pre">BILLY</span></code>.  Let&#8217;s start by aligning our alphabets:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+<span class="n">XYZABCDEFGHIJKLMNOPQRSTUVW</span>
+</pre></div>
+</div>
+<p>Notice how this time, instead of shifting the bottom row to the left, now we are shifting it to the <em>right</em>.  We can then find our ciphertext letters (top row) <code class="docutils literal"><span class="pre">E,L,O,B</span></code> and find their corresponding plaintext letters (bottom row).</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">[</span><span class="n">B</span><span class="p">]</span> <span class="n">CD</span> <span class="p">[</span><span class="n">E</span><span class="p">]</span> <span class="n">FGHIJK</span> <span class="p">[</span><span class="n">L</span><span class="p">]</span> <span class="n">MN</span> <span class="p">[</span><span class="n">O</span><span class="p">]</span> <span class="n">PQRSTUVWXYZ</span>
+<span class="n">X</span> <span class="p">[</span><span class="n">Y</span><span class="p">]</span> <span class="n">ZA</span> <span class="p">[</span><span class="n">B</span><span class="p">]</span> <span class="n">CDEFGH</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="n">JK</span> <span class="p">[</span><span class="n">L</span><span class="p">]</span> <span class="n">MNOPQRSTUVW</span>
+</pre></div>
+</div>
+<p>We can now see that:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">E</span></code> becomes <code class="docutils literal"><span class="pre">B</span></code></li>
+<li><code class="docutils literal"><span class="pre">L</span></code> becomes <code class="docutils literal"><span class="pre">I</span></code></li>
+<li><code class="docutils literal"><span class="pre">O</span></code> becomes <code class="docutils literal"><span class="pre">L</span></code></li>
+<li><code class="docutils literal"><span class="pre">B</span></code> becomes <code class="docutils literal"><span class="pre">Y</span></code></li>
+</ul>
+</div></blockquote>
+<p>Which gives us our original plaintext, <code class="docutils literal"><span class="pre">BILLY</span></code>.</p>
+<p>Next, we&#8217;re going to learn about a python implementation of the Caesar cipher.</p>
+</div>
+</div>
+<div class="section" id="encryption-walkthrough">
+<h2>Encryption Walkthrough<a class="headerlink" href="#encryption-walkthrough" title="Permalink to this headline">¶</a></h2>
+<p>To begin, create a file called <code class="docutils literal"><span class="pre">FILN_caesar.py</span></code>, where FILN is your first initial and last name, no space.</p>
+<p>This lab will work a little differently than previous ones.  The purpose of this lab is to explain an algorithm, walking you through the algorithm, as well as highlighting thought processes behind good code design.  Please pay special attention and read through <em>all</em> the text, as it does provide some strategies and insight into how you can write code.</p>
+<p>In this lab, you should be following along and building this step-by-step in your preferred python IDE.  Changed lines in code will be highlighted.</p>
+<p>Let&#8217;s start with our encryption function.  In this function, we&#8217;ll be taking in <code class="docutils literal"><span class="pre">key</span></code> and <code class="docutils literal"><span class="pre">message</span></code> as arguments.  The first thing I&#8217;m going to do is to convert the entire message to uppercase, which we can do using the <code class="docutils literal"><span class="pre">.upper()</span></code> string method.  Then I&#8217;m going to create a variable called <code class="docutils literal"><span class="pre">alpha</span></code> that will hold the alphabet as a long string</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+</span><span class="hll">    <span class="n">message</span> <span class="o">=</span> <span class="n">mesage</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</span><span class="hll">    <span class="n">alpha</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>Next, I know that I will have to operate on every letter in the message.  I can write a <code class="docutils literal"><span class="pre">for</span></code> loop that will loop through every letter in a string by using <code class="docutils literal"><span class="pre">for</span> <span class="pre">var</span> <span class="pre">in</span> <span class="pre">str</span></code>, where <code class="docutils literal"><span class="pre">var</span></code> will cycle through being every character in <code class="docutils literal"><span class="pre">str</span></code>.  I also know that since I am going through letter by letter, I will need to initialize an empty string as the result so I can build upon it.</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">mesage</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
+<span class="hll">    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+</span>
+<span class="hll">    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>One thing to note about the Caesar cipher is that it doesn&#8217;t really handle characters that aren&#8217;t letters, such as punctuation, or spaces.  So we want to make sure that if we&#8217;re going to encrypt something, we&#8217;re only going to encrypt letters.</p>
+<p>Let&#8217;s add in a conditional to handle that.  The logic here is, &#8220;if it&#8217;s a letter, encrypt it.  otherwise, just add it to the result (i.e. don&#8217;t change it)&#8221;.  We can check whether a letter <code class="docutils literal"><span class="pre">var</span></code> is in a string <code class="docutils literal"><span class="pre">str</span></code> by using <code class="docutils literal"><span class="pre">var</span> <span class="pre">in</span> <span class="pre">str</span></code>, which returns <code class="docutils literal"><span class="pre">True</span></code> if <code class="docutils literal"><span class="pre">var</span></code> is found in <code class="docutils literal"><span class="pre">str</span></code>.</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">mesage</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
+<span class="hll">        <span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">alpha</span><span class="p">:</span> <span class="c1">#if the letter is actually a letter</span>
+</span><span class="hll">            <span class="c1">#encrypt it</span>
+</span><span class="hll">        <span class="k">else</span><span class="p">:</span>
+</span><span class="hll">            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">letter</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>Now we&#8217;re going to get into the actual encryption.  This happens letter-by-letter since we are using the for loop to iterate through the message, which makes it simpler for us.  The first thing we want to do is find out  <strong>where is the letter in the alphabet?  What index is the letter in?</strong>  To do this, we can use the <code class="docutils literal"><span class="pre">.find()</span></code> string method, which will give us the first occurrence of the letter.</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">mesage</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">alpha</span><span class="p">:</span> <span class="c1">#if the letter is actually a letter</span>
+            <span class="c1">#find the letter in the alphabet</span>
+<span class="hll">            <span class="n">letter_index</span> <span class="o">=</span> <span class="n">alpha</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
+</span>        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">letter</span>
+</pre></div>
+</td></tr></table></div>
+<p>Now that we know the plaintext letter index... we have to find the corresponding ciphertext letter!  While we could technically create a new alphabet string that has been shifted, it would be much easier to compute the new letter index using the <strong>key</strong>.  We can &#8220;shift&#8221; the alphabet to the left by adding the value of the key to the index.  In our old example where we turned <code class="docutils literal"><span class="pre">B</span></code> into <code class="docutils literal"><span class="pre">E</span></code> with a key of <code class="docutils literal"><span class="pre">3</span></code>, you can see here that the index of <code class="docutils literal"><span class="pre">B</span></code> is <code class="docutils literal"><span class="pre">1</span></code>, and the index of <code class="docutils literal"><span class="pre">E</span></code> is <code class="docutils literal"><span class="pre">4</span></code>, so indeed, <code class="docutils literal"><span class="pre">+3</span></code> is the operation here.  More generally, it&#8217;s just <code class="docutils literal"><span class="pre">+key</span></code>.</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">mesage</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">alpha</span><span class="p">:</span> <span class="c1">#if the letter is actually a letter</span>
+            <span class="c1">#find the corresponding ciphertext letter in the alphabet</span>
+<span class="hll">            <span class="n">letter_index</span> <span class="o">=</span> <span class="n">alpha</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span> <span class="o">+</span> <span class="n">key</span>
+</span>        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">letter</span>
+</pre></div>
+</td></tr></table></div>
+<p>Now that we have the index of the ciphertext letter, we now just need to add that letter to the result.  Right now, <code class="docutils literal"><span class="pre">letter_index</span></code> represents the position of the letter in the alphabet.  We want to get the letter itself.  We do this just by using <code class="docutils literal"><span class="pre">letter_index</span></code> as an index to the string, <code class="docutils literal"><span class="pre">alpha[letter_index]</span></code>.  Then we add this to the result.</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">mesage</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">alpha</span><span class="p">:</span> <span class="c1">#if the letter is actually a letter</span>
+            <span class="c1">#find the corresponding ciphertext letter in the alphabet</span>
+            <span class="n">letter_index</span> <span class="o">=</span> <span class="n">alpha</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span> <span class="o">+</span> <span class="n">key</span>
+
+<span class="hll">            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">alpha</span><span class="p">[</span><span class="n">letter_index</span><span class="p">]</span>
+</span>        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">letter</span>
+</pre></div>
+</td></tr></table></div>
+<p>We did forget one thing, however.  We forgot to handle loop-arounds!  How do we handle what happens when we reach the end of the alphabet?  Well, whenever we hit a index of 26, we want that index to becomes zero (especially since <code class="docutils literal"><span class="pre">alpha</span></code> doesn&#8217;t have a 26th index!).  If our index goes to 28, we want our index to actually be 2.  The consistent thing here is that <strong>if our index is 26 or over, we want to subtract 26.</strong>  While we could use an if statement for this, there exists a better way.</p>
+<p>This is a prime example of where modulo would be helpful.  We can use modulo to handle loop-arounds.  This works because any number that is greater than 26 will be reduced to a number from 0 to 25, since the remainder of anything divided by 26 can only be from 0-25.</p>
+<p>We can know that this works for loop-arounds by observing the following behavior:</p>
+<blockquote>
+<div><ul class="simple">
+<li><span class="math">\(25 \% 26 = (0*26 + 25) \% 26 = 25\)</span></li>
+<li><span class="math">\(26 \% 26 = (1*26 + 0) \% 26 = 0\)</span></li>
+<li><span class="math">\(27 \% 26 = (1*26 + 1) \% 26 = 1\)</span></li>
+<li><span class="math">\(28 \% 26 = (1*26 + 2) \% 26 = 2\)</span></li>
+<li><em>and so on...</em></li>
+</ul>
+</div></blockquote>
+<p>We can then just use the following line to handle loop-arounds:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">letter_index</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span> <span class="o">+</span> <span class="n">key</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span>
+</pre></div>
+</div>
+<p>A good practice in programming, however, is to avoid hard-coding numbers if possible.  We are working with the number 26 because there are 26 letters in the alphabet, but also because <code class="docutils literal"><span class="pre">alpha</span></code> has a length of 26 (<code class="docutils literal"><span class="pre">len(alpha)</span> <span class="pre">==</span> <span class="pre">26</span></code>).  Instead of using 26 in our algorithm, we should use <code class="docutils literal"><span class="pre">len(alpha)</span></code>.</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">mesage</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">alpha</span><span class="p">:</span> <span class="c1">#if the letter is actually a letter</span>
+            <span class="c1">#find the corresponding ciphertext letter in the alphabet</span>
+<span class="hll">            <span class="n">letter_index</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span> <span class="o">+</span> <span class="n">key</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
+</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">alpha</span><span class="p">[</span><span class="n">letter_index</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">letter</span>
+</pre></div>
+</td></tr></table></div>
+<p>Finally, what we&#8217;ve written will repeat for every character in the message.  Let&#8217;s return our final string.</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">mesage</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">alpha</span><span class="p">:</span> <span class="c1">#if the letter is actually a letter</span>
+            <span class="c1">#find the corresponding ciphertext letter in the alphabet</span>
+            <span class="n">letter_index</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span> <span class="o">+</span> <span class="n">key</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
+
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">alpha</span><span class="p">[</span><span class="n">letter_index</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">letter</span>
+
+<span class="hll">    <span class="k">return</span> <span class="n">result</span>
+</span></pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="decryption-walkthrough">
+<h2>Decryption Walkthrough<a class="headerlink" href="#decryption-walkthrough" title="Permalink to this headline">¶</a></h2>
+<p>Again, this is very similar to our encryption function, so let&#8217;s go ahead and rewrite our encryption function and call it &#8220;decrypt&#8221;.</p>
+<p>As you&#8217;re rewriting the function, keep in mind what we are changing:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Instead of <code class="docutils literal"><span class="pre">+</span> <span class="pre">key</span></code>, we want to shift in the other direction, using <code class="docutils literal"><span class="pre">-</span> <span class="pre">key</span></code> instead.</li>
+</ul>
+</div></blockquote>
+<p>Our final program is then:</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">mesage</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">alpha</span><span class="p">:</span> <span class="c1">#if the letter is actually a letter</span>
+            <span class="c1">#find the corresponding ciphertext letter in the alphabet</span>
+            <span class="n">letter_index</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span> <span class="o">+</span> <span class="n">key</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
+
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">alpha</span><span class="p">[</span><span class="n">letter_index</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">letter</span>
+
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">def</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">mesage</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">alpha</span><span class="p">:</span> <span class="c1">#if the letter is actually a letter</span>
+            <span class="c1">#find the corresponding ciphertext letter in the alphabet</span>
+<span class="hll">            <span class="n">letter_index</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span> <span class="o">-</span> <span class="n">key</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
+</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">alpha</span><span class="p">[</span><span class="n">letter_index</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">letter</span>
+
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="testing-our-program">
+<h2>Testing our Program<a class="headerlink" href="#testing-our-program" title="Permalink to this headline">¶</a></h2>
+<p>Finally, we get to test our program.  Let&#8217;s write a script to test our code.  The following code should be added to the <strong>end</strong> of your program above.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+</span><span class="hll">    <span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;BILLY&quot;</span>
+</span>
+<span class="hll">    <span class="c1">#encrypt &quot;BILLY&quot; with a key of 3</span>
+</span><span class="hll">    <span class="n">encrypted</span> <span class="o">=</span> <span class="n">encrypt</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">word</span><span class="p">)</span>
+</span><span class="hll">    <span class="k">print</span><span class="p">(</span><span class="n">encrypted</span><span class="p">)</span> <span class="c1">#should print &quot;ELOOB&quot;</span>
+</span>
+<span class="hll">    <span class="c1">#decrypt &quot;ELOOB&quot; with a key of 3</span>
+</span><span class="hll">    <span class="n">decrypted</span> <span class="o">=</span> <span class="n">decrypt</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">encrypted</span><span class="p">)</span>
+</span><span class="hll">    <span class="k">print</span><span class="p">(</span><span class="n">decrypted</span><span class="p">)</span> <span class="c1">#should print &quot;BILLY&quot;</span>
+</span>
+<span class="hll"><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+</span><span class="hll">    <span class="n">main</span><span class="p">()</span>
+</span></pre></div>
+</div>
+<p>Run the program and compare its output to what it should be (it should print <code class="docutils literal"><span class="pre">ELOOB</span></code> then <code class="docutils literal"><span class="pre">BILLY</span></code> again).  If it works, then great!  We should test it one more time, but this time with a phrase/word with non-letter characters mixed in:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="hll">    <span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;HELLO WORLD?!&quot;</span>
+</span>
+<span class="hll">    <span class="c1">#encrypt &quot;HELLO WORLD?!&quot; with a key of 20</span>
+</span><span class="hll">    <span class="n">encrypted</span> <span class="o">=</span> <span class="n">encrypt</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="n">word</span><span class="p">)</span>
+</span><span class="hll">    <span class="k">print</span><span class="p">(</span><span class="n">encrypted</span><span class="p">)</span> <span class="c1">#should print &quot;BYFFI QILFX?!&quot;</span>
+</span>
+<span class="hll">    <span class="c1">#decrypt &quot;BYFFI QILFX?!&quot; with a key of 20</span>
+</span><span class="hll">    <span class="n">decrypted</span> <span class="o">=</span> <span class="n">decrypt</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="n">encrypted</span><span class="p">)</span>
+</span><span class="hll">    <span class="k">print</span><span class="p">(</span><span class="n">decrypted</span><span class="p">)</span> <span class="c1">#should print &quot;HELLO WORLD?!&quot;</span>
+</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span>
+</pre></div>
+</div>
+<p>When we run this program, we should notice that when it prints its ciphertext form, the space, question mark, and exclamation point all stay in the same place.  A good sign!</p>
+</div>
+<div class="section" id="refactoring-our-code">
+<h2>Refactoring Our Code<a class="headerlink" href="#refactoring-our-code" title="Permalink to this headline">¶</a></h2>
+<p>Per Wikipedia, <span class="vocab-word">refactoring code</span> is <span class="vocab-def">the process of restructuring existing computer code without changing its external behavior</span>.  This is a very important process to learn because it makes our code easier to maintain, as you are about to see.</p>
+<dl class="docutils">
+<dt>There are two major flaws in our code right now:</dt>
+<dd><ol class="first last arabic simple">
+<li>Our code repeats itself a lot.</li>
+<li>Our algorithm can be broken down into more dedicated functions</li>
+</ol>
+</dd>
+</dl>
+<p>By looking at our final solution, we can notice that the <code class="docutils literal"><span class="pre">for</span></code> loops in <code class="docutils literal"><span class="pre">encrypt()</span></code> and <code class="docutils literal"><span class="pre">decrypt()</span></code> are almost identical, except one adds the key and one subtracts the key (#1).  We also notice that our process of encrypting/decrypting an entire word can be broken down further into encrypting/decrypting individual letters (as we do in our <code class="docutils literal"><span class="pre">for</span></code> loop) (#2).  These two flaws can be fixed by simply creating a new function.</p>
+<p>Let&#8217;s create a new function, <code class="docutils literal"><span class="pre">get_cipherletter()</span></code>.</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span> <span class="nf">get_cipherletter</span><span class="p">(</span><span class="n">new_key</span><span class="p">,</span> <span class="n">letter</span><span class="p">):</span>
+</span><span class="hll">
+</span>
+<span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">mesage</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">alpha</span><span class="p">:</span> <span class="c1">#if the letter is actually a letter</span>
+            <span class="c1">#find the corresponding ciphertext letter in the alphabet</span>
+            <span class="n">letter_index</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span> <span class="o">+</span> <span class="n">key</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
+
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">alpha</span><span class="p">[</span><span class="n">letter_index</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span>
+
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">def</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">mesage</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">alpha</span><span class="p">:</span> <span class="c1">#if the letter is actually a letter</span>
+            <span class="c1">#find the corresponding ciphertext letter in the alphabet</span>
+            <span class="n">letter_index</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span> <span class="o">-</span> <span class="n">key</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
+
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">alpha</span><span class="p">[</span><span class="n">letter_index</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">letter</span>
+
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</td></tr></table></div>
+<p>The purpose of this function will be to simply return the the new letter given a new key.  We can pull code from our existing program to help us build this:</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_cipherletter</span><span class="p">(</span><span class="n">new_key</span><span class="p">,</span> <span class="n">letter</span><span class="p">):</span>
+<span class="hll">    <span class="c1">#still need alpha to find letters</span>
+</span><span class="hll">    <span class="n">alpha</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
+</span>
+<span class="hll">    <span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">alpha</span><span class="p">:</span>
+</span><span class="hll">        <span class="k">return</span> <span class="n">alpha</span><span class="p">[</span><span class="n">new_key</span><span class="p">]</span>
+</span><span class="hll">    <span class="k">else</span><span class="p">:</span>
+</span><span class="hll">        <span class="k">return</span> <span class="n">letter</span>
+</span>
+<span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">mesage</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">alpha</span><span class="p">:</span> <span class="c1">#if the letter is actually a letter</span>
+            <span class="c1">#find the corresponding ciphertext letter in the alphabet</span>
+            <span class="n">letter_index</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span> <span class="o">+</span> <span class="n">key</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
+
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">alpha</span><span class="p">[</span><span class="n">letter_index</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">letter</span>
+
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">def</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">mesage</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">alpha</span><span class="p">:</span> <span class="c1">#if the letter is actually a letter</span>
+            <span class="c1">#find the corresponding ciphertext letter in the alphabet</span>
+            <span class="n">letter_index</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span> <span class="o">-</span> <span class="n">key</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
+
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">alpha</span><span class="p">[</span><span class="n">letter_index</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">letter</span>
+
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</td></tr></table></div>
+<p>Next, we remove the bits of code from our <code class="docutils literal"><span class="pre">encrypt</span></code> and <code class="docutils literal"><span class="pre">decrypt</span></code> functions that are now redundant and replace it with code that uses the function:</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_cipherletter</span><span class="p">(</span><span class="n">new_key</span><span class="p">,</span> <span class="n">letter</span><span class="p">):</span>
+    <span class="c1">#still need alpha to find letters</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
+
+    <span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">alpha</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">alpha</span><span class="p">[</span><span class="n">new_key</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">letter</span>
+
+<span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">mesage</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
+<span class="hll">        <span class="n">new_key</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span> <span class="o">+</span> <span class="n">key</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
+</span><span class="hll">        <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">get_cipherletter</span><span class="p">(</span><span class="n">new_key</span><span class="p">,</span> <span class="n">letter</span><span class="p">)</span>
+</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">def</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">mesage</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
+<span class="hll">        <span class="n">new_key</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span> <span class="o">-</span> <span class="n">key</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
+</span><span class="hll">        <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">get_cipherletter</span><span class="p">(</span><span class="n">new_key</span><span class="p">,</span> <span class="n">letter</span><span class="p">)</span>
+</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</td></tr></table></div>
+<p>&#8220;But wait!&#8221; - you might be saying - &#8220;What if we have a symbol?  It won&#8217;t be found in <code class="docutils literal"><span class="pre">alpha</span></code> when we use <code class="docutils literal"><span class="pre">alpha.find()</span></code>!&#8221;</p>
+<p>And you are correct!  And that is fine.  The <code class="docutils literal"><span class="pre">.find()</span></code> function returns <code class="docutils literal"><span class="pre">-1</span></code>, which is still a valid number, and the check for whether the letter exists in <code class="docutils literal"><span class="pre">alpha</span></code> or not will still happen within the function.  So it is still good.  Good eye!</p>
+<p>At this point, we are ready to move on to the next lab, where we will be crack the cipher through brute forcing!</p>
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - Lab 4-1: Rock Paper Scissors' data-toggle="tooltip">
+    <a href="lab04-01.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="lab04-01.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - Lab 4-3: Cracking the Caesar Cipher' data-toggle="tooltip" >
+    <a href="lab04-03.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="lab04-03.html" >Next Section - Lab 4-3: Cracking the Caesar Cipher</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016 Timothy Chen.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
+    </p>
+  </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

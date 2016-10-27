@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Lab 4-4: Craps &mdash; CSP Python</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/livecode.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="CSP Python" href="../index.html" />
+    <link rel="next" title="Lesson 05-01: Python Lists" href="../unit5/u0501-lists.html" />
+    <link rel="prev" title="Lab 4-3: Cracking the Caesar Cipher" href="lab04-03.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'draft';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'draft';
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">CSP Python</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/draft/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/draft/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/static/help/bugreports.html'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Lab 4-4: Craps</a><ul>
+<li><a class="reference internal" href="#lab-requirements-and-specifications">Lab Requirements and Specifications</a><ul>
+<li><a class="reference internal" href="#game-rules">Game Rules</a><ul>
+<li><a class="reference internal" href="#phase-1-before-the-roll">Phase 1: Before The Roll</a></li>
+<li><a class="reference internal" href="#phase-2-the-first-roll">Phase 2: The First Roll</a></li>
+<li><a class="reference internal" href="#phase-3-the-point-number">Phase 3: The Point Number</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#planning-strategies">Planning Strategies</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#testing-your-program">Testing Your Program</a></li>
+<li><a class="reference internal" href="#taking-it-further">Taking it Further</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Lab 4-3: Cracking the Caesar Cipher" data-toggle="tooltip">
+    <a href="lab04-03.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Lesson 05-01: Python Lists' data-toggle="tooltip" >
+    <a href="../unit5/u0501-lists.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <script type=text/javascript>
+localStorage.clear()
+</script><div class="section" id="lab-4-4-craps">
+<h1>Lab 4-4: Craps<a class="headerlink" href="#lab-4-4-craps" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="lab-requirements-and-specifications">
+<h2>Lab Requirements and Specifications<a class="headerlink" href="#lab-requirements-and-specifications" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="game-rules">
+<h3>Game Rules<a class="headerlink" href="#game-rules" title="Permalink to this headline">¶</a></h3>
+<p>Hopefully many of the high school students reading this have not spent extended time in a casino and do not know the rules of the dice game, Craps.  We will be programming a simple version of the game with the following rules:</p>
+<p>At the beginning of the game, the user needs to have their bank account set to $100.  The player then continues to play rounds of craps until he/she decides to quit, or runs out of money.  Each round can be broken up into three phases:</p>
+<div class="section" id="phase-1-before-the-roll">
+<h4>Phase 1: Before The Roll<a class="headerlink" href="#phase-1-before-the-roll" title="Permalink to this headline">¶</a></h4>
+<p>Before any dice are rolled, the player should place their bet.</p>
+</div>
+<div class="section" id="phase-2-the-first-roll">
+<h4>Phase 2: The First Roll<a class="headerlink" href="#phase-2-the-first-roll" title="Permalink to this headline">¶</a></h4>
+<p>When the first pair of dice are rolled, a few outcomes can happen based on the sum:</p>
+<blockquote>
+<div><ul class="simple">
+<li>If the player rolls a 2, 3, or 12 in this phase, they lose their bet, and the round ends.</li>
+<li>If the player rolls a 7 or 11 in this phase, they win their bet, and the round ends.</li>
+<li>If the player rolls any other number (a 4,5,6,8,9,10), then they continue to Phase 3, with their roll becoming their &#8220;<strong>point number</strong>&#8220;</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="phase-3-the-point-number">
+<h4>Phase 3: The Point Number<a class="headerlink" href="#phase-3-the-point-number" title="Permalink to this headline">¶</a></h4>
+<p>If the player reaches Phase 3, which most rounds they do, then they keep rolling die until they roll a 7 or they roll their point number.</p>
+<blockquote>
+<div><ul class="simple">
+<li>If the player rolls their point number first, they win their bet, and the round ends.</li>
+<li>If the player rolls a 7 first, they lose their bet, and the round ends.</li>
+<li>If the player rolls any other number, they keep rolling in Phase 3.</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="planning-strategies">
+<h3>Planning Strategies<a class="headerlink" href="#planning-strategies" title="Permalink to this headline">¶</a></h3>
+<p>After each round, the program should ask the user if he/she wants to continue playing.  The game continues until the player runs out of money, or the player chooses to exit.</p>
+<dl class="docutils">
+<dt>Similar to Rock Paper Scissors (as well as any multi-step, complex program), planning out your code will be highly beneficial in writing cleaner and more organized solutions.  However, this time, you will be coming up with your own functions.  Please remember to heed the following guidelines:</dt>
+<dd><ul class="first last simple">
+<li>The majority of your program should be functions.  Break the game down into simple steps or instructions - each of those will have its own function.</li>
+<li>Each function should have a single purpose.  If you find that you have written a function that is doing multiple things, it means you should break it down further into more functions.  It&#8217;s okay to refactor code mid-development!</li>
+<li>The one exception to the above should be your main game function, which will contain the game loop, as well as any persistent variables.  Try to keep this one as small as possible, utilizing functions as much as you can.</li>
+<li>Take advantage of <code class="docutils literal"><span class="pre">return</span></code> statements.  Your code should not have any global variables.  Data should be passed to functions through arguments, and from functions through the <code class="docutils literal"><span class="pre">return</span></code> statement.</li>
+<li>Which variables will you have to keep track of during all the rounds, and after all the rounds are completed? Make a note of which ones should be <em>initialized</em> outside of your loop.</li>
+<li>Be sure to provide the player with the appropriate prompts, letting them know their options and limitations for input.</li>
+<li>Consider what control structures are necessary for the program.</li>
+<li>Consider the order of occurrences - what should the program do first?</li>
+</ul>
+</dd>
+</dl>
+<p>However, unlike Rock Paper Scissors, in this lab you will be required to validate user&#8217;s inputs.  This means that:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Players should not be able to enter a negative number as a bet</li>
+<li>Players should not be able to bet more money than they have in their bank</li>
+<li>Players should not be able to bet decimal amounts of money - only whole numbers. (recall: A boolean to check if <code class="docutils literal"><span class="pre">x</span></code> is an integer or not would be: <code class="docutils literal"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">int(x)</span></code>.  This will return <code class="docutils literal"><span class="pre">True</span></code> is <code class="docutils literal"><span class="pre">x</span></code> is an integer and <code class="docutils literal"><span class="pre">False</span></code> otherwise. It works because of math.)</li>
+<li>When prompted with the choice of ending the game or continuing, the question should repeat until the user has entered one choice or the other.</li>
+</ul>
+</div></blockquote>
+<p>This also means that your labs will have quite a few <code class="docutils literal"><span class="pre">while</span></code> loops. Keep that in mind!</p>
+<dl class="docutils">
+<dt>A good place to start would be to write the functions that you plan on writing.  You do not need to write the code itself, only the purpose of each function.  Here are a few examples:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>function name: roll2dice</dt>
+<dd><ul class="first last simple">
+<li>arguments: none</li>
+<li>purpose: generates a random dice roll for two dice and prints out that the two rolls are</li>
+<li>returns: the sum of the dice roll</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>function name: get_bet</dt>
+<dd><ul class="first last simple">
+<li>arguments: bank amount</li>
+<li>purpose: to get the amount to be bet from the user.  Bet must be a positive integer and no more than they have in their bank.  Should repeatedly ask the user to make a bet until they enter a valid one</li>
+<li>returns: the chosen valid bet amount</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<p>And so on. The above are examples, and do not have to be followed.  There are many ways these games can be organized.  However, notice that the names of my functions are verbs - just remember that functions should <em>do</em> things, and therefore have names that reflect what they <em>do</em>.</p>
+<p>You should name your file <code class="docutils literal"><span class="pre">FILN_craps.py</span></code>, where FILN is your first initial and last name, no space.</p>
+</div>
+</div>
+<div class="section" id="testing-your-program">
+<h2>Testing Your Program<a class="headerlink" href="#testing-your-program" title="Permalink to this headline">¶</a></h2>
+<p>Like Rock Paper Scissors, having functions makes it easier to test the program.  It would be a good idea to write tests for functions to ensure it is working as intended, for all cases that need to be considered.</p>
+<p>Here is a sample run through.  It demonstrates gameplay, some of the input validation, and the consequence of not quitting while ahead:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>You have $100 in your bank
+Enter a whole number for your bet: -10
+You can&#39;t bet negative money!
+Enter a whole number for your bet: 1000
+You don&#39;t have that much money!
+Enter a whole number for your bet: 50.99999
+You need to bet an integer amount!
+Enter a whole number for your bet: 50
+
+The dice is thrown: 3 and 1, 4 total
+Your point number is 4
+Press enter to continue.
+
+The dice is thrown: 2 and 3, 5 total
+No 7 or 4.  Reroll!
+Press enter to continue.
+
+The dice is thrown: 1 and 3, 4 total
+You rolled your point number!  You win the round!
+Do you want to keep playing? [y|n]: y
+You have $150.0 in your bank
+Enter a whole number for your bet: 150
+
+The dice is thrown: 6 and 2, 8 total
+Your point number is 8
+Press enter to continue.
+
+The dice is thrown: 4 and 2, 6 total
+No 7 or 8.  Reroll!
+Press enter to continue.
+
+The dice is thrown: 5 and 3, 8 total
+You rolled your point number!  You win the round!
+Do you want to keep playing? [y|n]: y
+You have $300.0 in your bank
+Enter a whole number for your bet: 300
+
+The dice is thrown: 4 and 6, 10 total
+Your point number is 10
+Press enter to continue.
+
+The dice is thrown: 6 and 6, 12 total
+No 7 or 10.  Reroll!
+Press enter to continue.
+
+The dice is thrown: 1 and 3, 4 total
+No 7 or 10.  Reroll!
+Press enter to continue.
+
+The dice is thrown: 4 and 3, 7 total
+You rolled a 7! You lose the round!
+You lost everything!  Sorry, better luck next time!
+</pre></div>
+</div>
+<p>The following space is provided in case you want to test code out or write it in the browser:</p>
+
+<textarea data-component="activecode" id=labspace-04-04 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+#Write and run code here!
+</textarea>
+</div>
+<div class="section" id="taking-it-further">
+<h2>Taking it Further<a class="headerlink" href="#taking-it-further" title="Permalink to this headline">¶</a></h2>
+<p>What good is fake internet money when you can&#8217;t compare yourself with other people?  Add functionality to this game to make it a two-player game.  Key changes would be:</p>
+<blockquote>
+<div><ul class="simple">
+<li>2 players</li>
+<li>Each player has a separate bank and makes separate bets.</li>
+<li>Each player takes turn being the person who rolls the dice, or the &#8220;shooter&#8221;</li>
+<li>The shooter should be allowed to type in a word before rolling (this word shouldn&#8217;t do anything, but it&#8217;s kinda like how people blow on dice before rolling them)</li>
+<li>The game ends when one person runs out of money.  Neither player can choose to leave before then.  You don&#8217;t need to ask the user if he/she wants to continue at the end of each round.</li>
+<li>The shooter (either player1 or player2) should be made clear at the beginning of each round.</li>
+</ul>
+</div></blockquote>
+<p>It&#8217;s all about making your game fun!</p>
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - Lab 4-3: Cracking the Caesar Cipher' data-toggle="tooltip">
+    <a href="lab04-03.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="lab04-03.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - Lesson 05-01: Python Lists' data-toggle="tooltip" >
+    <a href="../unit5/u0501-lists.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="../unit5/u0501-lists.html" >Next Section - Lesson 05-01: Python Lists</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016 Timothy Chen.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
+    </p>
+  </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

@@ -1,8 +1,0 @@
-.. qnum::
-   :start: 1
-   :prefix: ch0206-
-
-Lesson 02-06: Boolean Operators
-===============================
-
-**Learning Target: I can use boolean operators to compare values**

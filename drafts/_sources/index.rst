@@ -47,8 +47,8 @@ Unit 1 Labs
 .. toctree::
     :maxdepth: 2
        
-    lab01-01.rst
-    lab01-02.rst
+    unit1/lab01-01.rst
+    unit1/lab01-02.rst
     
 Please submit `this survey <https://goo.gl/forms/ix6skYC3XlsEV8l92>`_ at the end of each unit.
 
@@ -77,8 +77,8 @@ Unit 2 Labs
 .. toctree::
     :maxdepth: 2
 
-    lab02-01.rst
-    lab02-02.rst
+    unit2/lab02-01.rst
+    unit2/lab02-02.rst
     
 Please submit `this survey <https://goo.gl/forms/ix6skYC3XlsEV8l92>`_ at the end of each unit.
        
@@ -109,9 +109,9 @@ Unit 3 Labs
 .. toctree::
     :maxdepth: 2
        
-    lab03-01.rst
-    lab03-02-1.rst
-    lab03-02.rst
+    unit3/lab03-01.rst
+    unit3/lab03-02-1.rst
+    unit3/lab03-02.rst
     
 Please submit `this survey <https://goo.gl/forms/ix6skYC3XlsEV8l92>`_ at the end of each unit.
     
@@ -142,10 +142,10 @@ Unit 4 Labs
 .. toctree::
     :maxdepth: 2
     
-    lab04-01.rst
-    lab04-02.rst
-    lab04-03.rst
-    lab04-04.rst
+    unit4/lab04-01.rst
+    unit4/lab04-02.rst
+    unit4/lab04-03.rst
+    unit4/lab04-04.rst
     
 Please submit `this survey <https://goo.gl/forms/ix6skYC3XlsEV8l92>`_ at the end of each unit.
     
@@ -173,8 +173,8 @@ Unit 5 Labs
 .. toctree::
     :maxdepth: 2
     
-    lab05-01.rst
-    lab05-02.rst
+    unit5/lab05-01.rst
+    unit5/lab05-02.rst
     
 Please submit `this survey <https://goo.gl/forms/ix6skYC3XlsEV8l92>`_ at the end of each unit.
 
@@ -198,10 +198,10 @@ Unit 6 Labs
 .. toctree::
     :maxdepth: 2
     
-    lab06-01.rst
-    lab06-02-1.rst
-    lab06-02.rst
-    lab06-03.rst
+    unit6/lab06-01.rst
+    unit6/lab06-02-1.rst
+    unit6/lab06-02.rst
+    unit6/lab06-03.rst
 
 Unit 7 Lessons Dictionaries and File I/O (INCOMPLETE)
 =====================================================
@@ -226,10 +226,10 @@ Unit 7 Labs
 .. toctree::
     :maxdepth: 2
 
-    lab07-01.rst
-    lab07-02.rst
-    lab07-03.rst
-    lab07-04.rst
+    unit7/lab07-01.rst
+    unit7/lab07-02.rst
+    unit7/lab07-03.rst
+    unit7/lab07-04.rst
 
 GNU Free Documentation License
 ==============================

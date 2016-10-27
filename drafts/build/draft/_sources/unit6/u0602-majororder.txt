@@ -14,8 +14,8 @@
 Lesson 06-02: 2D Lists as a Grid
 ================================
 
-**Learning Target: I can create a 2D list to represent a grid of rows and columns.**
-**Learning Target: I can distinguish between row-major and column-major order.**
+| **Learning Target: I can create a 2D list to represent a grid of rows and columns.**
+| **Learning Target: I can distinguish between row-major and column-major order.**
 
 Why Use a List of Lists?
 ------------------------
