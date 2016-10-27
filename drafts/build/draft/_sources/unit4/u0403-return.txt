@@ -19,7 +19,7 @@ Lesson 04-03: The ``return`` Statement
 Functions Represent Values
 --------------------------
 
-Every function has a value representation.  Let's try printing a function instead of its 
+Every function has a value representation.  Let's try printing a function instead of just calling it.
 
 .. activecode:: 0403_ex_1
    :autorun:
@@ -50,7 +50,7 @@ Let's take our example from above, but instead of printing the sum of two number
    add2(0,0)
    print("Program ended")
 
-You might notice that nothing got printed!  That's because there are no print statements anywhere.  Since the function ``add2`` returns a value, the the expression ``add2(1,2)`` "becomes" that value, and represents 3.  ``add2(10,10)`` represents the value 20.  We can then print these value representations as if they were numbers themselves:
+You might notice that nothing got printed!  That's because there are no print statements anywhere.  Since the function ``add2`` returns a value, the expression ``add2(1,2)`` "becomes" that value, and represents 3.  ``add2(10,10)`` represents the value 20.  We can then print these value representations as if they were numbers themselves:
 
 .. activecode:: 0403_ex_3
    :autorun:

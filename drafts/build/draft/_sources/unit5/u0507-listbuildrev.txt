@@ -19,7 +19,9 @@ Lesson 05-07: Building List Methods: ``reverse``
 Assignment
 ----------
 
-In the area below, create a method called ``reverse()`` that will take in one list argument, and will reverse the order of the elements.  This should be done **without modifying the original list**.
+In the area below, create a function called ``reverse()`` that will take in one argument, a list called ``original``.  The function should alter ``original`` reversing the order of of the elements in the list.
+
+You may only use the following list methods: ``append()``, ``insert()``, ``remove()``, ``len()``.
 
 Example:
 
@@ -28,7 +30,7 @@ Example:
 .. activecode:: cfu_0507_1
     :nocodelens:
     
-    def reverse(orig):
+    def reverse(original):
         #write here
     
     ====
@@ -39,14 +41,12 @@ Example:
         
         def testOne(self):
             a = [6,7,8]
-            b = reverse(a)
-            a.extend(b)
-            self.assertEqual(a,[6,7,8,8,7,6],"inputs: [6,7,8]")
+            reverse(a)
+            self.assertEqual(a,[8,7,6],"inputs: [6,7,8]")
             
             a = [False,False,True]
-            b = reverse(a)
-            a.extend(b)
-            self.assertEqual(a,[False,False,True,True,False,False],"inputs: [False,False,True]")
+            reverse(a)
+            self.assertEqual(a,[True,False,False],"inputs: [False,False,True]")
             
     myTests().main()
 
@@ -78,24 +78,34 @@ Hints
     :showtitle: Show Answer
     :hidetitle: Hide Answer
 
-    Here's one way to do it:
+    Here's one way to do it, by creating a new list:
     
     .. code-block:: python3
     
-        def reverse(orig):
+        def reverse(original):
             result = []
-            index = len(orig)-1
+            index = len(original)-1
             while index >= 0:
-                result.append(orig[index])
+                result.append(original[index])
                 index = index - 1
                 
-            return result
+            original = result
+    
+    Here's another, where we don't create a new list:
+    
+    .. code-block:: python3
+        
+        def reverse(original):
+            for index in range(len(original)//2): #// is integer division
+                temp = original[index]
+                original[index] = original[len(original)-1-index]
+                original[len(original)-1-index] = temp
     
     And here's the 'super pythonic' way to do it:
     
     .. code-block:: python3
     
-        def reverse(orig):
-            return orig[::-1]
+        def reverse(original):
+            original = original[::-1]
     
     (but this wouldn't work in any other language - make sure you're confident with the solution provided above)

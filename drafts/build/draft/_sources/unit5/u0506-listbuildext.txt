@@ -11,24 +11,34 @@
     Documentation License".
 
 
-Lesson 05-06: Building List Methods: ``extend``
-===============================================
+Lesson 05-06: Building List Functions: ``extend``
+=================================================
 
 **Learning Target: I can create a python function that will combine two lists.**
 
 Assignment
 ----------
 
-In the area below, create a method called ``extend()`` that will take in two list arguments, and will add all the elements of the second list to the first list, in the same order, then return the list.  This should be done **without modifying the original list**. 
+In the area below, create a function called ``extend()`` that will take in two arguments, a list called ``original`` and a list called ``extension``.  The function should alter ``original`` by adding the elements of ``extension`` onto ``original``, keeping the same order.
+
+You may only use the following list methods: ``append()``, ``insert()``, ``remove()``, ``len()``.
 
 Example:
 
-``extend([1,2,3],[7,8,9])`` should return ``[1,2,3,7,8,9]``
+.. code-block:: python3
+    
+    list1 = [1,2,3]
+    list2 = [7,8,9]
+    extend(list1,list2)
+    print(list1)
+
+This should print the following: ``[1,2,3,7,8,9]``.
+
 
 .. activecode:: cfu_0506_1
     :nocodelens:
     
-    def extend(orig,ext):
+    def extend(original,extension):
         #write here
     
     ====
@@ -40,15 +50,13 @@ Example:
         def testOne(self):
             a = [1,2,3]
             b = [5,6,7]
-            extended = extend(a,b)
-            a.extend(extended)
-            self.assertEqual(a,[1,2,3,1,2,3,5,6,7],"inputs: [1,2,3],[5,6,7]")
+            extend(a,b)
+            self.assertEqual(a,[1,2,3,5,6,7],"inputs: [1,2,3],[5,6,7]")
             
             a = ['a','c','e']
             b = ['h','e','y']
-            extended = extend(a,b)
-            a.extend(extended)
-            self.assertEqual(a,['a','c','e','a','c','e','h','e','y'],"inputs: ['a','c','e'],['h','e','y']")
+            extend(a,b)
+            self.assertEqual(a,['a','c','e','h','e','y'],"inputs: ['a','c','e'],['h','e','y']")
             
     myTests().main()
 
@@ -59,27 +67,22 @@ Hints
     :showtitle: Show Hint #1
     :hidetitle: Hide Hint #1
     
-    This works very similarly to the algorithm for copying lists in lesson 05-05!
+    Remember that you can modify lists within functions and it will stay modified when you're done with the function!
 
 .. reveal:: reveal_0506_2
     :showtitle: Show Hint #2
     :hidetitle: Hide Hint #2
     
-    ...Except you have to do it twice!  Once for the old list, once for the new!
+    You'll have to add elements from ``extension`` to ``original``, one by one, using the ``append()`` list function.
 
 .. reveal:: reveal_0506_3
     :showtitle: Show Answer
     :hidetitle: Hide Answer
 
-    Here's one way to do it (I use ``e`` as short for "element"):
+    Here's one way to do it:
     
     .. code-block:: python3
     
-        def extend(orig,ext):
-            #write here
-            result = []
-            for e in orig:
-                result.append(e)
-            for e in ext:
-                result.append(e)
-            return result
+        def extend(original,extension):
+            for element in extension:
+                original.append(element)

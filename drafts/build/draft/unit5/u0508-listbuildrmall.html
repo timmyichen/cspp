@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lesson 05-08: Building List Methods: replace &mdash; CSP Python</title>
+    <title>Lesson 05-09: Building List Functions: removeall &mdash; CSP Python</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -100,8 +100,8 @@
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
     <link rel="top" title="CSP Python" href="../index.html" />
-    <link rel="next" title="Lesson 05-09: Building List Methods: removeall" href="u0509-listbuildrmall.html" />
-    <link rel="prev" title="Lesson 05-07: Building List Methods: reverse" href="u0507-listbuildrev.html" />
+    <link rel="next" title="Lesson 05-10: Strings to Lists" href="u0509-strtolist.html" />
+    <link rel="prev" title="Lesson 05-08: Building List Functions: replaceAll" href="u0507-listbuildrepl.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -259,7 +259,7 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Lesson 05-08: Building List Methods: <code class="docutils literal"><span class="pre">replace</span></code></a><ul>
+<li><a class="reference internal" href="#">Lesson 05-09: Building List Functions: <code class="docutils literal"><span class="pre">removeall</span></code></a><ul>
 <li><a class="reference internal" href="#assignment">Assignment</a></li>
 <li><a class="reference internal" href="#hints">Hints</a></li>
 </ul>
@@ -271,14 +271,14 @@
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Lesson 05-07: Building List Methods: <code class="docutils literal"><span class="pre">reverse</span></code>" data-toggle="tooltip">
-    <a href="u0507-listbuildrev.html" >
+  <li id="relations-prev" title="Previous Chapter - Lesson 05-08: Building List Functions: <code class="docutils literal"><span class="pre">replaceAll</span></code>" data-toggle="tooltip">
+    <a href="u0507-listbuildrepl.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Lesson 05-09: Building List Methods: <code class="docutils literal"><span class="pre">removeall</span></code>' data-toggle="tooltip" >
-    <a href="u0509-listbuildrmall.html" >
+  <li id="relations-next" title='Next Chapter - Lesson 05-10: Strings to Lists' data-toggle="tooltip" >
+    <a href="u0509-strtolist.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -310,23 +310,22 @@
   
   <script type=text/javascript>
 localStorage.clear()
-</script><div class="section" id="lesson-05-08-building-list-methods-replace">
-<h1>Lesson 05-08: Building List Methods: <code class="docutils literal"><span class="pre">replace</span></code><a class="headerlink" href="#lesson-05-08-building-list-methods-replace" title="Permalink to this headline">¶</a></h1>
-<p><strong>Learning Target: I can create a python function that will replace a given element in a list with another given element.</strong></p>
+</script><div class="section" id="lesson-05-09-building-list-functions-removeall">
+<h1>Lesson 05-09: Building List Functions: <code class="docutils literal"><span class="pre">removeall</span></code><a class="headerlink" href="#lesson-05-09-building-list-functions-removeall" title="Permalink to this headline">¶</a></h1>
+<p><strong>Learning Target: I can create a python function that will remove all elements of a given value.</strong></p>
 <div class="section" id="assignment">
 <h2>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h2>
-<p>In the area below, create a method called <code class="docutils literal"><span class="pre">replace()</span></code> that will take in three arguments:</p>
+<p>In the area below, create a method called <code class="docutils literal"><span class="pre">removeAll()</span></code> that will take in two arguments:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">orig</span></code> - the original list</li>
-<li><code class="docutils literal"><span class="pre">find_value</span></code> - the value you want to replace in the list</li>
-<li><code class="docutils literal"><span class="pre">replace_with</span></code> - the value you want to replace it with in the list</li>
+<li><code class="docutils literal"><span class="pre">original</span></code> - the original list</li>
+<li><code class="docutils literal"><span class="pre">del_value</span></code> - the value you want to replace in the list</li>
 </ul>
-<p>and will replace ALL elements that in <code class="docutils literal"><span class="pre">orig</span></code> that match <code class="docutils literal"><span class="pre">find_value</span></code> and replace their value with that of <code class="docutils literal"><span class="pre">replace_with</span></code>.  The function should then return the new list with the replaced values.  This should be done <strong>without modifying the original list</strong>.</p>
+<p>and will remove ALL elements that in <code class="docutils literal"><span class="pre">original</span></code> that match <code class="docutils literal"><span class="pre">del_value</span></code>.  The function should modify the value of <code class="docutils literal"><span class="pre">original</span></code>.</p>
 <p>Example:</p>
-<p><code class="docutils literal"><span class="pre">replace([1,2,1,2],1,&quot;a&quot;)</span></code> should return <code class="docutils literal"><span class="pre">[&quot;a&quot;,2,&quot;a&quot;,2]</span></code></p>
+<p><code class="docutils literal"><span class="pre">removeAll([1,2,1,2,3,1,2],1)</span></code> should return <code class="docutils literal"><span class="pre">[2,2,3,2]</span></code></p>
 
 <textarea data-component="activecode" id=cfu_0508_1 data-lang="python"    data-timelimit=25000   data-audio=''     >
-def replace(orig,find_value,replace_with):
+def removeAll(orig,del_value):
     #write here
 
 ====
@@ -337,14 +336,12 @@ class myTests(TestCaseGui):
 
     def testOne(self):
         a = [1,2,3,2,1]
-        b = replace(a,2,0)
-        a.extend(b)
-        self.assertEqual(a,[1,2,3,2,1,1,0,3,0,1],"inputs: [1,2,3,2,1],2,0")
+        removeAll(a,1)
+        self.assertEqual(a,[2,3,2],"inputs: [1,2,3,2,1],1")
 
-        a = [5,5,5,5]
-        b = replace(a,5,-5)
-        a.extend(b)
-        self.assertEqual(a,[5,5,5,5,-5,-5,-5,-5],"inputs: [5,5,5,5],5,-5")
+        a = [0,0,1,1,0,1,0,0]
+        removeAll(a,0)
+        self.assertEqual(a,[1,1,1],"inputs: [0,0,1,1,0,1,0,0],0")
 
 myTests().main()
 </textarea>
@@ -353,23 +350,34 @@ myTests().main()
 <h2>Hints<a class="headerlink" href="#hints" title="Permalink to this headline">¶</a></h2>
 
     <div data-component="reveal" id="reveal_0508_1"   data-showtitle="Show Hint #1" data-hidetitle="Hide Hint #1">
-    It&#8217;s kinda like copying a list, except you want to change some of the values.  You&#8217;ll need a conditional somewhere... how do you know whether you should be changing the value or not?
+    This time, you&#8217;re probably going to want a loop, but be careful!  Remember that when you remove an element, it shifts the index of all the remaining elements down by 1!
     </div>
     
     <div data-component="reveal" id="reveal_0508_2"   data-showtitle="Show Hint #2" data-hidetitle="Hide Hint #2">
-    Since you need to copy everything into a new list, you might as well start by looping through all the elements and adding them... except for the ones where they are equal to <code class="docutils literal"><span class="pre">find_value</span></code>!  Then you&#8217;ll want to add something else..
+    You&#8217;ll probably want to use a <code class="docutils literal"><span class="pre">while</span></code> loop here.  Also consider: In a while loop, you&#8217;re likely going to have a variable that keeps track of the index.  When do you want the index to move up?  Conversely, when do you want the index to <em>not</em> change?
     </div>
     
     <div data-component="reveal" id="reveal_0508_3"   data-showtitle="Show Answer" data-hidetitle="Hide Answer">
-    <p>Here&#8217;s one way to do it (I use <code class="docutils literal"><span class="pre">e</span></code> as short for &#8220;element&#8221;):</p>
-<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">replace</span><span class="p">(</span><span class="n">orig</span><span class="p">,</span><span class="n">find_value</span><span class="p">,</span><span class="n">replace_with</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">orig</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">e</span> <span class="o">==</span> <span class="n">find_value</span><span class="p">:</span>
-            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">replace_with</span><span class="p">)</span>
+    <p>Here&#8217;s one way to do it:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">removeAll</span><span class="p">(</span><span class="n">original</span><span class="p">,</span><span class="n">del_value</span><span class="p">):</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">original</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">original</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">==</span> <span class="n">del_value</span><span class="p">:</span>
+            <span class="n">original</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">del_value</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">result</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Here&#8217;s another way where we use for loops to count the occurrences of <code class="docutils literal"><span class="pre">del_value</span></code>, then another for loop do delete all of them at once.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">removeAll</span><span class="p">(</span><span class="n">original</span><span class="p">,</span><span class="n">del_value</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">original</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">e</span> <span class="o">==</span> <span class="n">del_value</span><span class="p">:</span>
+            <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+        <span class="n">original</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">del_value</span><span class="p">)</span>
 </pre></div>
 </div>
 
@@ -380,19 +388,19 @@ myTests().main()
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - Lesson 05-07: Building List Methods: <code class="docutils literal"><span class="pre">reverse</span></code>' data-toggle="tooltip">
-    <a href="u0507-listbuildrev.html" >
+  <li id="relations-prev" class="navLink" title='Previous Section - Lesson 05-08: Building List Functions: <code class="docutils literal"><span class="pre">replaceAll</span></code>' data-toggle="tooltip">
+    <a href="u0507-listbuildrepl.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>
   </li>
-  <a class="navLinkBg" id="navLinkBgLeft"  href="u0507-listbuildrev.html" ></a>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="u0507-listbuildrepl.html" ></a>
   
-  <li id="relations-next" class="navLink" title='Next Section - Lesson 05-09: Building List Methods: <code class="docutils literal"><span class="pre">removeall</span></code>' data-toggle="tooltip" >
-    <a href="u0509-listbuildrmall.html" >
+  <li id="relations-next" class="navLink" title='Next Section - Lesson 05-10: Strings to Lists' data-toggle="tooltip" >
+    <a href="u0509-strtolist.html" >
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="u0509-listbuildrmall.html" >Next Section - Lesson 05-09: Building List Methods: <code class="docutils literal"><span class="pre">removeall</span></code></a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="u0509-strtolist.html" >Next Section - Lesson 05-10: Strings to Lists</a>
 
 <script type="text/javascript">
 

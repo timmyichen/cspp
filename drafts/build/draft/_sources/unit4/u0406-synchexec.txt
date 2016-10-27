@@ -89,9 +89,9 @@ Q#1
            return False
    
    num = -2
-   if func1(n):
+   if func1(num):
        print("alpha")
-   elif func2(n):
+   elif func2(num):
        print("beta")
    else:
        print("gamma")

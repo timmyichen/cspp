@@ -11,18 +11,18 @@
     Documentation License".
 
 
-Lesson 05-03: Basic List Methods
-================================
+Lesson 05-03: Basic List Functions
+==================================
 
 **Learning Target: I can use python documentation to properly use list methods.**
 
 Python Documentation
 --------------------
 
-The `Python 3 documentation <https://docs.python.org/3/tutorial/datastructures.html>`_ contains all the information you need to know about python - this includes what list methods are available to you!  In the area below, using the documentation link above, try to figure out how to use these methods.  Remember to use CTRL+F (Windows) or CMD+F (Mac) to find specific words on a page.
+The `Python 3 documentation <https://docs.python.org/3/tutorial/datastructures.html>`_ contains all the information you need to know about python - this includes what list functions are available to you!  In the area below, using the documentation link above, try to figure out how to use these functions.  Remember to use CTRL+F (Windows) or CMD+F (Mac) to find specific words on a page.
 
-Using The Methods
------------------
+Using The Functions
+-------------------
 
 ``list.append()``
 ~~~~~~~~~~~~~~~~~

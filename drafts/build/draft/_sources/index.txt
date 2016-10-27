@@ -161,11 +161,10 @@ Unit 5 Lessons - Lists (IN PROGRESS)
     unit5/u0504-listvalue.rst
     unit5/u0505-dupelist.rst
     unit5/u0506-listbuildext.rst
-    unit5/u0507-listbuildrev.rst
-    unit5/u0508-listbuildrepl.rst
-    unit5/u0509-listbuildrmall.rst
-    unit5/u0510-strtolist.rst
-    unit5/u0511-swapalgo.rst
+    unit5/u0507-listbuildrepl.rst
+    unit5/u0508-listbuildrmall.rst
+    unit5/u0509-strtolist.rst
+    unit5/u0510-swapalgo.rst
     unit5/u05-labcheck.rst
 
 Unit 5 Labs
